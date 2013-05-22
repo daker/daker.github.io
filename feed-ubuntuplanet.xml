@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-ubuntuplanet.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-05-22T22:31:23Z</updated>
+        <updated>2013-05-22T22:37:18Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -20,7 +20,7 @@
                 <title>Hello World</title>
                 <link rel="alternate" href="http://daker.me/2013/05/hello-world.html" type="text/html" />
                 <id>http://daker.me/2013/05/hello-world.html</id>
-                <updated>2013-05-20T22:28:00Z</updated>
+                <updated>2013-05-22T22:28:00Z</updated>
 
                 <summary type="html">Hello World! I’ve been wanting a to start my own blog for a while now. Time and other constraints have been preventing me, but I finally sat down over the last week-end and hacked together what you actually see.</summary>
                 <content type="html">&lt;p&gt;Hello World! I’ve been wanting a to start my own blog for a while now. Time and other constraints have been preventing me, but I finally sat down over the last week-end and hacked together what you actually see.&lt;/p&gt;
