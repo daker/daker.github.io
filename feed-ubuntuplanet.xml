@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-ubuntuplanet.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-05-22T22:46:44Z</updated>
+        <updated>2013-05-23T22:20:56Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -20,7 +20,7 @@
                 <title>Hello World</title>
                 <link rel="alternate" href="http://daker.me/2013/05/hello-world.html" type="text/html" />
                 <id>http://daker.me/2013/05/hello-world.html</id>
-                <updated>2013-05-22T22:28:00Z</updated>
+                <updated>2013-05-22T23:55:00Z</updated>
 
                 <summary type="html">Hello World! I’ve been wanting a to start my own blog for a while now. Time and other constraints have been preventing me, but I finally sat down over the last week-end and hacked together what you actually see.</summary>
                 <content type="html">&lt;p&gt;Hello World! I’ve been wanting a to start my own blog for a while now. Time and other constraints have been preventing me, but I finally sat down over the last week-end and hacked together what you actually see.&lt;/p&gt;
@@ -30,7 +30,7 @@
 &lt;p&gt;I have decided to license the content of this website under a Creative Commons license; CC-BY-SA 3.0 Unported, to be exact. This means that you can take what I will write on this blog, reuse it for whatever you see fit, or combine it with other content under the same license, e.g. from Wikipedia. The only requirements are that :&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;you quote where you got it from, i.e. from me (Adnane Belmadiaf) and this website (&lt;a href=&#34;https://daker.me&#34;&gt;daker.me&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;you quote where you got it from, i.e. from me (Adnane Belmadiaf) and this website (&lt;a href=&#34;http://daker.me&#34;&gt;daker.me&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;you share the result under the same license&lt;/li&gt;
 &lt;/ul&gt;
 
