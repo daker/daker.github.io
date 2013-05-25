@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-05-25T22:57:52Z</updated>
+        <updated>2013-05-25T23:27:43Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -34,11 +34,11 @@
 &amp;lt;link rel=&amp;#34;dns-prefetch&amp;#34; href=&amp;#34;//www.google-analytics.com&amp;#34;&amp;gt;
 &amp;lt;link rel=&amp;#34;dns-prefetch&amp;#34; href=&amp;#34;//platform.twitter.com&amp;#34;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Link Prefetching&lt;/h2&gt;
-&lt;p&gt;Link prefetching allows developers to specify pages or assets they want to silently preload once the page load, like loading the first search resulat :&lt;/p&gt;
+&lt;p&gt;Link prefetching allows developers to specify pages or assets they want to silently preload once the page load, like loading the first search results :&lt;/p&gt;
 &lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;link rel=&amp;#34;prefetch&amp;#34; href=&amp;#34;http://daker.me/2013/05/hello-world.html&amp;#34; /&amp;gt;
 &amp;lt;link rel=&amp;#34;prefetch&amp;#34; href=&amp;#34;http://daker.me/assets/images/avatar.png&amp;#34; /&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Also you can use the &lt;a href=&#34;https://developers.google.com/chrome/whitepapers/prerender&#34;&gt;prerendering&lt;/a&gt; feature which will make your website even more faster, the browser will fetch and render the entire next page on the background and show it only when the user click on the link :&lt;/p&gt;
+&lt;p&gt;Also you can use the &lt;a href=&#34;https://developers.google.com/chrome/whitepapers/prerender&#34;&gt;prerendering&lt;/a&gt; feature which will make your website even faster, the browser will fetch and render the entire next page on the background and show it only when the user click on the link :&lt;/p&gt;
 &lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;link rel=&amp;#34;prerender&amp;#34; href=&amp;#34;http://daker.me/2013/05/hello-world.html&amp;#34; /&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;iframe width=&#34;780&#34; height=&#34;439&#34; src=&#34;https://www.youtube.com/embed/_Jn93FDx9oI&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
