@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-05-23T22:20:56Z</updated>
+        <updated>2013-05-25T17:59:46Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,57 @@
             <uri>http://daker.me/</uri>
         </author>
         
+        
+            <entry>
+                <title>5 HTML5 Features you need to know</title>
+                <link rel="alternate" href="http://daker.me/2013/05/5-html5-features-you-need-to-know.html" type="text/html" />
+                <id>http://daker.me/2013/05/5-html5-features-you-need-to-know.html</id>
+                <updated>2013-05-25T19:00:00Z</updated>
+                
+                <summary type="html">HTML5 has been around for a while now, it introduces lots of new and exciting new JavaScript and HTML APIs for both mobile and desktop, so in this post you will discover some HTML5 features that will enhance your web apps and will save you a lot of time.</summary>
+                <content type="html">&lt;p&gt;HTML5 has been around for a while now, it introduces lots of new and exciting new JavaScript and HTML APIs for both mobile and desktop, so in this post you will discover some HTML5 features that will enhance your web apps and will save you a lot of time.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/html5-logo.png&#34; alt=&#34;HTML5 logo&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;DNS Prefetching&lt;/h2&gt;
+&lt;p&gt;DNS hostname resolution is one of the issues that can make any website slow. Modern browsers start to be very smart when it comes to DNS resolution, they try to resolve domain names then cache them before the user tries to follow any link on the webpage.&lt;/p&gt;
+
+&lt;p&gt;With the dns-prefetch feature you are allowed to manually control this operation by telling the browser which domain names to resolve :&lt;/p&gt;
+&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;link rel=&amp;#34;dns-prefetch&amp;#34; href=&amp;#34;//fonts.googleapis.com&amp;#34;&amp;gt;
+&amp;lt;link rel=&amp;#34;dns-prefetch&amp;#34; href=&amp;#34;//google-analytics.com&amp;#34;&amp;gt;
+&amp;lt;link rel=&amp;#34;dns-prefetch&amp;#34; href=&amp;#34;//www.google-analytics.com&amp;#34;&amp;gt;
+&amp;lt;link rel=&amp;#34;dns-prefetch&amp;#34; href=&amp;#34;//platform.twitter.com&amp;#34;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Link Prefetching&lt;/h2&gt;
+&lt;p&gt;Link prefetching allows developers to specify pages or assets they want to silently preload once the page load, like loading the first search resulat :&lt;/p&gt;
+&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;link rel=&amp;#34;prefetch&amp;#34; href=&amp;#34;http://daker.me/2013/05/hello-world.html&amp;#34; /&amp;gt;
+&amp;lt;link rel=&amp;#34;prefetch&amp;#34; href=&amp;#34;http://daker.me/assets/images/avatar.png&amp;#34; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Combined with the pre-rendering feature will make your website even more faster, the browser will fetch and render the entire next page on the background and show it only when the user click on the link :&lt;/p&gt;
+
+&lt;iframe width=&#34;780&#34; height=&#34;439&#34; src=&#34;https://www.youtube.com/embed/_Jn93FDx9oI&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2&gt;Download Attribute&lt;/h2&gt;
+&lt;p&gt;The HTML5 download attribute allows developers to force a file to download rather than go to that specific page, you no longer need to rely on server side code to do that :&lt;/p&gt;
+&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;a href=&amp;#34;download_pdf.php?id=15&amp;#34; download=&amp;#34;myfile.pdf&amp;#34;&amp;gt;Download PDF&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Regular Expressions&lt;/h2&gt;
+&lt;p&gt;I know you&amp;#39;ll fall in love with this feature, no more js or a server side code to check if the user&amp;#39;s input is a valid email or url adress, with the pattern attribute you can use regular expressions directly :&lt;/p&gt;
+&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;input type=&amp;#34;email&amp;#34; pattern=&amp;#34;[^ @]*@[^ @]*&amp;#34; value=&amp;#34;&amp;#34;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Datalist Element&lt;/h2&gt;
+&lt;p&gt;Datalist element is a litle big addition, no more use of jQuery plugins for autocomplete inputs combined with a server side code that hit the database on each user keystroke :&lt;/p&gt;
+&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;form action=&amp;#34;form.php&amp;#34; method=&amp;#34;post&amp;#34;&amp;gt;
+    &amp;lt;input list=&amp;#34;cars&amp;#34; name=&amp;#34;cars&amp;#34; &amp;gt;
+    &amp;lt;datalist id=&amp;#34;cars&amp;#34;&amp;gt;
+        &amp;lt;option value=&amp;#34;Volvo&amp;#34;&amp;gt;
+        &amp;lt;option value=&amp;#34;BMW&amp;#34;&amp;gt;
+        &amp;lt;option value=&amp;#34;Bugatti&amp;#34;&amp;gt;
+        &amp;lt;option value=&amp;#34;Cadillac&amp;#34;&amp;gt;
+        &amp;lt;option value=&amp;#34;Chevrolet&amp;#34;&amp;gt;
+        &amp;lt;option value=&amp;#34;Chrysler&amp;#34;&amp;gt;
+    &amp;lt;/datalist&amp;gt;
+    &amp;lt;input type=&amp;#34;submit&amp;#34; /&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I hope this will help you save time and enhance you coding skills, let me know your thoughts in the comments below.&lt;/p&gt;
+</content>
+            </entry>
         
             <entry>
                 <title>Hello World</title>
