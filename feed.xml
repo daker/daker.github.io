@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-05-27T21:51:39Z</updated>
+        <updated>2013-05-28T22:41:11Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,105 @@
             <uri>http://daker.me/</uri>
         </author>
         
+        
+            <entry>
+                <title>5 Sublime Text 2 packages to enhance your frontend development workflow</title>
+                <link rel="alternate" href="http://daker.me/2013/05/5-sublimetext2-packages-to-enhance-your-frontend-development-workflow.html" type="text/html" />
+                <id>http://daker.me/2013/05/5-sublimetext2-packages-to-enhance-your-frontend-development-workflow.html</id>
+                <updated>2013-05-28T23:45:00Z</updated>
+                
+                <summary type="html">Sublime Text 2 is a lightweight, cross platform, blazing fast text editor with chrome-like tabs and split window layouts, it works for both web development and software development.</summary>
+                <content type="html">&lt;p&gt;Sublime Text 2 is a lightweight, cross platform, blazing fast text editor with chrome-like tabs and split window layouts, it works for both web development and software development.&lt;/p&gt;
+
+&lt;p&gt;Sublime Text has got a wide range of open source plugins with a massive community of plugin developers.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/sublime.png&#34; alt=&#34;Sublime Text 2&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;For my frontend development workflow i use some plugins with a specific user settings and sure the wonderfull &lt;a href=&#34;https://github.com/buymeasoda/soda-theme&#34;&gt;Soda theme&lt;/a&gt; by &lt;a href=&#34;https://github.com/buymeasoda&#34;&gt;Ian Hill&lt;/a&gt;, so here’s &lt;a href=&#34;https://gist.github.com/daker/5665850&#34;&gt;my settings file&lt;/a&gt;:&lt;/p&gt;
+&lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
+    &amp;#34;auto_complete&amp;#34;: false,
+    &amp;#34;caret_style&amp;#34;: &amp;#34;phase&amp;#34;,
+    &amp;#34;close_windows_when_empty&amp;#34;: false,
+    &amp;#34;color_scheme&amp;#34;: &amp;#34;Packages/Tomorrow Color Schemes/Tomorrow-Night.tmTheme&amp;#34;,
+    &amp;#34;draw_white_space&amp;#34;: &amp;#34;all&amp;#34;,
+    &amp;#34;find_selected_text&amp;#34;: true,
+    &amp;#34;fold_buttons&amp;#34;: false,
+    &amp;#34;folder_exclude_patterns&amp;#34;:
+    [
+        &amp;#34;.svn&amp;#34;,
+        &amp;#34;.git&amp;#34;,
+        &amp;#34;.hg&amp;#34;,
+        &amp;#34;CVS&amp;#34;,
+        &amp;#34;_build&amp;#34;,
+        &amp;#34;dist&amp;#34;,
+        &amp;#34;build&amp;#34;,
+        &amp;#34;site&amp;#34;
+    ],
+    &amp;#34;font_face&amp;#34;: &amp;#34;Ubuntu Mono&amp;#34;,
+    &amp;#34;font_options&amp;#34;:
+    [
+        &amp;#34;subpixel_antialias&amp;#34;
+    ],
+    &amp;#34;font_size&amp;#34;: 12.0,
+    &amp;#34;highlight_line&amp;#34;: true,
+    &amp;#34;ignored_packages&amp;#34;:
+    [
+        &amp;#34;Vintage&amp;#34;
+    ],
+    &amp;#34;rulers&amp;#34;:
+    [
+        72,
+        79
+    ],
+    &amp;#34;theme&amp;#34;: &amp;#34;Soda Dark.sublime-theme&amp;#34;,
+    &amp;#34;translate_tabs_to_spaces&amp;#34;: true,
+    &amp;#34;trim_trailing_white_space_on_save&amp;#34;: true
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Package Control&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://wbond.net/sublime_packages/package_control/&#34;&gt;Package Control&lt;/a&gt; is one of my favorite plugins, it allows users to manage packages very easily, with one shortcut you have access to a long list of plugins available to install and update is automaticly handled. To install it open the console View-&amp;gt;Show Console, then paste the following code :&lt;/p&gt;
+&lt;pre lang=&#34;python&#34;&gt;&lt;code&gt;import urllib2,os; pf=&amp;#39;Package Control.sublime-package&amp;#39;; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),&amp;#39;wb&amp;#39;).write(urllib2.urlopen(&amp;#39;http://sublime.wbond.net/&amp;#39;+pf.replace(&amp;#39; &amp;#39;,&amp;#39;%20&amp;#39;)).read()); print(&amp;#39;Please restart Sublime Text to finish installation&amp;#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To use it simply invoke the command palette using ctrl+shift+p or ⌘+shift+p then type &amp;quot;install&amp;quot; :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/sublime-palette.png&#34; alt=&#34;Sublime Text 2 command palette&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Sublime Linter&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/SublimeLinter/SublimeLinter&#34;&gt;Sublime Linter&lt;/a&gt; is the Swiss knife of code linting, it highlights potential errors in your code depending on the language you are using.&lt;/p&gt;
+&lt;h2&gt;LiveReload&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/dz0ny/LiveReload-sublimetext2&#34;&gt;LiveReload&lt;/a&gt; can help you to save a lot time, you don&amp;#39;t need to hit refresh in your browser each time you want to test, everything will be done automatically when you save your file.&lt;/p&gt;
+&lt;h2&gt;Prefixr&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://wbond.net/sublime_packages/prefixr&#34;&gt;Prefixr&lt;/a&gt; runs your CSS through the &lt;a href=&#34;http://prefixr.com/&#34;&gt;Prefixr&lt;/a&gt; API to make it Cross-Browser.&lt;/p&gt;
+&lt;h2&gt;Sidebar Enhancements&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/titoBouzout/SideBarEnhancements&#34;&gt;Sidebar Enhancements&lt;/a&gt; Makes the sidebar more user friendly and improves its usability by adding more options to it. You can delete files and open files using certain programs like Photoshop. giving you more options on new files, moving files, copying files and opening files in another program.&lt;/p&gt;
+&lt;h2&gt;Emmet&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/sergeche/emmet-sublime&#34;&gt;Emmet (ex Zen Coding)&lt;/a&gt; - With this plugin you will see the &amp;quot;Valentino Rossi&amp;quot; on you, this will bring hight-speed development process in your HTML and CSS.&lt;/p&gt;
+&lt;h2&gt;Bonus&lt;/h2&gt;
+&lt;p&gt;Here are some useful Keyboard shortcuts to remember :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  ctrl+d Select the next occurrence of the selected word&lt;/li&gt;
+&lt;li&gt;  ctrl+k, ctrl+b - Toggle the sidebar&lt;/li&gt;
+&lt;li&gt;  f11 - Toggle Full Screen&lt;/li&gt;
+&lt;li&gt;  shift+f11 - Toggle Distraction Free (this one is my &lt;strong&gt;favorite&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;  alt+. - Close Tag&lt;/li&gt;
+&lt;li&gt;  ctrl+p - Show the go to overlay panel&lt;/li&gt;
+&lt;li&gt;  ctrl+shift+p - Show the command overlay panel&lt;/li&gt;
+&lt;li&gt;  ctrl+alt+p - Show the project selector panel&lt;/li&gt;
+&lt;li&gt;  ctrl+r - Show the go to overlay panel default to method selector&lt;/li&gt;
+&lt;li&gt;  ctrl+g - Show the go to overlay panel default to go to line selector&lt;/li&gt;
+&lt;li&gt;  ctrl+; - Show the go to overlay panel default to variable selector&lt;/li&gt;
+&lt;li&gt;  ctrl+shift+up - Swap with the line above&lt;/li&gt;
+&lt;li&gt;  ctrl+shift+down - Swap with the line below&lt;/li&gt;
+&lt;li&gt;  ctrl+/ - Toggle a comment&lt;/li&gt;
+&lt;li&gt;  ctrl+shift+/ - Toggle a comment block&lt;/li&gt;
+&lt;li&gt;  ctrl+shift+d - Duplicate a line&lt;/li&gt;
+&lt;li&gt;  ctrl+` - Display console panel&lt;/li&gt;
+&lt;li&gt;  ctrl+space - Auto complete the current selected snippet&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I hope this will help you with your development workflow, let me know your thoughts and what plugins you use in the comments below.&lt;/p&gt;
+</content>
+            </entry>
         
             <entry>
                 <title>5 HTML5 Features you need to know</title>
