@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-05-29T08:29:08Z</updated>
+        <updated>2013-06-02T19:13:57Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,150 @@
             <uri>http://daker.me/</uri>
         </author>
         
+        
+            <entry>
+                <title>5 HTML5 Javascript APIs to keep an eye on</title>
+                <link rel="alternate" href="http://daker.me/2013/06/5-html5-javascript-apis-to-keep-an-eye-on.html" type="text/html" />
+                <id>http://daker.me/2013/06/5-html5-javascript-apis-to-keep-an-eye-on.html</id>
+                <updated>2013-06-02T17:30:00Z</updated>
+                
+                <summary type="html">In my &lt;a href=&#34;http://daker.me/2013/05/5-html5-features-you-need-to-know.html&#34;&gt;last post&lt;/a&gt;, i have talked about HTML5 APIs, so thought it will also interesting to write about some new &lt;strike&gt;old&lt;/strike&gt; Javasript APIs. Since CSS has been improving over the time and today you can achieve what was only done with Javascript with CSS only, on the other side Javascript have to improve and follow the evolution, so today Javascript can do a lot of things, like accessing hardware(camera, microphone, gamepad, GPU), accessing the filesystem and websocket.</summary>
+                <content type="html">&lt;p&gt;In my &lt;a href=&#34;http://daker.me/2013/05/5-html5-features-you-need-to-know.html&#34;&gt;last post&lt;/a&gt;, i have talked about HTML5 APIs, so thought it will also interesting to write about some new &lt;strike&gt;old&lt;/strike&gt; Javasript APIs. Since CSS has been improving over the time and today you can achieve what was only done with Javascript with CSS only, on the other side Javascript have to improve and follow the evolution, so today Javascript can do a lot of things, like accessing hardware(camera, microphone, gamepad, GPU), accessing the filesystem and websocket.&lt;/p&gt;
+&lt;h2&gt;Battery Status API&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&#34;http://www.w3.org/TR/battery-status/&#34;&gt;Battery Status API&lt;/a&gt; allows any webpage to inspect the state of the device&amp;#39;s (Laptop, phone or tablet) battery through javascript :&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery
+
+console.log(&amp;#34;Battery charging: &amp;#34;, battery.charging); // true
+console.log(&amp;#34;Battery level: &amp;#34;, battery.level); // 0.58
+console.log(&amp;#34;Battery discharging time: &amp;#34;, battery.dischargingTime);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As you can see you need to do more checks to make your code cross-browser compatible, i have done some researches and i have found &lt;a href=&#34;https://github.com/pstadler/battery.js/&#34;&gt;battery.js&lt;/a&gt; a tiny wrapper for the Battery Status API :&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;if(Battery.isSupported()) {
+    // Get the battery status
+    var status = Battery.getStatus();
+    console.log(&amp;#39;Level: &amp;#39; + Math.floor(status.level * 100) + &amp;#39;%&amp;#39;); // 30%
+    console.log(&amp;#39;Charging: &amp;#39; + status.charging);                   // true
+    console.log(&amp;#39;Time until charged: &amp;#39; + status.chargingTime);     // 3600 (seconds) or Infinity
+    console.log(&amp;#39;Battery time left: &amp;#39; + status.dischargingTime);   // 3600 (seconds) or Infinity
+
+    // Register a handler to get notified when battery status changes
+    Battery.onUpdate = function(status) {
+        console.log(status); // {level, charging, chargingTime, dischargingTime}
+    };
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;browser-support&#34;&gt;
+    &lt;dfn title=&#34;firefox&#34;&gt;&lt;div&gt;16.0&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;chrome&#34;&gt;&lt;div&gt;10.5&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;opera&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;ie&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;safari&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
+&lt;/div&gt;
+&lt;h2&gt;Gamepad API&lt;/h2&gt;
+&lt;p&gt;Gamepad API allows you to connect your console gamepad into your computer and use it for browser based games. With the increase in popularity of HTML5 games this API will have a prominent future.&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;navigator.gamepads = navigator.webkitGamepads || navigator.MozGamepads;
+
+var requestAnimationFrame = window.webkitRequestAnimationFrame ||
+                            window.mozRequestAnimationFrame;
+var cancelAnimationFrame = window.webkitCancelAnimationFrame ||
+                           window.MozCancelAnimationFrame;
+
+var controllers = {}; // Stash connected controllers.
+var reqId = null;
+
+function onConnected(e) {
+    controllers[e.gamepad.index] = e.gamepad;
+    runAnimation();
+}
+
+function onDisconnected(e) {
+    delete controllers[e.gamepad.index];
+    cancelAnimationFrame(reqId);
+}
+
+window.addEventListener(&amp;#39;webkitgamepadconnected&amp;#39;, onConnected, false);
+window.addEventListener(&amp;#39;webkitgamepaddisconnected&amp;#39;, onDisconnected, false);
+
+window.addEventListener(&amp;#39;MozGamepadDisconnected&amp;#39;, onDisconnected, false);
+window.addEventListener(&amp;#39;MozGamepadConnected&amp;#39;, onConnected, false);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Source : &lt;a href=&#34;https://html5-demos.appspot.com/static/html5-therealbleedingedge/template/index.html#27&#34;&gt;The Edge of HTML5&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&#34;browser-support&#34;&gt;
+    &lt;dfn title=&#34;firefox&#34;&gt;&lt;div&gt;10.5&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;opera&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;ie&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;chrome&#34;&gt;&lt;div&gt;10.5&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;safari&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There is a library called &lt;a href=&#34;http://www.gamepadjs.com/&#34;&gt;gamepadjs&lt;/a&gt;, which will let you use this API very easily.&lt;/p&gt;
+&lt;h2&gt;Device Orientation API&lt;/h2&gt;
+&lt;p&gt;Using device orientation, you can determine the orientation of the device as well as gather information about its movement (alpha, beta and gamma).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/deviceorientation.png&#34; alt=&#34;Source html5rocks.com&#34;&gt;&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;if (window.DeviceOrientationEvent) {
+    window.addEventListener(&amp;#39;deviceorientation&amp;#39;, function(event) {
+        var a = event.alpha,
+            b = event.beta,
+            g = event.gamma;
+        console.log(&amp;#39;Orientation - Alpha: &amp;#39; + a + &amp;#39;, Beta: &amp;#39;+ b + &amp;#39;, Gamma: &amp;#39; + g);
+    }, false);
+} else {
+    console.log(&amp;#39;This device does not support deviceorientation&amp;#39;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;browser-support&#34;&gt;
+    &lt;dfn title=&#34;firefox&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;opera&#34;&gt;&lt;div&gt;15.0&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;ie&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;chrome&#34;&gt;&lt;div&gt;7.0&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;safari&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To use this feature your device must have gyroscope capabilities, more about browser support can be found on &lt;a href=&#34;http://caniuse.com/deviceorientation&#34;&gt;caniuse.com&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Geolocation API&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&#34;http://dev.w3.org/geo/api/&#34;&gt;Geolocation API&lt;/a&gt; lets you share your location with trusted web sites. The latitude and longitude are available to JavaScript on the page, which in turn can send it back to the remote web server and do fancy location-aware things like finding local businesses or showing your location on a map, it can be also used for &amp;quot;geo-tagging&amp;quot; user&amp;#39;s content like photos.&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var lat = position.coords.latitude,
+            lon = position.coords.longitude;
+        console.log(&amp;#39;Geolocation - Latitude: &amp;#39;+ lat +&amp;#39;, Longitude: &amp;#39;+ lon);
+    });
+}
+else {
+    console.log(&amp;#39;Geolocation is not supported for this Browser/OS version yet.&amp;#39;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;browser-support&#34;&gt;
+    &lt;dfn title=&#34;firefox&#34;&gt;&lt;div&gt;3.5&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;opera&#34;&gt;&lt;div&gt;10.6&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;ie&#34;&gt;&lt;div&gt;9.0&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;chrome&#34;&gt;&lt;div&gt;5.0&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;safari&#34;&gt;&lt;div&gt;5.0&lt;/div&gt;&lt;/dfn&gt;
+&lt;/div&gt;
+
+&lt;p&gt;More about browser support can be found on &lt;a href=&#34;http://caniuse.com/geolocation&#34;&gt;caniuse.com&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Page Visibility API&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&#34;http://www.w3.org/TR/page-visibility/&#34;&gt;Page Visibility API&lt;/a&gt; let&amp;#39;s you determine if your page is visible or not, when you minimise the page or move to another tab, a visibilitychange event is triggered, this can be very useful if you are a game developer this will allow you to pause the game when the user change the page.&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;document.addEventListener(&amp;#39;visibilitychange&amp;#39;, function(e) {
+    console.log(&amp;#39;hidden:&amp;#39; + document.hidden,
+              &amp;#39;state:&amp;#39; + document.visibilityState)
+}, false);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;browser-support&#34;&gt;
+    &lt;dfn title=&#34;firefox&#34;&gt;&lt;div&gt;10.0&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;opera&#34;&gt;&lt;div&gt;12.1&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;ie&#34;&gt;&lt;div&gt;10.0&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;chrome&#34;&gt;&lt;div&gt;14.0&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;safari&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
+&lt;/div&gt;
+
+&lt;p&gt;More about browser support can be found on &lt;a href=&#34;http://caniuse.com/pagevisibility&#34;&gt;caniuse.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let me know your thoughts in the comments below, also you can discuss, upvote this post over at &lt;a href=&#34;#&#34;&gt;Hacker News&lt;/a&gt;.&lt;/p&gt;
+</content>
+            </entry>
         
             <entry>
                 <title>5 Sublime Text 2 packages to enhance your frontend development workflow</title>
