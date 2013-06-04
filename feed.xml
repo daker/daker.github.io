@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-06-03T20:05:44Z</updated>
+        <updated>2013-06-04T09:22:13Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -84,7 +84,7 @@ window.addEventListener(&amp;#39;MozGamepadConnected&amp;#39;, onConnected, fals
 &lt;p&gt;Source : &lt;a href=&#34;https://html5-demos.appspot.com/static/html5-therealbleedingedge/template/index.html#27&#34;&gt;The Edge of HTML5&lt;/a&gt;&lt;/p&gt;
 
 &lt;div class=&#34;browser-support&#34;&gt;
-    &lt;dfn title=&#34;firefox&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;firefox&#34;&gt;&lt;div&gt;3.6&lt;/div&gt;&lt;/dfn&gt;
     &lt;dfn title=&#34;chrome&#34;&gt;&lt;div&gt;21&lt;/div&gt;&lt;/dfn&gt;
     &lt;dfn title=&#34;opera&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
     &lt;dfn title=&#34;ie&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
