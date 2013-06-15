@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-06-09T15:32:26Z</updated>
+        <updated>2013-06-15T17:47:40Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -29,7 +29,7 @@ So in this post i will explain to you five features that will save you time and 
 &lt;p&gt;The CSS3 Flexible Box, better known as Flexbox enables you to create complex layouts with only a few lines of code.&lt;br&gt;
 How many time you wanted to vertically center a div ? how many time you wanted to create a 3 columns layout with 2 fluid columns and one fixed ? here is how to do it — with CSS only&lt;/p&gt;
 &lt;h3&gt;Vertical centering of a div&lt;/h3&gt;
-&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/NnkHF/embedded/result,css,html&#34; allowfullscreen=&#34;allowfullscreen&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/NnkHF/30/embedded/result,css,html&#34; allowfullscreen=&#34;allowfullscreen&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
 &lt;h3&gt;Fixed-Fluid-Fixed Layout&lt;/h3&gt;
 &lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/GWZzd/embedded/result,css,html&#34; allowfullscreen=&#34;allowfullscreen&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
 
@@ -80,10 +80,10 @@ How many time you wanted to vertically center a div ? how many time you wanted t
 &lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/qZdmS/embedded/result,css,html&#34; allowfullscreen=&#34;allowfullscreen&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
 
 &lt;div class=&#34;browser-support&#34;&gt;
-    &lt;dfn title=&#34;firefox&#34;&gt;&lt;div&gt;22.0&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;firefox&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
     &lt;dfn title=&#34;chrome&#34;&gt;&lt;div&gt;18.0&lt;/div&gt;&lt;/dfn&gt;
     &lt;dfn title=&#34;opera&#34;&gt;&lt;div&gt;15.0&lt;/div&gt;&lt;/dfn&gt;
-    &lt;dfn title=&#34;ie&#34;&gt;&lt;div&gt;11.0&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;ie&#34;  class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
     &lt;dfn title=&#34;safari&#34;&gt;&lt;div&gt;6.0&lt;/div&gt;&lt;/dfn&gt;
 &lt;/div&gt;
 &lt;h2&gt;CSS3 Media Queries&lt;/h2&gt;
