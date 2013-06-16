@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-06-15T17:47:40Z</updated>
+        <updated>2013-06-16T15:14:32Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,63 @@
             <uri>http://daker.me/</uri>
         </author>
         
+        
+            <entry>
+                <title>Pocket TV turns any TV into an Android smart TV</title>
+                <link rel="alternate" href="http://daker.me/2013/06/pocket-tv-turns-any-tv-into-an-android-smart-tv.html" type="text/html" />
+                <id>http://daker.me/2013/06/pocket-tv-turns-any-tv-into-an-android-smart-tv.html</id>
+                <updated>2013-06-16T16:15:00Z</updated>
+                
+                <summary type="html">Last Wednesday i got my Pocket TV or PTV from &lt;a href=&#34;https://infinitec.com&#34;&gt;infinitec&lt;/a&gt;, a small pocket-sized dongle that connects to the HDMI port of any regular TV and converts it into a powerful Android ISC Smart TV, it can also be controlled by Android mobile devices using the &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.google.android.apps.tvremote&#34;&gt;Google TV Remote&lt;/a&gt; app or using there own &lt;a href=&#34;http://infinitec.com/forum/viewtopic.php?f=2&amp;amp;t=605&#34;&gt;remote app&lt;/a&gt; which is still in beta.</summary>
+                <content type="html">&lt;p&gt;Last Wednesday i got my Pocket TV or PTV from &lt;a href=&#34;https://infinitec.com&#34;&gt;infinitec&lt;/a&gt;, a small pocket-sized dongle that connects to the HDMI port of any regular TV and converts it into a powerful Android ISC Smart TV, it can also be controlled by Android mobile devices using the &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.google.android.apps.tvremote&#34;&gt;Google TV Remote&lt;/a&gt; app or using there own &lt;a href=&#34;http://infinitec.com/forum/viewtopic.php?f=2&amp;amp;t=605&#34;&gt;remote app&lt;/a&gt; which is still in beta.&lt;/p&gt;
+&lt;h1&gt;Features&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;1 GHz ARM Cortex A9 Processor&lt;/li&gt;
+&lt;li&gt;Mali-400MP Graphics Processor&lt;/li&gt;
+&lt;li&gt;1 GB RAM&lt;/li&gt;
+&lt;li&gt;8 GB internal storage (expandable via MicroSD up to 32GB)&lt;/li&gt;
+&lt;li&gt;WiFi 802.11 b/g/n&lt;/li&gt;
+&lt;li&gt;Bluetooth supported via external USB Bluetooth Connector&lt;/li&gt;
+&lt;li&gt;USB 2.0 Power&lt;/li&gt;
+&lt;li&gt;Mini USB port Memory&lt;/li&gt;
+&lt;li&gt;HDMI 1.3 (Video and Audio)&lt;/li&gt;
+&lt;li&gt;Dimensions: 86 x 31 x 14 mm&lt;/li&gt;
+&lt;li&gt;Weight: 35 grams&lt;/li&gt;
+&lt;li&gt;Runs Android 4.0 ICS&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The packaging is good looking, clean and neat&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/ptv.jpg&#34; alt=&#34;Pocket TV&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;What&amp;#39;s in the box :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Infintec Android Pocket TV (Black)&lt;/li&gt;
+&lt;li&gt;Quick Start Guide&lt;/li&gt;
+&lt;li&gt;Air Remote&lt;/li&gt;
+&lt;li&gt;Infared Remote&lt;/li&gt;
+&lt;li&gt;Infared Receiver&lt;/li&gt;
+&lt;li&gt;HDMI extender cable&lt;/li&gt;
+&lt;li&gt;MiniUSB Power Cable&lt;/li&gt;
+&lt;li&gt;Power Adapter EU/US&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Setup&lt;/h1&gt;
+&lt;p&gt;The setup was easy and it took me about 5min, i plugged the PTV into my LG 22-Inch Widescreen 1080p HDMI port, connected the USB cable to the TV USB port. Booting took about 35 seconds, once booter i had the setup guide, for language, Wifi and TV resolution.&lt;/p&gt;
+&lt;h1&gt;Air Remote&lt;/h1&gt;
+&lt;p&gt;The Air Remote comes with a built-in gyroscope for a motion controller nav also it has a built-in QWERTY thumb keyboard for entering text. and a USB bluetooth Receiver that you have to plug in.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/ptv-air.jpg&#34; alt=&#34;Air Remote&#34;&gt;&lt;/p&gt;
+&lt;h1&gt;Infrared Remote&lt;/h1&gt;
+&lt;p&gt;The IR remote is really light, uses standard infrared signals and gives the ability to control the PTV using basic buttons, directional arrows, browser button, home, back, volume up/down, search and a power off button.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/ptv-ir.jpg&#34; alt=&#34;Infrared Remote&#34;&gt;&lt;/p&gt;
+&lt;h1&gt;Apps&lt;/h1&gt;
+&lt;p&gt;The pre-installed Android ICS operating system comes with some preinstalled apps like Gmail, Youtube, Browser, an app installer, a filebrowser, Gtalk (Hangout after ther upgrade), a movie player and musicplayer. It provides access to Google Play store with thousands of android apps.&lt;/p&gt;
+
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;http://www.youtube.com/embed/p-S1JBgBKLI&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+</content>
+            </entry>
         
             <entry>
                 <title>5 CSS3 features explained</title>
