@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//google-analytics.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//platform.twitter.com">
+    <link rel="dns-prefetch" href="//disqus.com">
+    <link rel="dns-prefetch" href="//undefined.disqus.com">
+    <link rel="dns-prefetch" href="//mediacdn.disqus.com">
+    <link rel="dns-prefetch" href="//daker-blog.disqus.com">
+    <link rel="dns-prefetch" href="//referrer.disqus.com">
+    <link rel="dns-prefetch" href="//juggler.services.disqus.com">
+    <link rel="dns-prefetch" href="//realtime.services.disqus.com">
+    <link rel="dns-prefetch" href="//p.twitter.com">
+    <link rel="dns-prefetch" href="//cdn.api.twitter.com">
+    <link rel="dns-prefetch" href="//themes.googleusercontent.com"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="google-site-verification" content="qA5fQYo10u0jB6kurgbIyQI03Yjm5hv99Ll68_c3jYQ" />
+    <meta name="author" content="Adnane Belmadiaf">
+    <link rel="author" href="https://plus.google.com/101694416703170881163" />
+    <link rel="stylesheet" href="/assets/css/app.min.css" type="text/css">
+    <title>How to make sticky elements using position sticky — Adnane Belmadiaf's Blog</title>
+    <meta name="title" content="How to make sticky elements using position sticky &ndash; Adnane Belmadiaf's Blog">
+    <meta name="description" content="position: sticky is a new CSS property that has landed in Webkit last year which will allow elements to stick to the viewport edge as you scroll past, unfortunately this hasn't been standardized yet but discussions are still going on.">
+    <meta name="keywords" content="css, webkit">
+    <meta property="og:image" content="http://daker.me/assets/images/avatar.png">
+    <meta property="og:title" content="How to make sticky elements using position sticky &ndash; Adnane Belmadiaf's Blog">
+    <meta property="og:site_name" content="Adnane Belmadiaf's Blog">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@AdnaneBelmadiaf">
+    <meta property="twitter:image" content="http://daker.me/assets/images/avatar.png">
+    <meta property="twitter:title" content="How to make sticky elements using position sticky &ndash; Adnane Belmadiaf's Blog">
+    <meta property="twitter:url" content="http://daker.me/2013/07/how-to-make-sticky-elements-using-position-sticky.html">
+    <meta name="twitter:creator" content="@AdnaneBelmadiaf">
+    <meta property="og:description" content="position: sticky is a new CSS property that has landed in Webkit last year which will allow elements to stick to the viewport edge as you scroll past, unfortunately this hasn't been standardized yet but discussions are still going on.">
+    <meta name="twitter:description" content="position: sticky is a new CSS property that has landed in Webkit last year which will allow elements to stick to the viewport edge as you scroll past, unfortunately this hasn't been standardized yet but discussions are still going on.">
+    <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/main.js"></script>
+    <link rel="prev" title="Grunt.js takes your workflow to the next level" href="http://daker.me/2013/06/gruntjs-takes-your-workflow-to-the-next-level.html" />
+    
+    <meta property="article:author" content="https://www.facebook.com/AdnaneBelmadiaf" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-precomposed-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-precomposed-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-precomposed-72.png">
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml">
+    <link rel="alternate" href="/feed-ubuntuplanet.xml" type="application/atom+xml">
+    <link rel="stylesheet" href="/assets/css/pygments.css" type="text/css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41135963-1', 'daker.me');
+      ga('send', 'pageview');
+    </script>
+</head>
+
+<body itemscope itemtype="http://schema.org/CreativeWork">
+    <div id="nav">
+        <a href="/">Blog</a>
+        <a href="/archives/">Archives</a>
+        <a href="/feed.xml">Feed</a>
+    </div>
+    <div class="container" id="container">
+        <aside id="sidebar">
+            <a href="https://twitter.com/AdnaneBelmadiaf/" target="_blank" class="post-author-image" title="Go to my twitter profil">
+                <img src="/assets/images/avatar.png" alt="Avatar">
+            </a>
+            <div class="post-author-info">
+                <span class="post-author-name">Adnane Belmadiaf</span>
+                <p>
+                    Front-end developer
+                </p>
+            </div>
+            
+<div class="post-published-date"> <strong>Published</strong>
+    <p>
+        <time pubdate datetime="2013-07-04 01:05:00+01:00" class="post-date">Jul 04, 2013 at 01:05</time>
+    </p>
+</div>
+
+<div class="post-reading-time"> <strong>Reading time</strong>
+    <p id="readingtime">---</p>
+</div>
+
+<div class="post-tags">
+    <strong>Tags</strong>
+    <p>
+        
+        <a href="/tags/css/" itemprop="keywords">#css</a>, 
+        
+        <a href="/tags/webkit/" itemprop="keywords">#webkit</a>
+        
+    </p>
+</div>
+
+
+        </aside>
+
+        <section class="posts">
+            
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <h1 itemprop="name headline" class="post-title">How to make sticky elements using position sticky</h1>
+    </header>
+    <div class="post-social">
+        <div class="post-social-button">
+            <fb:like href="http://daker.me/2013/07/how-to-make-sticky-elements-using-position-sticky.html" send="false" show_faces="false"  layout="button_count" width="92" ></fb:like>
+        </div>
+        <div class="post-social-button">
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://daker.me/2013/07/how-to-make-sticky-elements-using-position-sticky.html" data-count="horizontal" data-text="How to make sticky elements using position sticky" data-via="AdnaneBelmadiaf" data-related="AdnaneBelmadiaf"></a>
+        </div>
+        <div class="post-social-button">
+            <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="horizontal" data-url="http://daker.me/2013/07/how-to-make-sticky-elements-using-position-sticky.html" data-via="AdnaneBelmadiaf" data-picture="http://daker.me/assets/images/avatar.png"></a>
+        </div>
+        <div class="post-social-button">
+
+        <a href="https://kippt.com/save" class="kippt-save-button" data-url="http://daker.me/2013/07/how-to-make-sticky-elements-using-position-sticky.html" data-title="How to make sticky elements using position sticky" data-source="daker.me"></a>
+        </div>
+
+        <div class="post-social-button">
+            <div class="g-plusone" data-size="medium" data-href="http://daker.me/2013/07/how-to-make-sticky-elements-using-position-sticky.html"></div>
+        </div>
+    </div>
+    <div class="post-content">
+        <div class="post-field body" itemprop="articleBody"><p><code>position: sticky</code> is a new CSS property that has <a href="http://trac.webkit.org/changeset/126774">landed</a> in Webkit last year which will allow elements to stick to the viewport edge as you scroll past, unfortunately this hasn&#39;t been standardized yet but discussions are still going on.</p>
+<h1>How does it work ?</h1>
+<p>By simply adding <code>position: sticky</code>, you can tell an element to be <code>position: relative</code> until the user scrolls the item (or its parent) to be for ex 10px from the top, the actual way to achieve the same behaviour is by using Javascript :</p>
+
+<iframe width="100%" height="300" src="http://jsbin.com/omanut/2" allowfullscreen="allowfullscreen"></iframe>
+
+<p>and this is the CSS way:</p>
+<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="nc">.sticky</span> <span class="p">{</span>
+    <span class="k">position</span><span class="o">:</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">sticky</span><span class="p">;</span>
+    <span class="k">position</span><span class="o">:</span> <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">sticky</span><span class="p">;</span>
+    <span class="k">position</span><span class="o">:</span> <span class="o">-</span><span class="n">ms</span><span class="o">-</span><span class="n">sticky</span><span class="p">;</span>
+    <span class="k">position</span><span class="o">:</span> <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="n">sticky</span><span class="p">;</span>
+    <span class="k">position</span><span class="o">:</span> <span class="n">sticky</span><span class="p">;</span>
+    <span class="k">top</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div></div><h1>How to enable it ?</h1>
+<p>The <code>sticky</code> value is still an experimental feature in Webkit, so you need to enable it in <code>chrome://flags</code>, just Ctrl+F &quot;Enable experimental WebKit features&quot;, then click enable.</p>
+
+<p><img src="/assets/posts/css-sticky.png" alt="chrome://flags"></p>
+<h1>Demo</h1>
+<p>I have made a simple alphabetical contact list with sticky headers using HTML and CSS only!</p>
+
+<iframe width="100%" height="300" src="http://jsfiddle.net/daker/ecpTw/embedded/result,css,html" allowfullscreen="allowfullscreen"></iframe>
+
+<div class="browser-support">
+    <dfn title="firefox" class="unsupported"><div>—</div></dfn>
+    <dfn title="chrome"><div>23.0</div></dfn>
+    <dfn title="opera" class="unsupported"><div>—</div></dfn>
+    <dfn title="ie" class="unsupported"><div>—</div></dfn>
+    <dfn title="safari" class="unsupported"><div>—</div></dfn>
+</div>
+
+<p>One thing you should remember is that this feature is just a proposal that can be standardized or not.</p>
+</div>
+    </div>
+    
+    <div class="prev-next">
+        
+        <div class="prev-post">
+            <a href="/2013/06/gruntjs-takes-your-workflow-to-the-next-level.html" title="Grunt.js takes your workflow to the next level" class="title">
+                <span>Grunt.js takes your workflow to the next level</span>
+            </a>
+        </div>
+        
+        
+    </div>
+    
+</article>
+<section id="comment">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'daker-blog'; // required: replace example with your forum shortname
+        var disqus_title = 'How to make sticky elements using position sticky';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the
+        <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+</section>
+
+        </section>
+    </div>
+
+    <footer id="footer">
+        <p class="copyright">
+            Copyright &copy; 2013 Adnane Belmadiaf<br />
+            This work is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a></p>
+    </footer>
+
+    
+<script type="text/javascript" src="//connect.facebook.net/en_US/all.js#xfbml=1"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<script type="text/javascript">
+    (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+</script>
+<script type="text/javascript" src="http://static.bufferapp.com/js/button.js"></script>
+<script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://addons.kippt.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","kippt-wjs"));</script>
+
+</body>
+</html>

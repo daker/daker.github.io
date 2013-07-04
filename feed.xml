@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-07-01T22:13:42Z</updated>
+        <updated>2013-07-04T00:12:02Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,49 @@
             <uri>http://daker.me/</uri>
         </author>
         
+        
+            <entry>
+                <title>How to make sticky elements using position sticky</title>
+                <link rel="alternate" href="http://daker.me/2013/07/how-to-make-sticky-elements-using-position-sticky.html" type="text/html" />
+                <id>http://daker.me/2013/07/how-to-make-sticky-elements-using-position-sticky.html</id>
+                <updated>2013-07-04T01:05:00Z</updated>
+                
+                <summary type="html">&lt;code&gt;position: sticky&lt;/code&gt; is a new CSS property that has &lt;a href=&#34;http://trac.webkit.org/changeset/126774&#34;&gt;landed&lt;/a&gt; in Webkit last year which will allow elements to stick to the viewport edge as you scroll past, unfortunately this hasn&amp;#39;t been standardized yet but discussions are still going on.</summary>
+                <content type="html">&lt;p&gt;&lt;code&gt;position: sticky&lt;/code&gt; is a new CSS property that has &lt;a href=&#34;http://trac.webkit.org/changeset/126774&#34;&gt;landed&lt;/a&gt; in Webkit last year which will allow elements to stick to the viewport edge as you scroll past, unfortunately this hasn&amp;#39;t been standardized yet but discussions are still going on.&lt;/p&gt;
+&lt;h1&gt;How does it work ?&lt;/h1&gt;
+&lt;p&gt;By simply adding &lt;code&gt;position: sticky&lt;/code&gt;, you can tell an element to be &lt;code&gt;position: relative&lt;/code&gt; until the user scrolls the item (or its parent) to be for ex 10px from the top, the actual way to achieve the same behaviour is by using Javascript :&lt;/p&gt;
+
+&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsbin.com/omanut/2&#34; allowfullscreen=&#34;allowfullscreen&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;and this is the CSS way:&lt;/p&gt;
+&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;.sticky {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+    top: 10px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;How to enable it ?&lt;/h1&gt;
+&lt;p&gt;The &lt;code&gt;sticky&lt;/code&gt; value is still an experimental feature in Webkit, so you need to enable it in &lt;code&gt;chrome://flags&lt;/code&gt;, just Ctrl+F &amp;quot;Enable experimental WebKit features&amp;quot;, then click enable.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/css-sticky.png&#34; alt=&#34;chrome://flags&#34;&gt;&lt;/p&gt;
+&lt;h1&gt;Demo&lt;/h1&gt;
+&lt;p&gt;I have made a simple alphabetical contact list with sticky headers using HTML and CSS only!&lt;/p&gt;
+
+&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/ecpTw/embedded/result,css,html&#34; allowfullscreen=&#34;allowfullscreen&#34;&gt;&lt;/iframe&gt;
+
+&lt;div class=&#34;browser-support&#34;&gt;
+    &lt;dfn title=&#34;firefox&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;chrome&#34;&gt;&lt;div&gt;23.0&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;opera&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;ie&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;safari&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
+&lt;/div&gt;
+
+&lt;p&gt;One thing you should remember is that this feature is just a proposal that can be standardized or not.&lt;/p&gt;
+</content>
+            </entry>
         
             <entry>
                 <title>Grunt.js takes your workflow to the next level</title>
@@ -222,9 +265,9 @@ So in this post i will explain to you five features that will save you time and 
 &lt;p&gt;The CSS3 Flexible Box, better known as Flexbox enables you to create complex layouts with only a few lines of code.&lt;br&gt;
 How many time you wanted to vertically center a div ? how many time you wanted to create a 3 columns layout with 2 fluid columns and one fixed ? here is how to do it — with CSS only&lt;/p&gt;
 &lt;h3&gt;Vertical centering of a div&lt;/h3&gt;
-&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/NnkHF/30/embedded/result,css,html&#34; allowfullscreen=&#34;allowfullscreen&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/NnkHF/30/embedded/result,css,html&#34; allowfullscreen=&#34;allowfullscreen&#34;&gt;&lt;/iframe&gt;
 &lt;h3&gt;Fixed-Fluid-Fixed Layout&lt;/h3&gt;
-&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/GWZzd/embedded/result,css,html&#34; allowfullscreen=&#34;allowfullscreen&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/GWZzd/embedded/result,css,html&#34; allowfullscreen=&#34;allowfullscreen&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;As you can see this will allow you to make other layouts(Fluid-Fluid-Fixed, Fluid-Fixed-Fixed, etc...), easy no ?&lt;/p&gt;
 
