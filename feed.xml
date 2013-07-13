@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-07-09T15:31:24Z</updated>
+        <updated>2013-07-13T13:31:08Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,71 @@
             <uri>http://daker.me/</uri>
         </author>
         
+        
+            <entry>
+                <title>Testing your responsive design with PhantomJS</title>
+                <link rel="alternate" href="http://daker.me/2013/07/testing-your-responsive-design-with-phantomjs.html" type="text/html" />
+                <id>http://daker.me/2013/07/testing-your-responsive-design-with-phantomjs.html</id>
+                <updated>2013-07-13T14:30:00Z</updated>
+                
+                <summary type="html">PhantomJS is a headless WebKit with JavaScript API, which mean that the rendered web pages are never actually displayed, just because PhantomJS is a browser but without a GUI. User testing is an important aspect of the development process of any project, headless browsers can be great for automating and testing web pages programmatically.</summary>
+                <content type="html">&lt;p&gt;PhantomJS is a headless WebKit with JavaScript API, which mean that the rendered web pages are never actually displayed, just because PhantomJS is a browser but without a GUI. User testing is an important aspect of the development process of any project, headless browsers can be great for automating and testing web pages programmatically.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/phantomjs.png&#34; alt=&#34;PhantomJS&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Installation&lt;/h2&gt;&lt;h3&gt;Ubuntu&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo add-apt-repository ppa:chris-lea/node.js
+$ sudo apt-get update
+$ sudo apt-get install nodejs
+$ sudo npm install -g phantomjs
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Mac OSX&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ brew install node
+$ curl http://npmjs.org/install.sh | sh
+$ npm install -g phantomjs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now you should now have PhantomJS installed, you check that by running :&lt;br&gt;
+&lt;code&gt;$ phantomjs --version&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;PhantomJS is very powerfull tool, you can manipulate page, access page settings(prevent loading images, prevent running Javascript), accessing the filesystem, running Javascript and you can capture webpage, it can be coupled with other testing framework(like QUnitJS)&lt;/p&gt;
+&lt;h2&gt;Testing your responsive design&lt;/h2&gt;
+&lt;p&gt;PhantomJS can capture the content of any webpage in PNG, JPEG, GIF or PDF file, it let&amp;#39;s you set the viewport size, the zoom factor, the user-agent and more usefull stuff.&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;/*
+    requires: phantomjs, async
+    usage: phantomjs capture.js
+*/
+var async = require(&amp;#39;async&amp;#39;),
+    sizes = [
+        [320, 480],
+        [320, 568],
+        [600, 1024],
+        [1024, 768],
+        [1280, 800],
+        [1440, 900]
+    ];
+
+function capture(sizes, callback) {
+    var page = require(&amp;#39;webpage&amp;#39;).create();
+    page.viewportSize = {
+        width: sizes[0],
+        height: sizes[1]
+    };
+    page.zoomFactor = 1;
+    page.open(&amp;#39;http://daker.me&amp;#39;, function (status) {
+        var filename = sizes[0] + &amp;#39;x&amp;#39; + sizes[1] + &amp;#39;.png&amp;#39;;
+        page.render(&amp;#39;./screenshots/&amp;#39; + filename);
+        page.close();
+        callback.apply();
+    });
+}
+
+async.eachSeries(sizes, capture, function (e) {
+    if (e) console.log(e);
+    console.log(&amp;#39;done!&amp;#39;);
+    phantom.exit();
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I have coupled PhantomJS with [async.js][0] so i can take multiple screenshots, now all you need to do is to run &lt;code&gt;phantomjs capture.js&lt;/code&gt; from the commandline, the good part is that PhantomJS will capture all the page not only the viewport.&lt;/p&gt;
+
+&lt;p&gt;[0] &lt;a href=&#34;https://github.com/caolan/async&#34;&gt;https://github.com/caolan/async&lt;/a&gt;&lt;/p&gt;
+</content>
+            </entry>
         
             <entry>
                 <title>Understanding CSS3 box-sizing property</title>
