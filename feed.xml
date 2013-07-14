@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-07-14T02:47:17Z</updated>
+        <updated>2013-07-14T02:48:09Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -78,7 +78,7 @@ async.eachSeries(sizes, capture, function (e) {
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/phantomjs-demo.png&#34; alt=&#34;Responsive Design Screenshots&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;UPDATE 14/07/2013&lt;/strong&gt; : The script also works with &lt;a href=&#34;http://slimerjs.org/&#34;&gt;SlimerJS&lt;/a&gt;, SlimerJS similar to PhantomJs, except that it runs Gecko, the browser engine of Mozilla Firefox, instead of Webkit.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;UPDATE 14/07/2013&lt;/strong&gt; : The script also works with &lt;a href=&#34;http://slimerjs.org/&#34;&gt;SlimerJS&lt;/a&gt;, SlimerJS is similar to PhantomJs, except that it runs Gecko, the browser engine of Mozilla Firefox, instead of Webkit.&lt;/p&gt;
 
 &lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p&gt;Testing your &lt;a href=&#34;https://twitter.com/search?q=%23responsivedesign&amp;amp;src=hash&#34;&gt;#responsivedesign&lt;/a&gt;? Take this script for PhantomJS and run it with SlimerJS &lt;a href=&#34;http://t.co/wyqiIJustE&#34;&gt;&lt;a href=&#34;http://t.co/wyqiIJustE&#34;&gt;http://t.co/wyqiIJustE&lt;/a&gt;&lt;/a&gt; by &lt;a href=&#34;https://twitter.com/AdnaneBelmadiaf&#34;&gt;@AdnaneBelmadiaf&lt;/a&gt;&lt;/p&gt;&amp;mdash; SlimerJS (@slimerjs) &lt;a href=&#34;https://twitter.com/slimerjs/statuses/356172141277888513&#34;&gt;July 13, 2013&lt;/a&gt;&lt;/blockquote&gt;&lt;br&gt;
 &lt;script async src=&#34;http://daker.me/platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
