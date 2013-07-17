@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-07-17T01:23:40Z</updated>
+        <updated>2013-07-17T13:15:12Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -30,7 +30,7 @@ $ sudo apt-get update
 $ sudo apt-get install nodejs
 $ sudo npm install -g phantomjs
 &lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Mac OSX&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ brew install node
-$ curl http://npmjs.org/install.sh | sh
+$ curl https://npmjs.org/install.sh | sh
 $ npm install -g phantomjs
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Now you should now have PhantomJS installed, you check that by running :&lt;br&gt;
@@ -203,7 +203,7 @@ $ sudo apt-get install nodejs
 $ sudo npm install -g grunt-cli
 $ sudo npm install grunt --save-dev
 &lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Mac OSX&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ brew install node
-$ curl http://npmjs.org/install.sh | sh
+$ curl https://npmjs.org/install.sh | sh
 $ npm install -g grunt-cli
 $ npm install grunt --save-dev
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Integration&lt;/h2&gt;
