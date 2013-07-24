@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-07-20T23:54:09Z</updated>
+        <updated>2013-07-24T13:25:03Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,179 @@
             <uri>http://daker.me/</uri>
         </author>
         
+        
+            <entry>
+                <title>Why Stylus fit better my needs</title>
+                <link rel="alternate" href="http://daker.me/2013/07/why-stylus-fit-better-my-needs.html" type="text/html" />
+                <id>http://daker.me/2013/07/why-stylus-fit-better-my-needs.html</id>
+                <updated>2013-07-24T14:25:00Z</updated>
+                
+                <summary type="html">Stylus is an expressive, dynamic, robust CSS pre-processor built on top of Node.js. LESS and SASS are both great, they try to stay as close as the original CSS syntax as possible to minimize the impact of having to learn a new language, but for me someone who cares about simplicity and readability, the syntax becomes an important part of the language or the framework.S</summary>
+                <content type="html">&lt;p&gt;Stylus is an expressive, dynamic, robust CSS pre-processor built on top of Node.js. LESS and SASS are both great, they try to stay as close as the original CSS syntax as possible to minimize the impact of having to learn a new language, but for me someone who cares about simplicity and readability, the syntax becomes an important part of the language or the framework.S&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/stylus.png&#34; alt=&#34;PhantomJS&#34;&gt;&lt;/p&gt;
+&lt;h1&gt;Installation&lt;/h1&gt;&lt;h2&gt;Ubuntu&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo add-apt-repository ppa:chris-lea/node.js
+$ sudo apt-get update
+$ sudo apt-get install nodejs
+$ sudo npm install -g stylus
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Mac OSX&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ brew install node
+$ curl https://npmjs.org/install.sh | sh
+$ npm install -g stylus
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For me as someone who comes from a Python world, Stylus syntax strips away all the colons, semicolons, brackets and most parentheses from regular CSS script, which become like a python syntax, easy and dead simple.&lt;/p&gt;
+&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;#container
+    width 980px
+    margin 0 auto
+    background #ccc
+    font 12px Helvetica, Arial, sans-serif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;which produce the following CSS code&lt;/p&gt;
+&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;#container {
+    width: 980px;
+    margin: 0 auto;
+    background: #ccc;
+    font: 12px Helvetica, Arial, sans-serif;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Variables&lt;/h1&gt;
+&lt;p&gt;Defining variables is simple, you don&amp;#39;t need to use $ or @ like in SASS or LESS, the good part is that Stylus also support the $ so if you are coming from Sass your variables will remain functionnal.&lt;/p&gt;
+&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;font-size = 14px
+color = #ff0000
+
+body
+    font-family  Arial, sans-serif
+    font-size font-size
+    color color
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once compiled, you&amp;#39;ll get the following CSS code&lt;/p&gt;
+&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #f00;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Did you noticed something ? the color has been compressed automatically.&lt;/p&gt;
+&lt;h1&gt;Mixins&lt;/h1&gt;
+&lt;p&gt;Mixins are similar to functions, but used in a different way, a good example of a mixin is the border-radius property&lt;/p&gt;
+&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;border-radius(n)
+    -webkit-border-radius n
+    -moz-border-radius n
+    -ms-border-radius n
+    -o-border-radius n
+    border-radius n
+
+#btn
+    border-radius(3px) /* or just border-radius 3px */
+    background #e9573f
+&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;#btn {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    background: #e9573f;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Handy for vendor-prefixed properties.&lt;/p&gt;
+&lt;h1&gt;Iteration&lt;/h1&gt;
+&lt;p&gt;Stylus gives you the ablity to iterate expressions via for/in&lt;/p&gt;
+&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;ul
+    for row in 1 2 3 4 5
+        li:nth-child({row})
+            height: 10px * row
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The CSS code will be&lt;/p&gt;
+&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;ul li:nth-child(1) {
+    height: 10px;
+}
+
+ul li:nth-child(2) {
+    height: 20px;
+}
+
+ul li:nth-child(3) {
+    height: 30px;
+}
+
+ul li:nth-child(4) {
+    height: 40px;
+}
+
+ul li:nth-child(5) {
+    height: 50px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Inheritance&lt;/h1&gt;
+&lt;p&gt;Stylus provides a good inheritance mecanism&lt;/p&gt;
+&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;.notice
+    padding 10px
+    border 1px solid #eee
+
+.warning
+    @extend .message
+    color #e2e21e
+&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;.notice,
+.warning {
+    padding: 10px;
+    border: 1px solid #eee;
+}
+
+.warning {
+    color: #e2e21e;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Error Reporting&lt;/h1&gt;
+&lt;p&gt;Stylus has fantastic error reporting built-in for syntax, parse, and evaluation errors—complete with stack traces, line numbers, and filenames.&lt;/p&gt;
+&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;.message
+    padding 10px
+    border 1px solid [#ccc]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The output will look something like this&lt;/p&gt;
+&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ stylus buggy-demo.styl
+
+/usr/lib/node_modules/stylus/bin/stylus:530
+              throw err;
+                    ^
+Error: t.styl:3
+   1| .message
+   2|     padding 10px
+ &amp;gt; 3|     border 1px solid [#ccc]
+
+cannot perform solid[(#ccc)]
+    at &amp;#34;.message&amp;#34; (t.styl:NaN)
+    at Ident.Node.operate (/usr/lib/node_modules/stylus/lib/nodes/node.js:189:13)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Stylus provides a detailed stack trace much like you would find in any decent language.&lt;/p&gt;
+&lt;h1&gt;Literal CSS&lt;/h1&gt;
+&lt;p&gt;This the best part of Stylus, you can still use your CSS code using &lt;code&gt;@css&lt;/code&gt; and it will work, how that will help you in your workflow? you&amp;#39;ll be able to integrate Stylus progressivly in your project&lt;/p&gt;
+&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;@css {
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        color: #f00;
+    }
+}
+
+#container
+    width 980px
+    margin 0 auto
+    background #ccc
+    font 12px Helvetica, Arial, sans-serif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;the output will be&lt;/p&gt;
+&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #f00;
+}
+
+#container {
+    width: 980px;
+    margin: 0 auto;
+    background: #ccc;
+    font: 12px Helvetica, Arial, sans-serif;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;Stylus is certainly worth a try, and if you are a Compass guy, Stylus has an extension called &lt;a href=&#34;https://github.com/visionmedia/nib&#34;&gt;nib&lt;/a&gt; that provides robust cross-browser CSS3 mixins. Sure there is more you can learn about Stylus and there is [docs] for that.&lt;/p&gt;
+</content>
+            </entry>
         
             <entry>
                 <title>Testing your responsive design with PhantomJS</title>
