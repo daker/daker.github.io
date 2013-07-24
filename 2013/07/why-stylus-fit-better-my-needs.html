@@ -223,7 +223,9 @@
     <span class="nt">border-radius</span><span class="o">(</span><span class="nt">3px</span><span class="o">)</span> <span class="c">/* or just border-radius 3px */</span>
     <span class="nt">background</span> <span class="nf">#e9573f</span>
 </pre></div>
-</td></tr></table></div></div><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</td></tr></table></div></div>
+<p>The compiled version will be</p>
+<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -425,16 +427,16 @@ cannot perform solid<span class="o">[(</span><span class="c">#ccc)]</span>
     <form action="http://daker.us7.list-manage.com/subscribe/post?u=ebd280d4e0da7cce97bd7a8ad&amp;id=327b2cec50" method="post" id="signup" name="signup-form">
         <h2>Join the Mailing List</h2>
 
-        <div class="row">By joining you'll receive a weekly e-mail with latest blog posts each Wednesday. Easy unsubscribe. No spam — your e-mail address will be safe.</div>
-        <div class="row">
-            <input type="email" name="EMAIL" id="email" required="required" placeholder="Your E-mail address will be safe.">
-            <input type="submit" value="Subscribe" name="subscribe" id="subscribe-btn"> or Subscribe to the <a href="/feed.xml" title="Subscribe to the RSS feed">RSS feed</a> instead.
+        <div style="overflow: auto;">
+            <div class="row" style="width: 48%;">By joining you'll receive a weekly e-mail with latest blog posts each Wednesday. Easy unsubscribe. No spam — your e-mail address will be safe.
+            <div class="powerby">Powered by <a href="http://eepurl.com/Ci5NL" title="MailChimp - email marketing made easy and fun">MailChimp</a></div>
+            </div>
+            <div class="row" style="width: 50%; margin-right: 0;">
+                <input type="email" name="EMAIL" id="email" required="required" placeholder="Your E-mail address will be safe.">
+                <input type="submit" value="Subscribe" name="subscribe" id="subscribe-btn"> or Subscribe to the <a href="/feed.xml" title="Subscribe to the RSS feed">RSS feed</a> instead.
+                <div id="response" style="display:none"></div>
+            </div>
         </div>
-
-        <div id="response" style="display:none"></div>
-
-        <div class="row">Powered by <a href="http://eepurl.com/Ci5NL" title="MailChimp - email marketing made easy and fun">MailChimp</a></div>
-
     </form>
 
     
