@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-07-26T01:47:35Z</updated>
+        <updated>2013-07-26T12:29:16Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -48,7 +48,7 @@ $ npm install -g stylus
     font: 12px Helvetica, Arial, sans-serif;
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Variables&lt;/h1&gt;
-&lt;p&gt;Defining variables is simple, you don&amp;#39;t need to use $ or @ like in SASS or LESS, the good part is that Stylus also support the $ so if you are coming from Sass your variables will remain functionnal.&lt;/p&gt;
+&lt;p&gt;Defining variables is simple, you don&amp;#39;t need to use $ or @ like in SASS or LESS, the good part is that Stylus also support the $ so if you are coming from SASS your variables will remain functionnal.&lt;/p&gt;
 &lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;font-size = 14px
 color = #ff0000
 
