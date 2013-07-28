@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-07-27T18:17:57Z</updated>
+        <updated>2013-07-28T17:04:41Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -21,8 +21,8 @@
                 <id>http://daker.me/2013/07/why-stylus-fit-better-my-needs.html</id>
                 <updated>2013-07-24T14:25:00Z</updated>
                 
-                <summary type="html">Stylus is an expressive, dynamic, robust CSS pre-processor built on top of Node.js. LESS and SASS are both great, they try to stay as close as the original CSS syntax as possible to minimize the impact of having to learn a new language, but for me someone who cares about simplicity and readability, the syntax becomes an important part of the language or the framework.</summary>
-                <content type="html">&lt;p&gt;Stylus is an expressive, dynamic, robust CSS pre-processor built on top of Node.js. LESS and SASS are both great, they try to stay as close as the original CSS syntax as possible to minimize the impact of having to learn a new language, but for me someone who cares about simplicity and readability, the syntax becomes an important part of the language or the framework.&lt;/p&gt;
+                <summary type="html">Stylus is an expressive, dynamic, robust CSS pre-processor built on top of Node.js. LESS and Sass are both great, they try to stay as close as the original CSS syntax as possible to minimize the impact of having to learn a new language, but for me someone who cares about simplicity and readability, the syntax becomes an important part of the language or the framework.</summary>
+                <content type="html">&lt;p&gt;Stylus is an expressive, dynamic, robust CSS pre-processor built on top of Node.js. LESS and Sass are both great, they try to stay as close as the original CSS syntax as possible to minimize the impact of having to learn a new language, but for me someone who cares about simplicity and readability, the syntax becomes an important part of the language or the framework.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/stylus.png&#34; alt=&#34;PhantomJS&#34;&gt;&lt;/p&gt;
 &lt;h1&gt;Installation&lt;/h1&gt;&lt;h2&gt;Ubuntu&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo add-apt-repository ppa:chris-lea/node.js
@@ -48,7 +48,7 @@ $ npm install -g stylus
     font: 12px Helvetica, Arial, sans-serif;
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Variables&lt;/h1&gt;
-&lt;p&gt;Defining variables is simple, you don&amp;#39;t need to use $ or @ like in SASS or LESS, the good part is that Stylus also support the $ so if you are coming from SASS your variables will remain functionnal.&lt;/p&gt;
+&lt;p&gt;Defining variables is simple, you don&amp;#39;t need to use $ or @ like in Sass or LESS, the good part is that Stylus also support the $ so if you are coming from Sass your variables will remain functionnal.&lt;/p&gt;
 &lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;font-size = 14px
 color = #ff0000
 
