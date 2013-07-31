@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-07-29T19:12:14Z</updated>
+        <updated>2013-07-31T02:04:12Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -196,8 +196,8 @@ cannot perform solid[(#ccc)]
                 <id>http://daker.me/2013/07/testing-your-responsive-design-with-phantomjs.html</id>
                 <updated>2013-07-13T14:30:00Z</updated>
                 
-                <summary type="html">User testing is an important aspect of the development process of any project, headless browsers can be great for automating and testing web pages programmatically, PhantomJS is a headless WebKit with JavaScript API, which mean that the rendered web pages are never actually displayed, just because PhantomJS is a browser but without a GUI.</summary>
-                <content type="html">&lt;p&gt;User testing is an important aspect of the development process of any project, headless browsers can be great for automating and testing web pages programmatically, PhantomJS is a headless WebKit with JavaScript API, which mean that the rendered web pages are never actually displayed, just because PhantomJS is a browser but without a GUI.&lt;/p&gt;
+                <summary type="html">User testing is an important aspect of the development process of any web project, that&amp;#39;s why headless browsers can be great for automating and testing web pages programmatically, PhantomJS is one of many headless browsers basicaly a WebKit browser with JavaScript API, which means that the rendered web pages are never actually displayed, just because it is a browser but without a GUI.</summary>
+                <content type="html">&lt;p&gt;User testing is an important aspect of the development process of any web project, that&amp;#39;s why headless browsers can be great for automating and testing web pages programmatically, PhantomJS is one of many headless browsers basicaly a WebKit browser with JavaScript API, which means that the rendered web pages are never actually displayed, just because it is a browser but without a GUI.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/phantomjs.png&#34; alt=&#34;PhantomJS&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;&lt;h3&gt;Ubuntu&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo add-apt-repository ppa:chris-lea/node.js
