@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-07-31T02:04:12Z</updated>
+        <updated>2013-07-31T02:10:40Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -208,8 +208,7 @@ $ sudo npm install -g phantomjs
 $ curl https://npmjs.org/install.sh | sh
 $ npm install -g phantomjs
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now you should now have PhantomJS installed, you check that by running :&lt;br&gt;
-&lt;code&gt;$ phantomjs --version&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now you should now have PhantomJS installed, you check that by running : &lt;code&gt;$ phantomjs --version&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;PhantomJS is very powerfull tool, it lets you manipulate pages, access page settings(prevent loading images, prevent running Javascript), accessing the filesystem, running Javascript and you can capture webpage, it can be coupled with other testing frameworks(like QUnitJS)&lt;/p&gt;
 &lt;h2&gt;Testing your responsive design&lt;/h2&gt;
