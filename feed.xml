@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-08-23T23:22:38Z</updated>
+        <updated>2013-08-26T22:45:37Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,35 @@
             <uri>http://daker.me/</uri>
         </author>
         
+        
+            <entry>
+                <title>Thank you, Ubuntu!</title>
+                <link rel="alternate" href="http://daker.me/2013/08/thank-you-ubuntu.html" type="text/html" />
+                <id>http://daker.me/2013/08/thank-you-ubuntu.html</id>
+                <updated>2013-08-26T21:30:00Z</updated>
+                
+                <summary type="html">My experience with Ubuntu started in 2007 when i was doing the internship of my second year in Computer Engineering, the first week was really boring, the second week and while i was trying to fix the DVD driver, i open then i found a Green CD of &amp;quot;OpenSUSE&amp;quot;, i booted with the live CD, the OS was a bit complicated and not easy to play with.</summary>
+                <content type="html">&lt;p&gt;My experience with Ubuntu started in 2007 when i was doing the internship of my second year in Computer Engineering, the first week was really boring, the second week and while i was trying to fix the DVD driver, i open then i found a Green CD of &amp;quot;OpenSUSE&amp;quot;, i booted with the live CD, the OS was a bit complicated and not easy to play with.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/ubuntu/certificate.jpg&#34; alt=&#34;My Ubuntu certificate, signed by Mark Shuttleworth&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;I started googling for other Gnu/Linux distributions, after a few hours i found a distro called &amp;quot;Ubuntu&amp;quot;, i downloaded the iso, booted with the live CD it was easy to access almost everything(browser, e-mail client, musique player and an office suite that comes out of the box), then Ubuntu becomes my second OS.&lt;/p&gt;
+
+&lt;p&gt;In 2009 i read an &lt;a href=&#34;http://www.omgubuntu.co.uk/2010/01/interview-with-ubuntu-manual-project-leader&#34;&gt;article&lt;/a&gt; on OMG!Ubuntu about a project called &amp;quot;The Ubuntu Manual Project&amp;quot;, they were looking for contributors, as you may know i do a lot of web developement i jumed on the IRC channel someone pointed me the mockups, in few days the &lt;a href=&#34;http://ubuntu-manual.org&#34;&gt;site(made by myself)&lt;/a&gt; was up and running until now. That&amp;#39;s where my story with Ubuntu began.&lt;/p&gt;
+
+&lt;p&gt;I learned a lot of things and i had the pleasure to know and meet a lot of great &amp;amp; inspiring people virtually and IRL.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/ubuntu/1.jpg&#34; alt=&#34;Me and Daniel Holbach&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/ubuntu/2.jpg&#34; alt=&#34;From the right : IamNotThatGuy , Me, Joel Pickett, Rohan Garg, Ayrton Araújo, Randall Ross &amp;lt;br /&amp;gt;Steve Riley the former face of Microsoft Security and another guy&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/ubuntu/3.jpg&#34; alt=&#34;Me and the Kubuntu developers&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/ubuntu/4.jpg&#34; alt=&#34;Me and the Kubuntu developers again&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;Thank you, Ubuntu!&lt;/p&gt;
+</content>
+            </entry>
         
             <entry>
                 <title>Why Stylus fit better my needs</title>
