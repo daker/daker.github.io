@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-ubuntuplanet.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-09-01T15:20:21Z</updated>
+        <updated>2013-09-01T15:31:06Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -27,7 +27,7 @@
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/persona-mozilla.jpg&#34; alt=&#34;Persona&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;
-&lt;p&gt;Mozilla provides a library called &lt;code&gt;django-browserid&lt;/code&gt; that integrates Persona authentication into Django, so you can simply added to to your or just install via pip :&lt;/p&gt;
+&lt;p&gt;Mozilla provides a library called &lt;code&gt;django-browserid&lt;/code&gt; that integrates Persona authentication into Django, so you can simply added to to your &lt;code&gt;requirements.txt&lt;/code&gt; or just install via pip :&lt;/p&gt;
 &lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo pip install django-browserid
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Configuration&lt;/h2&gt;
 &lt;p&gt;Once done you need to follow the following steps :&lt;/p&gt;
