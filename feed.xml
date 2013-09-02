@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-09-01T15:31:06Z</updated>
+        <updated>2013-09-02T23:28:13Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -745,8 +745,8 @@ How many time you wanted to vertically center a div ? how many time you wanted t
                 <id>http://daker.me/2013/06/5-html5-javascript-apis-to-keep-an-eye-on.html</id>
                 <updated>2013-06-02T17:30:00Z</updated>
                 
-                <summary type="html">In my &lt;a href=&#34;http://daker.me/2013/05/5-html5-features-you-need-to-know.html&#34;&gt;last post&lt;/a&gt;, i have talked about HTML5 APIs, so thought it will also interesting to write about some new &lt;strike&gt;old&lt;/strike&gt; Javasript APIs. Since CSS has been improving over the time and today you can achieve what was only done with Javascript with CSS only, on the other side Javascript have to improve and follow the evolution, so today Javascript can do a lot of things, like accessing hardware(camera, microphone, gamepad, GPU), accessing the filesystem and websocket.</summary>
-                <content type="html">&lt;p&gt;In my &lt;a href=&#34;http://daker.me/2013/05/5-html5-features-you-need-to-know.html&#34;&gt;last post&lt;/a&gt;, i have talked about HTML5 APIs, so thought it will also interesting to write about some new &lt;strike&gt;old&lt;/strike&gt; Javasript APIs. Since CSS has been improving over the time and today you can achieve what was only done with Javascript with CSS only, on the other side Javascript have to improve and follow the evolution, so today Javascript can do a lot of things, like accessing hardware(camera, microphone, gamepad, GPU), accessing the filesystem and websocket.&lt;/p&gt;
+                <summary type="html">In my &lt;a href=&#34;http://daker.me/2013/05/5-html5-features-you-need-to-know.html&#34;&gt;last post&lt;/a&gt;, i have talked about HTML5 APIs, so thought it will also interesting to write about some new &lt;strike&gt;old&lt;/strike&gt; Javascript APIs. Since CSS has been improving over the time and today you can achieve what was only done with Javascript with CSS only, on the other side Javascript have to improve and follow the evolution, so today Javascript can do a lot of things, like accessing hardware(camera, microphone, gamepad, GPU), accessing the filesystem and websocket.</summary>
+                <content type="html">&lt;p&gt;In my &lt;a href=&#34;http://daker.me/2013/05/5-html5-features-you-need-to-know.html&#34;&gt;last post&lt;/a&gt;, i have talked about HTML5 APIs, so thought it will also interesting to write about some new &lt;strike&gt;old&lt;/strike&gt; Javascript APIs. Since CSS has been improving over the time and today you can achieve what was only done with Javascript with CSS only, on the other side Javascript have to improve and follow the evolution, so today Javascript can do a lot of things, like accessing hardware(camera, microphone, gamepad, GPU), accessing the filesystem and websocket.&lt;/p&gt;
 &lt;h2&gt;Battery Status API&lt;/h2&gt;
 &lt;p&gt;The &lt;a href=&#34;http://www.w3.org/TR/battery-status/&#34;&gt;Battery Status API&lt;/a&gt; allows any webpage to inspect the state of the device&amp;#39;s (Laptop, phone or tablet) battery through javascript :&lt;/p&gt;
 &lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery
