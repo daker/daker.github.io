@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-09-05T21:26:43Z</updated>
+        <updated>2013-09-07T20:42:48Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -438,7 +438,7 @@ async.eachSeries(sizes, capture, function (e) {
     &lt;dfn title=&#34;chrome&#34;&gt;&lt;div&gt;23.0&lt;/div&gt;&lt;/dfn&gt;
     &lt;dfn title=&#34;opera&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
     &lt;dfn title=&#34;ie&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
-    &lt;dfn title=&#34;safari&#34; class=&#34;unsupported&#34;&gt;&lt;div&gt;—&lt;/div&gt;&lt;/dfn&gt;
+    &lt;dfn title=&#34;safari&#34;&gt;&lt;div&gt;7&lt;/div&gt;&lt;/dfn&gt;
 &lt;/div&gt;
 
 &lt;p&gt;One thing you should remember is that this feature is just a proposal that can be standardized or not.&lt;/p&gt;
