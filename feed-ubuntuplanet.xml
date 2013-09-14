@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-ubuntuplanet.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-09-07T20:42:48Z</updated>
+        <updated>2013-09-14T21:04:32Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,47 @@
             <uri>http://daker.me/</uri>
         </author>
 
+        
+            
+            <entry>
+                <title>5 DevTools features to help you debug your WebApp</title>
+                <link rel="alternate" href="http://daker.me/2013/09/5-devtools-features-to-help-you-debug-your-webapp.html" type="text/html" />
+                <id>http://daker.me/2013/09/5-devtools-features-to-help-you-debug-your-webapp.html</id>
+                <updated>2013-09-14T22:15:00Z</updated>
+
+                <summary type="html">DevTools is a power tools than can developing Web easier, it has a lot of features some of them are still experimental and you need to enable them in the &lt;code&gt;about://flags&lt;/code&gt;.</summary>
+                <content type="html">&lt;p&gt;DevTools is a power tools than can developing Web easier, it has a lot of features some of them are still experimental and you need to enable them in the &lt;code&gt;about://flags&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/devtools.png&#34; alt=&#34;Devtools&#34;&gt;&lt;/p&gt;
+&lt;h1&gt;Breakpoints&lt;/h1&gt;
+&lt;p&gt;Breakpoint are related to the JavaScript code, it let&amp;#39;s you halt the JavaScript code execution and inspect the current environment. You can set them by simply going the &amp;quot;Source&amp;quot; tab, then select the JS file you want to debug , find the line you want to set a breakpoint on, then click the line number to apply a breakpoint :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/breakpoints.png&#34; alt=&#34;Javascript Breakpoints&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;The DevTools also supports conditional breakpoints.&lt;/p&gt;
+&lt;h1&gt;DOM Breakpoints&lt;/h1&gt;
+&lt;p&gt;The DevTools can also be used to set breakpoints on the DOM elements direclty, just right click on the element you want to break on, then select the option you want :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/dom-breakpoints.png&#34; alt=&#34;DOM Breakpoints&#34;&gt;&lt;/p&gt;
+&lt;h1&gt;monitorEvents&lt;/h1&gt;
+&lt;p&gt;The Devtools has a built function called &lt;code&gt;monitorEvents&lt;/code&gt;, it lets you monitor objects for mouse, key, touch or control events :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/monitorEvents.png&#34; alt=&#34;monitorEvents&#34;&gt;&lt;/p&gt;
+&lt;h1&gt;Pretty Print&lt;/h1&gt;
+&lt;p&gt;Pretty Print is a handy feature for debugging minified JavaScript. Trying to to set a breakpoint when everything is on the same line is something impossible, clicking on the &lt;code&gt;{}&lt;/code&gt; icon will make your Javascript code readable and easier to debug :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/pprint-before.png&#34; alt=&#34;Pretty Print - Before&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/pprint-after.png&#34; alt=&#34;Pretty Print - After&#34;&gt;&lt;/p&gt;
+&lt;h1&gt;Remote Debugging&lt;/h1&gt;
+&lt;p&gt;The Remote Debugger lets you connect Chrome/ium browser to the Chrome mobile browser so that you can use your desktop browser to debug all your tabs from your remote device :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/remote-debugging.png&#34; alt=&#34;Remote Debugging&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;and sure the DevTools still has a lot of features to cover from the &lt;code&gt;Source&lt;/code&gt; to the &lt;code&gt;Console&lt;/code&gt; Tab.&lt;/p&gt;
+</content>
+            </entry>
+            
         
             
             <entry>
