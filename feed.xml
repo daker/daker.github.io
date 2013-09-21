@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-09-19T20:55:02Z</updated>
+        <updated>2013-09-21T17:29:31Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,75 @@
             <uri>http://daker.me/</uri>
         </author>
         
+        
+            <entry>
+                <title>Introduction to Web Components, the Next Generation Markup</title>
+                <link rel="alternate" href="http://daker.me/2013/09/introduction-to-web-components-next-generation-markup.html" type="text/html" />
+                <id>http://daker.me/2013/09/introduction-to-web-components-next-generation-markup.html</id>
+                <updated>2013-09-21T14:25:00Z</updated>
+                
+                <summary type="html">Web Components enables frontend developers to create custom and reusable HTML tags, it&amp;#39;s the latest bleeding-edge web technologies being developed, the project is led by the Chrome dev team and aims to solve a simple problem: Building Web applications is more complicated than it used to be. Worse, it&amp;#39;s more complicated than it should be.</summary>
+                <content type="html">&lt;p&gt;Web Components enables frontend developers to create custom and reusable HTML tags, it&amp;#39;s the latest bleeding-edge web technologies being developed, the project is led by the Chrome dev team and aims to solve a simple problem: Building Web applications is more complicated than it used to be. Worse, it&amp;#39;s more complicated than it should be.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/webcomponents.png&#34; alt=&#34;Web Components&#34;&gt;&lt;/p&gt;
+&lt;h1&gt;HTML Templates&lt;/h1&gt;
+&lt;p&gt;A template provides a method for declaring document fragments in HTML, it contains a chunks of markup that can be used later. The &lt;code&gt;template&lt;/code&gt; element is not rendered but parsed, which means that scripts aren&amp;#39;t processed, css and images aren&amp;#39;t downloaded, it&amp;#39;s completly hidden from the document object, so for ex you can&amp;#39;t access the &lt;code&gt;.comment-text&lt;/code&gt; element using &lt;code&gt;document.querySelector&lt;/code&gt;.&lt;/p&gt;
+&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;template id=&amp;#34;commentTemplate&amp;#34;&amp;gt;
+    &amp;lt;img src=&amp;#34;&amp;#34;&amp;gt; &amp;lt;!-- dynamically populate at runtime --&amp;gt;
+    &amp;lt;div class=&amp;#34;comment-text&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;!-- dynamically populate at runtime --&amp;gt;
+&amp;lt;/template&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/m85DN/embedded/result,css,html,js&#34; allowfullscreen=&#34;allowfullscreen&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+&lt;h1&gt;Custom Elements&lt;/h1&gt;
+&lt;p&gt;The W3C defines it as follows :&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;custom elements let authors define their own elements, including new presentation and API, that can be used in HTML documents&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This means you will be able to create new HTML elements and extend the existing DOM objects with new ones. The name of any custom element must begin with &lt;code&gt;x-&lt;/code&gt; :&lt;/p&gt;
+&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;element name=&amp;#34;x-foo-bar&amp;#34; constructor=&amp;#34;XFooBar&amp;#34;&amp;gt;
+...
+&amp;lt;/element&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and use it like this &lt;code&gt;&amp;lt;x-foo-bar&amp;gt;Test&amp;lt;/x-foo-bar&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h1&gt;Shadow DOM&lt;/h1&gt;
+&lt;p&gt;Browser vendors have been using Shadow DOM for quite awhile now to build their own components. These components are built using HTML and CSS, but you cannot see how thesee elements are made up on the dev tools simply because they use the Shadow DOM , ex : &lt;code&gt;&amp;lt;video&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;textarea&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;input type=&amp;quot;date&amp;quot;&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;input type=&amp;quot;time&amp;quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Shadow DOM gives us markup encapsulation, style boundaries, and exposes (to web developers) the same mechanics browsers vendors have been using to implement their internal UI. — Eric Bidelma&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/input-date-time.png&#34; alt=&#34;Date &amp;amp; time input&#34;&gt;&lt;/p&gt;
+&lt;h1&gt;HTML Imports&lt;/h1&gt;
+&lt;p&gt;HTML Imports is similar way to how we load CSS stylesheets, it&amp;#39;s a new type of link tag which allow developers to import and use HTML code from a url, after importing the page you need to use some Javascript code to manipulate it and inject your code :&lt;/p&gt;
+&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;link rel=&amp;#34;import&amp;#34; href=&amp;#34;/import/page-to-import.html&amp;#34;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here is an example :&lt;/p&gt;
+&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt;
+    &amp;lt;head&amp;gt;
+        &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt;
+        &amp;lt;title&amp;gt;HTML Imports&amp;lt;/title&amp;gt;
+        &amp;lt;link rel=&amp;#34;import&amp;#34; href=&amp;#34;/import.html&amp;#34;&amp;gt;
+    &amp;lt;/head&amp;gt;
+    &amp;lt;body&amp;gt;
+        &amp;lt;p&amp;gt;Hello World!&amp;lt;/p&amp;gt;
+        &amp;lt;script&amp;gt;
+            var link = document.querySelector(&amp;#39;link[rel=import]&amp;#39;),
+                content = link.import.querySelector(&amp;#39;#page-content&amp;#39;);
+            document.body.appendChild(content.cloneNode(true));
+        &amp;lt;/script&amp;gt;
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;!-- import.html --&amp;gt;
+&amp;lt;div id=&amp;#34;page-content&amp;#34;&amp;gt;
+    &amp;lt;p&amp;gt;This is the content of the imported page.&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;One thing you should keep in mind that thoses APIs are still in developement so don&amp;#39;t exepect a full support rightnow, Chrome/ium have implemented some of them but you&amp;#39;ll need to enable them in &lt;code&gt;about://flags&lt;/code&gt;&lt;/p&gt;
+</content>
+            </entry>
         
             <entry>
                 <title>5 DevTools features to help you debug your WebApp</title>
