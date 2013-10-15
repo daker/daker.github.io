@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-10-15T22:50:52Z</updated>
+        <updated>2013-10-15T22:52:32Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -19,7 +19,7 @@
                 <title>Package your Webapp for Ubuntu Touch</title>
                 <link rel="alternate" href="http://daker.me/2013/10/package-your-webapp-for-ubuntu-touch.html" type="text/html" />
                 <id>http://daker.me/2013/10/package-your-webapp-for-ubuntu-touch.html</id>
-                <updated>2013-10-14T23:00:00Z</updated>
+                <updated>2013-10-15T23:50:00Z</updated>
                 
                 <summary type="html">Last week i discovered a HTML5 game called &amp;quot;&lt;a href=&#34;http://phoboslab.org/xtype/&#34;&gt;X-Type&lt;/a&gt;&amp;quot;, which is basically a free dual stick shooter with endless boss battles. Unfortunately this game does only work on iOS and Android and it does use the UA sniffing mechanism to serve both desktop and mobile versions, and using the Ubuntu Touch user-agent it will only serve the desktop version which will not work on the phone.</summary>
                 <content type="html">&lt;p&gt;Last week i discovered a HTML5 game called &amp;quot;&lt;a href=&#34;http://phoboslab.org/xtype/&#34;&gt;X-Type&lt;/a&gt;&amp;quot;, which is basically a free dual stick shooter with endless boss battles. Unfortunately this game does only work on iOS and Android and it does use the UA sniffing mechanism to serve both desktop and mobile versions, and using the Ubuntu Touch user-agent it will only serve the desktop version which will not work on the phone.&lt;/p&gt;
