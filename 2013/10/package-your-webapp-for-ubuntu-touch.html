@@ -186,7 +186,7 @@
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div></div>
-<p>The problem with using the QtWebKit Webview is that the device-pixel-ratio (DPR) is not set automatically causing the content of the Webview to not scale correctly, so you&#39;ll need to get the corresponding value for your device from the <code>QTWEBKIT_DPR</code> environment variable, there actually no way to read those variables using QML so you&#39;ll need to use some C++ code to read the <code>QTWEBKIT_DPR</code> and passe it to QML so the content of the WebView will scale accordingly.</p>
+<p>The problem with using the QtWebKit Webview is that the device-pixel-ratio (DPR) is not set automatically causing the content of the Webview to not scale correctly, so you&#39;ll need to get the corresponding value for your device from the <code>QTWEBKIT_DPR</code> environment variable, there is actually no way to read those variables using QML so you&#39;ll need to use some C++ code to read the <code>QTWEBKIT_DPR</code> and passe it to QML so the content of the WebView will scale accordingly.</p>
 
 <p>The Ubuntu Touch Browser Plugin provides a component called <code>UbuntuWebView</code>, it uses some kind of UA overrides to bypass the UA sniffing used to serve the mobile version of webapp(Gmail, G+, Facebook, Twitter, etc...) and changes the UA on the fly, unfortunately there was no way to set your own UA using the <code>UbuntuWebView</code> but now you can since this <a href="https://bugs.launchpad.net/webbrowser-app/+bug/1237365">bug #1237365</a> has been fixed.</p>
 
