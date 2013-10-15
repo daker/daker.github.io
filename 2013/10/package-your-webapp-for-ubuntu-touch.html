@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="/assets/css/app.min.css" type="text/css">
     <title>Package your Webapp for Ubuntu Touch — Adnane Belmadiaf's Blog</title>
     <meta name="description" content="Last week i discovered a HTML5 game called "X-Type", which is basically a free dual stick shooter with endless boss battles. Unfortunately this game does only work on iOS and Android and it does use the UA sniffing mechanism to serve both desktop and mobile versions, and using the Ubuntu Touch user-agent it will only serve the desktop version which will not work on the phone.">
-    <meta name="keywords" content="utouchdev">
+    <meta name="keywords" content="ubuntuplanet, utouchdev">
     <meta property="og:image" content="http://daker.me/assets/images/avatar.png">
     <meta property="og:title" content="Package your Webapp for Ubuntu Touch — Adnane Belmadiaf's Blog">
     <meta property="og:site_name" content="Adnane Belmadiaf's Blog">
@@ -97,6 +97,8 @@
     <strong>Tags</strong>
     <p>
         
+        <a href="/tags/ubuntuplanet/" itemprop="keywords">#ubuntuplanet</a>, 
+        
         <a href="/tags/utouchdev/" itemprop="keywords">#utouchdev</a>
         
     </p>
@@ -121,7 +123,7 @@
             <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://daker.me/2013/10/package-your-webapp-for-ubuntu-touch.html" data-count="horizontal" data-text="Package your Webapp for Ubuntu Touch" data-via="AdnaneBelmadiaf" data-related="AdnaneBelmadiaf"></a>
         </div>
         <div class="post-social-button">
-        <a class="FlattrButton" style="display:none;" href="http://daker.me/2013/10/package-your-webapp-for-ubuntu-touch.html" title="Package your Webapp for Ubuntu Touch" data-flattr-uid="daker" data-flattr-button="compact" data-flattr-tags="utouchdev" data-flattr-category="text" data-flattr-lang="en_US">Last week i discovered a HTML5 game called "X-Type", which is basically a free dual stick shooter with endless boss battles. Unfortunately this game does only work on iOS and Android and it does use the UA sniffing mechanism to serve both desktop and mobile versions, and using the Ubuntu Touch user-agent it will only serve the desktop version which will not work on the phone.</a>
+        <a class="FlattrButton" style="display:none;" href="http://daker.me/2013/10/package-your-webapp-for-ubuntu-touch.html" title="Package your Webapp for Ubuntu Touch" data-flattr-uid="daker" data-flattr-button="compact" data-flattr-tags="ubuntuplanet, utouchdev" data-flattr-category="text" data-flattr-lang="en_US">Last week i discovered a HTML5 game called "X-Type", which is basically a free dual stick shooter with endless boss battles. Unfortunately this game does only work on iOS and Android and it does use the UA sniffing mechanism to serve both desktop and mobile versions, and using the Ubuntu Touch user-agent it will only serve the desktop version which will not work on the phone.</a>
         </div>
         <div class="post-social-button">
             <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="horizontal" data-url="http://daker.me/2013/10/package-your-webapp-for-ubuntu-touch.html" data-via="AdnaneBelmadiaf" data-picture="http://daker.me/assets/images/avatar.png"></a>
@@ -285,19 +287,26 @@
 </pre></div>
 </td></tr></table></div></div>
 <p>and a .desktop file :</p>
-<pre><code>[Desktop Entry]
-Name=x-type
-Comment=A Free HTML5 Dual Stick Shooter
-Exec=qmlscene $@ x-type.qml
-Icon=./x-type.png
-Terminal=false
-Type=Application
-X-Ubuntu-Touch=true
-</code></pre>
+<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="p">[</span><span class="nx">Desktop</span> <span class="nx">Entry</span><span class="p">]</span>
+<span class="nx">Name</span><span class="o">=</span><span class="nx">x</span><span class="o">-</span><span class="nx">type</span>
+<span class="nx">Comment</span><span class="o">=</span><span class="nx">A</span> <span class="nx">Free</span> <span class="nx">HTML5</span> <span class="nx">Dual</span> <span class="nx">Stick</span> <span class="nx">Shooter</span>
+<span class="nx">Exec</span><span class="o">=</span><span class="nx">qmlscene</span> <span class="nx">$</span><span class="err">@</span> <span class="nx">x</span><span class="o">-</span><span class="nx">type</span><span class="p">.</span><span class="nx">qml</span>
+<span class="nx">Icon</span><span class="o">=</span><span class="p">.</span><span class="o">/</span><span class="nx">x</span><span class="o">-</span><span class="nx">type</span><span class="p">.</span><span class="nx">png</span>
+<span class="nx">Terminal</span><span class="o">=</span><span class="kc">false</span>
+<span class="nx">Type</span><span class="o">=</span><span class="nx">Application</span>
+<span class="nx">X</span><span class="o">-</span><span class="nx">Ubuntu</span><span class="o">-</span><span class="nx">Touch</span><span class="o">=</span><span class="kc">true</span>
+</pre></div>
+</td></tr></table></div></div>
 <p>you need to add the icon and now all you have to do is to build the click package using <code>click build .</code>and <a href="https://myapps.developer.ubuntu.com/dev/click-apps/new/">upload</a> it to the store. I have also packaged another HTML5 game called <a href="http://heliom.github.io/bytesjack/">BytesJack</a> using the same method, the source code of both games can be found <a href="https://bazaar.launchpad.net/%7Edaker/+junk/x-type/files">here</a> and <a href="https://bazaar.launchpad.net/%7Edaker/+junk/bytesjack/files">here</a>.</p>
 
-<p>Happy hacking!<br>
-```</p>
+<p>Happy hacking!</p>
 </div>
     </div>
 

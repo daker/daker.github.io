@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <feed xmlns="http://www.w3.org/2005/Atom">
+        <title>Adnane Belmadiaf's Blog</title>
+        
+        <link rel="alternate" href="http://daker.me/" />
+        <link rel="self" href="http://daker.me/feed-utouchdev.xml" type="application/atom+xml" />
+        <id>http://daker.me/</id>
+        <updated>2013-10-15T22:58:23Z</updated>
+
+        <author>
+            <name>Adnane Belmadiaf</name>
+            <email>daker@ubuntu.com</email>
+            <uri>http://daker.me/</uri>
+        </author>
+
+        
+            
+            <entry>
+                <title>Package your Webapp for Ubuntu Touch</title>
+                <link rel="alternate" href="http://daker.me/2013/10/package-your-webapp-for-ubuntu-touch.html" type="text/html" />
+                <id>http://daker.me/2013/10/package-your-webapp-for-ubuntu-touch.html</id>
+                <updated>2013-10-15T23:50:00Z</updated>
+
+                <summary type="html">Last week i discovered a HTML5 game called &amp;quot;&lt;a href=&#34;http://phoboslab.org/xtype/&#34;&gt;X-Type&lt;/a&gt;&amp;quot;, which is basically a free dual stick shooter with endless boss battles. Unfortunately this game does only work on iOS and Android and it does use the UA sniffing mechanism to serve both desktop and mobile versions, and using the Ubuntu Touch user-agent it will only serve the desktop version which will not work on the phone.</summary>
+                <content type="html">&lt;p&gt;Last week i discovered a HTML5 game called &amp;quot;&lt;a href=&#34;http://phoboslab.org/xtype/&#34;&gt;X-Type&lt;/a&gt;&amp;quot;, which is basically a free dual stick shooter with endless boss battles. Unfortunately this game does only work on iOS and Android and it does use the UA sniffing mechanism to serve both desktop and mobile versions, and using the Ubuntu Touch user-agent it will only serve the desktop version which will not work on the phone.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/xtype/xtype.png&#34; alt=&#34;X-Type running on Ubuntu Touch&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;First using the Qt Creator you have to create a &amp;quot;HTML5 Touch UI&amp;quot; project which will produce the following QML code :&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import QtQuick 2.0
+import Ubuntu.Components 0.1
+import QtWebKit 3.0
+
+MainView {
+    objectName: &amp;#34;mainView&amp;#34;
+    applicationName: &amp;#34;com.ubuntu.developer.daker.x-type&amp;#34;
+    automaticOrientation: true
+
+    width: units.gu(100)
+    height: units.gu(75)
+
+    Flickable {
+        id: webViewFlickable
+        anchors.fill: parent
+
+        WebView {
+            id: webView
+            anchors.fill: parent
+            url: &amp;#34;http://phoboslab.org/xtype/&amp;#34;
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The problem with using the QtWebKit Webview is that the device-pixel-ratio (DPR) is not set automatically causing the content of the Webview to not scale correctly, so you&amp;#39;ll need to get the corresponding value for your device from the &lt;code&gt;QTWEBKIT_DPR&lt;/code&gt; environment variable, there actually no way to read those variables using QML so you&amp;#39;ll need to use some C++ code to read the &lt;code&gt;QTWEBKIT_DPR&lt;/code&gt; and passe it to QML so the content of the WebView will scale accordingly.&lt;/p&gt;
+
+&lt;p&gt;The Ubuntu Touch Browser Plugin provides a component called &lt;code&gt;UbuntuWebView&lt;/code&gt;, it uses some kind of UA overrides to bypass the UA sniffing used to serve the mobile version of webapp(Gmail, G+, Facebook, Twitter, etc...) and changes the UA on the fly, unfortunately there was no way to set your own UA using the &lt;code&gt;UbuntuWebView&lt;/code&gt; but now you can since this &lt;a href=&#34;https://bugs.launchpad.net/webbrowser-app/+bug/1237365&#34;&gt;bug #1237365&lt;/a&gt; has been fixed.&lt;/p&gt;
+
+&lt;p&gt;Also with the &lt;code&gt;UbuntuWebView&lt;/code&gt; the &lt;code&gt;DPR&lt;/code&gt; weren&amp;#39;t set automatically(&lt;a href=&#34;https://bugs.launchpad.net/webbrowser-app/+bug/1237348&#34;&gt;bug #1237348&lt;/a&gt;), it was also fixed and all those fixes has been shipped with image #96.&lt;/p&gt;
+
+&lt;p&gt;Here is the QML code i used to embed the &amp;quot;X-Type&amp;quot; game(Fullscreen) but first you need to install the browser plugin :&lt;/p&gt;
+&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install qtdeclarative5-ubuntu-ui-extras-browser-plugin
+&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import QtQuick 2.0
+import Ubuntu.Components 0.1
+import Ubuntu.Components.Extras.Browser 0.1
+
+
+MainView {
+    objectName: &amp;#34;mainView&amp;#34;
+    applicationName: &amp;#34;com.ubuntu.developer.daker.x-type&amp;#34;
+    //automaticOrientation: true
+
+    width: units.gu(50)
+    height: units.gu(75)
+
+    UbuntuWebView {
+        anchors.fill: parent
+        url: &amp;#34;http://phoboslab.org/xtype/&amp;#34;
+        /* This function is used to override the UA */
+        function getUAString(url) {
+            return &amp;#34;Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3&amp;#34;
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;you need to create a manifest file &lt;code&gt;manifest.json&lt;/code&gt; :&lt;/p&gt;
+&lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
+    &amp;#34;description&amp;#34;: &amp;#34;A Free HTML5 Dual Stick Shooter&amp;#34;,
+    &amp;#34;framework&amp;#34;: &amp;#34;ubuntu-sdk-13.10&amp;#34;,
+    &amp;#34;architecture&amp;#34;: &amp;#34;all&amp;#34;,
+    &amp;#34;hooks&amp;#34;: {
+        &amp;#34;x-type&amp;#34;: {
+            &amp;#34;apparmor&amp;#34;: &amp;#34;x-type.json&amp;#34;,
+            &amp;#34;desktop&amp;#34;: &amp;#34;x-type.desktop&amp;#34;
+        }
+    },
+    &amp;#34;maintainer&amp;#34;: &amp;#34;Adnane Belmadiaf &amp;lt;daker@ubuntu.com&amp;gt;&amp;#34;,
+    &amp;#34;name&amp;#34;: &amp;#34;com.ubuntu.developer.daker.x-type&amp;#34;,
+    &amp;#34;title&amp;#34;: &amp;#34;X-Type&amp;#34;,
+    &amp;#34;version&amp;#34;: &amp;#34;0.4&amp;#34;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;the security policy groups &lt;code&gt;x-type.json&lt;/code&gt;&lt;/p&gt;
+&lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
+    &amp;#34;policy_groups&amp;#34;: [
+        &amp;#34;networking&amp;#34;
+    ],
+    &amp;#34;policy_version&amp;#34;: 1
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and a .desktop file :&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;[Desktop Entry]
+Name=x-type
+Comment=A Free HTML5 Dual Stick Shooter
+Exec=qmlscene $@ x-type.qml
+Icon=./x-type.png
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;you need to add the icon and now all you have to do is to build the click package using &lt;code&gt;click build .&lt;/code&gt;and &lt;a href=&#34;https://myapps.developer.ubuntu.com/dev/click-apps/new/&#34;&gt;upload&lt;/a&gt; it to the store. I have also packaged another HTML5 game called &lt;a href=&#34;http://heliom.github.io/bytesjack/&#34;&gt;BytesJack&lt;/a&gt; using the same method, the source code of both games can be found &lt;a href=&#34;https://bazaar.launchpad.net/%7Edaker/+junk/x-type/files&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://bazaar.launchpad.net/%7Edaker/+junk/bytesjack/files&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Happy hacking!&lt;/p&gt;
+</content>
+            </entry>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </feed>
