@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-ubuntuplanet.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-10-15T22:58:23Z</updated>
+        <updated>2013-10-15T23:00:47Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -83,7 +83,7 @@ MainView {
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;you need to create a manifest file &lt;code&gt;manifest.json&lt;/code&gt; :&lt;/p&gt;
+&lt;p&gt;you need to create a &lt;code&gt;manifest.json&lt;/code&gt; file :&lt;/p&gt;
 &lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
     &amp;#34;description&amp;#34;: &amp;#34;A Free HTML5 Dual Stick Shooter&amp;#34;,
     &amp;#34;framework&amp;#34;: &amp;#34;ubuntu-sdk-13.10&amp;#34;,
@@ -100,7 +100,7 @@ MainView {
     &amp;#34;version&amp;#34;: &amp;#34;0.4&amp;#34;
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;the security policy groups &lt;code&gt;x-type.json&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;the security policy groups &lt;code&gt;x-type.json&lt;/code&gt; :&lt;/p&gt;
 &lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
     &amp;#34;policy_groups&amp;#34;: [
         &amp;#34;networking&amp;#34;
