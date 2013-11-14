@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-utouchdev.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-11-09T00:02:59Z</updated>
+        <updated>2013-11-14T23:43:01Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,44 @@
             <uri>http://daker.me/</uri>
         </author>
 
+        
+            
+            <entry>
+                <title>Web Apps Remote Debugging on Ubuntu Touch</title>
+                <link rel="alternate" href="http://daker.me/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html" type="text/html" />
+                <id>http://daker.me/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html</id>
+                <updated>2013-11-14T23:40:00Z</updated>
+
+                <summary type="html">If you are writing Web Apps for &lt;a href=&#34;http://www.ubuntu.com/phone/install&#34;&gt;Ubuntu Touch&lt;/a&gt;, you might want to test them directly on the phone using the Ubuntu browser, this can be done by remotely debugging web pages using the built-in DevTools, which allow you to inspect, debug, and analyze the on-device experience with the full suite of tools you&amp;#39;re used to.</summary>
+                <content type="html">&lt;p&gt;If you are writing Web Apps for &lt;a href=&#34;http://www.ubuntu.com/phone/install&#34;&gt;Ubuntu Touch&lt;/a&gt;, you might want to test them directly on the phone using the Ubuntu browser, this can be done by remotely debugging web pages using the built-in DevTools, which allow you to inspect, debug, and analyze the on-device experience with the full suite of tools you&amp;#39;re used to.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/utouch/3.png&#34; alt=&#34;Ubuntu Browser&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;The phablet-team PPA has the tools and dependencies for 12.04, 12.10, 13.04 and 13.10 to get everything setup:&lt;/p&gt;
+&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo add-apt-repository ppa:phablet-team/tools
+$ sudo apt-get update
+$ sudo apt-get install phablet-tools android-tools-adb android-tools-fastboot
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Plug the device via the USB cable, then run the following commands to connect to it through ADB&lt;/p&gt;
+&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ adb shell
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Switch to the phablet user :&lt;/p&gt;
+&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo -u phablet -i
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Take a note of your phone IP adresse :&lt;/p&gt;
+&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ ifconfig wlan0 | grep &amp;#39;inet addr&amp;#39; | cut -d: -f2 | awk &amp;#39;{print $1}&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once done launch the webbrowser app using :&lt;/p&gt;
+&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ upstart-app-launch webbrowser-app --inspector
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A browser instance will launch on the phone, point to URL of your webapp then access the Devtools with your Chrome/ium browser by opening &lt;code&gt;http://$YOUR-PHONE-IP:9221&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/utouch/4.png&#34; alt=&#34;DevTools&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;The built-in Devtools is a bit old &amp;amp; slow so i am using the hosted version : &lt;code&gt;https://chrome-devtools-frontend.appspot.com/static/30.0.1599.118/devtools.html?ws=$YOUR-PHONE-IP:9221/devtools/page/$PAGE-ID&lt;/code&gt;, you can get the page id from &lt;code&gt;http://$YOUR-PHONE-IP:9221/pagelist.json&lt;/code&gt;&lt;/p&gt;
+</content>
+            </entry>
+            
         
             
             <entry>

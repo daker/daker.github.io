@@ -22,23 +22,23 @@
     <meta name="author" content="Adnane Belmadiaf">
     <link rel="author" href="https://plus.google.com/101694416703170881163" />
     <link rel="stylesheet" href="/assets/css/app.min.css" type="text/css">
-    <title>Ubuntu Touch User-Agent — Adnane Belmadiaf's Blog</title>
-    <meta name="description" content="With the launch of Ubuntu Touch v1.0, the OS now ships its own QtWebKit based browser which will be replaced by Oxide a Chromium-powered webview by 14.04. There has been a lot of discussions arround the user-agent because many large sites(Facebook, Google, Twitter, Yahoo etc..) are sniffing the UA(for iPhone or Android tokens) to serve the mobile version of the site.">
+    <title>Web Apps Remote Debugging on Ubuntu Touch — Adnane Belmadiaf's Blog</title>
+    <meta name="description" content="If you are writing Web Apps for Ubuntu Touch, you might want to test them directly on the phone using the Ubuntu browser, this can be done by remotely debugging web pages using the built-in DevTools, which allow you to inspect, debug, and analyze the on-device experience with the full suite of tools you're used to.">
     <meta name="keywords" content="ubuntuplanet, utouchdev">
     <meta property="og:image" content="http://daker.me/assets/images/avatar.png">
-    <meta property="og:title" content="Ubuntu Touch User-Agent — Adnane Belmadiaf's Blog">
+    <meta property="og:title" content="Web Apps Remote Debugging on Ubuntu Touch — Adnane Belmadiaf's Blog">
     <meta property="og:site_name" content="Adnane Belmadiaf's Blog">
     <meta property="og:type" content="article">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@AdnaneBelmadiaf">
     <meta property="twitter:image" content="http://daker.me/assets/images/avatar.png">
-    <meta property="twitter:title" content="Ubuntu Touch User-Agent — Adnane Belmadiaf's Blog">
-    <meta property="twitter:url" content="http://daker.me/2013/11/ubuntu-touch-user-agent.html">
+    <meta property="twitter:title" content="Web Apps Remote Debugging on Ubuntu Touch — Adnane Belmadiaf's Blog">
+    <meta property="twitter:url" content="http://daker.me/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html">
     <meta name="twitter:creator" content="@AdnaneBelmadiaf">
-    <meta property="og:description" content="With the launch of Ubuntu Touch v1.0, the OS now ships its own QtWebKit based browser which will be replaced by Oxide a Chromium-powered webview by 14.04. There has been a lot of discussions arround the user-agent because many large sites(Facebook, Google, Twitter, Yahoo etc..) are sniffing the UA(for iPhone or Android tokens) to serve the mobile version of the site.">
-    <meta name="twitter:description" content="With the launch of Ubuntu Touch v1.0, the OS now ships its own QtWebKit based browser which will be replaced by Oxide a Chromium-powered webview by 14.04. There has been a lot of discussions arround the user-agent because many large sites(Facebook, Google, Twitter, Yahoo etc..) are sniffing the UA(for iPhone or Android tokens) to serve the mobile version of the site.">
-    <link rel="prev" title="Package your Webapp for Ubuntu Touch" href="http://daker.me/2013/10/package-your-webapp-for-ubuntu-touch.html" />
-    <link rel="next" title="Web Apps Remote Debugging on Ubuntu Touch" href="http://daker.me/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html" />
+    <meta property="og:description" content="If you are writing Web Apps for Ubuntu Touch, you might want to test them directly on the phone using the Ubuntu browser, this can be done by remotely debugging web pages using the built-in DevTools, which allow you to inspect, debug, and analyze the on-device experience with the full suite of tools you're used to.">
+    <meta name="twitter:description" content="If you are writing Web Apps for Ubuntu Touch, you might want to test them directly on the phone using the Ubuntu browser, this can be done by remotely debugging web pages using the built-in DevTools, which allow you to inspect, debug, and analyze the on-device experience with the full suite of tools you're used to.">
+    <link rel="prev" title="Ubuntu Touch User-Agent" href="http://daker.me/2013/11/ubuntu-touch-user-agent.html" />
+    
     <meta property="article:author" content="https://www.facebook.com/AdnaneBelmadiaf" />
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-precomposed-144.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-precomposed-114.png">
@@ -90,7 +90,7 @@
             
 <div class="post-published-date"> <strong>Published</strong>
     <p>
-        <time datetime="2013-11-06 19:00:00+01:00" class="post-date">Nov 06, 2013 at 19:00</time>
+        <time datetime="2013-11-14 23:40:00+01:00" class="post-date">Nov 14, 2013 at 23:40</time>
     </p>
 </div>
 
@@ -114,44 +114,60 @@
             
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header">
-        <h1 itemprop="name headline" class="post-title">Ubuntu Touch User-Agent</h1>
+        <h1 itemprop="name headline" class="post-title">Web Apps Remote Debugging on Ubuntu Touch</h1>
     </header>
     <div class="post-social">
         <div class="post-social-button">
-            <fb:like href="http://daker.me/2013/11/ubuntu-touch-user-agent.html" send="false" show_faces="false"  layout="button_count" width="92" ></fb:like>
+            <fb:like href="http://daker.me/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html" send="false" show_faces="false"  layout="button_count" width="92" ></fb:like>
         </div>
         <div class="post-social-button">
-            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://daker.me/2013/11/ubuntu-touch-user-agent.html" data-count="horizontal" data-text="Ubuntu Touch User-Agent" data-via="AdnaneBelmadiaf" data-related="AdnaneBelmadiaf"></a>
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://daker.me/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html" data-count="horizontal" data-text="Web Apps Remote Debugging on Ubuntu Touch" data-via="AdnaneBelmadiaf" data-related="AdnaneBelmadiaf"></a>
         </div>
         <div class="post-social-button">
-        <a class="FlattrButton" style="display:none;" href="http://daker.me/2013/11/ubuntu-touch-user-agent.html" title="Ubuntu Touch User-Agent" data-flattr-uid="daker" data-flattr-button="compact" data-flattr-tags="ubuntuplanet, utouchdev" data-flattr-category="text" data-flattr-lang="en_US">With the launch of Ubuntu Touch v1.0, the OS now ships its own QtWebKit based browser which will be replaced by Oxide a Chromium-powered webview by 14.04. There has been a lot of discussions arround the user-agent because many large sites(Facebook, Google, Twitter, Yahoo etc..) are sniffing the UA(for iPhone or Android tokens) to serve the mobile version of the site.</a>
+        <a class="FlattrButton" style="display:none;" href="http://daker.me/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html" title="Web Apps Remote Debugging on Ubuntu Touch" data-flattr-uid="daker" data-flattr-button="compact" data-flattr-tags="ubuntuplanet, utouchdev" data-flattr-category="text" data-flattr-lang="en_US">If you are writing Web Apps for Ubuntu Touch, you might want to test them directly on the phone using the Ubuntu browser, this can be done by remotely debugging web pages using the built-in DevTools, which allow you to inspect, debug, and analyze the on-device experience with the full suite of tools you're used to.</a>
         </div>
         <div class="post-social-button">
-            <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="horizontal" data-url="http://daker.me/2013/11/ubuntu-touch-user-agent.html" data-via="AdnaneBelmadiaf" data-picture="http://daker.me/assets/images/avatar.png"></a>
+            <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="horizontal" data-url="http://daker.me/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html" data-via="AdnaneBelmadiaf" data-picture="http://daker.me/assets/images/avatar.png"></a>
         </div>
 
         <div class="post-social-button">
-            <div class="g-plusone" data-size="medium" data-href="http://daker.me/2013/11/ubuntu-touch-user-agent.html"></div>
+            <div class="g-plusone" data-size="medium" data-href="http://daker.me/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html"></div>
         </div>
     </div>
     <div class="post-content">
-        <div class="post-field body" itemprop="articleBody"><p>With the launch of <a href="http://www.ubuntu.com/phone/install">Ubuntu Touch</a> v1.0, the OS now ships its own QtWebKit based browser which will be replaced by <a href="https://launchpad.net/oxide">Oxide</a> a Chromium-powered webview by 14.04. There has been a lot of <a href="https://bugs.launchpad.net/webbrowser-app/+bug/1179596">discussions</a> arround the user-agent because many large sites(Facebook, Google, Twitter, Yahoo etc..) are sniffing the UA(for iPhone or Android tokens) to serve the mobile version of the site.</p>
+        <div class="post-field body" itemprop="articleBody"><p>If you are writing Web Apps for <a href="http://www.ubuntu.com/phone/install">Ubuntu Touch</a>, you might want to test them directly on the phone using the Ubuntu browser, this can be done by remotely debugging web pages using the built-in DevTools, which allow you to inspect, debug, and analyze the on-device experience with the full suite of tools you&#39;re used to.</p>
 
-<p>Adding an Android or iPhone token will lead to unwanted behaviours, like showing ads for the Android app or even trying to open the Google Play app or the Youtube app. The browser now reports it in the following formats, depending on whether the device is a phone or a tablet, with the addition of an <a href="https://bazaar.launchpad.net/%7Ephablet-team/webbrowser-app/trunk/view/head:/src/Ubuntu/Components/Extras/Browser/ua-overrides.js">override mechanism</a> that will override the UA on the fly and the site will serve us a proper mobile content.</p>
+<p><img src="/assets/posts/utouch/3.png" alt="Ubuntu Browser"></p>
 
-<p><img src="/assets/posts/utouch/1.png" alt="Facebook Android Ads"></p>
-<h1>Phone</h1><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre>Mozilla/5.0 <span class="o">(</span>Ubuntu; Mobile<span class="o">)</span> WebKit/537.21
-</pre></div>
-</td></tr></table></div></div><h1>Tablet</h1><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre>Mozilla/5.0 <span class="o">(</span>Ubuntu; Tablet<span class="o">)</span> WebKit/537.21
-</pre></div>
-</td></tr></table></div></div><h1>Pattern</h1><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre>Mozilla/5.0 <span class="o">(</span>Ubuntu; <span class="nv">$FormFactor</span><span class="o">)</span> WebKit/<span class="nv">$WebKitRev</span>
+<p>The phablet-team PPA has the tools and dependencies for 12.04, 12.10, 13.04 and 13.10 to get everything setup:</p>
+<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>sudo add-apt-repository ppa:phablet-team/tools
+<span class="nv">$ </span>sudo apt-get update
+<span class="nv">$ </span>sudo apt-get install phablet-tools android-tools-adb android-tools-fastboot
 </pre></div>
 </td></tr></table></div></div>
-<p>You can also get it through JavaScript using the <code>navigator.userAgent</code></p>
+<p>Plug the device via the USB cable, then run the following commands to connect to it through ADB</p>
+<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>adb shell
+</pre></div>
+</td></tr></table></div></div>
+<p>Switch to the phablet user :</p>
+<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>sudo -u phablet -i
+</pre></div>
+</td></tr></table></div></div>
+<p>Take a note of your phone IP adresse :</p>
+<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>ifconfig wlan0 | grep <span class="s1">&#39;inet addr&#39;</span> | cut -d: -f2 | awk <span class="s1">&#39;{print $1}&#39;</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>Once done launch the webbrowser app using :</p>
+<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>upstart-app-launch webbrowser-app --inspector
+</pre></div>
+</td></tr></table></div></div>
+<p>A browser instance will launch on the phone, point to URL of your webapp then access the Devtools with your Chrome/ium browser by opening <code>http://$YOUR-PHONE-IP:9221</code></p>
 
-<p><img src="/assets/posts/utouch/2.png" alt="Using the console"></p>
+<p><img src="/assets/posts/utouch/4.png" alt="DevTools"></p>
 
-<p>So if you are doing UA sniffing it&#39;s really better to look for &quot;Mobile&quot; rather than looking the OS identifier.</p>
+<p>The built-in Devtools is a bit old &amp; slow so i am using the hosted version : <code>https://chrome-devtools-frontend.appspot.com/static/30.0.1599.118/devtools.html?ws=$YOUR-PHONE-IP:9221/devtools/page/$PAGE-ID</code>, you can get the page id from <code>http://$YOUR-PHONE-IP:9221/pagelist.json</code></p>
 </div>
     </div>
 
@@ -169,17 +185,11 @@
     <div class="prev-next">
         
         <div class="prev-post">
-            <a href="/2013/10/package-your-webapp-for-ubuntu-touch.html" title="Package your Webapp for Ubuntu Touch" class="title">
-                <span>Package your Webapp for Ubuntu Touch</span>
+            <a href="/2013/11/ubuntu-touch-user-agent.html" title="Ubuntu Touch User-Agent" class="title">
+                <span>Ubuntu Touch User-Agent</span>
             </a>
         </div>
         
-        
-        <div class="next-post">
-            <a href="/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html" title="Web Apps Remote Debugging on Ubuntu Touch" class="title">
-                <span>Web Apps Remote Debugging on Ubuntu Touch</span>
-            </a>
-        </div>
         
     </div>
     
@@ -188,7 +198,7 @@
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname = 'daker-blog';
-        var disqus_title = 'Ubuntu Touch User-Agent';
+        var disqus_title = 'Web Apps Remote Debugging on Ubuntu Touch';
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
