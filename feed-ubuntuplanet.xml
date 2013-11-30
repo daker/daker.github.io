@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-ubuntuplanet.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-11-30T16:19:17Z</updated>
+        <updated>2013-11-30T16:39:39Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -22,8 +22,8 @@
                 <id>http://daker.me/2013/11/adding-usermetrics-to-your-app-on-ubuntu-touch.html</id>
                 <updated>2013-11-30T16:00:00Z</updated>
 
-                <summary type="html">The Welcome Screen infographic is one of the key component for the customization of the user experience on &lt;a href=&#34;http://www.ubuntu.com/phone/install&#34;&gt;Ubuntu Touch&lt;/a&gt;, beautiful visualisations of data from multiple sources, the &lt;code&gt;UserMetrics&lt;/code&gt; is the responsible component for updating the infographic using QML.</summary>
-                <content type="html">&lt;p&gt;The Welcome Screen infographic is one of the key component for the customization of the user experience on &lt;a href=&#34;http://www.ubuntu.com/phone/install&#34;&gt;Ubuntu Touch&lt;/a&gt;, beautiful visualisations of data from multiple sources, the &lt;code&gt;UserMetrics&lt;/code&gt; is the responsible component for updating the infographic using QML.&lt;/p&gt;
+                <summary type="html">The Welcome Screen infographic is one of the key components for the customization of the user experience on &lt;a href=&#34;http://www.ubuntu.com/phone/install&#34;&gt;Ubuntu Touch&lt;/a&gt;, beautiful visualisations of data from multiple sources, the &lt;code&gt;UserMetrics&lt;/code&gt; is the responsible component for updating the infographic using QML.</summary>
+                <content type="html">&lt;p&gt;The Welcome Screen infographic is one of the key components for the customization of the user experience on &lt;a href=&#34;http://www.ubuntu.com/phone/install&#34;&gt;Ubuntu Touch&lt;/a&gt;, beautiful visualisations of data from multiple sources, the &lt;code&gt;UserMetrics&lt;/code&gt; is the responsible component for updating the infographic using QML.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/utouch/5.png&#34; alt=&#34;Welcome Screen&#34;&gt;&lt;/p&gt;
 
