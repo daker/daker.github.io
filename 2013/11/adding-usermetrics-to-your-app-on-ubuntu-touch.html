@@ -22,23 +22,23 @@
     <meta name="author" content="Adnane Belmadiaf">
     <link rel="author" href="https://plus.google.com/101694416703170881163" />
     <link rel="stylesheet" href="/assets/css/app.min.css" type="text/css">
-    <title>Web Apps Remote Debugging on Ubuntu Touch — Adnane Belmadiaf's Blog</title>
-    <meta name="description" content="If you are writing Web Apps for Ubuntu Touch, you might want to test them directly on the phone using the Ubuntu browser, this can be done by remotely debugging web pages using the built-in DevTools, which allow you to inspect, debug, and analyze the on-device experience with the full suite of tools you're used to.">
+    <title>Adding UserMetrics to your app on Ubuntu Touch — Adnane Belmadiaf's Blog</title>
+    <meta name="description" content="The Welcome Screen infographic is one of the key component for the customization of the user experience on Ubuntu Touch, beautiful visualisations of data from multiple sources, the UserMetrics is the responsible component for updating the infographic using QML.">
     <meta name="keywords" content="ubuntuplanet, utouchdev">
     <meta property="og:image" content="http://daker.me/assets/images/avatar.png">
-    <meta property="og:title" content="Web Apps Remote Debugging on Ubuntu Touch — Adnane Belmadiaf's Blog">
+    <meta property="og:title" content="Adding UserMetrics to your app on Ubuntu Touch — Adnane Belmadiaf's Blog">
     <meta property="og:site_name" content="Adnane Belmadiaf's Blog">
     <meta property="og:type" content="article">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@AdnaneBelmadiaf">
     <meta property="twitter:image" content="http://daker.me/assets/images/avatar.png">
-    <meta property="twitter:title" content="Web Apps Remote Debugging on Ubuntu Touch — Adnane Belmadiaf's Blog">
-    <meta property="twitter:url" content="http://daker.me/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html">
+    <meta property="twitter:title" content="Adding UserMetrics to your app on Ubuntu Touch — Adnane Belmadiaf's Blog">
+    <meta property="twitter:url" content="http://daker.me/2013/11/adding-usermetrics-to-your-app-on-ubuntu-touch.html">
     <meta name="twitter:creator" content="@AdnaneBelmadiaf">
-    <meta property="og:description" content="If you are writing Web Apps for Ubuntu Touch, you might want to test them directly on the phone using the Ubuntu browser, this can be done by remotely debugging web pages using the built-in DevTools, which allow you to inspect, debug, and analyze the on-device experience with the full suite of tools you're used to.">
-    <meta name="twitter:description" content="If you are writing Web Apps for Ubuntu Touch, you might want to test them directly on the phone using the Ubuntu browser, this can be done by remotely debugging web pages using the built-in DevTools, which allow you to inspect, debug, and analyze the on-device experience with the full suite of tools you're used to.">
-    <link rel="prev" title="Ubuntu Touch User-Agent" href="http://daker.me/2013/11/ubuntu-touch-user-agent.html" />
-    <link rel="next" title="Adding UserMetrics to your app on Ubuntu Touch" href="http://daker.me/2013/11/adding-usermetrics-to-your-app-on-ubuntu-touch.html" />
+    <meta property="og:description" content="The Welcome Screen infographic is one of the key component for the customization of the user experience on Ubuntu Touch, beautiful visualisations of data from multiple sources, the UserMetrics is the responsible component for updating the infographic using QML.">
+    <meta name="twitter:description" content="The Welcome Screen infographic is one of the key component for the customization of the user experience on Ubuntu Touch, beautiful visualisations of data from multiple sources, the UserMetrics is the responsible component for updating the infographic using QML.">
+    <link rel="prev" title="Web Apps Remote Debugging on Ubuntu Touch" href="http://daker.me/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html" />
+    
     <meta property="article:author" content="https://www.facebook.com/AdnaneBelmadiaf" />
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-precomposed-144.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-precomposed-114.png">
@@ -90,7 +90,7 @@
             
 <div class="post-published-date"> <strong>Published</strong>
     <p>
-        <time datetime="2013-11-14 23:40:00+01:00" class="post-date">Nov 14, 2013 at 23:40</time>
+        <time datetime="2013-11-30 16:00:00+01:00" class="post-date">Nov 30, 2013 at 16:00</time>
     </p>
 </div>
 
@@ -114,60 +114,95 @@
             
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header">
-        <h1 itemprop="name headline" class="post-title">Web Apps Remote Debugging on Ubuntu Touch</h1>
+        <h1 itemprop="name headline" class="post-title">Adding UserMetrics to your app on Ubuntu Touch</h1>
     </header>
     <div class="post-social">
         <div class="post-social-button">
-            <fb:like href="http://daker.me/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html" send="false" show_faces="false"  layout="button_count" width="92" ></fb:like>
+            <fb:like href="http://daker.me/2013/11/adding-usermetrics-to-your-app-on-ubuntu-touch.html" send="false" show_faces="false"  layout="button_count" width="92" ></fb:like>
         </div>
         <div class="post-social-button">
-            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://daker.me/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html" data-count="horizontal" data-text="Web Apps Remote Debugging on Ubuntu Touch" data-via="AdnaneBelmadiaf" data-related="AdnaneBelmadiaf"></a>
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://daker.me/2013/11/adding-usermetrics-to-your-app-on-ubuntu-touch.html" data-count="horizontal" data-text="Adding UserMetrics to your app on Ubuntu Touch" data-via="AdnaneBelmadiaf" data-related="AdnaneBelmadiaf"></a>
         </div>
         <div class="post-social-button">
-        <a class="FlattrButton" style="display:none;" href="http://daker.me/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html" title="Web Apps Remote Debugging on Ubuntu Touch" data-flattr-uid="daker" data-flattr-button="compact" data-flattr-tags="ubuntuplanet, utouchdev" data-flattr-category="text" data-flattr-lang="en_US">If you are writing Web Apps for Ubuntu Touch, you might want to test them directly on the phone using the Ubuntu browser, this can be done by remotely debugging web pages using the built-in DevTools, which allow you to inspect, debug, and analyze the on-device experience with the full suite of tools you're used to.</a>
+        <a class="FlattrButton" style="display:none;" href="http://daker.me/2013/11/adding-usermetrics-to-your-app-on-ubuntu-touch.html" title="Adding UserMetrics to your app on Ubuntu Touch" data-flattr-uid="daker" data-flattr-button="compact" data-flattr-tags="ubuntuplanet, utouchdev" data-flattr-category="text" data-flattr-lang="en_US">The Welcome Screen infographic is one of the key component for the customization of the user experience on Ubuntu Touch, beautiful visualisations of data from multiple sources, the UserMetrics is the responsible component for updating the infographic using QML.</a>
         </div>
         <div class="post-social-button">
-            <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="horizontal" data-url="http://daker.me/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html" data-via="AdnaneBelmadiaf" data-picture="http://daker.me/assets/images/avatar.png"></a>
+            <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="horizontal" data-url="http://daker.me/2013/11/adding-usermetrics-to-your-app-on-ubuntu-touch.html" data-via="AdnaneBelmadiaf" data-picture="http://daker.me/assets/images/avatar.png"></a>
         </div>
 
         <div class="post-social-button">
-            <div class="g-plusone" data-size="medium" data-href="http://daker.me/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html"></div>
+            <div class="g-plusone" data-size="medium" data-href="http://daker.me/2013/11/adding-usermetrics-to-your-app-on-ubuntu-touch.html"></div>
         </div>
     </div>
     <div class="post-content">
-        <div class="post-field body" itemprop="articleBody"><p>If you are writing Web Apps for <a href="http://www.ubuntu.com/phone/install">Ubuntu Touch</a>, you might want to test them directly on the phone using the Ubuntu browser, this can be done by remotely debugging web pages using the built-in DevTools, which allow you to inspect, debug, and analyze the on-device experience with the full suite of tools you&#39;re used to.</p>
+        <div class="post-field body" itemprop="articleBody"><p>The Welcome Screen infographic is one of the key component for the customization of the user experience on <a href="http://www.ubuntu.com/phone/install">Ubuntu Touch</a>, beautiful visualisations of data from multiple sources, the <code>UserMetrics</code> is the responsible component for updating the infographic using QML.</p>
 
-<p><img src="/assets/posts/utouch/3.png" alt="Ubuntu Browser"></p>
+<p><img src="/assets/posts/utouch/5.png" alt="Welcome Screen"></p>
 
-<p>The phablet-team PPA has the tools and dependencies for 12.04, 12.10, 13.04 and 13.10 to get everything setup:</p>
+<p>To use the <code>UserMetrics</code> QML module you need to install <code>qtdeclarative5-usermetrics0.1</code> package on the desktop :</p>
+<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install qtdeclarative5-usermetrics0.1
+</pre></div>
+</td></tr></table></div></div><h1>Apparmor Policy groups</h1>
+<p>Add the <code>usermetrics</code> to your apparmor file :</p>
 <div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>sudo add-apt-repository ppa:phablet-team/tools
-<span class="nv">$ </span>sudo apt-get update
-<span class="nv">$ </span>sudo apt-get install phablet-tools android-tools-adb android-tools-fastboot
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nt">&quot;policy_groups&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="err">...</span>
+        <span class="s2">&quot;usermetrics&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;policy_version&quot;</span><span class="p">:</span> <span class="mf">1.0</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div></div><h1>QML</h1>
+<p>First you need to import the <code>UserMetrics</code> module :</p>
+<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre>import UserMetrics 0.1
 </pre></div>
 </td></tr></table></div></div>
-<p>Plug the device via the USB cable, then run the following commands to connect to it through ADB</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>adb shell
-</pre></div>
-</td></tr></table></div></div>
-<p>Switch to the phablet user :</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>sudo -u phablet -i
-</pre></div>
-</td></tr></table></div></div>
-<p>Take a note of your phone IP adresse :</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>ifconfig wlan0 | grep <span class="s1">&#39;inet addr&#39;</span> | cut -d: -f2 | awk <span class="s1">&#39;{print $1}&#39;</span>
-</pre></div>
-</td></tr></table></div></div>
-<p>Once done launch the webbrowser app using :</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>upstart-app-launch webbrowser-app --inspector
-</pre></div>
-</td></tr></table></div></div>
-<p>A browser instance will launch on the phone, point to URL of your webapp then access the Devtools with your Chrome/ium browser by opening <code>http://$YOUR-PHONE-IP:9221</code></p>
+<p>Then create the metric(s) :</p>
+<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre>Metric <span class="o">{</span>
+    /* Set a unique ID <span class="k">for </span>each metric object you use so you can access it in your QML code. */
+    id: gameMetric
 
-<p><img src="/assets/posts/utouch/4.png" alt="DevTools"></p>
+    /* Set a unique name <span class="k">for </span>each metric object, this is used <span class="k">for </span>the storage of the metric data. */
+    name: <span class="s2">&quot;game-metrics&quot;</span>
 
-<p>The built-in Devtools is a bit old &amp; slow so i am using the hosted version : <code>https://chrome-devtools-frontend.appspot.com/static/30.0.1599.118/devtools.html?ws=$YOUR-PHONE-IP:9221/devtools/page/$PAGE-ID</code>, you can get the page id from <code>http://$YOUR-PHONE-IP:9221/pagelist.json</code></p>
+    /* This is the format <span class="k">for </span>the plural <span class="k">case</span>. */
+    format: <span class="s2">&quot;%1 missions completed today&quot;</span>
+
+    /* This is the format <span class="k">for </span>no data <span class="k">for </span>the day. */
+    emptyFormat: <span class="s2">&quot;0 missions completed today&quot;</span>
+
+    /* This is the gettext domain used <span class="k">for </span>the localisation, you can use the applicationName. */
+    domain: <span class="s2">&quot;com.ubuntu.developer.daker.mygame&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>The Metric component provides two methods :</p>
+
+<p>— <code>increment(double amount = 1.0)</code> : You can use this method if you want to we want to increment metric by a specific amount ex: gameMetric.increment(3) or gameMetric.increment() to increment the metric by 1.<br>
+— <code>update(double value)</code> : You can use this method if you want to reset the metric and set a specific amount ex: gameMetric.update(5)</p>
+
+<p>The use of the Metric is not limited by the number.</p>
 </div>
     </div>
 
@@ -185,17 +220,11 @@
     <div class="prev-next">
         
         <div class="prev-post">
-            <a href="/2013/11/ubuntu-touch-user-agent.html" title="Ubuntu Touch User-Agent" class="title">
-                <span>Ubuntu Touch User-Agent</span>
+            <a href="/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html" title="Web Apps Remote Debugging on Ubuntu Touch" class="title">
+                <span>Web Apps Remote Debugging on Ubuntu Touch</span>
             </a>
         </div>
         
-        
-        <div class="next-post">
-            <a href="/2013/11/adding-usermetrics-to-your-app-on-ubuntu-touch.html" title="Adding UserMetrics to your app on Ubuntu Touch" class="title">
-                <span>Adding UserMetrics to your app on Ubuntu Touch</span>
-            </a>
-        </div>
         
     </div>
     
@@ -204,7 +233,7 @@
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname = 'daker-blog';
-        var disqus_title = 'Web Apps Remote Debugging on Ubuntu Touch';
+        var disqus_title = 'Adding UserMetrics to your app on Ubuntu Touch';
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-ubuntuplanet.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-11-14T23:43:01Z</updated>
+        <updated>2013-11-30T16:19:17Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,61 @@
             <uri>http://daker.me/</uri>
         </author>
 
+        
+            
+            <entry>
+                <title>Adding UserMetrics to your app on Ubuntu Touch</title>
+                <link rel="alternate" href="http://daker.me/2013/11/adding-usermetrics-to-your-app-on-ubuntu-touch.html" type="text/html" />
+                <id>http://daker.me/2013/11/adding-usermetrics-to-your-app-on-ubuntu-touch.html</id>
+                <updated>2013-11-30T16:00:00Z</updated>
+
+                <summary type="html">The Welcome Screen infographic is one of the key component for the customization of the user experience on &lt;a href=&#34;http://www.ubuntu.com/phone/install&#34;&gt;Ubuntu Touch&lt;/a&gt;, beautiful visualisations of data from multiple sources, the &lt;code&gt;UserMetrics&lt;/code&gt; is the responsible component for updating the infographic using QML.</summary>
+                <content type="html">&lt;p&gt;The Welcome Screen infographic is one of the key component for the customization of the user experience on &lt;a href=&#34;http://www.ubuntu.com/phone/install&#34;&gt;Ubuntu Touch&lt;/a&gt;, beautiful visualisations of data from multiple sources, the &lt;code&gt;UserMetrics&lt;/code&gt; is the responsible component for updating the infographic using QML.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/utouch/5.png&#34; alt=&#34;Welcome Screen&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;To use the &lt;code&gt;UserMetrics&lt;/code&gt; QML module you need to install &lt;code&gt;qtdeclarative5-usermetrics0.1&lt;/code&gt; package on the desktop :&lt;/p&gt;
+&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install qtdeclarative5-usermetrics0.1
+&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Apparmor Policy groups&lt;/h1&gt;
+&lt;p&gt;Add the &lt;code&gt;usermetrics&lt;/code&gt; to your apparmor file :&lt;/p&gt;
+&lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
+    &amp;#34;policy_groups&amp;#34;: [
+        ...
+        &amp;#34;usermetrics&amp;#34;
+    ],
+    &amp;#34;policy_version&amp;#34;: 1.0
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;QML&lt;/h1&gt;
+&lt;p&gt;First you need to import the &lt;code&gt;UserMetrics&lt;/code&gt; module :&lt;/p&gt;
+&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;import UserMetrics 0.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then create the metric(s) :&lt;/p&gt;
+&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Metric {
+    /* Set a unique ID for each metric object you use so you can access it in your QML code. */
+    id: gameMetric
+
+    /* Set a unique name for each metric object, this is used for the storage of the metric data. */
+    name: &amp;#34;game-metrics&amp;#34;
+
+    /* This is the format for the plural case. */
+    format: &amp;#34;%1 missions completed today&amp;#34;
+
+    /* This is the format for no data for the day. */
+    emptyFormat: &amp;#34;0 missions completed today&amp;#34;
+
+    /* This is the gettext domain used for the localisation, you can use the applicationName. */
+    domain: &amp;#34;com.ubuntu.developer.daker.mygame&amp;#34;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The Metric component provides two methods :&lt;/p&gt;
+
+&lt;p&gt;— &lt;code&gt;increment(double amount = 1.0)&lt;/code&gt; : You can use this method if you want to we want to increment metric by a specific amount ex: gameMetric.increment(3) or gameMetric.increment() to increment the metric by 1.&lt;br&gt;
+— &lt;code&gt;update(double value)&lt;/code&gt; : You can use this method if you want to reset the metric and set a specific amount ex: gameMetric.update(5)&lt;/p&gt;
+
+&lt;p&gt;The use of the Metric is not limited by the number.&lt;/p&gt;
+</content>
+            </entry>
+            
         
             
             <entry>
