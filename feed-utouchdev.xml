@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-utouchdev.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-11-30T17:21:38Z</updated>
+        <updated>2013-12-22T00:45:19Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,8 @@
             <uri>http://daker.me/</uri>
         </author>
 
+        
+            
         
             
             <entry>
@@ -29,7 +31,7 @@
 
 &lt;p&gt;To use the &lt;code&gt;UserMetrics&lt;/code&gt; QML module you need to install &lt;code&gt;qtdeclarative5-usermetrics0.1&lt;/code&gt; package on the desktop :&lt;/p&gt;
 &lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install qtdeclarative5-usermetrics0.1
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Apparmor Policy groups&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Apparmor Policy groups&lt;/h2&gt;
 &lt;p&gt;Add the &lt;code&gt;usermetrics&lt;/code&gt; to your apparmor file :&lt;/p&gt;
 &lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
     &amp;#34;policy_groups&amp;#34;: [
@@ -38,7 +40,7 @@
     ],
     &amp;#34;policy_version&amp;#34;: 1.0
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;QML&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;QML&lt;/h2&gt;
 &lt;p&gt;First you need to import the &lt;code&gt;UserMetrics&lt;/code&gt; module :&lt;/p&gt;
 &lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;import UserMetrics 0.1
 &lt;/code&gt;&lt;/pre&gt;
@@ -121,9 +123,9 @@ $ sudo apt-get install phablet-tools android-tools-adb android-tools-fastboot
 &lt;p&gt;Adding an Android or iPhone token will lead to unwanted behaviours, like showing ads for the Android app or even trying to open the Google Play app or the Youtube app. The browser now reports it in the following formats, depending on whether the device is a phone or a tablet, with the addition of an &lt;a href=&#34;https://bazaar.launchpad.net/%7Ephablet-team/webbrowser-app/trunk/view/head:/src/Ubuntu/Components/Extras/Browser/ua-overrides.js&#34;&gt;override mechanism&lt;/a&gt; that will override the UA on the fly and the site will serve us a proper mobile content.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/utouch/1.png&#34; alt=&#34;Facebook Android Ads&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;Phone&lt;/h1&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; Mobile) WebKit/537.21
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Tablet&lt;/h1&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; Tablet) WebKit/537.21
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Pattern&lt;/h1&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; $FormFactor) WebKit/$WebKitRev
+&lt;h2&gt;Phone&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; Mobile) WebKit/537.21
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Tablet&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; Tablet) WebKit/537.21
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Pattern&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; $FormFactor) WebKit/$WebKitRev
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You can also get it through JavaScript using the &lt;code&gt;navigator.userAgent&lt;/code&gt;&lt;/p&gt;
 

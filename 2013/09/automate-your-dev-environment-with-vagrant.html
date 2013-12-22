@@ -138,11 +138,11 @@
         <div class="post-field body" itemprop="articleBody"><p>I started feeling the need of automating my developement environments when i started contributing to several django projects run by the community, each project uses a different django version and several dependencies, thoses dependencies can be found or not on the Ubuntu version i use for my daily work. Vagrant is a great tool for those situations, it allow you to create and manage custom virtual environments to your needs using automated configuration technologies such as Chef, Puppet and Shell scripts.</p>
 
 <p><img src="/assets/posts/vagrant/vagrant.jpg" alt="Vagrant"></p>
-<h1>Installing Vagrant</h1>
+<h2>Installing Vagrant</h2>
 <p>Vagrant works with VirtualBox, and support <a href="http://www.vagrantup.com/vmware">Vmware Fusion</a> and AWS via plugins</p>
-<h2>Install Virtualbox</h2><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install virtualbox
+<h3>Install Virtualbox</h3><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install virtualbox
 </pre></div>
-</td></tr></table></div></div><h2>Install Vagrant</h2><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install vagrant
+</td></tr></table></div></div><h3>Install Vagrant</h3><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install vagrant
 </pre></div>
 </td></tr></table></div></div>
 <p>Make sure Vagrant is installed correctly</p>
@@ -150,7 +150,7 @@
 2</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>vagrant --version
 Vagrant version 1.2.0
 </pre></div>
-</td></tr></table></div></div><h1>Get your first VM up and running</h1>
+</td></tr></table></div></div><h2>Get your first VM up and running</h2>
 <ol>
 <li><p>start a vagrant config file in an empty project folder. this will create <code>Vagrantfile</code></p>
 <div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -207,7 +207,7 @@ Vagrant version 1.2.0
 <p>Wait for the command to finish, then you will have a VM ready for you to connect. the VM can be accessed via SSH:</p>
 <div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>vagrant ssh
 </pre></div>
-</td></tr></table></div></div><h1>Provisioning</h1>
+</td></tr></table></div></div><h2>Provisioning</h2>
 <p>Vagrant allow you to use different Provisioners to easily setup your VM with everything it needs to run your project :</p>
 
 <ul>
@@ -585,13 +585,13 @@ notice: Finished catalog run in 811.47 seconds
             This work is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a></p>
     </footer>
     <script type="text/javascript">
-            (function(){
-              var bsa = document.createElement('script');
-                 bsa.type = 'text/javascript';
-                 bsa.async = true;
-                 bsa.src = '//s3.buysellads.com/ac/bsa.js';
-              (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
-            })();
+        (function () {
+            var bsa = document.createElement('script');
+            bsa.type = 'text/javascript';
+            bsa.async = true;
+            bsa.src = '//s3.buysellads.com/ac/bsa.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(bsa);
+        })();
     </script>
     <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/jquery.ba-hashchange.min.js"></script>

@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-11-30T17:21:38Z</updated>
+        <updated>2013-12-22T00:45:19Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,129 @@
             <uri>http://daker.me/</uri>
         </author>
         
+        
+            <entry>
+                <title>Devtools Console, from Novice to Ninja</title>
+                <link rel="alternate" href="http://daker.me/2013/12/devtools-console-from-novice-to-ninja.html" type="text/html" />
+                <id>http://daker.me/2013/12/devtools-console-from-novice-to-ninja.html</id>
+                <updated>2013-12-21T23:45:00Z</updated>
+                
+                <summary type="html">The &lt;a href=&#34;http://daker.me/2013/06/5-html5-javascript-apis-to-keep-an-eye-on.html&#34;&gt;JavaScript&lt;/a&gt; console is a powerful tool that allows developers debug their code using functions provided by the Console API and a shell prompt where they can enter commands and interact with the document object.</summary>
+                <content type="html">&lt;p&gt;The &lt;a href=&#34;http://daker.me/2013/06/5-html5-javascript-apis-to-keep-an-eye-on.html&#34;&gt;JavaScript&lt;/a&gt; console is a powerful tool that allows developers debug their code using functions provided by the Console API and a shell prompt where they can enter commands and interact with the document object.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/console.png&#34; alt=&#34;JavaScript Console&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Filters&lt;/h2&gt;
+&lt;p&gt;There are different buttons allowing you to filter the display of messages logged to the console:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;All — Shows all console output.&lt;/li&gt;
+&lt;li&gt;Errors — Only show output from console.error()&lt;/li&gt;
+&lt;li&gt;Warnings — Only show output from console.warn()&lt;/li&gt;
+&lt;li&gt;Logs — Only show output from console.log(), console.info() and console.debug().&lt;/li&gt;
+&lt;li&gt;Debug — Only show output from console.timeEnd() and other console output.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/filters.png&#34; alt=&#34;Filters&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Errors and warnings&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;console.info : Writes a message to the console with the visual &amp;quot;info&amp;quot; icon and color coding and a hyperlink to the line where it was called.&lt;/li&gt;
+&lt;li&gt;console.warn : Writes a message to the console with the visual &amp;quot;warning&amp;quot; icon and color coding and a hyperlink to the line where it was called.&lt;/li&gt;
+&lt;li&gt;console.debug : Writes a message to the console, including a hyperlink to the line where it was called.&lt;/li&gt;
+&lt;li&gt;console.error : Writes a message to the console with the visual &amp;quot;error&amp;quot; icon and color coding and a hyperlink to the line where it was called.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/logging.png&#34; alt=&#34;Logging&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;console.dir[xml]&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;console.dir(object)&lt;/code&gt; prints an interactive listing of all properties of the object, while &lt;code&gt;console.dirxml(node)&lt;/code&gt; prints the XML source tree of an element.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/dir.png&#34; alt=&#34;JavaScript Console&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Assertions&lt;/h2&gt;
+&lt;p&gt;Tests that an expression is true using &lt;code&gt;console.assert&lt;/code&gt;. If not, it will write a message to the console and throw an exception.&lt;/p&gt;
+&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;var x=0;
+console.assert((x == 1), &amp;#34;assert message: x != 1&amp;#34;);
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Grouping output&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;console.group&lt;/code&gt; allows you to group the message or log in Console tab. If you have some many logs in your code, you can probably divide your log into small group or subgroup&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var user = &amp;#34;jsmith&amp;#34;, authenticated = false;
+console.group(&amp;#34;Authentication phase&amp;#34;);
+console.log(&amp;#34;Authenticating user &amp;#39;%s&amp;#39;&amp;#34;, user);
+// authentication code here...
+if (!authenticated) {
+    console.log(&amp;#34;User &amp;#39;%s&amp;#39; not authenticated.&amp;#34;, user)
+}
+console.groupEnd();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You also do nested grouping :&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var user = &amp;#34;jsmith&amp;#34;, authenticated = true, authorized = true;
+// Top-level group
+console.group(&amp;#34;Authenticating user &amp;#39;%s&amp;#39;&amp;#34;, user);
+if (authenticated) {
+    console.log(&amp;#34;User &amp;#39;%s&amp;#39; was authenticated&amp;#34;, user);
+    // Start nested group
+    console.group(&amp;#34;Authorizing user &amp;#39;%s&amp;#39;&amp;#34;, user);
+    if (authorized) {
+        console.log(&amp;#34;User &amp;#39;%s&amp;#39; was authorized.&amp;#34;, user);
+    }
+    // End nested group
+    console.groupEnd();
+}
+// End top-level group
+console.groupEnd();
+console.log(&amp;#34;A group-less log trace.&amp;#34;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/nested.png&#34; alt=&#34;Nested Grouping&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Logging Array Data&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;console.table()&lt;/code&gt; is a very handy fonction to display Array object&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var langs = [
+    { name: &amp;#34;JavaScript&amp;#34;, extension: &amp;#34;.js&amp;#34; },
+    { name: &amp;#34;HTML&amp;#34;, extension: &amp;#34;.html&amp;#34; },
+    { name: &amp;#34;CoffeeScript&amp;#34;, extension: &amp;#34;.coffee&amp;#34; },
+    { name: &amp;#34;SASS&amp;#34;, extension: &amp;#34;.sass&amp;#34; }
+];
+
+console.table(langs);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/table.png&#34; alt=&#34;JavaScript Console&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Measuring Execution time&lt;/h2&gt;
+&lt;p&gt;To mesure how long something it takes to execute a set of instructions :&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var i, t = &amp;#34;&amp;#34;;
+
+// Start
+console.time(&amp;#34;OPNAME&amp;#34;);
+
+for (i = 1; i &amp;lt;= 100; i++)
+    t += i;
+
+// Stop
+console.timeEnd(&amp;#34;OPNAME&amp;#34;);
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Tracing&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;console.trace()&lt;/code&gt; prints the stacktrace of JavaScript execution at the point where it was called.&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;function F(v) {
+    return K(v + 1);
+}
+
+function K(v) {
+    return Y(v + 2);
+}
+
+function Y(v) {
+    console.trace();
+};
+
+F(5);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/trace.png&#34; alt=&#34;Console Trace&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Shortcuts&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + Shift + J&lt;/code&gt; : Open the Chrome/ium Console&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+l&lt;/code&gt; : Clear the console&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://getfirebug.com/wiki/index.php/Console_Panel&#34;&gt;Firebug Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.google.com/chrome-developer-tools/docs/javascript-debugging#console-assert&#34;&gt;Chrome DevTools documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+            </entry>
         
             <entry>
                 <title>Adding UserMetrics to your app on Ubuntu Touch</title>
@@ -28,7 +151,7 @@
 
 &lt;p&gt;To use the &lt;code&gt;UserMetrics&lt;/code&gt; QML module you need to install &lt;code&gt;qtdeclarative5-usermetrics0.1&lt;/code&gt; package on the desktop :&lt;/p&gt;
 &lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install qtdeclarative5-usermetrics0.1
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Apparmor Policy groups&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Apparmor Policy groups&lt;/h2&gt;
 &lt;p&gt;Add the &lt;code&gt;usermetrics&lt;/code&gt; to your apparmor file :&lt;/p&gt;
 &lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
     &amp;#34;policy_groups&amp;#34;: [
@@ -37,7 +160,7 @@
     ],
     &amp;#34;policy_version&amp;#34;: 1.0
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;QML&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;QML&lt;/h2&gt;
 &lt;p&gt;First you need to import the &lt;code&gt;UserMetrics&lt;/code&gt; module :&lt;/p&gt;
 &lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;import UserMetrics 0.1
 &lt;/code&gt;&lt;/pre&gt;
@@ -116,9 +239,9 @@ $ sudo apt-get install phablet-tools android-tools-adb android-tools-fastboot
 &lt;p&gt;Adding an Android or iPhone token will lead to unwanted behaviours, like showing ads for the Android app or even trying to open the Google Play app or the Youtube app. The browser now reports it in the following formats, depending on whether the device is a phone or a tablet, with the addition of an &lt;a href=&#34;https://bazaar.launchpad.net/%7Ephablet-team/webbrowser-app/trunk/view/head:/src/Ubuntu/Components/Extras/Browser/ua-overrides.js&#34;&gt;override mechanism&lt;/a&gt; that will override the UA on the fly and the site will serve us a proper mobile content.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/utouch/1.png&#34; alt=&#34;Facebook Android Ads&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;Phone&lt;/h1&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; Mobile) WebKit/537.21
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Tablet&lt;/h1&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; Tablet) WebKit/537.21
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Pattern&lt;/h1&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; $FormFactor) WebKit/$WebKitRev
+&lt;h2&gt;Phone&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; Mobile) WebKit/537.21
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Tablet&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; Tablet) WebKit/537.21
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Pattern&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; $FormFactor) WebKit/$WebKitRev
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You can also get it through JavaScript using the &lt;code&gt;navigator.userAgent&lt;/code&gt;&lt;/p&gt;
 
@@ -246,15 +369,15 @@ X-Ubuntu-Touch=true
                 <content type="html">&lt;p&gt;I started feeling the need of automating my developement environments when i started contributing to several django projects run by the community, each project uses a different django version and several dependencies, thoses dependencies can be found or not on the Ubuntu version i use for my daily work. Vagrant is a great tool for those situations, it allow you to create and manage custom virtual environments to your needs using automated configuration technologies such as Chef, Puppet and Shell scripts.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/vagrant/vagrant.jpg&#34; alt=&#34;Vagrant&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;Installing Vagrant&lt;/h1&gt;
+&lt;h2&gt;Installing Vagrant&lt;/h2&gt;
 &lt;p&gt;Vagrant works with VirtualBox, and support &lt;a href=&#34;http://www.vagrantup.com/vmware&#34;&gt;Vmware Fusion&lt;/a&gt; and AWS via plugins&lt;/p&gt;
-&lt;h2&gt;Install Virtualbox&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install virtualbox
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Install Vagrant&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install vagrant
+&lt;h3&gt;Install Virtualbox&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install virtualbox
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Install Vagrant&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install vagrant
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Make sure Vagrant is installed correctly&lt;/p&gt;
 &lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ vagrant --version
 Vagrant version 1.2.0
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Get your first VM up and running&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Get your first VM up and running&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;start a vagrant config file in an empty project folder. this will create &lt;code&gt;Vagrantfile&lt;/code&gt;&lt;/p&gt;
 &lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ mkdir project
@@ -289,7 +412,7 @@ end
 
 &lt;p&gt;Wait for the command to finish, then you will have a VM ready for you to connect. the VM can be accessed via SSH:&lt;/p&gt;
 &lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ vagrant ssh
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Provisioning&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Provisioning&lt;/h2&gt;
 &lt;p&gt;Vagrant allow you to use different Provisioners to easily setup your VM with everything it needs to run your project :&lt;/p&gt;
 
 &lt;ul&gt;
@@ -476,7 +599,7 @@ notice: Finished catalog run in 811.47 seconds
                 <content type="html">&lt;p&gt;Web Components enables frontend developers to create custom and reusable HTML tags, it&amp;#39;s the latest bleeding-edge web technologies being developed, the project is led by the Chrome dev team and aims to solve a simple problem: Building Web applications is more complicated than it used to be. Worse, it&amp;#39;s more complicated than it should be.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/webcomponents.png&#34; alt=&#34;Web Components&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;HTML Templates&lt;/h1&gt;
+&lt;h2&gt;HTML Templates&lt;/h2&gt;
 &lt;p&gt;A template provides a method for declaring document fragments in HTML, it contains a chunks of markup that can be used later. The &lt;code&gt;template&lt;/code&gt; element is not rendered but parsed, which means that scripts aren&amp;#39;t processed, css and images aren&amp;#39;t downloaded, it&amp;#39;s completly hidden from the document object, so for ex you can&amp;#39;t access the &lt;code&gt;.comment-text&lt;/code&gt; element using &lt;code&gt;document.querySelector&lt;/code&gt;.&lt;/p&gt;
 &lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;template id=&amp;#34;commentTemplate&amp;#34;&amp;gt;
     &amp;lt;img src=&amp;#34;&amp;#34;&amp;gt; &amp;lt;!-- dynamically populate at runtime --&amp;gt;
@@ -484,7 +607,7 @@ notice: Finished catalog run in 811.47 seconds
 &amp;lt;/template&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/m85DN/embedded/result,css,html,js&#34; allowfullscreen=&#34;allowfullscreen&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-&lt;h1&gt;Custom Elements&lt;/h1&gt;
+&lt;h2&gt;Custom Elements&lt;/h2&gt;
 &lt;p&gt;The W3C defines it as follows :&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -497,15 +620,15 @@ notice: Finished catalog run in 811.47 seconds
 &amp;lt;/element&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;and use it like this &lt;code&gt;&amp;lt;x-foo-bar&amp;gt;Test&amp;lt;/x-foo-bar&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;h1&gt;Shadow DOM&lt;/h1&gt;
+&lt;h2&gt;Shadow DOM&lt;/h2&gt;
 &lt;p&gt;Browser vendors have been using Shadow DOM for quite awhile now to build their own components. These components are built using HTML and CSS, but you cannot see how thesee elements are made up on the dev tools simply because they use the Shadow DOM , ex : &lt;code&gt;&amp;lt;video&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;textarea&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;input type=&amp;quot;date&amp;quot;&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;input type=&amp;quot;time&amp;quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Shadow DOM gives us markup encapsulation, style boundaries, and exposes (to web developers) the same mechanics browsers vendors have been using to implement their internal UI. — Eric Bidelma&lt;/p&gt;
+&lt;p&gt;Shadow DOM gives us markup encapsulation, style boundaries, and exposes (to web developers) the same mechanics browsers vendors have been using to implement their internal UI. — Eric Bidelman&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/input-date-time.png&#34; alt=&#34;Date &amp;amp; time input&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;HTML Imports&lt;/h1&gt;
+&lt;h2&gt;HTML Imports&lt;/h2&gt;
 &lt;p&gt;HTML Imports is similar way to how we load CSS stylesheets, it&amp;#39;s a new type of link tag which allow developers to import and use HTML code from a url, after importing the page you need to use some Javascript code to manipulate it and inject your code :&lt;/p&gt;
 &lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;link rel=&amp;#34;import&amp;#34; href=&amp;#34;/import/page-to-import.html&amp;#34;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -545,27 +668,27 @@ notice: Finished catalog run in 811.47 seconds
                 <content type="html">&lt;p&gt;DevTools is a powerful tool than can made developing WebApp easier, it has a lot of features some of them are still experimental and you need to enable them in the &lt;code&gt;about://flags&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/devtools.png&#34; alt=&#34;Devtools&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;Breakpoints&lt;/h1&gt;
+&lt;h2&gt;Breakpoints&lt;/h2&gt;
 &lt;p&gt;Breakpoint are related to the JavaScript code, it let&amp;#39;s you halt the JavaScript code execution and inspect the current environment. You can set them by simply going the &amp;quot;Source&amp;quot; tab, then select the JS file you want to debug , find the line you want to set a breakpoint on, then click the line number to apply a breakpoint :&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/breakpoints.png&#34; alt=&#34;Javascript Breakpoints&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;The DevTools also supports conditional breakpoints.&lt;/p&gt;
-&lt;h1&gt;DOM Breakpoints&lt;/h1&gt;
+&lt;h2&gt;DOM Breakpoints&lt;/h2&gt;
 &lt;p&gt;The DevTools can also be used to set breakpoints on the DOM elements direclty, just right click on the element you want to break on, then select the option you want :&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/dom-breakpoints.png&#34; alt=&#34;DOM Breakpoints&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;monitorEvents&lt;/h1&gt;
+&lt;h2&gt;monitorEvents&lt;/h2&gt;
 &lt;p&gt;The Devtools has a built function called &lt;code&gt;monitorEvents&lt;/code&gt;, it lets you monitor objects for mouse, key, touch or control events :&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/monitorEvents.png&#34; alt=&#34;monitorEvents&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;Pretty Print&lt;/h1&gt;
+&lt;h2&gt;Pretty Print&lt;/h2&gt;
 &lt;p&gt;Pretty Print is a handy feature for debugging minified JavaScript. Trying to to set a breakpoint when everything is on the same line is something impossible, clicking on the &lt;code&gt;{}&lt;/code&gt; icon will make your Javascript code readable and easier to debug :&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/pprint-before.png&#34; alt=&#34;Pretty Print - Before&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/pprint-after.png&#34; alt=&#34;Pretty Print - After&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;Remote Debugging&lt;/h1&gt;
+&lt;h2&gt;Remote Debugging&lt;/h2&gt;
 &lt;p&gt;The Remote Debugger lets you connect Chrome/ium browser to the Chrome mobile browser so that you can use your desktop browser to debug all your tabs from your remote device :&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/remote-debugging.png&#34; alt=&#34;Remote Debugging&#34;&gt;&lt;/p&gt;
@@ -664,11 +787,11 @@ notice: Finished catalog run in 811.47 seconds
                 <content type="html">&lt;p&gt;Stylus is an expressive, dynamic, robust CSS pre-processor built on top of Node.js. LESS and Sass are both great, they try to stay as close as the original CSS syntax as possible to minimize the impact of having to learn a new language, but for me someone who cares about simplicity and readability, the syntax becomes an important part of the language or the framework.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/stylus.png&#34; alt=&#34;Stylus&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;Installation&lt;/h1&gt;&lt;h2&gt;Ubuntu&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo add-apt-repository ppa:chris-lea/node.js
+&lt;h2&gt;Installation&lt;/h2&gt;&lt;h3&gt;Ubuntu&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo add-apt-repository ppa:chris-lea/node.js
 $ sudo apt-get update
 $ sudo apt-get install nodejs
 $ sudo npm install -g stylus
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Mac OSX&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ brew install node
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Mac OSX&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ brew install node
 $ curl https://npmjs.org/install.sh | sh
 $ npm install -g stylus
 &lt;/code&gt;&lt;/pre&gt;
@@ -686,7 +809,7 @@ $ npm install -g stylus
     background: #ccc;
     font: 12px Helvetica, Arial, sans-serif;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Variables&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Variables&lt;/h2&gt;
 &lt;p&gt;Defining variables is simple, you don&amp;#39;t need to use $ or @ like in Sass or LESS, the good part is that Stylus also support the $ so if you are coming from Sass your variables will remain functionnal.&lt;/p&gt;
 &lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;font-size = 14px
 color = #ff0000
@@ -704,7 +827,7 @@ body
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Did you noticed something ? the color has been compressed automatically.&lt;/p&gt;
-&lt;h1&gt;Mixins&lt;/h1&gt;
+&lt;h2&gt;Mixins&lt;/h2&gt;
 &lt;p&gt;Mixins are similar to functions, but used in a different way, a good example of a mixin is the border-radius property&lt;/p&gt;
 &lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;border-radius(n)
     -webkit-border-radius n
@@ -728,7 +851,7 @@ body
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Handy for vendor-prefixed properties.&lt;/p&gt;
-&lt;h1&gt;Iteration&lt;/h1&gt;
+&lt;h2&gt;Iteration&lt;/h2&gt;
 &lt;p&gt;Stylus gives you the ablity to iterate expressions via for/in&lt;/p&gt;
 &lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;ul
     for row in 1 2 3 4 5
@@ -755,7 +878,7 @@ ul li:nth-child(4) {
 ul li:nth-child(5) {
     height: 50px;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Inheritance&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Inheritance&lt;/h2&gt;
 &lt;p&gt;Stylus provides a good inheritance mecanism&lt;/p&gt;
 &lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;.notice
     padding 10px
@@ -773,7 +896,7 @@ ul li:nth-child(5) {
 .warning {
     color: #e2e21e;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Error Reporting&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Error Reporting&lt;/h2&gt;
 &lt;p&gt;Stylus has fantastic error reporting built-in for syntax, parse, and evaluation errors—complete with stack traces, line numbers, and filenames.&lt;/p&gt;
 &lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;.message
     padding 10px
@@ -795,7 +918,7 @@ cannot perform solid[(#ccc)]
     at Ident.Node.operate (/usr/lib/node_modules/stylus/lib/nodes/node.js:189:13)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Stylus provides a detailed stack trace much like you would find in any decent language.&lt;/p&gt;
-&lt;h1&gt;Literal CSS&lt;/h1&gt;
+&lt;h2&gt;Literal CSS&lt;/h2&gt;
 &lt;p&gt;This the best part of Stylus, you can still use your CSS code using &lt;code&gt;@css&lt;/code&gt; and it will work, how that will help you in your workflow? you&amp;#39;ll be able to integrate Stylus progressivly in your project&lt;/p&gt;
 &lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;@css {
     body {
@@ -824,7 +947,7 @@ cannot perform solid[(#ccc)]
     background: #ccc;
     font: 12px Helvetica, Arial, sans-serif;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Stylus is certainly worth a try, and if you are a Compass guy, Stylus has an extension called &lt;a href=&#34;https://github.com/visionmedia/nib&#34;&gt;nib&lt;/a&gt; that provides robust cross-browser CSS3 mixins. Sure there is more you can learn about Stylus and there is &lt;a href=&#34;http://learnboost.github.io/stylus/&#34;&gt;docs&lt;/a&gt; for that.&lt;/p&gt;
 </content>
             </entry>
@@ -969,7 +1092,7 @@ async.eachSeries(sizes, capture, function (e) {
                 
                 <summary type="html">&lt;code&gt;position: sticky&lt;/code&gt; is a new CSS property that has &lt;a href=&#34;http://trac.webkit.org/changeset/126774&#34;&gt;landed&lt;/a&gt; in Webkit last year which will allow elements to stick to the viewport edge as you scroll past, unfortunately this hasn&amp;#39;t been standardized yet but discussions are still going on.</summary>
                 <content type="html">&lt;p&gt;&lt;code&gt;position: sticky&lt;/code&gt; is a new CSS property that has &lt;a href=&#34;http://trac.webkit.org/changeset/126774&#34;&gt;landed&lt;/a&gt; in Webkit last year which will allow elements to stick to the viewport edge as you scroll past, unfortunately this hasn&amp;#39;t been standardized yet but discussions are still going on.&lt;/p&gt;
-&lt;h1&gt;How does it work ?&lt;/h1&gt;
+&lt;h2&gt;How does it work ?&lt;/h2&gt;
 &lt;p&gt;By simply adding &lt;code&gt;position: sticky&lt;/code&gt;, you can tell an element to be &lt;code&gt;position: relative&lt;/code&gt; until the user scrolls the item (or its parent) to be for ex 10px from the top, the actual way to achieve the same behaviour is by using Javascript :&lt;/p&gt;
 
 &lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsbin.com/omanut/2&#34; allowfullscreen=&#34;allowfullscreen&#34;&gt;&lt;/iframe&gt;
@@ -983,11 +1106,11 @@ async.eachSeries(sizes, capture, function (e) {
     position: sticky;
     top: 10px;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;How to enable it ?&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;How to enable it ?&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;sticky&lt;/code&gt; value is still an experimental feature in Webkit, so you need to enable it in &lt;code&gt;chrome://flags&lt;/code&gt;, just Ctrl+F &amp;quot;Enable experimental WebKit features&amp;quot;, then click enable.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/css-sticky.png&#34; alt=&#34;chrome://flags&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;Demo&lt;/h1&gt;
+&lt;h2&gt;Demo&lt;/h2&gt;
 &lt;p&gt;I have made a simple alphabetical contact list with sticky headers using HTML and CSS only!&lt;/p&gt;
 
 &lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/ecpTw/embedded/result,css,html&#34; allowfullscreen=&#34;allowfullscreen&#34;&gt;&lt;/iframe&gt;
@@ -1148,7 +1271,7 @@ module.exports = function(grunt) {
                 
                 <summary type="html">Last Wednesday i got my Pocket TV or PTV from &lt;a href=&#34;https://infinitec.com&#34;&gt;infinitec&lt;/a&gt;, a small pocket-sized dongle that connects to the HDMI port of any regular TV and converts it into a powerful Android Smart TV, it can also be controlled by Android mobile devices using the &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.google.android.apps.tvremote&#34;&gt;Google TV Remote&lt;/a&gt; app or using there own &lt;a href=&#34;http://infinitec.com/forum/viewtopic.php?f=2&amp;amp;t=605&#34;&gt;remote app&lt;/a&gt; which is still in beta.</summary>
                 <content type="html">&lt;p&gt;Last Wednesday i got my Pocket TV or PTV from &lt;a href=&#34;https://infinitec.com&#34;&gt;infinitec&lt;/a&gt;, a small pocket-sized dongle that connects to the HDMI port of any regular TV and converts it into a powerful Android Smart TV, it can also be controlled by Android mobile devices using the &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.google.android.apps.tvremote&#34;&gt;Google TV Remote&lt;/a&gt; app or using there own &lt;a href=&#34;http://infinitec.com/forum/viewtopic.php?f=2&amp;amp;t=605&#34;&gt;remote app&lt;/a&gt; which is still in beta.&lt;/p&gt;
-&lt;h1&gt;Features&lt;/h1&gt;
+&lt;h2&gt;Features&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;1 GHz ARM Cortex A9 Processor&lt;/li&gt;
 &lt;li&gt;Mali-400MP Graphics Processor&lt;/li&gt;
@@ -1180,17 +1303,17 @@ module.exports = function(grunt) {
 &lt;li&gt;MiniUSB Power Cable&lt;/li&gt;
 &lt;li&gt;Power Adapter EU/US&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Setup&lt;/h1&gt;
+&lt;h2&gt;Setup&lt;/h2&gt;
 &lt;p&gt;The setup was easy and it took me about 5min, i plugged the PTV into my LG 22-Inch Widescreen 1080p HDMI port, connected the USB cable to the TV USB port. Booting took about 35 seconds, once booter i had the setup guide, for language, Wifi and TV resolution.&lt;/p&gt;
-&lt;h1&gt;Air Remote&lt;/h1&gt;
+&lt;h2&gt;Air Remote&lt;/h2&gt;
 &lt;p&gt;The Air Remote comes with a built-in gyroscope for a motion controller nav also it has a built-in QWERTY thumb keyboard for entering text. and a USB bluetooth Receiver that you have to plug in.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/ptv-air.jpg&#34; alt=&#34;Air Remote&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;Infrared Remote&lt;/h1&gt;
+&lt;h2&gt;Infrared Remote&lt;/h2&gt;
 &lt;p&gt;The IR remote is really light, uses standard infrared signals and gives the ability to control the PTV using basic buttons, directional arrows, browser button, home, back, volume up/down, search and a power off button.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/ptv-ir.jpg&#34; alt=&#34;Infrared Remote&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;Apps&lt;/h1&gt;
+&lt;h2&gt;Apps&lt;/h2&gt;
 &lt;p&gt;The pre-installed Android ICS operating system comes with some preinstalled apps like Gmail, Youtube, Browser, an app installer, a filebrowser, Gtalk (Hangout after ther upgrade), a movie player and musicplayer. It provides access to Google Play store with thousands of android apps.&lt;/p&gt;
 
 &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;http://www.youtube.com/embed/p-S1JBgBKLI&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
@@ -1304,8 +1427,8 @@ How many time you wanted to vertically center a div ? how many time you wanted t
                 <id>http://daker.me/2013/06/5-html5-javascript-apis-to-keep-an-eye-on.html</id>
                 <updated>2013-06-02T17:30:00Z</updated>
                 
-                <summary type="html">In my &lt;a href=&#34;http://daker.me/2013/05/5-html5-features-you-need-to-know.html&#34;&gt;last post&lt;/a&gt;, i have talked about HTML5 APIs, so thought it will also interesting to write about some new &lt;strike&gt;old&lt;/strike&gt; Javascript APIs. Since CSS has been improving over the time and today you can achieve what was only done with Javascript with CSS only, on the other side Javascript have to improve and follow the evolution, so today Javascript can do a lot of things, like accessing hardware(camera, microphone, gamepad, GPU), accessing the filesystem and websocket.</summary>
-                <content type="html">&lt;p&gt;In my &lt;a href=&#34;http://daker.me/2013/05/5-html5-features-you-need-to-know.html&#34;&gt;last post&lt;/a&gt;, i have talked about HTML5 APIs, so thought it will also interesting to write about some new &lt;strike&gt;old&lt;/strike&gt; Javascript APIs. Since CSS has been improving over the time and today you can achieve what was only done with Javascript with CSS only, on the other side Javascript have to improve and follow the evolution, so today Javascript can do a lot of things, like accessing hardware(camera, microphone, gamepad, GPU), accessing the filesystem and websocket.&lt;/p&gt;
+                <summary type="html">In my &lt;a href=&#34;http://daker.me/2013/05/5-html5-features-you-need-to-know.html&#34;&gt;last post&lt;/a&gt;, i have talked about HTML5 APIs, so thought it will also interesting to write about some new &lt;strike&gt;old&lt;/strike&gt; JavaScript APIs. Since CSS has been improving over the time and today you can achieve what was only done with Javascript with CSS only, on the other side Javascript have to improve and follow the evolution, so today Javascript can do a lot of things, like accessing hardware(camera, microphone, gamepad, GPU), accessing the filesystem and websocket.</summary>
+                <content type="html">&lt;p&gt;In my &lt;a href=&#34;http://daker.me/2013/05/5-html5-features-you-need-to-know.html&#34;&gt;last post&lt;/a&gt;, i have talked about HTML5 APIs, so thought it will also interesting to write about some new &lt;strike&gt;old&lt;/strike&gt; JavaScript APIs. Since CSS has been improving over the time and today you can achieve what was only done with Javascript with CSS only, on the other side Javascript have to improve and follow the evolution, so today Javascript can do a lot of things, like accessing hardware(camera, microphone, gamepad, GPU), accessing the filesystem and websocket.&lt;/p&gt;
 &lt;h2&gt;Battery Status API&lt;/h2&gt;
 &lt;p&gt;The &lt;a href=&#34;http://www.w3.org/TR/battery-status/&#34;&gt;Battery Status API&lt;/a&gt; allows any webpage to inspect the state of the device&amp;#39;s (Laptop, phone or tablet) battery through javascript :&lt;/p&gt;
 &lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery

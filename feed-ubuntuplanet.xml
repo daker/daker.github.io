@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-ubuntuplanet.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-11-30T17:21:38Z</updated>
+        <updated>2013-12-22T00:45:19Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,131 @@
             <uri>http://daker.me/</uri>
         </author>
 
+        
+            
+            <entry>
+                <title>Devtools Console, from Novice to Ninja</title>
+                <link rel="alternate" href="http://daker.me/2013/12/devtools-console-from-novice-to-ninja.html" type="text/html" />
+                <id>http://daker.me/2013/12/devtools-console-from-novice-to-ninja.html</id>
+                <updated>2013-12-21T23:45:00Z</updated>
+
+                <summary type="html">The &lt;a href=&#34;http://daker.me/2013/06/5-html5-javascript-apis-to-keep-an-eye-on.html&#34;&gt;JavaScript&lt;/a&gt; console is a powerful tool that allows developers debug their code using functions provided by the Console API and a shell prompt where they can enter commands and interact with the document object.</summary>
+                <content type="html">&lt;p&gt;The &lt;a href=&#34;http://daker.me/2013/06/5-html5-javascript-apis-to-keep-an-eye-on.html&#34;&gt;JavaScript&lt;/a&gt; console is a powerful tool that allows developers debug their code using functions provided by the Console API and a shell prompt where they can enter commands and interact with the document object.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/console.png&#34; alt=&#34;JavaScript Console&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Filters&lt;/h2&gt;
+&lt;p&gt;There are different buttons allowing you to filter the display of messages logged to the console:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;All — Shows all console output.&lt;/li&gt;
+&lt;li&gt;Errors — Only show output from console.error()&lt;/li&gt;
+&lt;li&gt;Warnings — Only show output from console.warn()&lt;/li&gt;
+&lt;li&gt;Logs — Only show output from console.log(), console.info() and console.debug().&lt;/li&gt;
+&lt;li&gt;Debug — Only show output from console.timeEnd() and other console output.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/filters.png&#34; alt=&#34;Filters&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Errors and warnings&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;console.info : Writes a message to the console with the visual &amp;quot;info&amp;quot; icon and color coding and a hyperlink to the line where it was called.&lt;/li&gt;
+&lt;li&gt;console.warn : Writes a message to the console with the visual &amp;quot;warning&amp;quot; icon and color coding and a hyperlink to the line where it was called.&lt;/li&gt;
+&lt;li&gt;console.debug : Writes a message to the console, including a hyperlink to the line where it was called.&lt;/li&gt;
+&lt;li&gt;console.error : Writes a message to the console with the visual &amp;quot;error&amp;quot; icon and color coding and a hyperlink to the line where it was called.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/logging.png&#34; alt=&#34;Logging&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;console.dir[xml]&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;console.dir(object)&lt;/code&gt; prints an interactive listing of all properties of the object, while &lt;code&gt;console.dirxml(node)&lt;/code&gt; prints the XML source tree of an element.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/dir.png&#34; alt=&#34;JavaScript Console&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Assertions&lt;/h2&gt;
+&lt;p&gt;Tests that an expression is true using &lt;code&gt;console.assert&lt;/code&gt;. If not, it will write a message to the console and throw an exception.&lt;/p&gt;
+&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;var x=0;
+console.assert((x == 1), &amp;#34;assert message: x != 1&amp;#34;);
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Grouping output&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;console.group&lt;/code&gt; allows you to group the message or log in Console tab. If you have some many logs in your code, you can probably divide your log into small group or subgroup&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var user = &amp;#34;jsmith&amp;#34;, authenticated = false;
+console.group(&amp;#34;Authentication phase&amp;#34;);
+console.log(&amp;#34;Authenticating user &amp;#39;%s&amp;#39;&amp;#34;, user);
+// authentication code here...
+if (!authenticated) {
+    console.log(&amp;#34;User &amp;#39;%s&amp;#39; not authenticated.&amp;#34;, user)
+}
+console.groupEnd();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You also do nested grouping :&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var user = &amp;#34;jsmith&amp;#34;, authenticated = true, authorized = true;
+// Top-level group
+console.group(&amp;#34;Authenticating user &amp;#39;%s&amp;#39;&amp;#34;, user);
+if (authenticated) {
+    console.log(&amp;#34;User &amp;#39;%s&amp;#39; was authenticated&amp;#34;, user);
+    // Start nested group
+    console.group(&amp;#34;Authorizing user &amp;#39;%s&amp;#39;&amp;#34;, user);
+    if (authorized) {
+        console.log(&amp;#34;User &amp;#39;%s&amp;#39; was authorized.&amp;#34;, user);
+    }
+    // End nested group
+    console.groupEnd();
+}
+// End top-level group
+console.groupEnd();
+console.log(&amp;#34;A group-less log trace.&amp;#34;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/nested.png&#34; alt=&#34;Nested Grouping&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Logging Array Data&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;console.table()&lt;/code&gt; is a very handy fonction to display Array object&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var langs = [
+    { name: &amp;#34;JavaScript&amp;#34;, extension: &amp;#34;.js&amp;#34; },
+    { name: &amp;#34;HTML&amp;#34;, extension: &amp;#34;.html&amp;#34; },
+    { name: &amp;#34;CoffeeScript&amp;#34;, extension: &amp;#34;.coffee&amp;#34; },
+    { name: &amp;#34;SASS&amp;#34;, extension: &amp;#34;.sass&amp;#34; }
+];
+
+console.table(langs);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/table.png&#34; alt=&#34;JavaScript Console&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Measuring Execution time&lt;/h2&gt;
+&lt;p&gt;To mesure how long something it takes to execute a set of instructions :&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var i, t = &amp;#34;&amp;#34;;
+
+// Start
+console.time(&amp;#34;OPNAME&amp;#34;);
+
+for (i = 1; i &amp;lt;= 100; i++)
+    t += i;
+
+// Stop
+console.timeEnd(&amp;#34;OPNAME&amp;#34;);
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Tracing&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;console.trace()&lt;/code&gt; prints the stacktrace of JavaScript execution at the point where it was called.&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;function F(v) {
+    return K(v + 1);
+}
+
+function K(v) {
+    return Y(v + 2);
+}
+
+function Y(v) {
+    console.trace();
+};
+
+F(5);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/trace.png&#34; alt=&#34;Console Trace&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Shortcuts&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + Shift + J&lt;/code&gt; : Open the Chrome/ium Console&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+l&lt;/code&gt; : Clear the console&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://getfirebug.com/wiki/index.php/Console_Panel&#34;&gt;Firebug Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.google.com/chrome-developer-tools/docs/javascript-debugging#console-assert&#34;&gt;Chrome DevTools documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+            </entry>
+            
         
             
             <entry>
@@ -29,7 +154,7 @@
 
 &lt;p&gt;To use the &lt;code&gt;UserMetrics&lt;/code&gt; QML module you need to install &lt;code&gt;qtdeclarative5-usermetrics0.1&lt;/code&gt; package on the desktop :&lt;/p&gt;
 &lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install qtdeclarative5-usermetrics0.1
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Apparmor Policy groups&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Apparmor Policy groups&lt;/h2&gt;
 &lt;p&gt;Add the &lt;code&gt;usermetrics&lt;/code&gt; to your apparmor file :&lt;/p&gt;
 &lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
     &amp;#34;policy_groups&amp;#34;: [
@@ -38,7 +163,7 @@
     ],
     &amp;#34;policy_version&amp;#34;: 1.0
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;QML&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;QML&lt;/h2&gt;
 &lt;p&gt;First you need to import the &lt;code&gt;UserMetrics&lt;/code&gt; module :&lt;/p&gt;
 &lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;import UserMetrics 0.1
 &lt;/code&gt;&lt;/pre&gt;
@@ -121,9 +246,9 @@ $ sudo apt-get install phablet-tools android-tools-adb android-tools-fastboot
 &lt;p&gt;Adding an Android or iPhone token will lead to unwanted behaviours, like showing ads for the Android app or even trying to open the Google Play app or the Youtube app. The browser now reports it in the following formats, depending on whether the device is a phone or a tablet, with the addition of an &lt;a href=&#34;https://bazaar.launchpad.net/%7Ephablet-team/webbrowser-app/trunk/view/head:/src/Ubuntu/Components/Extras/Browser/ua-overrides.js&#34;&gt;override mechanism&lt;/a&gt; that will override the UA on the fly and the site will serve us a proper mobile content.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/utouch/1.png&#34; alt=&#34;Facebook Android Ads&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;Phone&lt;/h1&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; Mobile) WebKit/537.21
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Tablet&lt;/h1&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; Tablet) WebKit/537.21
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Pattern&lt;/h1&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; $FormFactor) WebKit/$WebKitRev
+&lt;h2&gt;Phone&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; Mobile) WebKit/537.21
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Tablet&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; Tablet) WebKit/537.21
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Pattern&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; $FormFactor) WebKit/$WebKitRev
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You can also get it through JavaScript using the &lt;code&gt;navigator.userAgent&lt;/code&gt;&lt;/p&gt;
 
@@ -255,15 +380,15 @@ X-Ubuntu-Touch=true
                 <content type="html">&lt;p&gt;I started feeling the need of automating my developement environments when i started contributing to several django projects run by the community, each project uses a different django version and several dependencies, thoses dependencies can be found or not on the Ubuntu version i use for my daily work. Vagrant is a great tool for those situations, it allow you to create and manage custom virtual environments to your needs using automated configuration technologies such as Chef, Puppet and Shell scripts.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/vagrant/vagrant.jpg&#34; alt=&#34;Vagrant&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;Installing Vagrant&lt;/h1&gt;
+&lt;h2&gt;Installing Vagrant&lt;/h2&gt;
 &lt;p&gt;Vagrant works with VirtualBox, and support &lt;a href=&#34;http://www.vagrantup.com/vmware&#34;&gt;Vmware Fusion&lt;/a&gt; and AWS via plugins&lt;/p&gt;
-&lt;h2&gt;Install Virtualbox&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install virtualbox
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Install Vagrant&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install vagrant
+&lt;h3&gt;Install Virtualbox&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install virtualbox
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Install Vagrant&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install vagrant
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Make sure Vagrant is installed correctly&lt;/p&gt;
 &lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ vagrant --version
 Vagrant version 1.2.0
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Get your first VM up and running&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Get your first VM up and running&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;start a vagrant config file in an empty project folder. this will create &lt;code&gt;Vagrantfile&lt;/code&gt;&lt;/p&gt;
 &lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ mkdir project
@@ -298,7 +423,7 @@ end
 
 &lt;p&gt;Wait for the command to finish, then you will have a VM ready for you to connect. the VM can be accessed via SSH:&lt;/p&gt;
 &lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ vagrant ssh
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;Provisioning&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Provisioning&lt;/h2&gt;
 &lt;p&gt;Vagrant allow you to use different Provisioners to easily setup your VM with everything it needs to run your project :&lt;/p&gt;
 
 &lt;ul&gt;
@@ -489,27 +614,27 @@ notice: Finished catalog run in 811.47 seconds
                 <content type="html">&lt;p&gt;DevTools is a powerful tool than can made developing WebApp easier, it has a lot of features some of them are still experimental and you need to enable them in the &lt;code&gt;about://flags&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/devtools.png&#34; alt=&#34;Devtools&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;Breakpoints&lt;/h1&gt;
+&lt;h2&gt;Breakpoints&lt;/h2&gt;
 &lt;p&gt;Breakpoint are related to the JavaScript code, it let&amp;#39;s you halt the JavaScript code execution and inspect the current environment. You can set them by simply going the &amp;quot;Source&amp;quot; tab, then select the JS file you want to debug , find the line you want to set a breakpoint on, then click the line number to apply a breakpoint :&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/breakpoints.png&#34; alt=&#34;Javascript Breakpoints&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;The DevTools also supports conditional breakpoints.&lt;/p&gt;
-&lt;h1&gt;DOM Breakpoints&lt;/h1&gt;
+&lt;h2&gt;DOM Breakpoints&lt;/h2&gt;
 &lt;p&gt;The DevTools can also be used to set breakpoints on the DOM elements direclty, just right click on the element you want to break on, then select the option you want :&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/dom-breakpoints.png&#34; alt=&#34;DOM Breakpoints&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;monitorEvents&lt;/h1&gt;
+&lt;h2&gt;monitorEvents&lt;/h2&gt;
 &lt;p&gt;The Devtools has a built function called &lt;code&gt;monitorEvents&lt;/code&gt;, it lets you monitor objects for mouse, key, touch or control events :&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/monitorEvents.png&#34; alt=&#34;monitorEvents&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;Pretty Print&lt;/h1&gt;
+&lt;h2&gt;Pretty Print&lt;/h2&gt;
 &lt;p&gt;Pretty Print is a handy feature for debugging minified JavaScript. Trying to to set a breakpoint when everything is on the same line is something impossible, clicking on the &lt;code&gt;{}&lt;/code&gt; icon will make your Javascript code readable and easier to debug :&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/pprint-before.png&#34; alt=&#34;Pretty Print - Before&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/pprint-after.png&#34; alt=&#34;Pretty Print - After&#34;&gt;&lt;/p&gt;
-&lt;h1&gt;Remote Debugging&lt;/h1&gt;
+&lt;h2&gt;Remote Debugging&lt;/h2&gt;
 &lt;p&gt;The Remote Debugger lets you connect Chrome/ium browser to the Chrome mobile browser so that you can use your desktop browser to debug all your tabs from your remote device :&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/devtools/remote-debugging.png&#34; alt=&#34;Remote Debugging&#34;&gt;&lt;/p&gt;

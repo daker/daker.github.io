@@ -140,11 +140,11 @@
 <p>Adding an Android or iPhone token will lead to unwanted behaviours, like showing ads for the Android app or even trying to open the Google Play app or the Youtube app. The browser now reports it in the following formats, depending on whether the device is a phone or a tablet, with the addition of an <a href="https://bazaar.launchpad.net/%7Ephablet-team/webbrowser-app/trunk/view/head:/src/Ubuntu/Components/Extras/Browser/ua-overrides.js">override mechanism</a> that will override the UA on the fly and the site will serve us a proper mobile content.</p>
 
 <p><img src="/assets/posts/utouch/1.png" alt="Facebook Android Ads"></p>
-<h1>Phone</h1><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre>Mozilla/5.0 <span class="o">(</span>Ubuntu; Mobile<span class="o">)</span> WebKit/537.21
+<h2>Phone</h2><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre>Mozilla/5.0 <span class="o">(</span>Ubuntu; Mobile<span class="o">)</span> WebKit/537.21
 </pre></div>
-</td></tr></table></div></div><h1>Tablet</h1><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre>Mozilla/5.0 <span class="o">(</span>Ubuntu; Tablet<span class="o">)</span> WebKit/537.21
+</td></tr></table></div></div><h2>Tablet</h2><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre>Mozilla/5.0 <span class="o">(</span>Ubuntu; Tablet<span class="o">)</span> WebKit/537.21
 </pre></div>
-</td></tr></table></div></div><h1>Pattern</h1><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre>Mozilla/5.0 <span class="o">(</span>Ubuntu; <span class="nv">$FormFactor</span><span class="o">)</span> WebKit/<span class="nv">$WebKitRev</span>
+</td></tr></table></div></div><h2>Pattern</h2><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre>Mozilla/5.0 <span class="o">(</span>Ubuntu; <span class="nv">$FormFactor</span><span class="o">)</span> WebKit/<span class="nv">$WebKitRev</span>
 </pre></div>
 </td></tr></table></div></div>
 <p>You can also get it through JavaScript using the <code>navigator.userAgent</code></p>
@@ -210,13 +210,13 @@
             This work is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a></p>
     </footer>
     <script type="text/javascript">
-            (function(){
-              var bsa = document.createElement('script');
-                 bsa.type = 'text/javascript';
-                 bsa.async = true;
-                 bsa.src = '//s3.buysellads.com/ac/bsa.js';
-              (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
-            })();
+        (function () {
+            var bsa = document.createElement('script');
+            bsa.type = 'text/javascript';
+            bsa.async = true;
+            bsa.src = '//s3.buysellads.com/ac/bsa.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(bsa);
+        })();
     </script>
     <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/jquery.ba-hashchange.min.js"></script>

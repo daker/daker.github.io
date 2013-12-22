@@ -136,7 +136,7 @@
     </div>
     <div class="post-content">
         <div class="post-field body" itemprop="articleBody"><p><code>position: sticky</code> is a new CSS property that has <a href="http://trac.webkit.org/changeset/126774">landed</a> in Webkit last year which will allow elements to stick to the viewport edge as you scroll past, unfortunately this hasn&#39;t been standardized yet but discussions are still going on.</p>
-<h1>How does it work ?</h1>
+<h2>How does it work ?</h2>
 <p>By simply adding <code>position: sticky</code>, you can tell an element to be <code>position: relative</code> until the user scrolls the item (or its parent) to be for ex 10px from the top, the actual way to achieve the same behaviour is by using Javascript :</p>
 
 <iframe width="100%" height="300" src="http://jsbin.com/omanut/2" allowfullscreen="allowfullscreen"></iframe>
@@ -158,11 +158,11 @@
     <span class="k">top</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</td></tr></table></div></div><h1>How to enable it ?</h1>
+</td></tr></table></div></div><h2>How to enable it ?</h2>
 <p>The <code>sticky</code> value is still an experimental feature in Webkit, so you need to enable it in <code>chrome://flags</code>, just Ctrl+F &quot;Enable experimental WebKit features&quot;, then click enable.</p>
 
 <p><img src="/assets/posts/css-sticky.png" alt="chrome://flags"></p>
-<h1>Demo</h1>
+<h2>Demo</h2>
 <p>I have made a simple alphabetical contact list with sticky headers using HTML and CSS only!</p>
 
 <iframe width="100%" height="300" src="http://jsfiddle.net/daker/ecpTw/embedded/result,css,html" allowfullscreen="allowfullscreen"></iframe>
@@ -234,13 +234,13 @@
             This work is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a></p>
     </footer>
     <script type="text/javascript">
-            (function(){
-              var bsa = document.createElement('script');
-                 bsa.type = 'text/javascript';
-                 bsa.async = true;
-                 bsa.src = '//s3.buysellads.com/ac/bsa.js';
-              (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
-            })();
+        (function () {
+            var bsa = document.createElement('script');
+            bsa.type = 'text/javascript';
+            bsa.async = true;
+            bsa.src = '//s3.buysellads.com/ac/bsa.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(bsa);
+        })();
     </script>
     <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/jquery.ba-hashchange.min.js"></script>

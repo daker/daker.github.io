@@ -138,7 +138,7 @@
         <div class="post-field body" itemprop="articleBody"><p>Stylus is an expressive, dynamic, robust CSS pre-processor built on top of Node.js. LESS and Sass are both great, they try to stay as close as the original CSS syntax as possible to minimize the impact of having to learn a new language, but for me someone who cares about simplicity and readability, the syntax becomes an important part of the language or the framework.</p>
 
 <p><img src="/assets/posts/stylus.png" alt="Stylus"></p>
-<h1>Installation</h1><h2>Ubuntu</h2><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<h2>Installation</h2><h3>Ubuntu</h3><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>sudo add-apt-repository ppa:chris-lea/node.js
@@ -146,7 +146,7 @@
 <span class="nv">$ </span>sudo apt-get install nodejs
 <span class="nv">$ </span>sudo npm install -g stylus
 </pre></div>
-</td></tr></table></div></div><h2>Mac OSX</h2><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</td></tr></table></div></div><h3>Mac OSX</h3><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>brew install node
 <span class="nv">$ </span>curl https://npmjs.org/install.sh | sh
@@ -178,7 +178,7 @@
     <span class="k">font</span><span class="o">:</span> <span class="m">12px</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</td></tr></table></div></div><h1>Variables</h1>
+</td></tr></table></div></div><h2>Variables</h2>
 <p>Defining variables is simple, you don&#39;t need to use $ or @ like in Sass or LESS, the good part is that Stylus also support the $ so if you are coming from Sass your variables will remain functionnal.</p>
 <div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -208,7 +208,7 @@
 </pre></div>
 </td></tr></table></div></div>
 <p>Did you noticed something ? the color has been compressed automatically.</p>
-<h1>Mixins</h1>
+<h2>Mixins</h2>
 <p>Mixins are similar to functions, but used in a different way, a good example of a mixin is the border-radius property</p>
 <div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -250,7 +250,7 @@
 </pre></div>
 </td></tr></table></div></div>
 <p>Handy for vendor-prefixed properties.</p>
-<h1>Iteration</h1>
+<h2>Iteration</h2>
 <p>Stylus gives you the ablity to iterate expressions via for/in</p>
 <div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -300,7 +300,7 @@
     <span class="k">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</td></tr></table></div></div><h1>Inheritance</h1>
+</td></tr></table></div></div><h2>Inheritance</h2>
 <p>Stylus provides a good inheritance mecanism</p>
 <div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -334,7 +334,7 @@
     <span class="k">color</span><span class="o">:</span> <span class="m">#e2e21e</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</td></tr></table></div></div><h1>Error Reporting</h1>
+</td></tr></table></div></div><h2>Error Reporting</h2>
 <p>Stylus has fantastic error reporting built-in for syntax, parse, and evaluation errors—complete with stack traces, line numbers, and filenames.</p>
 <div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -372,7 +372,7 @@ cannot perform solid<span class="o">[(</span><span class="c">#ccc)]</span>
 </pre></div>
 </td></tr></table></div></div>
 <p>Stylus provides a detailed stack trace much like you would find in any decent language.</p>
-<h1>Literal CSS</h1>
+<h2>Literal CSS</h2>
 <p>This the best part of Stylus, you can still use your CSS code using <code>@css</code> and it will work, how that will help you in your workflow? you&#39;ll be able to integrate Stylus progressivly in your project</p>
 <div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -426,7 +426,7 @@ cannot perform solid<span class="o">[(</span><span class="c">#ccc)]</span>
     <span class="k">font</span><span class="o">:</span> <span class="m">12px</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</td></tr></table></div></div><h1>Conclusion</h1>
+</td></tr></table></div></div><h2>Conclusion</h2>
 <p>Stylus is certainly worth a try, and if you are a Compass guy, Stylus has an extension called <a href="https://github.com/visionmedia/nib">nib</a> that provides robust cross-browser CSS3 mixins. Sure there is more you can learn about Stylus and there is <a href="http://learnboost.github.io/stylus/">docs</a> for that.</p>
 </div>
     </div>
@@ -486,13 +486,13 @@ cannot perform solid<span class="o">[(</span><span class="c">#ccc)]</span>
             This work is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a></p>
     </footer>
     <script type="text/javascript">
-            (function(){
-              var bsa = document.createElement('script');
-                 bsa.type = 'text/javascript';
-                 bsa.async = true;
-                 bsa.src = '//s3.buysellads.com/ac/bsa.js';
-              (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
-            })();
+        (function () {
+            var bsa = document.createElement('script');
+            bsa.type = 'text/javascript';
+            bsa.async = true;
+            bsa.src = '//s3.buysellads.com/ac/bsa.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(bsa);
+        })();
     </script>
     <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/jquery.ba-hashchange.min.js"></script>

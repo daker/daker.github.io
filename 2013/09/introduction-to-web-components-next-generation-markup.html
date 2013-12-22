@@ -136,7 +136,7 @@
         <div class="post-field body" itemprop="articleBody"><p>Web Components enables frontend developers to create custom and reusable HTML tags, it&#39;s the latest bleeding-edge web technologies being developed, the project is led by the Chrome dev team and aims to solve a simple problem: Building Web applications is more complicated than it used to be. Worse, it&#39;s more complicated than it should be.</p>
 
 <p><img src="/assets/posts/webcomponents.png" alt="Web Components"></p>
-<h1>HTML Templates</h1>
+<h2>HTML Templates</h2>
 <p>A template provides a method for declaring document fragments in HTML, it contains a chunks of markup that can be used later. The <code>template</code> element is not rendered but parsed, which means that scripts aren&#39;t processed, css and images aren&#39;t downloaded, it&#39;s completly hidden from the document object, so for ex you can&#39;t access the <code>.comment-text</code> element using <code>document.querySelector</code>.</p>
 <div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -148,7 +148,7 @@
 </pre></div>
 </td></tr></table></div></div>
 <iframe width="100%" height="300" src="http://jsfiddle.net/daker/m85DN/embedded/result,css,html,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-<h1>Custom Elements</h1>
+<h2>Custom Elements</h2>
 <p>The W3C defines it as follows :</p>
 
 <blockquote>
@@ -164,15 +164,15 @@
 </pre></div>
 </td></tr></table></div></div>
 <p>and use it like this <code>&lt;x-foo-bar&gt;Test&lt;/x-foo-bar&gt;</code></p>
-<h1>Shadow DOM</h1>
+<h2>Shadow DOM</h2>
 <p>Browser vendors have been using Shadow DOM for quite awhile now to build their own components. These components are built using HTML and CSS, but you cannot see how thesee elements are made up on the dev tools simply because they use the Shadow DOM , ex : <code>&lt;video&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;input type=&quot;date&quot;&gt;</code>, <code>&lt;input type=&quot;time&quot;&gt;</code></p>
 
 <blockquote>
-<p>Shadow DOM gives us markup encapsulation, style boundaries, and exposes (to web developers) the same mechanics browsers vendors have been using to implement their internal UI. — Eric Bidelma</p>
+<p>Shadow DOM gives us markup encapsulation, style boundaries, and exposes (to web developers) the same mechanics browsers vendors have been using to implement their internal UI. — Eric Bidelman</p>
 </blockquote>
 
 <p><img src="/assets/posts/input-date-time.png" alt="Date &amp; time input"></p>
-<h1>HTML Imports</h1>
+<h2>HTML Imports</h2>
 <p>HTML Imports is similar way to how we load CSS stylesheets, it&#39;s a new type of link tag which allow developers to import and use HTML code from a url, after importing the page you need to use some Javascript code to manipulate it and inject your code :</p>
 <div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;import&quot;</span> <span class="na">href=</span><span class="s">&quot;/import/page-to-import.html&quot;</span><span class="nt">&gt;</span>
 </pre></div>
@@ -278,13 +278,13 @@
             This work is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a></p>
     </footer>
     <script type="text/javascript">
-            (function(){
-              var bsa = document.createElement('script');
-                 bsa.type = 'text/javascript';
-                 bsa.async = true;
-                 bsa.src = '//s3.buysellads.com/ac/bsa.js';
-              (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
-            })();
+        (function () {
+            var bsa = document.createElement('script');
+            bsa.type = 'text/javascript';
+            bsa.async = true;
+            bsa.src = '//s3.buysellads.com/ac/bsa.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(bsa);
+        })();
     </script>
     <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/jquery.ba-hashchange.min.js"></script>
