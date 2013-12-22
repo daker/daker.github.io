@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-ubuntuplanet.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-12-22T00:45:19Z</updated>
+        <updated>2013-12-22T01:07:42Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -131,7 +131,7 @@ F(5);
 &lt;li&gt;&lt;code&gt;Ctrl + Shift + J&lt;/code&gt; : Open the Chrome/ium Console&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;Ctrl+l&lt;/code&gt; : Clear the console&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Reference&lt;/h2&gt;
+&lt;h2&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://getfirebug.com/wiki/index.php/Console_Panel&#34;&gt;Firebug Wiki&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://developers.google.com/chrome-developer-tools/docs/javascript-debugging#console-assert&#34;&gt;Chrome DevTools documentation&lt;/a&gt;&lt;/li&gt;
