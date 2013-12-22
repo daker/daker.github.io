@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-12-22T01:07:42Z</updated>
+        <updated>2013-12-22T13:18:01Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -65,7 +65,7 @@ if (!authenticated) {
 }
 console.groupEnd();
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You also do nested grouping :&lt;/p&gt;
+&lt;p&gt;You can also do nested grouping :&lt;/p&gt;
 &lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var user = &amp;#34;jsmith&amp;#34;, authenticated = true, authorized = true;
 // Top-level group
 console.group(&amp;#34;Authenticating user &amp;#39;%s&amp;#39;&amp;#34;, user);
