@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2013-12-27T01:07:10Z</updated>
+        <updated>2014-01-07T22:12:50Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,123 @@
             <uri>http://daker.me/</uri>
         </author>
         
+        
+            <entry>
+                <title>Chrome’s requestAutocomplete(), for a Better Payment on the Web &amp; Mobile</title>
+                <link rel="alternate" href="http://daker.me/2014/01/chrome-requestautocomplete-better-payment-web-mobile.html" type="text/html" />
+                <id>http://daker.me/2014/01/chrome-requestautocomplete-better-payment-web-mobile.html</id>
+                <updated>2014-01-07T22:15:00Z</updated>
+                
+                <summary type="html">Google is always trying to make the web experience very easy including the online shopping experience, filling out the 21 pieces of data can be a painful task and specialy on mobile devices. Studies have shown that most of the consumers will leave the website or the mobile app without complete checkout because they have to fill the checkout form which detailed &amp;amp; very long. In 2011 Google launched Google Wallet, a step forward to try to simplify the payment process and make it less time consuming.</summary>
+                <content type="html">&lt;p&gt;Google is always trying to make the web experience very easy including the online shopping experience, filling out the 21 pieces of data can be a painful task and specialy on mobile devices. Studies have shown that most of the consumers will leave the website or the mobile app without complete checkout because they have to fill the checkout form which detailed &amp;amp; very long. In 2011 Google launched Google Wallet, a step forward to try to simplify the payment process and make it less time consuming.&lt;/p&gt;
+
+&lt;p&gt;During the last I/O Google introduced a new API called &lt;code&gt;requestAutocomplete()&lt;/code&gt;, which can auto-populate all of your payment details stored in the browser.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Particularly for mobile applications, this solves the problem of working with long or even multi-page forms. It improves the purchase checkout flow and reduces drop-off with a secure and concise payment submission UI. For merchants, this results in improved conversion rates, sorely needed in mobile purchase scenarios.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/requestAutocomplete/1.png&#34; alt=&#34;requestAutocomplete&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;Calling the &lt;code&gt;requestAutocomplete()&lt;/code&gt; on a form element will auto-populate the data, the browser will use the form to detect which input types to populate, which means that the form doesn’t really need to be shown to the user.&lt;/p&gt;
+&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;button id=&amp;#34;checkout&amp;#34;&amp;gt;Checkout&amp;lt;/button&amp;gt;
+
+&amp;lt;form id=&amp;#34;checkout-form&amp;#34; hidden&amp;gt;
+  &amp;lt;input autocomplete=&amp;#34;cc-name&amp;#34; name=&amp;#34;myname&amp;#34;&amp;gt;
+  &amp;lt;input autocomplete=&amp;#34;cc-number&amp;#34; name=&amp;#34;ccnumber&amp;#34;&amp;gt;
+  &amp;lt;input autocomplete=&amp;#34;cc-exp&amp;#34; name=&amp;#34;ccexp&amp;#34;&amp;gt;
+  &amp;lt;input autocomplete=&amp;#34;cc-csc&amp;#34; name=&amp;#34;cccvc&amp;#34;&amp;gt;
+
+  &amp;lt;input autocomplete=&amp;#34;billing street-address&amp;#34; name=&amp;#34;billaddress&amp;#34;&amp;gt;
+  &amp;lt;input autocomplete=&amp;#34;billing locality&amp;#34; name=&amp;#34;billtown&amp;#34;&amp;gt;
+  &amp;lt;input autocomplete=&amp;#34;billing region&amp;#34; name=&amp;#34;billstate&amp;#34;&amp;gt;
+  &amp;lt;input autocomplete=&amp;#34;billing postal-code&amp;#34; name=&amp;#34;billzip&amp;#34;&amp;gt;
+
+  &amp;lt;input autocomplete=&amp;#34;shipping street-address&amp;#34; name=&amp;#34;billaddress&amp;#34;&amp;gt;
+  &amp;lt;input autocomplete=&amp;#34;shipping locality&amp;#34; name=&amp;#34;billtown&amp;#34;&amp;gt;
+  &amp;lt;input autocomplete=&amp;#34;shipping region&amp;#34; name=&amp;#34;billstate&amp;#34;&amp;gt;
+  &amp;lt;input autocomplete=&amp;#34;shipping postal-code&amp;#34; name=&amp;#34;billzip&amp;#34;&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;&amp;lt;script&amp;gt;
+  (function(){
+    var form = document.getElementById(&amp;#39;checkout-form&amp;#39;);
+    var button = document.getElementById(&amp;#39;checkout&amp;#39;);
+
+    if (!(&amp;#34;requestAutocomplete&amp;#34; in form)) return;
+
+    button.addEventListener(&amp;#39;click&amp;#39;, function(){
+      form.requestAutocomplete();
+    });
+
+    form.addEventListener(&amp;#39;autocomplete&amp;#39;, function(){
+      // The form contains the data. We could either submit it, or read the data
+      form.submit();
+    });
+  }).call(this);
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Autocomplete Attributes&lt;/h2&gt;&lt;h3&gt;Credit Card Details&lt;/h3&gt;
+&lt;p&gt;The credit card data includes the following field types :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;email&lt;/li&gt;
+&lt;li&gt;cc-name&lt;/li&gt;
+&lt;li&gt;cc-number&lt;/li&gt;
+&lt;li&gt;cc-exp-month&lt;/li&gt;
+&lt;li&gt;cc-exp-year&lt;/li&gt;
+&lt;li&gt;cc-csc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Address Details&lt;/h3&gt;
+&lt;p&gt;Both the &lt;code&gt;shipping&lt;/code&gt; and &lt;code&gt;billing&lt;/code&gt; addresses have the following fields :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;name&lt;/li&gt;
+&lt;li&gt;tel&lt;/li&gt;
+&lt;li&gt;tel-country-code&lt;/li&gt;
+&lt;li&gt;tel-national&lt;/li&gt;
+&lt;li&gt;street-address&lt;/li&gt;
+&lt;li&gt;locality&lt;/li&gt;
+&lt;li&gt;region&lt;/li&gt;
+&lt;li&gt;postal-code&lt;/li&gt;
+&lt;li&gt;country&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Autocomplete Events&lt;/h2&gt;
+&lt;p&gt;Once &lt;code&gt;requestAutocomplete()&lt;/code&gt; has been called, a permissions dialog will be shown to the user, so he can accept or not to share his information with the page or fill them if he didn&amp;#39;t.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/requestAutocomplete/2.png&#34; alt=&#34;Me&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;The autocomplete process is asynchronous, so you need to listen for the &lt;code&gt;autocomplete&lt;/code&gt; and &lt;code&gt;autocompleteerror&lt;/code&gt; events :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;autocomplete&lt;/code&gt; : fired if the user has successfully submitted the all payment details&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;autocompleteerror&lt;/code&gt; : fired if an error occurs, it provides a &lt;code&gt;reason&lt;/code&gt; property :
+
+&lt;ul&gt;
+&lt;li&gt;invalid – The user&amp;#39;s data did not pass the HTML5 form validation.&lt;/li&gt;
+&lt;li&gt;cancel – The user clicked cancel on the dialog.&lt;/li&gt;
+&lt;li&gt;disabled – The browser supports requestAutocomplete, but it’s disabled in browser preferences.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;form.addEventListener(&amp;#39;autocomplete&amp;#39;, function() {
+    form.submit();
+});
+
+form.addEventListener(&amp;#39;autocompleteerror&amp;#39;, function(event) {
+    if (event.reason == &amp;#39;invalid&amp;#39;) {
+        form.submit();
+    } else if (event.reason != &amp;#39;cancel&amp;#39;) {
+        window.location = &amp;#39;/checkout/&amp;#39;;
+    } else if (event.reason == &amp;#39;disabled&amp;#39;) {
+        window.location = &amp;#39;/checkout/&amp;#39;;
+    }
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can already start using it while being compatible with others browsers that didn&amp;#39;t implement it yet(and hope they will standardize it), by using the &lt;code&gt;event.reason&lt;/code&gt; as shown above and fallback to a normal checkout form.&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;From a consumer percepective, it means that the 21 pieces of data to enter will be reduced to two or three clicks, this will dramatically improve the usability and conversion rates.&lt;/p&gt;
+
+&lt;p&gt;NB: The &lt;code&gt;requestAutocomplete()&lt;/code&gt; is only implemented on Chrome Mobile and Google Chrome for Windows &amp;amp; MacOS.&lt;/p&gt;
+</content>
+            </entry>
         
             <entry>
                 <title>Devtools Console, from Novice to Ninja</title>
