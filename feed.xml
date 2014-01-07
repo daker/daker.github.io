@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-01-07T22:38:31Z</updated>
+        <updated>2014-01-07T23:45:09Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -126,7 +126,7 @@ form.addEventListener(&amp;#39;autocompleteerror&amp;#39;, function(event) {
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You can already start using it while being compatible with others browsers that didn&amp;#39;t implement it yet(and hope they will standardize it), by using the &lt;code&gt;event.reason&lt;/code&gt; as shown above and fallback to a normal checkout form.&lt;/p&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;From a consumer percepective, it means that the 21 pieces of data to enter will be reduced to two or three clicks, this will dramatically improve the usability and conversion rates.&lt;/p&gt;
+&lt;p&gt;From a consumer perspective, it means that the 21 pieces of data to enter will be reduced to two or three clicks, this will dramatically improve the usability and conversion rates.&lt;/p&gt;
 
 &lt;p&gt;NB: The &lt;code&gt;requestAutocomplete()&lt;/code&gt; is only implemented on Chrome Mobile and Google Chrome for Windows &amp;amp; MacOS.&lt;/p&gt;
 </content>
