@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-01-11T18:08:33Z</updated>
+        <updated>2014-01-11T20:24:51Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,56 @@
             <uri>http://daker.me/</uri>
         </author>
         
+        
+            <entry>
+                <title>How to use the Built-in Screen Recording in Android 4.4 KitKat</title>
+                <link rel="alternate" href="http://daker.me/2014/01/how-to-use-the-built-in-screen-recording-in-android-4.4-kitkat.html" type="text/html" />
+                <id>http://daker.me/2014/01/how-to-use-the-built-in-screen-recording-in-android-4.4-kitkat.html</id>
+                <updated>2014-01-11T20:30:00Z</updated>
+                
+                <summary type="html">Android 4.4 KitKat now supports screen recording, it&amp;#39;s only accessible via an ADB command on unrooted devices a. This featues is really a great way to create walkthroughs, tutorials for apps and also perfect for reporting bugs.</summary>
+                <content type="html">&lt;p&gt;Android 4.4 KitKat now supports screen recording, it&amp;#39;s only accessible via an ADB command on unrooted devices a. This featues is really a great way to create walkthroughs, tutorials for apps and also perfect for reporting bugs.&lt;/p&gt;
+
+&lt;p&gt;&lt;video src=&#34;http://daker.me/assets/posts/android4.4/recording.mp4&#34; width=&#34;350&#34; height=&#34;500&#34;&gt;&lt;/video&gt;&lt;/p&gt;
+
+&lt;p&gt;To start using it you need to install ADB, you can use the phablet-team PPA if you are using Ubuntu which has the tools and dependencies for 12.04, 12.10, 13.04 and 13.10 to get everything setup, if not you can download the Android SDK from the &lt;a href=&#34;https://developer.android.com/sdk/index.html&#34;&gt;Android developer site&lt;/a&gt;&lt;/p&gt;
+&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo add-apt-repository ppa:phablet-team/tools
+$ sudo apt-get update
+$ sudo apt-get install android-tools-adb
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Enable Developer Mode&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to the settings menu, and scroll down to &amp;quot;About phone.&amp;quot; Tap on it.&lt;/li&gt;
+&lt;li&gt;Scroll down to the bottom, where you see &amp;quot;Build number.&amp;quot;&lt;/li&gt;
+&lt;li&gt;Tap on it seven (7) times.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Enable the USB debugging&lt;/h2&gt;
+&lt;p&gt;Once done hit the Back button, youl&amp;#39;ll see an new entry called &amp;quot;Developer Options&amp;quot; just above the &amp;quot;About phone.&amp;quot; entry, tap on it, scroll down to the debugging section, then enable USB debugging, note that you’ve to confirm the security prompt on your device :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/android4.4/usb-debugging.png&#34; alt=&#34;USB debugging&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/android4.4/usb-debugging2.png&#34; alt=&#34;Security Question&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Using the Screen Recording&lt;/h2&gt;
+&lt;p&gt;Once done, you need to make sure that your device is listed &amp;amp; connected using :&lt;/p&gt;
+&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ adb devices
+List of devices attached
+xxxxxxxxxxxxxxxx  device
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then all you have to do is :&lt;/p&gt;
+&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ adb shell screenrecord /sdcard/recording.mp4 &amp;amp;&amp;amp; adb pull /sdcard/recording.mp4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The default and maximum duration of a screenrecord is 3 minutes, you can use the &lt;code&gt;--time-limit&lt;/code&gt; argument to set the limit you want, here all arguements you can set :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;--help : Displays a usage summary.&lt;/li&gt;
+&lt;li&gt;--size &lt;WIDTHxHEIGHT&gt; : Sets the video size, for example: 1280x720. The default value is the device&amp;#39;s main display resolution (if supported), 1280x720 if not. For best results, use a size supported by your device&amp;#39;s Advanced Video Coding (AVC) encoder.&lt;/li&gt;
+&lt;li&gt;--bit-rate &lt;RATE&gt; : Sets the video bit rate for the video, in megabits per second. The default value is 4Mbps. You can increase the bit rate to improve video quality or lower it for smaller movie files. The following example sets the recording bit rate to 6Mbps:
+screenrecord --bit-rate 6000000 /sdcard/demo.mp4&lt;/li&gt;
+&lt;li&gt;--time-limit &lt;TIME&gt; : Sets the maximum recording time, in seconds. The default and maximum value is 180 (3 minutes).&lt;/li&gt;
+&lt;li&gt;--rotate : Rotates the output 90 degrees. This feature is experimental.&lt;/li&gt;
+&lt;li&gt;--verbose : Displays log information on command line screen. If you do not set this option, the utility does not display any information while running.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+            </entry>
         
             <entry>
                 <title>Chrome’s requestAutocomplete(), for a Better Payment on the Web &amp; Mobile</title>
