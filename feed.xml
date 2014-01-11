@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-01-11T20:24:51Z</updated>
+        <updated>2014-01-11T20:39:43Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -24,7 +24,9 @@
                 <summary type="html">Android 4.4 KitKat now supports screen recording, it&amp;#39;s only accessible via an ADB command on unrooted devices a. This featues is really a great way to create walkthroughs, tutorials for apps and also perfect for reporting bugs.</summary>
                 <content type="html">&lt;p&gt;Android 4.4 KitKat now supports screen recording, it&amp;#39;s only accessible via an ADB command on unrooted devices a. This featues is really a great way to create walkthroughs, tutorials for apps and also perfect for reporting bugs.&lt;/p&gt;
 
-&lt;p&gt;&lt;video src=&#34;http://daker.me/assets/posts/android4.4/recording.mp4&#34; width=&#34;350&#34; height=&#34;500&#34;&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;&lt;video controls autoplay width=&#34;350&#34; height=&#34;500&#34;&gt;&lt;br&gt;
+  &lt;source src=&#34;http://daker.me/assets/posts/android4.4/recording.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;br&gt;
+&lt;/video&gt;&lt;/p&gt;
 
 &lt;p&gt;To start using it you need to install ADB, you can use the phablet-team PPA if you are using Ubuntu which has the tools and dependencies for 12.04, 12.10, 13.04 and 13.10 to get everything setup, if not you can download the Android SDK from the &lt;a href=&#34;https://developer.android.com/sdk/index.html&#34;&gt;Android developer site&lt;/a&gt;&lt;/p&gt;
 &lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo add-apt-repository ppa:phablet-team/tools
