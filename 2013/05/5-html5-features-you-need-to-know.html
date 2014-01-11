@@ -47,29 +47,21 @@
     <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <link rel="alternate" href="/feed.xml" type="application/atom+xml">
     <link rel="alternate" href="/feed-ubuntuplanet.xml" type="application/atom+xml">
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-41135963-1', 'daker.me');
-      ga('send', 'pageview');
-    </script>
 </head>
 <body itemscope itemtype="http://schema.org/CreativeWork">
-    <section id="header">
+    <header class="site-header">
         <form action="." id="searchForm">
             <input type="search" placeholder="Search..." name="q" id="q" accesskey="s" autocomplete="off" required="">
         </form>
-        <div id="nav">
+        <menu id="nav">
             <a href="/">Blog</a>
             <a href="/archives/">Archives</a>
             <a href="/demos/">Demos</a>
             <a href="/feed.xml">Feed</a>
-        </div>
-    </section>
+        </menu>
+    </header>
 
-    <div class="container" id="container">
+    <main class="content">
         <aside id="sidebar">
             <a href="/" class="post-author-image" title="Homepage">
                 <img src="/assets/images/avatar.png" alt="Avatar">
@@ -248,12 +240,13 @@
 </section>
 
         </section>
-    </div>
-    <div style="clear: both;"></div>
-    <footer id="footer">
+    </main>
+
+    <footer class="site-footer">
         <p class="copyright">
             Copyright &copy; 2014 Adnane Belmadiaf<br />
-            This work is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a></p>
+            This work is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>
+        </p>
     </footer>
     <script type="text/javascript">
         (function () {
@@ -267,6 +260,14 @@
     <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/jquery.ba-hashchange.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/main.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41135963-1', 'daker.me');
+      ga('send', 'pageview');
+    </script>
     
 <script type="text/javascript" src="//connect.facebook.net/en_US/all.js#xfbml=1"></script>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
