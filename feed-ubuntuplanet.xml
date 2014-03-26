@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-ubuntuplanet.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-02-11T22:18:10Z</updated>
+        <updated>2014-03-26T22:49:36Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,76 @@
             <uri>http://daker.me/</uri>
         </author>
 
+        
+            
+            <entry>
+                <title>Update on the Ubuntu HTML5 SDK UI</title>
+                <link rel="alternate" href="http://daker.me/2014/03/update-on-the-ubuntu-html5-sdk-ui.html" type="text/html" />
+                <id>http://daker.me/2014/03/update-on-the-ubuntu-html5-sdk-ui.html</id>
+                <updated>2014-03-26T22:45:00Z</updated>
+
+                <summary type="html">As you may know HTML5 apps are first class citizens on Ubuntu, to acheive that the Ubuntu plateform provides a set of APIs and UI elements like the QML SDK, in this post i&amp;#39;ll provide some updates on the HTML5 UI elements.</summary>
+                <content type="html">&lt;p&gt;As you may know HTML5 apps are first class citizens on Ubuntu, to acheive that the Ubuntu plateform provides a set of APIs and UI elements like the QML SDK, in this post i&amp;#39;ll provide some updates on the HTML5 UI elements.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/ubuntu-html5.png&#34; alt=&#34;Ubuntu loves HTML5&#34;&gt;&lt;/p&gt;
+
+&lt;script type=&#34;text/javascript&#34; src=&#34;https://apis.google.com/js/plusone.js&#34;&gt;&lt;/script&gt;
+&lt;h2&gt;Ubuntu Shape&lt;/h2&gt;
+&lt;p&gt;The actual implementation is using an image as background with the pseudo class :after which is very limited the design team have suggested that we used a simple CSS border-radius for now, a proposal made by &lt;a href=&#34;https://plus.google.com/u/0/+KyleNitzsche/posts&#34;&gt;Stuart Langridge&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Swipe To delete&lt;/h2&gt;
+&lt;p&gt;Last week-end i had to seat and work on this missing feature, it&amp;#39;s still a work in progress since i need to finished the design of the API and how it should be declared.&lt;/p&gt;
+
+&lt;div class=&#34;g-post&#34; data-href=&#34;https://plus.google.com/101694416703170881163/posts/auBU41xRHnB&#34;&gt;&lt;/div&gt;
+&lt;h2&gt;i18n&lt;/h2&gt;
+&lt;p&gt;The first proposal was based on JSON files, but we thought that this will need a lot of work to be consistent with Launchpad translation infrastructure.&lt;/p&gt;
+
+&lt;p&gt;The HTML translation is done by using :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;data-i18n-translate : this is used to collect all the strings that needs be translated used by JavaScript and used for pot generation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;h1 data-i18n-translate&amp;gt;Good Morning&amp;lt;/h1&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;data-i18n-args : JSON data used to replace variables in the string, it only supports one level so far&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;h1 data-i18n-translate data-i18n-args=&amp;#39;{ &amp;#34;user&amp;#34;: &amp;#34;daker&amp;#34; }&amp;#39;&amp;gt;Good Morning &amp;lt;/h1&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;data-i18n-plural : This is the plural string, here &lt;a href=&#34;https://plus.google.com/u/0/+KyleNitzsche/posts&#34;&gt;Kyle&lt;/a&gt; suggested that we hardcode the &amp;quot;n&amp;quot; counter used to determine if the string will be plural or not to &amp;quot;num&amp;quot;, so the dev have to passe the &amp;quot;num&amp;quot; in the data-i18n-args instead of a proper data-i18n-n.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;h1 data-i18n-translate data-i18n-plural=&amp;#34;I have   cars&amp;#34; data-i18n-args=&amp;#39;{ &amp;#34;num&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;brand&amp;#34;: &amp;#34;Mercedes&amp;#34; }&amp;#39;&amp;gt;I have a  car&amp;lt;/h1&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;g-post&#34; data-href=&#34;https://plus.google.com/101694416703170881163/posts/DpgEVUdcQJd&#34;&gt;&lt;/div&gt;
+
+&lt;div class=&#34;g-post&#34; data-href=&#34;https://plus.google.com/101694416703170881163/posts/AY3k3BYbCSS&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;For the JS API, we will provide tree functions &lt;code&gt;i18n.tr&lt;/code&gt; and &lt;code&gt;i18n.dtr&lt;/code&gt; like in QML and a function to do string replacement &lt;code&gt;i18n.strargs&lt;/code&gt; :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;tr(text);&lt;/li&gt;
+&lt;li&gt;tr(singular, plural, int n);&lt;/li&gt;
+&lt;li&gt;dtr(domain, text);&lt;/li&gt;
+&lt;li&gt;dtr(domain, singular, plural, n);&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;i18n.tr(&amp;#39;Good Morning&amp;#39;);
+i18n.strargs(i18n.tr(&amp;#39;Good Morning &amp;#39;), &amp;#39;{ &amp;#34;user&amp;#34;: &amp;#34;daker&amp;#34; }&amp;#39;));
+i18n.strargs(i18n.tr(&amp;#39;I have a  car&amp;#39;, &amp;#39;I have   cars&amp;#39;, &amp;#39;1&amp;#39;), &amp;#39;{ &amp;#34;num&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;brand&amp;#34;: &amp;#34;Mercedes&amp;#34; }&amp;#39;));
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Grid Layout&lt;/h2&gt;
+&lt;p&gt;I have tried to use the flexbox technique to provide a simple implementation of a grid layout by using data attributes :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;data-role=&amp;quot;row&amp;quot; : To define a row&lt;/li&gt;
+&lt;li&gt;data-role=&amp;quot;column&amp;quot; : To define a column&lt;/li&gt;
+&lt;li&gt;data-align=&amp;quot;top, bottom, center&amp;quot; : To define the vertical alignment&lt;/li&gt;
+&lt;li&gt;data-role=&amp;quot;column&amp;quot; + data-offset=&amp;quot;[10, 20, 25, 33, 34, 50, 66, 67, 75, 80, 90]&amp;quot; : To define the offset of the column&lt;/li&gt;
+&lt;li&gt;data-role=&amp;quot;column&amp;quot; + data-size=&amp;quot;[10, 20, 25, 33, 34, 50, 66, 67, 75, 80, 90]&amp;quot; : To define the size of the column&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you want to helps us by contributing, by fixing &lt;a href=&#34;https://bugs.launchpad.net/ubuntu-html5-theme&#34;&gt;bugs&lt;/a&gt; or share your opinions ping me &amp;quot;daker&amp;quot; or &amp;quot;alex-abreu&amp;quot; on #ubuntu-webapps channel on freenode.&lt;/p&gt;
+</content>
+            </entry>
+            
         
             
         
