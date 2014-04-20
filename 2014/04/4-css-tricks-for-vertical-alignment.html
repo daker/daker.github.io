@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#">
+    <meta charset="utf-8">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//google-analytics.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//platform.twitter.com">
+    <link rel="dns-prefetch" href="//disqus.com">
+    <link rel="dns-prefetch" href="//undefined.disqus.com">
+    <link rel="dns-prefetch" href="//mediacdn.disqus.com">
+    <link rel="dns-prefetch" href="//daker-blog.disqus.com">
+    <link rel="dns-prefetch" href="//referrer.disqus.com">
+    <link rel="dns-prefetch" href="//juggler.services.disqus.com">
+    <link rel="dns-prefetch" href="//realtime.services.disqus.com">
+    <link rel="dns-prefetch" href="//p.twitter.com">
+    <link rel="dns-prefetch" href="//cdn.api.twitter.com">
+    <link rel="dns-prefetch" href="//themes.googleusercontent.com"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="msvalidate.01" content="A9896803DADDF85332F6A520107ECEBE" />
+    <meta name="google-site-verification" content="qA5fQYo10u0jB6kurgbIyQI03Yjm5hv99Ll68_c3jYQ" />
+    <meta name="author" content="Adnane Belmadiaf">
+    <link rel="author" href="https://plus.google.com/101694416703170881163" />
+    <link rel="stylesheet" href="/assets/css/app.min.css" type="text/css">
+    <title>4 CSS Tricks for Vertical Alignment — Adnane Belmadiaf's Blog</title>
+    <meta name="description" content="There are a few different techniques to vertically centre objects with CSS, in this post i’ll show you four ways to do it.">
+    <meta name="keywords" content="css">
+    <meta property="og:image" content="http://daker.me/assets/images/avatar.png">
+    <meta property="og:title" content="4 CSS Tricks for Vertical Alignment — Adnane Belmadiaf's Blog">
+    <meta property="og:site_name" content="Adnane Belmadiaf's Blog">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@AdnaneBelmadiaf">
+    <meta property="twitter:image" content="http://daker.me/assets/images/avatar.png">
+    <meta property="twitter:title" content="4 CSS Tricks for Vertical Alignment — Adnane Belmadiaf's Blog">
+    <meta property="twitter:url" content="http://daker.me/2014/04/4-css-tricks-for-vertical-alignment.html">
+    <meta name="twitter:creator" content="@AdnaneBelmadiaf">
+    <meta property="og:description" content="There are a few different techniques to vertically centre objects with CSS, in this post i’ll show you four ways to do it.">
+    <meta name="twitter:description" content="There are a few different techniques to vertically centre objects with CSS, in this post i’ll show you four ways to do it.">
+    <link rel="prev" title="Update on the Ubuntu HTML5 SDK UI" href="http://daker.me/2014/03/update-on-the-ubuntu-html5-sdk-ui.html" />
+    
+    <meta property="article:author" content="https://www.facebook.com/AdnaneBelmadiaf" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-precomposed-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-precomposed-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-precomposed-72.png">
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml">
+    <link rel="alternate" href="/feed-ubuntuplanet.xml" type="application/atom+xml">
+</head>
+<body itemscope itemtype="http://schema.org/CreativeWork">
+    <header class="site-header">
+        <form action="." id="searchForm">
+            <input type="search" placeholder="Search..." name="q" id="q" accesskey="s" autocomplete="off" required="">
+        </form>
+        <menu id="nav">
+            <a href="/">Blog</a>
+            <a href="/archives/">Archives</a>
+            <a href="/demos/">Demos</a>
+            <a href="/feed.xml">Feed</a>
+        </menu>
+    </header>
+
+    <main class="content">
+        <aside id="sidebar">
+            <a href="/" class="post-author-image" title="Homepage">
+                <img src="/assets/images/avatar.png" alt="Avatar">
+            </a>
+            <div class="post-author-info">
+                <span class="post-author-name">Adnane Belmadiaf</span>
+                <p>
+                    Front-end developer
+                </p>
+                <div class="post-author-icons">
+                    <a href="https://launchpad.net/~daker" class="icon-tux" title="Launchpad" target="_blank"></a>
+                    <a href="https://github.com/daker" class="icon-github" title="Github" target="_blank"></a>
+                    <a href="https://plus.google.com/101694416703170881163" class="icon-google-plus" title="Google Plus" target="_blank"></a>
+                    <a href="https://twitter.com/AdnaneBelmadiaf" class="icon-twitter" title="Twitter" target="_blank"></a>
+                    <a style="margin-right: 0;" href="/feed.xml" class="icon-feed" title="RSS feed" target="_blank"></a>
+                </div>
+            </div>
+            
+<div class="post-published-date"> <strong>Published</strong>
+    <p>
+        <time datetime="2014-04-20 15:30:00+01:00" class="post-date">Apr 20, 2014 at 15:30</time>
+    </p>
+</div>
+
+<div class="post-tags">
+    <strong>Tags</strong>
+    <p>
+        
+        <a href="/tags/css/" itemprop="keywords">#css</a>
+        
+    </p>
+</div>
+
+
+            <script type="text/javascript" src="http://cdn.adpacks.com/adpacks.js?legacyid=1290676&zoneid=1386&key=af6bf8f7d59e09aa41173c9e7d776de9&serve=C6SD52Y&placement=dakerme&circle=dev" id="_adpacks_js"></script>
+        </aside>
+
+        <section class="posts">
+            
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <h2 itemprop="name headline" class="post-title">4 CSS Tricks for Vertical Alignment</h2>
+    </header>
+    <div class="post-social">
+        <div class="post-social-button">
+            <fb:like href="http://daker.me/2014/04/4-css-tricks-for-vertical-alignment.html" send="false" show_faces="false"  layout="button_count" width="92" ></fb:like>
+        </div>
+        <div class="post-social-button">
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://daker.me/2014/04/4-css-tricks-for-vertical-alignment.html" data-count="horizontal" data-text="4 CSS Tricks for Vertical Alignment" data-via="AdnaneBelmadiaf" data-related="AdnaneBelmadiaf"></a>
+        </div>
+        <div class="post-social-button">
+        <a class="FlattrButton" style="display:none;" href="http://daker.me/2014/04/4-css-tricks-for-vertical-alignment.html" title="4 CSS Tricks for Vertical Alignment" data-flattr-uid="daker" data-flattr-button="compact" data-flattr-tags="css" data-flattr-category="text" data-flattr-lang="en_US">There are a few different techniques to vertically centre objects with CSS, in this post i’ll show you four ways to do it.</a>
+        </div>
+        <div class="post-social-button">
+            <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="horizontal" data-url="http://daker.me/2014/04/4-css-tricks-for-vertical-alignment.html" data-via="AdnaneBelmadiaf" data-picture="http://daker.me/assets/images/avatar.png"></a>
+        </div>
+
+        <div class="post-social-button">
+            <div class="g-plusone" data-size="medium" data-href="http://daker.me/2014/04/4-css-tricks-for-vertical-alignment.html"></div>
+        </div>
+    </div>
+    <div class="post-content">
+        <div class="post-field body" itemprop="articleBody"><p>There are a few different techniques to vertically centre objects with CSS, in this post i’ll show you four ways to do it.</p>
+
+<p><img src="/assets/posts/box-model.png" alt="Box Model"></p>
+<h2>display: table-cell</h2>
+<p>The first trick is by using <code>display: table</code> for the parent of the element you want to center, then your element will behave like a table cell by using <code>display: table-cell</code>.<br>
+<iframe width="100%" height="300" src="http://jsfiddle.net/daker/cx6MG/embedded/result,css,html" allowfullscreen="allowfullscreen"></iframe></p>
+<h2>line-height</h2>
+<p>This technique only works if you have a single line text, by setting the <code>line-height</code> will make in the middle of the parent div.<br>
+<iframe width="100%" height="300" src="http://jsfiddle.net/daker/5NhNX/1/embedded/result,css,html" allowfullscreen="allowfullscreen"></iframe></p>
+<h2>CSS3 transform</h2>
+<p>With this technique we use the CSS property transform which is usally used for rotating and scaling elements, but it ca be also used to translate them vertically.<br>
+<iframe width="100%" height="300" src="http://jsfiddle.net/daker/dYdLn/embedded/result,css,html" allowfullscreen="allowfullscreen"></iframe></p>
+<h2>Flex Box</h2>
+<p>Flex Box is a layout mode providing for the arrangement of elements on a page.<br>
+<iframe width="100%" height="300" src="http://jsfiddle.net/daker/z58kQ/embedded/result,css,html" allowfullscreen="allowfullscreen"></iframe></p>
+</div>
+    </div>
+
+    <form action="http://daker.us7.list-manage.com/subscribe/post?u=ebd280d4e0da7cce97bd7a8ad&amp;id=327b2cec50" method="post" id="signup" name="signup-form">
+        <div class="row">
+            <input type="email" name="EMAIL" id="email" required="required" placeholder="Your E-mail address will be safe.">
+            <a href="/feed.xml" class="icon-feed " title="Subscribe to the RSS feed" target="_blank"></a>
+            <input type="submit" value="Subscribe" name="subscribe" id="subscribe-btn">
+        </div>
+    </form>
+    <div id="response" style="display:none"></div>
+    <div class="notice">By joining you'll receive a weekly e-mail with latest blog posts each Wednesday. Easy unsubscribe. No spam — your e-mail address will be safe.</div>
+
+    
+    <div class="prev-next">
+        
+        <div class="prev-post">
+            <a href="/2014/03/update-on-the-ubuntu-html5-sdk-ui.html" title="Update on the Ubuntu HTML5 SDK UI" class="title">
+                <span>Update on the Ubuntu HTML5 SDK UI</span>
+            </a>
+        </div>
+        
+        
+    </div>
+    
+</article>
+<section id="comment">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'daker-blog';
+        var disqus_title = '4 CSS Tricks for Vertical Alignment';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+</section>
+
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="copyright">
+            Copyright &copy; 2014 Adnane Belmadiaf<br />
+            This work is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>
+        </p>
+    </footer>
+    <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/jquery.ba-hashchange.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/main.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41135963-1', 'daker.me');
+      ga('send', 'pageview');
+    </script>
+    
+<script type="text/javascript" src="//connect.facebook.net/en_US/all.js#xfbml=1"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<script type="text/javascript">
+    (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+</script>
+<script type="text/javascript" src="http://static.bufferapp.com/js/button.js"></script>
+<script type="text/javascript">
+(function() {
+    var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+    t.parentNode.insertBefore(s, t);
+})();
+</script>
+</body>
+</html>
