@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-04-20T14:31:55Z</updated>
+        <updated>2014-05-11T21:41:03Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,245 @@
             <uri>http://daker.me/</uri>
         </author>
         
+        
+            <entry>
+                <title>How to use Oxide in your Ubuntu QML application</title>
+                <link rel="alternate" href="http://daker.me/2014/05/how-to-use-oxide-in-your-ubuntu-qml-application.html" type="text/html" />
+                <id>http://daker.me/2014/05/how-to-use-oxide-in-your-ubuntu-qml-application.html</id>
+                <updated>2014-05-11T10:30:00Z</updated>
+                
+                <summary type="html">Oxide is a Qt5/QML binding based on the Chromium Content API, it&amp;#39;s intended to &lt;a href=&#34;http://www.chriscoulson.me.uk/blog/?p=196&#34;&gt;replace qtwebkit&lt;/a&gt; for the touch browser, webapps and the UbuntuWebView.</summary>
+                <content type="html">&lt;p&gt;Oxide is a Qt5/QML binding based on the Chromium Content API, it&amp;#39;s intended to &lt;a href=&#34;http://www.chriscoulson.me.uk/blog/?p=196&#34;&gt;replace qtwebkit&lt;/a&gt; for the touch browser, webapps and the UbuntuWebView.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/ubuntu-browser.png&#34; alt=&#34;The Ubuntu Browser app&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;So what does Oxide provide for developers ? It does provide a good chunk a usefull functions :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Basic navigation&lt;/li&gt;
+&lt;li&gt;Incognito mode&lt;/li&gt;
+&lt;li&gt;Multiple browser contexts&lt;/li&gt;
+&lt;li&gt;User scripts&lt;/li&gt;
+&lt;li&gt;Message API&lt;/li&gt;
+&lt;li&gt;Dialog support&lt;/li&gt;
+&lt;li&gt;Accelerated compositing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;WebView&lt;/h2&gt;
+&lt;p&gt;To declare a Webview using Oxide you need to use to components, &lt;code&gt;WebView&lt;/code&gt; from &lt;code&gt;com.canonical.Oxide&lt;/code&gt;&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+[...]
+WebView {
+    id: webview
+    width: parent.width
+    height: parent.height
+
+    Component.onCompleted: {
+        url = &amp;#34;http://daker.me&amp;#34;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;WebView&lt;/code&gt; comes with a &lt;code&gt;preferences&lt;/code&gt; property which allows to set a list of attributes :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;allowFileAccessFromFileUrls (bool)&lt;/li&gt;
+&lt;li&gt;allowScriptsToCloseWindows  (bool)&lt;/li&gt;
+&lt;li&gt;allowUniversalAccessFromFileUrls (bool)&lt;/li&gt;
+&lt;li&gt;appCacheEnabled (bool)&lt;/li&gt;
+&lt;li&gt;canDisplayInsecureContent (bool)&lt;/li&gt;
+&lt;li&gt;canRunInsecureContent (bool)&lt;/li&gt;
+&lt;li&gt;caretBrowsingEnabled (bool)&lt;/li&gt;
+&lt;li&gt;databasesEnabled (bool)&lt;/li&gt;
+&lt;li&gt;defaultEncoding (QString)&lt;/li&gt;
+&lt;li&gt;defaultFixedFontSize (uint)&lt;/li&gt;
+&lt;li&gt;defaultFontSize (uint)&lt;/li&gt;
+&lt;li&gt;fixedFontFamily (QString)&lt;/li&gt;
+&lt;li&gt;hyperlinkAuditingEnabled (bool)&lt;/li&gt;
+&lt;li&gt;javascriptCanAccessClipboard (bool)&lt;/li&gt;
+&lt;li&gt;javascriptEnabled (bool)&lt;/li&gt;
+&lt;li&gt;loadsImagesAutomatically (bool)&lt;/li&gt;
+&lt;li&gt;localStorageEnabled (bool)&lt;/li&gt;
+&lt;li&gt;minimumFontSize (uint)&lt;/li&gt;
+&lt;li&gt;objectName (QString)&lt;/li&gt;
+&lt;li&gt;passwordEchoEnabled (bool)&lt;/li&gt;
+&lt;li&gt;remoteFontsEnabled(bool)&lt;/li&gt;
+&lt;li&gt;sanSerifFontFamily (QString)&lt;/li&gt;
+&lt;li&gt;serifFontFamily (QString)&lt;/li&gt;
+&lt;li&gt;shrinksStandaloneImagesToFit (bool)&lt;/li&gt;
+&lt;li&gt;standardFontFamily (QString)&lt;/li&gt;
+&lt;li&gt;tabsToLinks (bool)&lt;/li&gt;
+&lt;li&gt;textAreasAreResizable (bool)&lt;/li&gt;
+&lt;li&gt;touchEnabled  (bool)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Example&lt;/h3&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+[...]
+WebView {
+    id: webview
+    width: parent.width
+    height: parent.height
+
+    Component.onCompleted: {
+        url = &amp;#34;http://daker.me&amp;#34;
+    }
+
+    preferences.localStorageEnabled: true
+    preferences.loadsImagesAutomatically: false
+    preferences.passwordEchoEnabled: true
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;WebContext&lt;/h2&gt;
+&lt;p&gt;Oxide also provides a &lt;code&gt;WebContext&lt;/code&gt; which allow to set other settings&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;acceptLangs (QString)&lt;/li&gt;
+&lt;li&gt;cachePath (QUrl)&lt;/li&gt;
+&lt;li&gt;cookiePolicy (CookiePolicy)&lt;/li&gt;
+&lt;li&gt;dataPath (QUrl)&lt;/li&gt;
+&lt;li&gt;objectName (QString)&lt;/li&gt;
+&lt;li&gt;popupBlockerEnabled (bool)&lt;/li&gt;
+&lt;li&gt;product (QString)&lt;/li&gt;
+&lt;li&gt;sessionCookieMode&lt;/li&gt;
+&lt;li&gt;storageAccessPermissionDelegate&lt;/li&gt;
+&lt;li&gt;userAgent (QString)&lt;/li&gt;
+&lt;li&gt;userAgentOverrideDelegate&lt;/li&gt;
+&lt;li&gt;userScripts&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This example shows how you can use the &lt;code&gt;WebContext&lt;/code&gt; to override the default UserAgent&lt;/p&gt;
+&lt;h3&gt;UserAgent&lt;/h3&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+[...]
+WebContext {
+    id: webcontext
+    userAgent: &amp;#34;Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3&amp;#34;
+}
+
+WebView {
+    id: webview
+    width: parent.width
+    height: parent.height
+
+    context: webcontext
+
+    Component.onCompleted: {
+        url = &amp;#34;http://www.whatsmyuseragent.com&amp;#34;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;networkRequestDelegate&lt;/h3&gt;
+&lt;p&gt;You can also override the http request headers by using the &lt;code&gt;networkRequestDelegate&lt;/code&gt;, in this example i am adding a &lt;a href=&#34;https://en.wikipedia.org/wiki/Do_Not_Track&#34;&gt;Do Not Track&lt;/a&gt; (DNT) an HTTP header field on the fly.&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+[...]
+WebContext {
+    id: webcontext
+    networkRequestDelegate: WebContextDelegateWorker {
+        source: Qt.resolvedUrl(&amp;#34;dnt.js&amp;#34;)
+    }
+}
+
+WebView {
+    id: webview
+    width: parent.width
+    height: parent.height
+
+    context: webcontext
+
+    Component.onCompleted: {
+        url = &amp;#34;http://www.browserleaks.com/donottrack&amp;#34;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;/*
+ dnt.js
+ Made by Adnane Belmadiaf &amp;lt;daker AT ubuntu DOT com&amp;gt;
+*/
+
+exports.onBeforeSendHeaders = function(event) {
+    event.setHeader(&amp;#34;DNT&amp;#34;, 1);
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;UserScripts&lt;/h3&gt;
+&lt;p&gt;Oxide supports Greasemonkey-style user scripts, here is an example to do some DOM manipulation.&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+[...]
+WebContext {
+    id: webcontext
+    userScripts: [
+        UserScript {
+            context: &amp;#34;oxide://&amp;#34;
+            url: Qt.resolvedUrl(&amp;#34;oxide_dom.js&amp;#34;)
+            incognitoEnabled: true
+            matchAllFrames: true
+        }
+    ]
+}
+
+WebView {
+    id: webview
+    width: parent.width
+    height: parent.height
+
+    context: webcontext
+
+    Component.onCompleted: {
+        url = &amp;#34;http://www.ubuntu.com/&amp;#34;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;// ==UserScript==
+// @name           Dom Manipulation
+// @namespace      http://daker.me
+// @description    Oxide UserScript demo
+// ==/UserScript==
+
+function oxide_dom() {
+    var div = document.createElement(&amp;#39;div&amp;#39;);
+    div.innerHTML = &amp;#39;&amp;lt;h1&amp;gt;Content inserted using Oxide UserScript!&amp;lt;/h1&amp;gt;&amp;#39;;
+    div.style.color = &amp;#39;red&amp;#39;;
+    document.getElementById(&amp;#34;nav-global&amp;#34;).insertBefore(div);
+}
+
+window.addEventListener(&amp;#39;load&amp;#39;, oxide_dom, true);
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Message API&lt;/h3&gt;
+&lt;p&gt;Oxide does also provide a message API, in this example the script will send a message to Oxide on every request.&lt;/p&gt;
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+[...]
+WebContext {
+    id: webcontext
+    networkRequestDelegate: WebContextDelegateWorker {
+        source: Qt.resolvedUrl(&amp;#34;message-api.js&amp;#34;)
+        onMessage: console.log(&amp;#34;Message from Oxide : &amp;#34;, message.msg)
+        Component.onCompleted: {
+            sendMessage({ msg: &amp;#39;ping&amp;#39; })
+        }
+    }
+}
+
+WebView {
+    id: webview
+    width: parent.width
+    height: parent.height
+
+    context: webcontext
+
+    Component.onCompleted: {
+        url = &amp;#34;http://www.ubuntu.com/&amp;#34;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;/*
+ message-api.js
+ This script will send a message to Oxide on every request
+*/
+var response_msg = &amp;#34;&amp;#34;;
+
+oxide.onMessage = function(msg) {
+    if (&amp;#34;msg&amp;#34; in msg) {
+        if (msg[&amp;#34;msg&amp;#34;] == &amp;#39;ping&amp;#39;) {
+            response_msg = &amp;#34;pong&amp;#34;;
+        }
+    }
+};
+
+exports.onBeforeSendHeaders = function(event) {
+    oxide.sendMessage({msg: response_msg});
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Sure you can still use the UbuntuWebView&lt;/p&gt;
+</content>
+            </entry>
         
             <entry>
                 <title>4 CSS Tricks for Vertical Alignment</title>
