@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-05-11T21:44:16Z</updated>
+        <updated>2014-05-12T19:33:35Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -38,7 +38,7 @@
 &lt;li&gt;Accelerated compositing&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;WebView&lt;/h2&gt;
-&lt;p&gt;To declare a Webview using Oxide you need to use to components, &lt;code&gt;WebView&lt;/code&gt; from &lt;code&gt;com.canonical.Oxide&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Before you start make sure to add the &lt;code&gt;webview&lt;/code&gt; to your apparmor policy file, to declare a Webview using Oxide you need to use the &lt;code&gt;WebView&lt;/code&gt; component from &lt;code&gt;com.canonical.Oxide&lt;/code&gt;&lt;/p&gt;
 &lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
 [...]
 WebView {
@@ -115,9 +115,9 @@ WebView {
 &lt;li&gt;userAgentOverrideDelegate&lt;/li&gt;
 &lt;li&gt;userScripts&lt;/li&gt;
 &lt;/ul&gt;
-
+&lt;h3&gt;UserAgent&lt;/h3&gt;
 &lt;p&gt;This example shows how you can use the &lt;code&gt;WebContext&lt;/code&gt; to override the default UserAgent&lt;/p&gt;
-&lt;h3&gt;UserAgent&lt;/h3&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
 [...]
 WebContext {
     id: webcontext
