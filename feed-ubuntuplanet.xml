@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-ubuntuplanet.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-05-31T15:32:04Z</updated>
+        <updated>2014-06-07T16:02:41Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,78 @@
             <uri>http://daker.me/</uri>
         </author>
 
+        
+            
+            <entry>
+                <title>How I Did Make The Ubuntu HTML5 Range Slider</title>
+                <link rel="alternate" href="http://daker.me/2014/06/how-i-did-make-the-ubuntu-html5-range-slider.html" type="text/html" />
+                <id>http://daker.me/2014/06/how-i-did-make-the-ubuntu-html5-range-slider.html</id>
+                <updated>2014-06-07T16:00:00Z</updated>
+
+                <summary type="html">Last week while i was attending the &lt;a href=&#34;http://daker.me/2014/05/canonical-sprint-in-malta.html&#34;&gt;Canonical Client Sprint&lt;/a&gt; in Malta, i start looking into re-lifting some components like the CheckBox/Switch and the Slider, so in this post i&amp;#39;ll explain how i did implement the new the Slider.</summary>
+                <content type="html">&lt;p&gt;Last week while i was attending the &lt;a href=&#34;http://daker.me/2014/05/canonical-sprint-in-malta.html&#34;&gt;Canonical Client Sprint&lt;/a&gt; in Malta, i start looking into re-lifting some components like the CheckBox/Switch and the Slider, so in this post i&amp;#39;ll explain how i did implement the new the Slider.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/-OsoN55QFLxg/U5Mf5pZcTcI/AAAAAAAADBk/anOEUUCKFXA/w426-h584/out-7.gif&#34; alt=&#34;Ubuntu HTML5 Slider&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;The first thing that needs be done is to remove the default styles using &lt;code&gt;-webkit-appearance: none&lt;/code&gt;.&lt;/p&gt;
+&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;input[type=range] {
+  -webkit-appearance: none;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now we can start adding our CSS styles, Webkit/Blink provides an easy way to style the thumb using the pseudo class &lt;code&gt;::-webkit-slider-thumb&lt;/code&gt; but first we need to remove the defaul styles.&lt;/p&gt;
+&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;input[type=range] {
+    -webkit-appearance: none;
+    background: linear-gradient(to right, rgba(175, 175, 175, 0.3) 0%, rgba(175, 175, 175, 0.3) 100%);
+    background-position: center;
+    background-size: 99% 4px;
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    width: auto;
+    height: 36px;
+    border-radius: 1px;
+    overflow: hidden;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/f3Kzw/embedded/result,css,html&#34; allowfullscreen=&#34;allowfullscreen&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Now let&amp;#39;s style the thumb :&lt;/p&gt;
+&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;input[type=range]::-webkit-slider-thumb {
+  -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  background-color: #fff;
+  pointer-events: none;
+  border-radius: 3px;
+  width: 16px;
+  height: 16px;
+  position: relative;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/f3Kzw/2/embedded/result,css,html&#34; allowfullscreen=&#34;allowfullscreen&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;At this point we are still missing the oragne fill color, unfortunatly Webkit/Blink doesn&amp;#39;t provide any pseudo class to style this area like IE does, so i have tried to combine the pseudo class &lt;code&gt;::-webkit-slider-thumb&lt;/code&gt; and &lt;code&gt;:before&lt;/code&gt; to create this effect.&lt;/p&gt;
+&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;input[type=range]::-webkit-slider-thumb:before {
+  position: absolute;
+  top: 6px;
+  left: -2000px;
+  width: 2000px;
+  height: 4px;
+  background: #dd4814;
+  content: &amp;#39; &amp;#39;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/f3Kzw/1/embedded/result,css,html&#34; allowfullscreen=&#34;allowfullscreen&#34;&gt;&lt;/iframe&gt;
+</content>
+            </entry>
+            
         
             
             <entry>

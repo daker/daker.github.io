@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#">
+    <meta charset="utf-8">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//google-analytics.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//platform.twitter.com">
+    <link rel="dns-prefetch" href="//disqus.com">
+    <link rel="dns-prefetch" href="//undefined.disqus.com">
+    <link rel="dns-prefetch" href="//mediacdn.disqus.com">
+    <link rel="dns-prefetch" href="//daker-blog.disqus.com">
+    <link rel="dns-prefetch" href="//referrer.disqus.com">
+    <link rel="dns-prefetch" href="//juggler.services.disqus.com">
+    <link rel="dns-prefetch" href="//realtime.services.disqus.com">
+    <link rel="dns-prefetch" href="//p.twitter.com">
+    <link rel="dns-prefetch" href="//cdn.api.twitter.com">
+    <link rel="dns-prefetch" href="//themes.googleusercontent.com"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="msvalidate.01" content="A9896803DADDF85332F6A520107ECEBE" />
+    <meta name="google-site-verification" content="qA5fQYo10u0jB6kurgbIyQI03Yjm5hv99Ll68_c3jYQ" />
+    <meta name="author" content="Adnane Belmadiaf">
+    <link rel="author" href="https://plus.google.com/101694416703170881163" />
+    <link rel="stylesheet" href="/assets/css/app.min.css" type="text/css">
+    <title>How I Did Make The Ubuntu HTML5 Range Slider — Adnane Belmadiaf's Blog</title>
+    <meta name="description" content="Last week while i was attending the Canonical Client Sprint in Malta, i start looking into re-lifting some components like the CheckBox/Switch and the Slider, so in this post i'll explain how i did implement the new the Slider.">
+    <meta name="keywords" content="ubuntuplanet, ubuntutouch">
+    <meta property="og:image" content="http://daker.me/assets/images/avatar.png">
+    <meta property="og:title" content="How I Did Make The Ubuntu HTML5 Range Slider — Adnane Belmadiaf's Blog">
+    <meta property="og:site_name" content="Adnane Belmadiaf's Blog">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@AdnaneBelmadiaf">
+    <meta property="twitter:image" content="http://daker.me/assets/images/avatar.png">
+    <meta property="twitter:title" content="How I Did Make The Ubuntu HTML5 Range Slider — Adnane Belmadiaf's Blog">
+    <meta property="twitter:url" content="http://daker.me/2014/06/how-i-did-make-the-ubuntu-html5-range-slider.html">
+    <meta name="twitter:creator" content="@AdnaneBelmadiaf">
+    <meta property="og:description" content="Last week while i was attending the Canonical Client Sprint in Malta, i start looking into re-lifting some components like the CheckBox/Switch and the Slider, so in this post i'll explain how i did implement the new the Slider.">
+    <meta name="twitter:description" content="Last week while i was attending the Canonical Client Sprint in Malta, i start looking into re-lifting some components like the CheckBox/Switch and the Slider, so in this post i'll explain how i did implement the new the Slider.">
+    <link rel="prev" title="Canonical Sprint in Malta" href="http://daker.me/2014/05/canonical-sprint-in-malta.html" />
+    
+    <meta property="article:author" content="https://www.facebook.com/AdnaneBelmadiaf" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-precomposed-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-precomposed-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-precomposed-72.png">
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml">
+    <link rel="alternate" href="/feed-ubuntuplanet.xml" type="application/atom+xml">
+</head>
+<body itemscope itemtype="http://schema.org/CreativeWork">
+    <header class="site-header">
+        <form action="." id="searchForm">
+            <input type="search" placeholder="Search..." name="q" id="q" accesskey="s" autocomplete="off" required="">
+        </form>
+        <menu id="nav">
+            <a href="/">Blog</a>
+            <a href="/archives/">Archives</a>
+            <a href="/demos/">Demos</a>
+            <a href="/feed.xml">Feed</a>
+        </menu>
+    </header>
+
+    <main class="content">
+        <aside id="sidebar">
+            <a href="/" class="post-author-image" title="Homepage">
+                <img src="/assets/images/avatar.png" alt="Avatar">
+            </a>
+            <div class="post-author-info">
+                <span class="post-author-name">Adnane Belmadiaf</span>
+                <p>
+                    Front-end developer
+                </p>
+                <div class="post-author-icons">
+                    <a href="https://launchpad.net/~daker" class="icon-tux" title="Launchpad" target="_blank"></a>
+                    <a href="https://github.com/daker" class="icon-github" title="Github" target="_blank"></a>
+                    <a href="https://plus.google.com/101694416703170881163" class="icon-google-plus" title="Google Plus" target="_blank"></a>
+                    <a href="https://twitter.com/AdnaneBelmadiaf" class="icon-twitter" title="Twitter" target="_blank"></a>
+                    <a style="margin-right: 0;" href="/feed.xml" class="icon-feed" title="RSS feed" target="_blank"></a>
+                </div>
+            </div>
+            
+<div class="post-published-date"> <strong>Published</strong>
+    <p>
+        <time datetime="2014-06-07 16:00:00+01:00" class="post-date">Jun 07, 2014 at 16:00</time>
+    </p>
+</div>
+
+<div class="post-tags">
+    <strong>Tags</strong>
+    <p>
+        
+        <a href="/tags/ubuntuplanet/" itemprop="keywords">#ubuntuplanet</a>, 
+        
+        <a href="/tags/ubuntutouch/" itemprop="keywords">#ubuntutouch</a>
+        
+    </p>
+</div>
+
+
+            <script type="text/javascript" src="http://cdn.adpacks.com/adpacks.js?legacyid=1290676&zoneid=1386&key=af6bf8f7d59e09aa41173c9e7d776de9&serve=C6SD52Y&placement=dakerme&circle=dev" id="_adpacks_js"></script>
+        </aside>
+
+        <section class="posts">
+            
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <h2 itemprop="name headline" class="post-title">How I Did Make The Ubuntu HTML5 Range Slider</h2>
+    </header>
+    <div class="post-social">
+        <div class="post-social-button">
+            <fb:like href="http://daker.me/2014/06/how-i-did-make-the-ubuntu-html5-range-slider.html" send="false" show_faces="false"  layout="button_count" width="92" ></fb:like>
+        </div>
+        <div class="post-social-button">
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://daker.me/2014/06/how-i-did-make-the-ubuntu-html5-range-slider.html" data-count="horizontal" data-text="How I Did Make The Ubuntu HTML5 Range Slider" data-via="AdnaneBelmadiaf" data-related="AdnaneBelmadiaf"></a>
+        </div>
+        <div class="post-social-button">
+        <a class="FlattrButton" style="display:none;" href="http://daker.me/2014/06/how-i-did-make-the-ubuntu-html5-range-slider.html" title="How I Did Make The Ubuntu HTML5 Range Slider" data-flattr-uid="daker" data-flattr-button="compact" data-flattr-tags="ubuntuplanet, ubuntutouch" data-flattr-category="text" data-flattr-lang="en_US">Last week while i was attending the Canonical Client Sprint in Malta, i start looking into re-lifting some components like the CheckBox/Switch and the Slider, so in this post i'll explain how i did implement the new the Slider.</a>
+        </div>
+        <div class="post-social-button">
+            <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="horizontal" data-url="http://daker.me/2014/06/how-i-did-make-the-ubuntu-html5-range-slider.html" data-via="AdnaneBelmadiaf" data-picture="http://daker.me/assets/images/avatar.png"></a>
+        </div>
+
+        <div class="post-social-button">
+            <div class="g-plusone" data-size="medium" data-href="http://daker.me/2014/06/how-i-did-make-the-ubuntu-html5-range-slider.html"></div>
+        </div>
+    </div>
+    <div class="post-content">
+        <div class="post-field body" itemprop="articleBody"><p>Last week while i was attending the <a href="http://daker.me/2014/05/canonical-sprint-in-malta.html">Canonical Client Sprint</a> in Malta, i start looking into re-lifting some components like the CheckBox/Switch and the Slider, so in this post i&#39;ll explain how i did implement the new the Slider.</p>
+
+<p><img src="https://lh4.googleusercontent.com/-OsoN55QFLxg/U5Mf5pZcTcI/AAAAAAAADBk/anOEUUCKFXA/w426-h584/out-7.gif" alt="Ubuntu HTML5 Slider"></p>
+
+<p>The first thing that needs be done is to remove the default styles using <code>-webkit-appearance: none</code>.</p>
+<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">range</span><span class="o">]</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">appearance</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>Now we can start adding our CSS styles, Webkit/Blink provides an easy way to style the thumb using the pseudo class <code>::-webkit-slider-thumb</code> but first we need to remove the defaul styles.</p>
+<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">range</span><span class="o">]</span> <span class="p">{</span>
+    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">appearance</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+    <span class="k">background</span><span class="o">:</span> <span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="n">to</span> <span class="k">right</span><span class="o">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">175</span><span class="o">,</span> <span class="m">175</span><span class="o">,</span> <span class="m">175</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">3</span><span class="p">)</span> <span class="m">0</span><span class="o">%,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">175</span><span class="o">,</span> <span class="m">175</span><span class="o">,</span> <span class="m">175</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">3</span><span class="p">)</span> <span class="m">100</span><span class="o">%</span><span class="p">);</span>
+    <span class="k">background-position</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+    <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="m">99</span><span class="o">%</span> <span class="m">4px</span><span class="p">;</span>
+    <span class="k">background-repeat</span><span class="o">:</span> <span class="k">no-repeat</span><span class="p">;</span>
+    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">appearance</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+    <span class="k">width</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+    <span class="k">height</span><span class="o">:</span> <span class="m">36px</span><span class="p">;</span>
+    <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">1px</span><span class="p">;</span>
+    <span class="k">overflow</span><span class="o">:</span> <span class="k">hidden</span><span class="p">;</span>
+    <span class="k">margin-top</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">range</span><span class="o">]:</span><span class="nd">:-webkit-slider-thumb</span> <span class="p">{</span>
+    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">appearance</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div></div>
+<iframe width="100%" height="300" src="http://jsfiddle.net/daker/f3Kzw/embedded/result,css,html" allowfullscreen="allowfullscreen"></iframe>
+
+<p>Now let&#39;s style the thumb :</p>
+<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">range</span><span class="o">]:</span><span class="nd">:-webkit-slider-thumb</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="k">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">0</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">2</span><span class="p">);</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="k">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">0</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">2</span><span class="p">);</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">appearance</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="m">#fff</span><span class="p">;</span>
+  <span class="k">pointer</span><span class="o">-</span><span class="n">events</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div></div>
+<iframe width="100%" height="300" src="http://jsfiddle.net/daker/f3Kzw/2/embedded/result,css,html" allowfullscreen="allowfullscreen"></iframe>
+
+<p>At this point we are still missing the oragne fill color, unfortunatly Webkit/Blink doesn&#39;t provide any pseudo class to style this area like IE does, so i have tried to combine the pseudo class <code>::-webkit-slider-thumb</code> and <code>:before</code> to create this effect.</p>
+<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">range</span><span class="o">]:</span><span class="nd">:-webkit-slider-thumb:before</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+  <span class="k">top</span><span class="o">:</span> <span class="m">6px</span><span class="p">;</span>
+  <span class="k">left</span><span class="o">:</span> <span class="m">-2000px</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">2000px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">4px</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">:</span> <span class="m">#dd4814</span><span class="p">;</span>
+  <span class="k">content</span><span class="o">:</span> <span class="s1">&#39; &#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div></div>
+<iframe width="100%" height="300" src="http://jsfiddle.net/daker/f3Kzw/1/embedded/result,css,html" allowfullscreen="allowfullscreen"></iframe>
+</div>
+    </div>
+
+    <form action="http://daker.us7.list-manage.com/subscribe/post?u=ebd280d4e0da7cce97bd7a8ad&amp;id=327b2cec50" method="post" id="signup" name="signup-form">
+        <div class="row">
+            <input type="email" name="EMAIL" id="email" required="required" placeholder="Your E-mail address will be safe.">
+            <a href="/feed.xml" class="icon-feed " title="Subscribe to the RSS feed" target="_blank"></a>
+            <input type="submit" value="Subscribe" name="subscribe" id="subscribe-btn">
+        </div>
+    </form>
+    <div id="response" style="display:none"></div>
+    <div class="notice">By joining you'll receive a weekly e-mail with latest blog posts each Wednesday. Easy unsubscribe. No spam — your e-mail address will be safe.</div>
+
+    
+    <div class="prev-next">
+        
+        <div class="prev-post">
+            <a href="/2014/05/canonical-sprint-in-malta.html" title="Canonical Sprint in Malta" class="title">
+                <span>Canonical Sprint in Malta</span>
+            </a>
+        </div>
+        
+        
+    </div>
+    
+</article>
+<section id="comment">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'daker-blog';
+        var disqus_title = 'How I Did Make The Ubuntu HTML5 Range Slider';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+</section>
+
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="copyright">
+            Copyright &copy; 2014 Adnane Belmadiaf<br />
+            This work is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>
+        </p>
+    </footer>
+    <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/jquery.ba-hashchange.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/main.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41135963-1', 'daker.me');
+      ga('send', 'pageview');
+    </script>
+    
+<script type="text/javascript" src="//connect.facebook.net/en_US/all.js#xfbml=1"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<script type="text/javascript">
+    (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+</script>
+<script type="text/javascript" src="http://static.bufferapp.com/js/button.js"></script>
+<script type="text/javascript">
+(function() {
+    var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+    t.parentNode.insertBefore(s, t);
+})();
+</script>
+</body>
+</html>
