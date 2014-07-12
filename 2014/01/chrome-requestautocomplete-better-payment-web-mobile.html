@@ -135,77 +135,42 @@
 <p><img src="/assets/posts/requestAutocomplete/1.png" alt="requestAutocomplete"></p>
 
 <p>Calling the <code>requestAutocomplete()</code> on a form element will auto-populate the data, the browser will use the form to detect which input types to populate, which means that the form doesn’t really need to be shown to the user.</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18</pre></div></td><td class="code"><div class="highlight"><pre><span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;checkout&quot;</span><span class="nt">&gt;</span>Checkout<span class="nt">&lt;/button&gt;</span>
+<pre><code data-language="html">&lt;button id=&#34;checkout&#34;&gt;Checkout&lt;/button&gt;
 
-<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;checkout-form&quot;</span> <span class="na">hidden</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">autocomplete=</span><span class="s">&quot;cc-name&quot;</span> <span class="na">name=</span><span class="s">&quot;myname&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">autocomplete=</span><span class="s">&quot;cc-number&quot;</span> <span class="na">name=</span><span class="s">&quot;ccnumber&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">autocomplete=</span><span class="s">&quot;cc-exp&quot;</span> <span class="na">name=</span><span class="s">&quot;ccexp&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">autocomplete=</span><span class="s">&quot;cc-csc&quot;</span> <span class="na">name=</span><span class="s">&quot;cccvc&quot;</span><span class="nt">&gt;</span>
+&lt;form id=&#34;checkout-form&#34; hidden&gt;
+  &lt;input autocomplete=&#34;cc-name&#34; name=&#34;myname&#34;&gt;
+  &lt;input autocomplete=&#34;cc-number&#34; name=&#34;ccnumber&#34;&gt;
+  &lt;input autocomplete=&#34;cc-exp&#34; name=&#34;ccexp&#34;&gt;
+  &lt;input autocomplete=&#34;cc-csc&#34; name=&#34;cccvc&#34;&gt;
 
-  <span class="nt">&lt;input</span> <span class="na">autocomplete=</span><span class="s">&quot;billing street-address&quot;</span> <span class="na">name=</span><span class="s">&quot;billaddress&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">autocomplete=</span><span class="s">&quot;billing locality&quot;</span> <span class="na">name=</span><span class="s">&quot;billtown&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">autocomplete=</span><span class="s">&quot;billing region&quot;</span> <span class="na">name=</span><span class="s">&quot;billstate&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">autocomplete=</span><span class="s">&quot;billing postal-code&quot;</span> <span class="na">name=</span><span class="s">&quot;billzip&quot;</span><span class="nt">&gt;</span>
+  &lt;input autocomplete=&#34;billing street-address&#34; name=&#34;billaddress&#34;&gt;
+  &lt;input autocomplete=&#34;billing locality&#34; name=&#34;billtown&#34;&gt;
+  &lt;input autocomplete=&#34;billing region&#34; name=&#34;billstate&#34;&gt;
+  &lt;input autocomplete=&#34;billing postal-code&#34; name=&#34;billzip&#34;&gt;
 
-  <span class="nt">&lt;input</span> <span class="na">autocomplete=</span><span class="s">&quot;shipping street-address&quot;</span> <span class="na">name=</span><span class="s">&quot;billaddress&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">autocomplete=</span><span class="s">&quot;shipping locality&quot;</span> <span class="na">name=</span><span class="s">&quot;billtown&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">autocomplete=</span><span class="s">&quot;shipping region&quot;</span> <span class="na">name=</span><span class="s">&quot;billstate&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">autocomplete=</span><span class="s">&quot;shipping postal-code&quot;</span> <span class="na">name=</span><span class="s">&quot;billzip&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/form&gt;</span>
-</pre></div>
-</td></tr></table></div></div><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17</pre></div></td><td class="code"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-  <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;checkout-form&#39;</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;checkout&#39;</span><span class="p">);</span>
+  &lt;input autocomplete=&#34;shipping street-address&#34; name=&#34;billaddress&#34;&gt;
+  &lt;input autocomplete=&#34;shipping locality&#34; name=&#34;billtown&#34;&gt;
+  &lt;input autocomplete=&#34;shipping region&#34; name=&#34;billstate&#34;&gt;
+  &lt;input autocomplete=&#34;shipping postal-code&#34; name=&#34;billzip&#34;&gt;
+&lt;/form&gt;
+</code></pre><pre><code data-language="js">&lt;script&gt;
+  (function(){
+    var form = document.getElementById(&#39;checkout-form&#39;);
+    var button = document.getElementById(&#39;checkout&#39;);
 
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="s2">&quot;requestAutocomplete&quot;</span> <span class="k">in</span> <span class="nx">form</span><span class="p">))</span> <span class="k">return</span><span class="p">;</span>
+    if (!(&#34;requestAutocomplete&#34; in form)) return;
 
-    <span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-      <span class="nx">form</span><span class="p">.</span><span class="nx">requestAutocomplete</span><span class="p">();</span>
-    <span class="p">});</span>
+    button.addEventListener(&#39;click&#39;, function(){
+      form.requestAutocomplete();
+    });
 
-    <span class="nx">form</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;autocomplete&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-      <span class="c1">// The form contains the data. We could either submit it, or read the data</span>
-      <span class="nx">form</span><span class="p">.</span><span class="nx">submit</span><span class="p">();</span>
-    <span class="p">});</span>
-  <span class="p">}).</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-<span class="o">&lt;</span><span class="err">/script&gt;</span>
-</pre></div>
-</td></tr></table></div></div><h2>Autocomplete Attributes</h2><h3>Credit Card Details</h3>
+    form.addEventListener(&#39;autocomplete&#39;, function(){
+      // The form contains the data. We could either submit it, or read the data
+      form.submit();
+    });
+  }).call(this);
+&lt;/script&gt;
+</code></pre><h2>Autocomplete Attributes</h2><h3>Credit Card Details</h3>
 <p>The credit card data includes the following field types :</p>
 
 <ul>
@@ -247,33 +212,20 @@
 <li>disabled – The browser supports requestAutocomplete, but it’s disabled in browser preferences.</li>
 </ul></li>
 </ul>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">form</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;autocomplete&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">form</span><span class="p">.</span><span class="nx">submit</span><span class="p">();</span>
-<span class="p">});</span>
+<pre><code data-language="js">form.addEventListener(&#39;autocomplete&#39;, function() {
+    form.submit();
+});
 
-<span class="nx">form</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;autocompleteerror&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">reason</span> <span class="o">==</span> <span class="s1">&#39;invalid&#39;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">form</span><span class="p">.</span><span class="nx">submit</span><span class="p">();</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">reason</span> <span class="o">!=</span> <span class="s1">&#39;cancel&#39;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nb">window</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="s1">&#39;/checkout/&#39;</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">reason</span> <span class="o">==</span> <span class="s1">&#39;disabled&#39;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nb">window</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="s1">&#39;/checkout/&#39;</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">});</span>
-</pre></div>
-</td></tr></table></div></div>
+form.addEventListener(&#39;autocompleteerror&#39;, function(event) {
+    if (event.reason == &#39;invalid&#39;) {
+        form.submit();
+    } else if (event.reason != &#39;cancel&#39;) {
+        window.location = &#39;/checkout/&#39;;
+    } else if (event.reason == &#39;disabled&#39;) {
+        window.location = &#39;/checkout/&#39;;
+    }
+});
+</code></pre>
 <p>You can already start using it while being compatible with others browsers that didn&#39;t implement it yet(and hope they will standardize it), by using the <code>event.reason</code> as shown above and fallback to a normal checkout form.</p>
 <h2>Conclusion</h2>
 <p>From a consumer perspective, it means that the 21 pieces of data to enter will be reduced to two or three clicks, this will dramatically improve the usability and conversion rates.</p>
@@ -340,6 +292,10 @@
     <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/jquery.ba-hashchange.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/main.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/rainbow.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/css.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/html.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/javascript.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

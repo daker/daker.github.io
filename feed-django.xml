@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-django.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-07-08T21:18:58Z</updated>
+        <updated>2014-07-12T23:48:26Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -60,12 +60,12 @@
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/persona-mozilla.jpg&#34; alt=&#34;Persona&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;
 &lt;p&gt;Mozilla provides a library called &lt;code&gt;django-browserid&lt;/code&gt; that integrates Persona authentication into Django, so you can simply added to to your &lt;code&gt;requirements.txt&lt;/code&gt; or just install via pip :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo pip install django-browserid
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo pip install django-browserid
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Configuration&lt;/h2&gt;
 &lt;p&gt;Once done you need to follow the following steps :&lt;/p&gt;
 
 &lt;p&gt;Add &lt;code&gt;django-browserid&lt;/code&gt; to your &lt;code&gt;INSTALLED_APPS&lt;/code&gt;,&lt;/p&gt;
-&lt;pre lang=&#34;python&#34;&gt;&lt;code&gt;INSTALLED_APPS = (
+&lt;pre&gt;&lt;code data-language=&#34;python&#34;&gt;INSTALLED_APPS = (
     # ...
     &amp;#39;django.contrib.auth&amp;#39;,
     &amp;#39;django.contrib.contenttypes&amp;#39;,
@@ -78,7 +78,7 @@
 )
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Add the &lt;code&gt;django_browserid&lt;/code&gt; authentication backend :&lt;/p&gt;
-&lt;pre lang=&#34;python&#34;&gt;&lt;code&gt;AUTHENTICATION_BACKENDS = (
+&lt;pre&gt;&lt;code data-language=&#34;python&#34;&gt;AUTHENTICATION_BACKENDS = (
    # ...
    &amp;#39;django.contrib.auth.backends.ModelBackend&amp;#39;, # required for admin
    &amp;#39;django_browserid.auth.BrowserIDBackend&amp;#39;,
@@ -86,14 +86,14 @@
 )
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Add the &lt;code&gt;django_browserid&lt;/code&gt; context processor :&lt;/p&gt;
-&lt;pre lang=&#34;python&#34;&gt;&lt;code&gt;TEMPLATE_CONTEXT_PROCESSORS = (
+&lt;pre&gt;&lt;code data-language=&#34;python&#34;&gt;TEMPLATE_CONTEXT_PROCESSORS = (
    # ...
    &amp;#39;django_browserid.context_processors.browserid&amp;#39;,
    # ...
 )
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;and finally you need to set your site url :&lt;/p&gt;
-&lt;pre lang=&#34;python&#34;&gt;&lt;code&gt;SITE_URL = &amp;#39;https://example.com&amp;#39;
+&lt;pre&gt;&lt;code data-language=&#34;python&#34;&gt;SITE_URL = &amp;#39;https://example.com&amp;#39;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I have created a working demo project on &lt;a href=&#34;https://github.com/daker/django-persona-demo&#34;&gt;github&lt;/a&gt; to play with, you can still check the &lt;a href=&#34;http://django-browserid.readthedocs.org/en/v0.9/details/troubleshooting.html&#34;&gt;docs&lt;/a&gt; or comment here if it doesn&amp;#39;t work for you.&lt;/p&gt;
 </content>

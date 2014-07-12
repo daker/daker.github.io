@@ -147,29 +147,18 @@
 </ul>
 <h2>WebView</h2>
 <p>Before you start make sure to add the <code>webview</code> to your apparmor policy file, to declare a Webview using Oxide you need to use the <code>WebView</code> component from <code>com.canonical.Oxide</code></p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11</pre></div></td><td class="code"><div class="highlight"><pre><span class="kr">import</span> <span class="nx">com</span><span class="p">.</span><span class="nx">canonical</span><span class="p">.</span><span class="nx">Oxide</span> <span class="mf">1.0</span>
-<span class="p">[...]</span>
-<span class="nx">WebView</span> <span class="p">{</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="nx">webview</span>
-    <span class="nx">width</span><span class="o">:</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">width</span>
-    <span class="nx">height</span><span class="o">:</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">height</span>
+<pre><code data-language="js">import com.canonical.Oxide 1.0
+[...]
+WebView {
+    id: webview
+    width: parent.width
+    height: parent.height
 
-    <span class="nx">Component</span><span class="p">.</span><span class="nx">onCompleted</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;http://daker.me&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div></div>
+    Component.onCompleted: {
+        url = &#34;http://daker.me&#34;
+    }
+}
+</code></pre>
 <p>The <code>WebView</code> comes with a <code>preferences</code> property which allows to set a list of attributes :</p>
 
 <ul>
@@ -202,37 +191,22 @@
 <li>textAreasAreResizable (bool)</li>
 <li>touchEnabled  (bool)</li>
 </ul>
-<h3>Example</h3><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td><td class="code"><div class="highlight"><pre><span class="kr">import</span> <span class="nx">com</span><span class="p">.</span><span class="nx">canonical</span><span class="p">.</span><span class="nx">Oxide</span> <span class="mf">1.0</span>
-<span class="p">[...]</span>
-<span class="nx">WebView</span> <span class="p">{</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="nx">webview</span>
-    <span class="nx">width</span><span class="o">:</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">width</span>
-    <span class="nx">height</span><span class="o">:</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">height</span>
+<h3>Example</h3><pre><code data-language="js">import com.canonical.Oxide 1.0
+[...]
+WebView {
+    id: webview
+    width: parent.width
+    height: parent.height
 
-    <span class="nx">Component</span><span class="p">.</span><span class="nx">onCompleted</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;http://daker.me&quot;</span>
-    <span class="p">}</span>
+    Component.onCompleted: {
+        url = &#34;http://daker.me&#34;
+    }
 
-    <span class="nx">preferences</span><span class="p">.</span><span class="nx">localStorageEnabled</span><span class="o">:</span> <span class="kc">true</span>
-    <span class="nx">preferences</span><span class="p">.</span><span class="nx">loadsImagesAutomatically</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="nx">preferences</span><span class="p">.</span><span class="nx">passwordEchoEnabled</span><span class="o">:</span> <span class="kc">true</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div></div><h2>WebContext</h2>
+    preferences.localStorageEnabled: true
+    preferences.loadsImagesAutomatically: false
+    preferences.passwordEchoEnabled: true
+}
+</code></pre><h2>WebContext</h2>
 <p>Oxide also provides a <code>WebContext</code> which allow to set other settings</p>
 
 <ul>
@@ -251,265 +225,139 @@
 </ul>
 <h3>UserAgent</h3>
 <p>This example shows how you can use the <code>WebContext</code> to override the default UserAgent</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18</pre></div></td><td class="code"><div class="highlight"><pre><span class="kr">import</span> <span class="nx">com</span><span class="p">.</span><span class="nx">canonical</span><span class="p">.</span><span class="nx">Oxide</span> <span class="mf">1.0</span>
-<span class="p">[...]</span>
-<span class="nx">WebContext</span> <span class="p">{</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="nx">webcontext</span>
-    <span class="nx">userAgent</span><span class="o">:</span> <span class="s2">&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3&quot;</span>
-<span class="p">}</span>
+<pre><code data-language="js">import com.canonical.Oxide 1.0
+[...]
+WebContext {
+    id: webcontext
+    userAgent: &#34;Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3&#34;
+}
 
-<span class="nx">WebView</span> <span class="p">{</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="nx">webview</span>
-    <span class="nx">width</span><span class="o">:</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">width</span>
-    <span class="nx">height</span><span class="o">:</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">height</span>
+WebView {
+    id: webview
+    width: parent.width
+    height: parent.height
 
-    <span class="nx">context</span><span class="o">:</span> <span class="nx">webcontext</span>
+    context: webcontext
 
-    <span class="nx">Component</span><span class="p">.</span><span class="nx">onCompleted</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;http://www.whatsmyuseragent.com&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div></div><h3>networkRequestDelegate</h3>
+    Component.onCompleted: {
+        url = &#34;http://www.whatsmyuseragent.com&#34;
+    }
+}
+</code></pre><h3>networkRequestDelegate</h3>
 <p>You can also override the http request headers by using the <code>networkRequestDelegate</code>, in this example i am adding a <a href="https://en.wikipedia.org/wiki/Do_Not_Track">Do Not Track</a> (DNT) an HTTP header field on the fly.</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20</pre></div></td><td class="code"><div class="highlight"><pre><span class="kr">import</span> <span class="nx">com</span><span class="p">.</span><span class="nx">canonical</span><span class="p">.</span><span class="nx">Oxide</span> <span class="mf">1.0</span>
-<span class="p">[...]</span>
-<span class="nx">WebContext</span> <span class="p">{</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="nx">webcontext</span>
-    <span class="nx">networkRequestDelegate</span><span class="o">:</span> <span class="nx">WebContextDelegateWorker</span> <span class="p">{</span>
-        <span class="nx">source</span><span class="o">:</span> <span class="nx">Qt</span><span class="p">.</span><span class="nx">resolvedUrl</span><span class="p">(</span><span class="s2">&quot;dnt.js&quot;</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<pre><code data-language="js">import com.canonical.Oxide 1.0
+[...]
+WebContext {
+    id: webcontext
+    networkRequestDelegate: WebContextDelegateWorker {
+        source: Qt.resolvedUrl(&#34;dnt.js&#34;)
+    }
+}
 
-<span class="nx">WebView</span> <span class="p">{</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="nx">webview</span>
-    <span class="nx">width</span><span class="o">:</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">width</span>
-    <span class="nx">height</span><span class="o">:</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">height</span>
+WebView {
+    id: webview
+    width: parent.width
+    height: parent.height
 
-    <span class="nx">context</span><span class="o">:</span> <span class="nx">webcontext</span>
+    context: webcontext
 
-    <span class="nx">Component</span><span class="p">.</span><span class="nx">onCompleted</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;http://www.browserleaks.com/donottrack&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div></div><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span class="cm">/*</span>
-<span class="cm"> dnt.js</span>
-<span class="cm"> Made by Adnane Belmadiaf &lt;daker AT ubuntu DOT com&gt;</span>
-<span class="cm">*/</span>
+    Component.onCompleted: {
+        url = &#34;http://www.browserleaks.com/donottrack&#34;
+    }
+}
+</code></pre><pre><code data-language="js">/*
+ dnt.js
+ Made by Adnane Belmadiaf &lt;daker AT ubuntu DOT com&gt;
+*/
 
-<span class="nx">exports</span><span class="p">.</span><span class="nx">onBeforeSendHeaders</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">event</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s2">&quot;DNT&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="p">};</span>
-</pre></div>
-</td></tr></table></div></div><h3>UserScripts</h3>
+exports.onBeforeSendHeaders = function(event) {
+    event.setHeader(&#34;DNT&#34;, 1);
+};
+</code></pre><h3>UserScripts</h3>
 <p>Oxide supports Greasemonkey-style user scripts, here is an example to do some DOM manipulation.</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25</pre></div></td><td class="code"><div class="highlight"><pre><span class="kr">import</span> <span class="nx">com</span><span class="p">.</span><span class="nx">canonical</span><span class="p">.</span><span class="nx">Oxide</span> <span class="mf">1.0</span>
-<span class="p">[...]</span>
-<span class="nx">WebContext</span> <span class="p">{</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="nx">webcontext</span>
-    <span class="nx">userScripts</span><span class="o">:</span> <span class="p">[</span>
-        <span class="nx">UserScript</span> <span class="p">{</span>
-            <span class="nx">context</span><span class="o">:</span> <span class="s2">&quot;oxide://&quot;</span>
-            <span class="nx">url</span><span class="o">:</span> <span class="nx">Qt</span><span class="p">.</span><span class="nx">resolvedUrl</span><span class="p">(</span><span class="s2">&quot;oxide_dom.js&quot;</span><span class="p">)</span>
-            <span class="nx">incognitoEnabled</span><span class="o">:</span> <span class="kc">true</span>
-            <span class="nx">matchAllFrames</span><span class="o">:</span> <span class="kc">true</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span>
+<pre><code data-language="js">import com.canonical.Oxide 1.0
+[...]
+WebContext {
+    id: webcontext
+    userScripts: [
+        UserScript {
+            context: &#34;oxide://&#34;
+            url: Qt.resolvedUrl(&#34;oxide_dom.js&#34;)
+            incognitoEnabled: true
+            matchAllFrames: true
+        }
+    ]
+}
 
-<span class="nx">WebView</span> <span class="p">{</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="nx">webview</span>
-    <span class="nx">width</span><span class="o">:</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">width</span>
-    <span class="nx">height</span><span class="o">:</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">height</span>
+WebView {
+    id: webview
+    width: parent.width
+    height: parent.height
 
-    <span class="nx">context</span><span class="o">:</span> <span class="nx">webcontext</span>
+    context: webcontext
 
-    <span class="nx">Component</span><span class="p">.</span><span class="nx">onCompleted</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;http://www.ubuntu.com/&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div></div><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1">// ==UserScript==</span>
-<span class="c1">// @name           Dom Manipulation</span>
-<span class="c1">// @namespace      http://daker.me</span>
-<span class="c1">// @description    Oxide UserScript demo</span>
-<span class="c1">// ==/UserScript==</span>
+    Component.onCompleted: {
+        url = &#34;http://www.ubuntu.com/&#34;
+    }
+}
+</code></pre><pre><code data-language="js">// ==UserScript==
+// @name           Dom Manipulation
+// @namespace      http://daker.me
+// @description    Oxide UserScript demo
+// ==/UserScript==
 
-<span class="kd">function</span> <span class="nx">oxide_dom</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
-    <span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">&#39;&lt;h1&gt;Content inserted using Oxide UserScript!&lt;/h1&gt;&#39;</span><span class="p">;</span>
-    <span class="nx">div</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">;</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;nav-global&quot;</span><span class="p">).</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">div</span><span class="p">);</span>
-<span class="p">}</span>
+function oxide_dom() {
+    var div = document.createElement(&#39;div&#39;);
+    div.innerHTML = &#39;&lt;h1&gt;Content inserted using Oxide UserScript!&lt;/h1&gt;&#39;;
+    div.style.color = &#39;red&#39;;
+    document.getElementById(&#34;nav-global&#34;).insertBefore(div);
+}
 
-<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="nx">oxide_dom</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-</pre></div>
-</td></tr></table></div></div><h3>Message API</h3>
+window.addEventListener(&#39;load&#39;, oxide_dom, true);
+</code></pre><h3>Message API</h3>
 <p>Oxide does also provide a message API, in this example the script will send a message to Oxide and Oxide will reply back.</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24</pre></div></td><td class="code"><div class="highlight"><pre><span class="kr">import</span> <span class="nx">com</span><span class="p">.</span><span class="nx">canonical</span><span class="p">.</span><span class="nx">Oxide</span> <span class="mf">1.0</span>
-<span class="p">[...]</span>
-<span class="nx">WebContext</span> <span class="p">{</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="nx">webcontext</span>
-    <span class="nx">networkRequestDelegate</span><span class="o">:</span> <span class="nx">WebContextDelegateWorker</span> <span class="p">{</span>
-        <span class="nx">source</span><span class="o">:</span> <span class="nx">Qt</span><span class="p">.</span><span class="nx">resolvedUrl</span><span class="p">(</span><span class="s2">&quot;message-api.js&quot;</span><span class="p">)</span>
-        <span class="nx">onMessage</span><span class="o">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Message from Oxide : &quot;</span><span class="p">,</span> <span class="nx">message</span><span class="p">.</span><span class="nx">msg</span><span class="p">)</span>
-        <span class="nx">Component</span><span class="p">.</span><span class="nx">onCompleted</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">sendMessage</span><span class="p">({</span> <span class="nx">msg</span><span class="o">:</span> <span class="s1">&#39;ping&#39;</span> <span class="p">})</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<pre><code data-language="js">import com.canonical.Oxide 1.0
+[...]
+WebContext {
+    id: webcontext
+    networkRequestDelegate: WebContextDelegateWorker {
+        source: Qt.resolvedUrl(&#34;message-api.js&#34;)
+        onMessage: console.log(&#34;Message from Oxide : &#34;, message.msg)
+        Component.onCompleted: {
+            sendMessage({ msg: &#39;ping&#39; })
+        }
+    }
+}
 
-<span class="nx">WebView</span> <span class="p">{</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="nx">webview</span>
-    <span class="nx">width</span><span class="o">:</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">width</span>
-    <span class="nx">height</span><span class="o">:</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">height</span>
+WebView {
+    id: webview
+    width: parent.width
+    height: parent.height
 
-    <span class="nx">context</span><span class="o">:</span> <span class="nx">webcontext</span>
+    context: webcontext
 
-    <span class="nx">Component</span><span class="p">.</span><span class="nx">onCompleted</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;http://www.ubuntu.com/&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div></div><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17</pre></div></td><td class="code"><div class="highlight"><pre><span class="cm">/*</span>
-<span class="cm"> message-api.js</span>
-<span class="cm"> This script will send a message to Oxide on every request</span>
-<span class="cm">*/</span>
-<span class="kd">var</span> <span class="nx">response_msg</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+    Component.onCompleted: {
+        url = &#34;http://www.ubuntu.com/&#34;
+    }
+}
+</code></pre><pre><code data-language="js">/*
+ message-api.js
+ This script will send a message to Oxide on every request
+*/
+var response_msg = &#34;&#34;;
 
-<span class="nx">oxide</span><span class="p">.</span><span class="nx">onMessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;msg&quot;</span> <span class="k">in</span> <span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">msg</span><span class="p">[</span><span class="s2">&quot;msg&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;ping&#39;</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">response_msg</span> <span class="o">=</span> <span class="s2">&quot;pong&quot;</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+oxide.onMessage = function(msg) {
+    if (&#34;msg&#34; in msg) {
+        if (msg[&#34;msg&#34;] == &#39;ping&#39;) {
+            response_msg = &#34;pong&#34;;
+        }
+    }
+};
 
-<span class="nx">exports</span><span class="p">.</span><span class="nx">onBeforeSendHeaders</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">oxide</span><span class="p">.</span><span class="nx">sendMessage</span><span class="p">({</span><span class="nx">msg</span><span class="o">:</span> <span class="nx">response_msg</span><span class="p">});</span>
-<span class="p">};</span>
-</pre></div>
-</td></tr></table></div></div></div>
+exports.onBeforeSendHeaders = function(event) {
+    oxide.sendMessage({msg: response_msg});
+};
+</code></pre></div>
     </div>
 
     <form action="http://daker.us7.list-manage.com/subscribe/post?u=ebd280d4e0da7cce97bd7a8ad&amp;id=327b2cec50" method="post" id="signup" name="signup-form">
@@ -570,6 +418,10 @@
     <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/jquery.ba-hashchange.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/main.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/rainbow.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/css.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/html.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/javascript.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-utouchdev.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-07-08T21:18:58Z</updated>
+        <updated>2014-07-12T23:48:26Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -46,10 +46,10 @@
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/utouch/5.png&#34; alt=&#34;Welcome Screen&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;To use the &lt;code&gt;UserMetrics&lt;/code&gt; QML module you need to install &lt;code&gt;qtdeclarative5-usermetrics0.1&lt;/code&gt; package on the desktop :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install qtdeclarative5-usermetrics0.1
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo apt-get install qtdeclarative5-usermetrics0.1
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Apparmor Policy groups&lt;/h2&gt;
 &lt;p&gt;Add the &lt;code&gt;usermetrics&lt;/code&gt; to your apparmor file :&lt;/p&gt;
-&lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
+&lt;pre&gt;&lt;code data-language=&#34;json&#34;&gt;{
     &amp;#34;policy_groups&amp;#34;: [
         ...
         &amp;#34;usermetrics&amp;#34;
@@ -58,10 +58,10 @@
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;QML&lt;/h2&gt;
 &lt;p&gt;First you need to import the &lt;code&gt;UserMetrics&lt;/code&gt; module :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;import UserMetrics 0.1
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;import UserMetrics 0.1
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then create the metric(s) :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Metric {
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;Metric {
     /* Set a unique ID for each metric object you use so you can access it in your QML code. */
     id: gameMetric
 
@@ -101,21 +101,21 @@
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/utouch/3.png&#34; alt=&#34;Ubuntu Browser&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;The phablet-team PPA has the tools and dependencies for 12.04, 12.10, 13.04 and 13.10 to get everything setup:&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo add-apt-repository ppa:phablet-team/tools
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo add-apt-repository ppa:phablet-team/tools
 $ sudo apt-get update
 $ sudo apt-get install phablet-tools android-tools-adb android-tools-fastboot
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Plug the device via the USB cable, then run the following commands to connect to it through ADB&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ adb shell
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ adb shell
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Switch to the phablet user :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo -u phablet -i
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo -u phablet -i
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Take a note of your phone IP adresse :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ ifconfig wlan0 | grep &amp;#39;inet addr&amp;#39; | cut -d: -f2 | awk &amp;#39;{print $1}&amp;#39;
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ ifconfig wlan0 | grep &amp;#39;inet addr&amp;#39; | cut -d: -f2 | awk &amp;#39;{print $1}&amp;#39;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Once done launch the webbrowser app using :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ upstart-app-launch webbrowser-app --inspector
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ upstart-app-launch webbrowser-app --inspector
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;A browser instance will launch on the phone, point to URL of your webapp then access the Devtools with your Chrome/ium browser by opening &lt;code&gt;http://$YOUR-PHONE-IP:9221&lt;/code&gt;&lt;/p&gt;
 
@@ -139,9 +139,9 @@ $ sudo apt-get install phablet-tools android-tools-adb android-tools-fastboot
 &lt;p&gt;Adding an Android or iPhone token will lead to unwanted behaviours, like showing ads for the Android app or even trying to open the Google Play app or the Youtube app. The browser now reports it in the following formats, depending on whether the device is a phone or a tablet, with the addition of an &lt;a href=&#34;https://bazaar.launchpad.net/%7Ephablet-team/webbrowser-app/trunk/view/head:/src/Ubuntu/Components/Extras/Browser/ua-overrides.js&#34;&gt;override mechanism&lt;/a&gt; that will override the UA on the fly and the site will serve us a proper mobile content.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/utouch/1.png&#34; alt=&#34;Facebook Android Ads&#34;&gt;&lt;/p&gt;
-&lt;h2&gt;Phone&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; Mobile) WebKit/537.21
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Tablet&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; Tablet) WebKit/537.21
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Pattern&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; $FormFactor) WebKit/$WebKitRev
+&lt;h2&gt;Phone&lt;/h2&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;Mozilla/5.0 (Ubuntu; Mobile) WebKit/537.21
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Tablet&lt;/h2&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;Mozilla/5.0 (Ubuntu; Tablet) WebKit/537.21
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Pattern&lt;/h2&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;Mozilla/5.0 (Ubuntu; $FormFactor) WebKit/$WebKitRev
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You can also get it through JavaScript using the &lt;code&gt;navigator.userAgent&lt;/code&gt;&lt;/p&gt;
 
@@ -165,7 +165,7 @@ $ sudo apt-get install phablet-tools android-tools-adb android-tools-fastboot
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/xtype/xtype.png&#34; alt=&#34;X-Type running on Ubuntu Touch&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;First using the Qt Creator you have to create a &amp;quot;HTML5 Touch UI&amp;quot; project which will produce the following QML code :&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import QtQuick 2.0
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;import QtQuick 2.0
 import Ubuntu.Components 0.1
 import QtWebKit 3.0
 
@@ -196,8 +196,8 @@ MainView {
 &lt;p&gt;Also with the &lt;code&gt;UbuntuWebView&lt;/code&gt; the &lt;code&gt;DPR&lt;/code&gt; weren&amp;#39;t set automatically(&lt;a href=&#34;https://bugs.launchpad.net/webbrowser-app/+bug/1237348&#34;&gt;bug #1237348&lt;/a&gt;), it was also fixed and all those fixes has been shipped with image #96.&lt;/p&gt;
 
 &lt;p&gt;Here is the QML code i used to embed the &amp;quot;X-Type&amp;quot; game(Fullscreen) but first you need to install the browser plugin :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install qtdeclarative5-ubuntu-ui-extras-browser-plugin
-&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import QtQuick 2.0
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo apt-get install qtdeclarative5-ubuntu-ui-extras-browser-plugin
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;import QtQuick 2.0
 import Ubuntu.Components 0.1
 import Ubuntu.Components.Extras.Browser 0.1
 
@@ -221,7 +221,7 @@ MainView {
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;you need to create a &lt;code&gt;manifest.json&lt;/code&gt; file :&lt;/p&gt;
-&lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
+&lt;pre&gt;&lt;code data-language=&#34;json&#34;&gt;{
     &amp;#34;description&amp;#34;: &amp;#34;A Free HTML5 Dual Stick Shooter&amp;#34;,
     &amp;#34;framework&amp;#34;: &amp;#34;ubuntu-sdk-13.10&amp;#34;,
     &amp;#34;architecture&amp;#34;: &amp;#34;all&amp;#34;,
@@ -238,7 +238,7 @@ MainView {
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;the security policy groups &lt;code&gt;x-type.json&lt;/code&gt; :&lt;/p&gt;
-&lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
+&lt;pre&gt;&lt;code data-language=&#34;json&#34;&gt;{
     &amp;#34;policy_groups&amp;#34;: [
         &amp;#34;networking&amp;#34;
     ],
@@ -246,7 +246,7 @@ MainView {
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;and a .desktop file :&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;[Desktop Entry]
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;[Desktop Entry]
 Name=x-type
 Comment=A Free HTML5 Dual Stick Shooter
 Exec=qmlscene $@ x-type.qml

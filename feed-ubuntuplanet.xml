@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-ubuntuplanet.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-07-08T21:18:58Z</updated>
+        <updated>2014-07-12T23:48:26Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -28,12 +28,12 @@
 &lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/-OsoN55QFLxg/U5Mf5pZcTcI/AAAAAAAADBk/anOEUUCKFXA/w426-h584/out-7.gif&#34; alt=&#34;Ubuntu HTML5 Slider&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;The first thing that needs be done is to remove the default styles using &lt;code&gt;-webkit-appearance: none&lt;/code&gt;.&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;input[type=range] {
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;input[type=range] {
   -webkit-appearance: none;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Now we can start adding our CSS styles, Webkit/Blink provides an easy way to style the thumb using the pseudo class &lt;code&gt;::-webkit-slider-thumb&lt;/code&gt; but first we need to remove the defaul styles.&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;input[type=range] {
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;input[type=range] {
     -webkit-appearance: none;
     background: linear-gradient(to right, rgba(175, 175, 175, 0.3) 0%, rgba(175, 175, 175, 0.3) 100%);
     background-position: center;
@@ -55,7 +55,7 @@ input[type=range]::-webkit-slider-thumb {
 &lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/f3Kzw/embedded/result,css,html&#34; allowfullscreen=&#34;allowfullscreen&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;Now let&amp;#39;s style the thumb :&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;input[type=range]::-webkit-slider-thumb {
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;input[type=range]::-webkit-slider-thumb {
   -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
   -webkit-box-sizing: border-box;
@@ -72,7 +72,7 @@ input[type=range]::-webkit-slider-thumb {
 &lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/f3Kzw/2/embedded/result,css,html&#34; allowfullscreen=&#34;allowfullscreen&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;At this point we are still missing the oragne fill color, unfortunatly Webkit/Blink doesn&amp;#39;t provide any pseudo class to style this area like IE does, so i have tried to combine the pseudo class &lt;code&gt;::-webkit-slider-thumb&lt;/code&gt; and &lt;code&gt;:before&lt;/code&gt; to create this effect.&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;input[type=range]::-webkit-slider-thumb:before {
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;input[type=range]::-webkit-slider-thumb:before {
   position: absolute;
   top: 6px;
   left: -2000px;
@@ -155,7 +155,7 @@ I hope we will be invited again next time.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h2&gt;WebView&lt;/h2&gt;
 &lt;p&gt;Before you start make sure to add the &lt;code&gt;webview&lt;/code&gt; to your apparmor policy file, to declare a Webview using Oxide you need to use the &lt;code&gt;WebView&lt;/code&gt; component from &lt;code&gt;com.canonical.Oxide&lt;/code&gt;&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;import com.canonical.Oxide 1.0
 [...]
 WebView {
     id: webview
@@ -199,7 +199,7 @@ WebView {
 &lt;li&gt;textAreasAreResizable (bool)&lt;/li&gt;
 &lt;li&gt;touchEnabled  (bool)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Example&lt;/h3&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+&lt;h3&gt;Example&lt;/h3&gt;&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;import com.canonical.Oxide 1.0
 [...]
 WebView {
     id: webview
@@ -233,7 +233,7 @@ WebView {
 &lt;/ul&gt;
 &lt;h3&gt;UserAgent&lt;/h3&gt;
 &lt;p&gt;This example shows how you can use the &lt;code&gt;WebContext&lt;/code&gt; to override the default UserAgent&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;import com.canonical.Oxide 1.0
 [...]
 WebContext {
     id: webcontext
@@ -253,7 +253,7 @@ WebView {
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;networkRequestDelegate&lt;/h3&gt;
 &lt;p&gt;You can also override the http request headers by using the &lt;code&gt;networkRequestDelegate&lt;/code&gt;, in this example i am adding a &lt;a href=&#34;https://en.wikipedia.org/wiki/Do_Not_Track&#34;&gt;Do Not Track&lt;/a&gt; (DNT) an HTTP header field on the fly.&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;import com.canonical.Oxide 1.0
 [...]
 WebContext {
     id: webcontext
@@ -273,7 +273,7 @@ WebView {
         url = &amp;#34;http://www.browserleaks.com/donottrack&amp;#34;
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;/*
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;/*
  dnt.js
  Made by Adnane Belmadiaf &amp;lt;daker AT ubuntu DOT com&amp;gt;
 */
@@ -283,7 +283,7 @@ exports.onBeforeSendHeaders = function(event) {
 };
 &lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;UserScripts&lt;/h3&gt;
 &lt;p&gt;Oxide supports Greasemonkey-style user scripts, here is an example to do some DOM manipulation.&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;import com.canonical.Oxide 1.0
 [...]
 WebContext {
     id: webcontext
@@ -308,7 +308,7 @@ WebView {
         url = &amp;#34;http://www.ubuntu.com/&amp;#34;
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;// ==UserScript==
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;// ==UserScript==
 // @name           Dom Manipulation
 // @namespace      http://daker.me
 // @description    Oxide UserScript demo
@@ -324,7 +324,7 @@ function oxide_dom() {
 window.addEventListener(&amp;#39;load&amp;#39;, oxide_dom, true);
 &lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Message API&lt;/h3&gt;
 &lt;p&gt;Oxide does also provide a message API, in this example the script will send a message to Oxide and Oxide will reply back.&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;import com.canonical.Oxide 1.0
 [...]
 WebContext {
     id: webcontext
@@ -348,7 +348,7 @@ WebView {
         url = &amp;#34;http://www.ubuntu.com/&amp;#34;
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;/*
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;/*
  message-api.js
  This script will send a message to Oxide on every request
 */
@@ -398,17 +398,17 @@ exports.onBeforeSendHeaders = function(event) {
 &lt;ul&gt;
 &lt;li&gt;data-i18n-translate : this is used to collect all the strings that needs be translated used by JavaScript and used for pot generation&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;h1 data-i18n-translate&amp;gt;Good Morning&amp;lt;/h1&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;h1 data-i18n-translate&amp;gt;Good Morning&amp;lt;/h1&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;data-i18n-args : JSON data used to replace variables in the string, it only supports one level so far&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;h1 data-i18n-translate data-i18n-args=&amp;#39;{ &amp;#34;user&amp;#34;: &amp;#34;daker&amp;#34; }&amp;#39;&amp;gt;Good Morning &amp;lt;/h1&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;h1 data-i18n-translate data-i18n-args=&amp;#39;{ &amp;#34;user&amp;#34;: &amp;#34;daker&amp;#34; }&amp;#39;&amp;gt;Good Morning &amp;lt;/h1&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;data-i18n-plural : This is the plural string, here &lt;a href=&#34;https://plus.google.com/u/0/+KyleNitzsche/posts&#34;&gt;Kyle&lt;/a&gt; suggested that we hardcode the &amp;quot;n&amp;quot; counter used to determine if the string will be plural or not to &amp;quot;num&amp;quot;, so the dev have to passe the &amp;quot;num&amp;quot; in the data-i18n-args instead of a proper data-i18n-n.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;h1 data-i18n-translate data-i18n-plural=&amp;#34;I have   cars&amp;#34; data-i18n-args=&amp;#39;{ &amp;#34;num&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;brand&amp;#34;: &amp;#34;Mercedes&amp;#34; }&amp;#39;&amp;gt;I have a  car&amp;lt;/h1&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;h1 data-i18n-translate data-i18n-plural=&amp;#34;I have   cars&amp;#34; data-i18n-args=&amp;#39;{ &amp;#34;num&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;brand&amp;#34;: &amp;#34;Mercedes&amp;#34; }&amp;#39;&amp;gt;I have a  car&amp;lt;/h1&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;div class=&#34;g-post&#34; data-href=&#34;https://plus.google.com/101694416703170881163/posts/DpgEVUdcQJd&#34;&gt;&lt;/div&gt;
 
@@ -422,7 +422,7 @@ exports.onBeforeSendHeaders = function(event) {
 &lt;li&gt;dtr(domain, text);&lt;/li&gt;
 &lt;li&gt;dtr(domain, singular, plural, n);&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;i18n.tr(&amp;#39;Good Morning&amp;#39;);
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;i18n.tr(&amp;#39;Good Morning&amp;#39;);
 i18n.strargs(i18n.tr(&amp;#39;Good Morning &amp;#39;), &amp;#39;{ &amp;#34;user&amp;#34;: &amp;#34;daker&amp;#34; }&amp;#39;));
 i18n.strargs(i18n.tr(&amp;#39;I have a  car&amp;#39;, &amp;#39;I have   cars&amp;#39;, &amp;#39;1&amp;#39;), &amp;#39;{ &amp;#34;num&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;brand&amp;#34;: &amp;#34;Mercedes&amp;#34; }&amp;#39;));
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Grid Layout&lt;/h2&gt;
@@ -458,7 +458,7 @@ i18n.strargs(i18n.tr(&amp;#39;I have a  car&amp;#39;, &amp;#39;I have   cars&amp
 &lt;/video&gt;&lt;/p&gt;
 
 &lt;p&gt;To start using it you need to install ADB, you can use the phablet-team PPA if you are using Ubuntu which has the tools and dependencies for 12.04, 12.10, 13.04 and 13.10 to get everything setup, if not you can download the Android SDK from the &lt;a href=&#34;https://developer.android.com/sdk/index.html&#34;&gt;Android developer site&lt;/a&gt;&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo add-apt-repository ppa:phablet-team/tools
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo add-apt-repository ppa:phablet-team/tools
 $ sudo apt-get update
 $ sudo apt-get install android-tools-adb
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Enable Developer Mode&lt;/h2&gt;
@@ -475,12 +475,12 @@ $ sudo apt-get install android-tools-adb
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/android4.4/usb-debugging2.png&#34; alt=&#34;Security Question&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Using the Screen Recording&lt;/h2&gt;
 &lt;p&gt;Once done, you need to make sure that your device is listed &amp;amp; connected using :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ adb devices
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ adb devices
 List of devices attached
 xxxxxxxxxxxxxxxx  device
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then all you have to do is :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ adb shell screenrecord /sdcard/recording.mp4 &amp;amp;&amp;amp; adb pull /sdcard/recording.mp4
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ adb shell screenrecord /sdcard/recording.mp4 &amp;amp;&amp;amp; adb pull /sdcard/recording.mp4
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The default and maximum duration of a screenrecord is 3 minutes, you can use the &lt;code&gt;--time-limit&lt;/code&gt; argument to set the limit you want, here all arguements you can set :&lt;/p&gt;
 
@@ -537,11 +537,11 @@ screenrecord --bit-rate 6000000 /sdcard/demo.mp4&lt;/li&gt;
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/dir.png&#34; alt=&#34;JavaScript Console&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Assertions&lt;/h2&gt;
 &lt;p&gt;Tests that an expression is true using &lt;code&gt;console.assert&lt;/code&gt;. If not, it will write a message to the console and throw an exception.&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;var x=0;
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;var x=0;
 console.assert((x == 1), &amp;#34;assert message: x != 1&amp;#34;);
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Grouping output&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;console.group&lt;/code&gt; allows you to group the message or log in Console tab. If you have some many logs in your code, you can probably divide your log into small group or subgroup&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var user = &amp;#34;jsmith&amp;#34;, authenticated = false;
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;var user = &amp;#34;jsmith&amp;#34;, authenticated = false;
 console.group(&amp;#34;Authentication phase&amp;#34;);
 console.log(&amp;#34;Authenticating user &amp;#39;%s&amp;#39;&amp;#34;, user);
 // authentication code here...
@@ -551,7 +551,7 @@ if (!authenticated) {
 console.groupEnd();
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You can also do nested grouping :&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var user = &amp;#34;jsmith&amp;#34;, authenticated = true, authorized = true;
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;var user = &amp;#34;jsmith&amp;#34;, authenticated = true, authorized = true;
 // Top-level group
 console.group(&amp;#34;Authenticating user &amp;#39;%s&amp;#39;&amp;#34;, user);
 if (authenticated) {
@@ -571,7 +571,7 @@ console.log(&amp;#34;A group-less log trace.&amp;#34;);
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/nested.png&#34; alt=&#34;Nested Grouping&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Logging Array Data&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;console.table()&lt;/code&gt; is a very handy fonction to display Array object&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var langs = [
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;var langs = [
     { name: &amp;#34;JavaScript&amp;#34;, extension: &amp;#34;.js&amp;#34; },
     { name: &amp;#34;HTML&amp;#34;, extension: &amp;#34;.html&amp;#34; },
     { name: &amp;#34;CoffeeScript&amp;#34;, extension: &amp;#34;.coffee&amp;#34; },
@@ -583,7 +583,7 @@ console.table(langs);
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/table.png&#34; alt=&#34;JavaScript Console&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Measuring Execution time&lt;/h2&gt;
 &lt;p&gt;To mesure how long something it takes to execute a set of instructions :&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var i, t = &amp;#34;&amp;#34;;
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;var i, t = &amp;#34;&amp;#34;;
 
 // Start
 console.time(&amp;#34;OPNAME&amp;#34;);
@@ -595,7 +595,7 @@ for (i = 1; i &amp;lt;= 100; i++)
 console.timeEnd(&amp;#34;OPNAME&amp;#34;);
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Tracing&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;console.trace()&lt;/code&gt; prints the stacktrace of JavaScript execution at the point where it was called.&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;function F(v) {
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;function F(v) {
     return K(v + 1);
 }
 
@@ -637,10 +637,10 @@ F(5);
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/utouch/5.png&#34; alt=&#34;Welcome Screen&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;To use the &lt;code&gt;UserMetrics&lt;/code&gt; QML module you need to install &lt;code&gt;qtdeclarative5-usermetrics0.1&lt;/code&gt; package on the desktop :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install qtdeclarative5-usermetrics0.1
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo apt-get install qtdeclarative5-usermetrics0.1
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Apparmor Policy groups&lt;/h2&gt;
 &lt;p&gt;Add the &lt;code&gt;usermetrics&lt;/code&gt; to your apparmor file :&lt;/p&gt;
-&lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
+&lt;pre&gt;&lt;code data-language=&#34;json&#34;&gt;{
     &amp;#34;policy_groups&amp;#34;: [
         ...
         &amp;#34;usermetrics&amp;#34;
@@ -649,10 +649,10 @@ F(5);
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;QML&lt;/h2&gt;
 &lt;p&gt;First you need to import the &lt;code&gt;UserMetrics&lt;/code&gt; module :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;import UserMetrics 0.1
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;import UserMetrics 0.1
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then create the metric(s) :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Metric {
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;Metric {
     /* Set a unique ID for each metric object you use so you can access it in your QML code. */
     id: gameMetric
 
@@ -692,21 +692,21 @@ F(5);
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/utouch/3.png&#34; alt=&#34;Ubuntu Browser&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;The phablet-team PPA has the tools and dependencies for 12.04, 12.10, 13.04 and 13.10 to get everything setup:&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo add-apt-repository ppa:phablet-team/tools
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo add-apt-repository ppa:phablet-team/tools
 $ sudo apt-get update
 $ sudo apt-get install phablet-tools android-tools-adb android-tools-fastboot
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Plug the device via the USB cable, then run the following commands to connect to it through ADB&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ adb shell
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ adb shell
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Switch to the phablet user :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo -u phablet -i
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo -u phablet -i
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Take a note of your phone IP adresse :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ ifconfig wlan0 | grep &amp;#39;inet addr&amp;#39; | cut -d: -f2 | awk &amp;#39;{print $1}&amp;#39;
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ ifconfig wlan0 | grep &amp;#39;inet addr&amp;#39; | cut -d: -f2 | awk &amp;#39;{print $1}&amp;#39;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Once done launch the webbrowser app using :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ upstart-app-launch webbrowser-app --inspector
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ upstart-app-launch webbrowser-app --inspector
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;A browser instance will launch on the phone, point to URL of your webapp then access the Devtools with your Chrome/ium browser by opening &lt;code&gt;http://$YOUR-PHONE-IP:9221&lt;/code&gt;&lt;/p&gt;
 
@@ -730,9 +730,9 @@ $ sudo apt-get install phablet-tools android-tools-adb android-tools-fastboot
 &lt;p&gt;Adding an Android or iPhone token will lead to unwanted behaviours, like showing ads for the Android app or even trying to open the Google Play app or the Youtube app. The browser now reports it in the following formats, depending on whether the device is a phone or a tablet, with the addition of an &lt;a href=&#34;https://bazaar.launchpad.net/%7Ephablet-team/webbrowser-app/trunk/view/head:/src/Ubuntu/Components/Extras/Browser/ua-overrides.js&#34;&gt;override mechanism&lt;/a&gt; that will override the UA on the fly and the site will serve us a proper mobile content.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/utouch/1.png&#34; alt=&#34;Facebook Android Ads&#34;&gt;&lt;/p&gt;
-&lt;h2&gt;Phone&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; Mobile) WebKit/537.21
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Tablet&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; Tablet) WebKit/537.21
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Pattern&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; $FormFactor) WebKit/$WebKitRev
+&lt;h2&gt;Phone&lt;/h2&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;Mozilla/5.0 (Ubuntu; Mobile) WebKit/537.21
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Tablet&lt;/h2&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;Mozilla/5.0 (Ubuntu; Tablet) WebKit/537.21
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Pattern&lt;/h2&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;Mozilla/5.0 (Ubuntu; $FormFactor) WebKit/$WebKitRev
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You can also get it through JavaScript using the &lt;code&gt;navigator.userAgent&lt;/code&gt;&lt;/p&gt;
 
@@ -756,7 +756,7 @@ $ sudo apt-get install phablet-tools android-tools-adb android-tools-fastboot
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/xtype/xtype.png&#34; alt=&#34;X-Type running on Ubuntu Touch&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;First using the Qt Creator you have to create a &amp;quot;HTML5 Touch UI&amp;quot; project which will produce the following QML code :&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import QtQuick 2.0
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;import QtQuick 2.0
 import Ubuntu.Components 0.1
 import QtWebKit 3.0
 
@@ -787,8 +787,8 @@ MainView {
 &lt;p&gt;Also with the &lt;code&gt;UbuntuWebView&lt;/code&gt; the &lt;code&gt;DPR&lt;/code&gt; weren&amp;#39;t set automatically(&lt;a href=&#34;https://bugs.launchpad.net/webbrowser-app/+bug/1237348&#34;&gt;bug #1237348&lt;/a&gt;), it was also fixed and all those fixes has been shipped with image #96.&lt;/p&gt;
 
 &lt;p&gt;Here is the QML code i used to embed the &amp;quot;X-Type&amp;quot; game(Fullscreen) but first you need to install the browser plugin :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install qtdeclarative5-ubuntu-ui-extras-browser-plugin
-&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import QtQuick 2.0
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo apt-get install qtdeclarative5-ubuntu-ui-extras-browser-plugin
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;import QtQuick 2.0
 import Ubuntu.Components 0.1
 import Ubuntu.Components.Extras.Browser 0.1
 
@@ -812,7 +812,7 @@ MainView {
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;you need to create a &lt;code&gt;manifest.json&lt;/code&gt; file :&lt;/p&gt;
-&lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
+&lt;pre&gt;&lt;code data-language=&#34;json&#34;&gt;{
     &amp;#34;description&amp;#34;: &amp;#34;A Free HTML5 Dual Stick Shooter&amp;#34;,
     &amp;#34;framework&amp;#34;: &amp;#34;ubuntu-sdk-13.10&amp;#34;,
     &amp;#34;architecture&amp;#34;: &amp;#34;all&amp;#34;,
@@ -829,7 +829,7 @@ MainView {
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;the security policy groups &lt;code&gt;x-type.json&lt;/code&gt; :&lt;/p&gt;
-&lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
+&lt;pre&gt;&lt;code data-language=&#34;json&#34;&gt;{
     &amp;#34;policy_groups&amp;#34;: [
         &amp;#34;networking&amp;#34;
     ],
@@ -837,7 +837,7 @@ MainView {
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;and a .desktop file :&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;[Desktop Entry]
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;[Desktop Entry]
 Name=x-type
 Comment=A Free HTML5 Dual Stick Shooter
 Exec=qmlscene $@ x-type.qml
@@ -866,29 +866,29 @@ X-Ubuntu-Touch=true
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/vagrant/vagrant.jpg&#34; alt=&#34;Vagrant&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Installing Vagrant&lt;/h2&gt;
 &lt;p&gt;Vagrant works with VirtualBox, and support &lt;a href=&#34;http://www.vagrantup.com/vmware&#34;&gt;Vmware Fusion&lt;/a&gt; and AWS via plugins&lt;/p&gt;
-&lt;h3&gt;Install Virtualbox&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install virtualbox
-&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Install Vagrant&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install vagrant
+&lt;h3&gt;Install Virtualbox&lt;/h3&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo apt-get install virtualbox
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Install Vagrant&lt;/h3&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo apt-get install vagrant
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Make sure Vagrant is installed correctly&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ vagrant --version
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ vagrant --version
 Vagrant version 1.2.0
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Get your first VM up and running&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;start a vagrant config file in an empty project folder. this will create &lt;code&gt;Vagrantfile&lt;/code&gt;&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ mkdir project
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ mkdir project
 $ cd project
 $ vagrant init
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;edit &lt;code&gt;Vagrantfile&lt;/code&gt; to add the boxname&lt;/p&gt;
-&lt;pre lang=&#34;ruby&#34;&gt;&lt;code&gt;Vagrant::Config.run do |config|
+&lt;pre&gt;&lt;code data-language=&#34;ruby&#34;&gt;Vagrant::Config.run do |config|
     config.vm.box = &amp;#34;devserver&amp;#34;
 end
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;add a base image or box to quickly clone a virtual machine. this will create a folder .vagrant with an ubuntu box&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ vagrant box add devserver http://files.vagrantup.com/precise32.box
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ vagrant box add devserver http://files.vagrantup.com/precise32.box
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;then you are ready to go&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ vagrant up
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ vagrant up
 [default] Importing base box &amp;#39;precise32&amp;#39;...
 [default] Matching MAC address for NAT networking...
 [default] Clearing any previously set forwarded ports...
@@ -906,7 +906,7 @@ end
 &lt;/ol&gt;
 
 &lt;p&gt;Wait for the command to finish, then you will have a VM ready for you to connect. the VM can be accessed via SSH:&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ vagrant ssh
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ vagrant ssh
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Provisioning&lt;/h2&gt;
 &lt;p&gt;Vagrant allow you to use different Provisioners to easily setup your VM with everything it needs to run your project :&lt;/p&gt;
 
@@ -921,7 +921,7 @@ end
 &lt;p&gt;I do prefer Puppet for provisioning, because it&amp;#39;s easy and it allow you to easily create a manifest to control the package, file or service with a few lines of code.&lt;/p&gt;
 
 &lt;p&gt;Here is the &lt;code&gt;Vagrantfile&lt;/code&gt; i use, i needed to forward the port 8000 because i want to access the webapp using my browser, i also increased the memory of the VM to 1GB, and made the project folder accessible to the VM :&lt;/p&gt;
-&lt;pre lang=&#34;ruby&#34;&gt;&lt;code&gt;# -*- mode: ruby -*-
+&lt;pre&gt;&lt;code data-language=&#34;ruby&#34;&gt;# -*- mode: ruby -*-
 # vi: set ft=ruby :
 
 Vagrant::Config.run do |ltp|
@@ -944,7 +944,7 @@ Vagrant::Config.run do |ltp|
 end
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;here one of the classes i use on my dev environement :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;class init {
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;class init {
 
     group { &amp;#34;puppet&amp;#34;:
         ensure =&amp;gt; &amp;#34;present&amp;#34;,
@@ -974,7 +974,7 @@ end
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You need to specify one manifest file in your Vagranfile, if you need to split it, you can use something like this :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ tree
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ tree
 .
 └── manifests
     ├── classes
@@ -983,7 +983,7 @@ end
     └── vagrant.pp
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I use &lt;code&gt;vagrant.pp&lt;/code&gt; to define my project variables, and to make sure all the classes are executed in the order i want :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;import &amp;#34;classes/*.pp&amp;#34;
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;import &amp;#34;classes/*.pp&amp;#34;
 
 $PROJ_DIR = &amp;#34;/home/vagrant/ltp&amp;#34;
 
@@ -1002,7 +1002,7 @@ class dev {
 include dev
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The &lt;code&gt;ltp&lt;/code&gt; class is only used to run some &lt;code&gt;django&lt;/code&gt; commands :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;class ltp {
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;class ltp {
 
     file { &amp;#34;$PROJ_DIR/loco_directory/local_settings.py&amp;#34;:
         ensure =&amp;gt; file,
@@ -1031,7 +1031,7 @@ include dev
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Now all i have to do is &lt;code&gt;vagrant up&lt;/code&gt; and let Vagrant do all his magic tricks :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ vagrant up
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ vagrant up
 [default] Importing base box &amp;#39;ltp-devserver&amp;#39;...
 [default] Matching MAC address for NAT networking...
 [default] Clearing any previously set forwarded ports...
@@ -1141,12 +1141,12 @@ notice: Finished catalog run in 811.47 seconds
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/persona-mozilla.jpg&#34; alt=&#34;Persona&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;
 &lt;p&gt;Mozilla provides a library called &lt;code&gt;django-browserid&lt;/code&gt; that integrates Persona authentication into Django, so you can simply added to to your &lt;code&gt;requirements.txt&lt;/code&gt; or just install via pip :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo pip install django-browserid
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo pip install django-browserid
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Configuration&lt;/h2&gt;
 &lt;p&gt;Once done you need to follow the following steps :&lt;/p&gt;
 
 &lt;p&gt;Add &lt;code&gt;django-browserid&lt;/code&gt; to your &lt;code&gt;INSTALLED_APPS&lt;/code&gt;,&lt;/p&gt;
-&lt;pre lang=&#34;python&#34;&gt;&lt;code&gt;INSTALLED_APPS = (
+&lt;pre&gt;&lt;code data-language=&#34;python&#34;&gt;INSTALLED_APPS = (
     # ...
     &amp;#39;django.contrib.auth&amp;#39;,
     &amp;#39;django.contrib.contenttypes&amp;#39;,
@@ -1159,7 +1159,7 @@ notice: Finished catalog run in 811.47 seconds
 )
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Add the &lt;code&gt;django_browserid&lt;/code&gt; authentication backend :&lt;/p&gt;
-&lt;pre lang=&#34;python&#34;&gt;&lt;code&gt;AUTHENTICATION_BACKENDS = (
+&lt;pre&gt;&lt;code data-language=&#34;python&#34;&gt;AUTHENTICATION_BACKENDS = (
    # ...
    &amp;#39;django.contrib.auth.backends.ModelBackend&amp;#39;, # required for admin
    &amp;#39;django_browserid.auth.BrowserIDBackend&amp;#39;,
@@ -1167,14 +1167,14 @@ notice: Finished catalog run in 811.47 seconds
 )
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Add the &lt;code&gt;django_browserid&lt;/code&gt; context processor :&lt;/p&gt;
-&lt;pre lang=&#34;python&#34;&gt;&lt;code&gt;TEMPLATE_CONTEXT_PROCESSORS = (
+&lt;pre&gt;&lt;code data-language=&#34;python&#34;&gt;TEMPLATE_CONTEXT_PROCESSORS = (
    # ...
    &amp;#39;django_browserid.context_processors.browserid&amp;#39;,
    # ...
 )
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;and finally you need to set your site url :&lt;/p&gt;
-&lt;pre lang=&#34;python&#34;&gt;&lt;code&gt;SITE_URL = &amp;#39;https://example.com&amp;#39;
+&lt;pre&gt;&lt;code data-language=&#34;python&#34;&gt;SITE_URL = &amp;#39;https://example.com&amp;#39;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I have created a working demo project on &lt;a href=&#34;https://github.com/daker/django-persona-demo&#34;&gt;github&lt;/a&gt; to play with, you can still check the &lt;a href=&#34;http://django-browserid.readthedocs.org/en/v0.9/details/troubleshooting.html&#34;&gt;docs&lt;/a&gt; or comment here if it doesn&amp;#39;t work for you.&lt;/p&gt;
 </content>

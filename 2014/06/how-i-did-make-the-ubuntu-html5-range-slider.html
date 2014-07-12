@@ -131,103 +131,60 @@
 <p><img src="https://lh4.googleusercontent.com/-OsoN55QFLxg/U5Mf5pZcTcI/AAAAAAAADBk/anOEUUCKFXA/w426-h584/out-7.gif" alt="Ubuntu HTML5 Slider"></p>
 
 <p>The first thing that needs be done is to remove the default styles using <code>-webkit-appearance: none</code>.</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">range</span><span class="o">]</span> <span class="p">{</span>
-  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">appearance</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div></div>
+<pre><code data-language="css">input[type=range] {
+  -webkit-appearance: none;
+}
+</code></pre>
 <p>Now we can start adding our CSS styles, Webkit/Blink provides an easy way to style the thumb using the pseudo class <code>::-webkit-slider-thumb</code> but first we need to remove the defaul styles.</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18</pre></div></td><td class="code"><div class="highlight"><pre><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">range</span><span class="o">]</span> <span class="p">{</span>
-    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">appearance</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-    <span class="k">background</span><span class="o">:</span> <span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="n">to</span> <span class="k">right</span><span class="o">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">175</span><span class="o">,</span> <span class="m">175</span><span class="o">,</span> <span class="m">175</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">3</span><span class="p">)</span> <span class="m">0</span><span class="o">%,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">175</span><span class="o">,</span> <span class="m">175</span><span class="o">,</span> <span class="m">175</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">3</span><span class="p">)</span> <span class="m">100</span><span class="o">%</span><span class="p">);</span>
-    <span class="k">background-position</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
-    <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="m">99</span><span class="o">%</span> <span class="m">4px</span><span class="p">;</span>
-    <span class="k">background-repeat</span><span class="o">:</span> <span class="k">no-repeat</span><span class="p">;</span>
-    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">appearance</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-    <span class="k">width</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
-    <span class="k">height</span><span class="o">:</span> <span class="m">36px</span><span class="p">;</span>
-    <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">1px</span><span class="p">;</span>
-    <span class="k">overflow</span><span class="o">:</span> <span class="k">hidden</span><span class="p">;</span>
-    <span class="k">margin-top</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
-    <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
-<span class="p">}</span>
+<pre><code data-language="css">input[type=range] {
+    -webkit-appearance: none;
+    background: linear-gradient(to right, rgba(175, 175, 175, 0.3) 0%, rgba(175, 175, 175, 0.3) 100%);
+    background-position: center;
+    background-size: 99% 4px;
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    width: auto;
+    height: 36px;
+    border-radius: 1px;
+    overflow: hidden;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">range</span><span class="o">]:</span><span class="nd">:-webkit-slider-thumb</span> <span class="p">{</span>
-    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">appearance</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div></div>
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+</code></pre>
 <iframe width="100%" height="300" src="http://jsfiddle.net/daker/f3Kzw/embedded/result,css,html" allowfullscreen="allowfullscreen"></iframe>
 
 <p>Now let&#39;s style the thumb :</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="highlight"><pre><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">range</span><span class="o">]:</span><span class="nd">:-webkit-slider-thumb</span> <span class="p">{</span>
-  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="k">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">0</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">2</span><span class="p">);</span>
-  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="k">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">0</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">2</span><span class="p">);</span>
-  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
-  <span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
-  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">appearance</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-  <span class="k">background-color</span><span class="o">:</span> <span class="m">#fff</span><span class="p">;</span>
-  <span class="k">pointer</span><span class="o">-</span><span class="n">events</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
-  <span class="k">width</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
-  <span class="k">height</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
-  <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div></div>
+<pre><code data-language="css">input[type=range]::-webkit-slider-thumb {
+  -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  background-color: #fff;
+  pointer-events: none;
+  border-radius: 3px;
+  width: 16px;
+  height: 16px;
+  position: relative;
+}
+</code></pre>
 <iframe width="100%" height="300" src="http://jsfiddle.net/daker/f3Kzw/2/embedded/result,css,html" allowfullscreen="allowfullscreen"></iframe>
 
 <p>At this point we are still missing the oragne fill color, unfortunatly Webkit/Blink doesn&#39;t provide any pseudo class to style this area like IE does, so i have tried to combine the pseudo class <code>::-webkit-slider-thumb</code> and <code>:before</code> to create this effect.</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">range</span><span class="o">]:</span><span class="nd">:-webkit-slider-thumb:before</span> <span class="p">{</span>
-  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
-  <span class="k">top</span><span class="o">:</span> <span class="m">6px</span><span class="p">;</span>
-  <span class="k">left</span><span class="o">:</span> <span class="m">-2000px</span><span class="p">;</span>
-  <span class="k">width</span><span class="o">:</span> <span class="m">2000px</span><span class="p">;</span>
-  <span class="k">height</span><span class="o">:</span> <span class="m">4px</span><span class="p">;</span>
-  <span class="k">background</span><span class="o">:</span> <span class="m">#dd4814</span><span class="p">;</span>
-  <span class="k">content</span><span class="o">:</span> <span class="s1">&#39; &#39;</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div></div>
+<pre><code data-language="css">input[type=range]::-webkit-slider-thumb:before {
+  position: absolute;
+  top: 6px;
+  left: -2000px;
+  width: 2000px;
+  height: 4px;
+  background: #dd4814;
+  content: &#39; &#39;;
+}
+</code></pre>
 <iframe width="100%" height="300" src="http://jsfiddle.net/daker/f3Kzw/1/embedded/result,css,html" allowfullscreen="allowfullscreen"></iframe>
 </div>
     </div>
@@ -284,6 +241,10 @@
     <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/jquery.ba-hashchange.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/main.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/rainbow.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/css.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/html.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/javascript.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

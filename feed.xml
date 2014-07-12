@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-07-08T21:18:58Z</updated>
+        <updated>2014-07-12T23:48:26Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -27,12 +27,12 @@
 &lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/-OsoN55QFLxg/U5Mf5pZcTcI/AAAAAAAADBk/anOEUUCKFXA/w426-h584/out-7.gif&#34; alt=&#34;Ubuntu HTML5 Slider&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;The first thing that needs be done is to remove the default styles using &lt;code&gt;-webkit-appearance: none&lt;/code&gt;.&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;input[type=range] {
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;input[type=range] {
   -webkit-appearance: none;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Now we can start adding our CSS styles, Webkit/Blink provides an easy way to style the thumb using the pseudo class &lt;code&gt;::-webkit-slider-thumb&lt;/code&gt; but first we need to remove the defaul styles.&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;input[type=range] {
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;input[type=range] {
     -webkit-appearance: none;
     background: linear-gradient(to right, rgba(175, 175, 175, 0.3) 0%, rgba(175, 175, 175, 0.3) 100%);
     background-position: center;
@@ -54,7 +54,7 @@ input[type=range]::-webkit-slider-thumb {
 &lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/f3Kzw/embedded/result,css,html&#34; allowfullscreen=&#34;allowfullscreen&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;Now let&amp;#39;s style the thumb :&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;input[type=range]::-webkit-slider-thumb {
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;input[type=range]::-webkit-slider-thumb {
   -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
   -webkit-box-sizing: border-box;
@@ -71,7 +71,7 @@ input[type=range]::-webkit-slider-thumb {
 &lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/daker/f3Kzw/2/embedded/result,css,html&#34; allowfullscreen=&#34;allowfullscreen&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;At this point we are still missing the oragne fill color, unfortunatly Webkit/Blink doesn&amp;#39;t provide any pseudo class to style this area like IE does, so i have tried to combine the pseudo class &lt;code&gt;::-webkit-slider-thumb&lt;/code&gt; and &lt;code&gt;:before&lt;/code&gt; to create this effect.&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;input[type=range]::-webkit-slider-thumb:before {
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;input[type=range]::-webkit-slider-thumb:before {
   position: absolute;
   top: 6px;
   left: -2000px;
@@ -150,7 +150,7 @@ I hope we will be invited again next time.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h2&gt;WebView&lt;/h2&gt;
 &lt;p&gt;Before you start make sure to add the &lt;code&gt;webview&lt;/code&gt; to your apparmor policy file, to declare a Webview using Oxide you need to use the &lt;code&gt;WebView&lt;/code&gt; component from &lt;code&gt;com.canonical.Oxide&lt;/code&gt;&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;import com.canonical.Oxide 1.0
 [...]
 WebView {
     id: webview
@@ -194,7 +194,7 @@ WebView {
 &lt;li&gt;textAreasAreResizable (bool)&lt;/li&gt;
 &lt;li&gt;touchEnabled  (bool)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Example&lt;/h3&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+&lt;h3&gt;Example&lt;/h3&gt;&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;import com.canonical.Oxide 1.0
 [...]
 WebView {
     id: webview
@@ -228,7 +228,7 @@ WebView {
 &lt;/ul&gt;
 &lt;h3&gt;UserAgent&lt;/h3&gt;
 &lt;p&gt;This example shows how you can use the &lt;code&gt;WebContext&lt;/code&gt; to override the default UserAgent&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;import com.canonical.Oxide 1.0
 [...]
 WebContext {
     id: webcontext
@@ -248,7 +248,7 @@ WebView {
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;networkRequestDelegate&lt;/h3&gt;
 &lt;p&gt;You can also override the http request headers by using the &lt;code&gt;networkRequestDelegate&lt;/code&gt;, in this example i am adding a &lt;a href=&#34;https://en.wikipedia.org/wiki/Do_Not_Track&#34;&gt;Do Not Track&lt;/a&gt; (DNT) an HTTP header field on the fly.&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;import com.canonical.Oxide 1.0
 [...]
 WebContext {
     id: webcontext
@@ -268,7 +268,7 @@ WebView {
         url = &amp;#34;http://www.browserleaks.com/donottrack&amp;#34;
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;/*
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;/*
  dnt.js
  Made by Adnane Belmadiaf &amp;lt;daker AT ubuntu DOT com&amp;gt;
 */
@@ -278,7 +278,7 @@ exports.onBeforeSendHeaders = function(event) {
 };
 &lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;UserScripts&lt;/h3&gt;
 &lt;p&gt;Oxide supports Greasemonkey-style user scripts, here is an example to do some DOM manipulation.&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;import com.canonical.Oxide 1.0
 [...]
 WebContext {
     id: webcontext
@@ -303,7 +303,7 @@ WebView {
         url = &amp;#34;http://www.ubuntu.com/&amp;#34;
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;// ==UserScript==
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;// ==UserScript==
 // @name           Dom Manipulation
 // @namespace      http://daker.me
 // @description    Oxide UserScript demo
@@ -319,7 +319,7 @@ function oxide_dom() {
 window.addEventListener(&amp;#39;load&amp;#39;, oxide_dom, true);
 &lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Message API&lt;/h3&gt;
 &lt;p&gt;Oxide does also provide a message API, in this example the script will send a message to Oxide and Oxide will reply back.&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import com.canonical.Oxide 1.0
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;import com.canonical.Oxide 1.0
 [...]
 WebContext {
     id: webcontext
@@ -343,7 +343,7 @@ WebView {
         url = &amp;#34;http://www.ubuntu.com/&amp;#34;
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;/*
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;/*
  message-api.js
  This script will send a message to Oxide on every request
 */
@@ -414,17 +414,17 @@ exports.onBeforeSendHeaders = function(event) {
 &lt;ul&gt;
 &lt;li&gt;data-i18n-translate : this is used to collect all the strings that needs be translated used by JavaScript and used for pot generation&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;h1 data-i18n-translate&amp;gt;Good Morning&amp;lt;/h1&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;h1 data-i18n-translate&amp;gt;Good Morning&amp;lt;/h1&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;data-i18n-args : JSON data used to replace variables in the string, it only supports one level so far&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;h1 data-i18n-translate data-i18n-args=&amp;#39;{ &amp;#34;user&amp;#34;: &amp;#34;daker&amp;#34; }&amp;#39;&amp;gt;Good Morning &amp;lt;/h1&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;h1 data-i18n-translate data-i18n-args=&amp;#39;{ &amp;#34;user&amp;#34;: &amp;#34;daker&amp;#34; }&amp;#39;&amp;gt;Good Morning &amp;lt;/h1&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;data-i18n-plural : This is the plural string, here &lt;a href=&#34;https://plus.google.com/u/0/+KyleNitzsche/posts&#34;&gt;Kyle&lt;/a&gt; suggested that we hardcode the &amp;quot;n&amp;quot; counter used to determine if the string will be plural or not to &amp;quot;num&amp;quot;, so the dev have to passe the &amp;quot;num&amp;quot; in the data-i18n-args instead of a proper data-i18n-n.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;h1 data-i18n-translate data-i18n-plural=&amp;#34;I have   cars&amp;#34; data-i18n-args=&amp;#39;{ &amp;#34;num&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;brand&amp;#34;: &amp;#34;Mercedes&amp;#34; }&amp;#39;&amp;gt;I have a  car&amp;lt;/h1&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;h1 data-i18n-translate data-i18n-plural=&amp;#34;I have   cars&amp;#34; data-i18n-args=&amp;#39;{ &amp;#34;num&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;brand&amp;#34;: &amp;#34;Mercedes&amp;#34; }&amp;#39;&amp;gt;I have a  car&amp;lt;/h1&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;div class=&#34;g-post&#34; data-href=&#34;https://plus.google.com/101694416703170881163/posts/DpgEVUdcQJd&#34;&gt;&lt;/div&gt;
 
@@ -438,7 +438,7 @@ exports.onBeforeSendHeaders = function(event) {
 &lt;li&gt;dtr(domain, text);&lt;/li&gt;
 &lt;li&gt;dtr(domain, singular, plural, n);&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;i18n.tr(&amp;#39;Good Morning&amp;#39;);
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;i18n.tr(&amp;#39;Good Morning&amp;#39;);
 i18n.strargs(i18n.tr(&amp;#39;Good Morning &amp;#39;), &amp;#39;{ &amp;#34;user&amp;#34;: &amp;#34;daker&amp;#34; }&amp;#39;));
 i18n.strargs(i18n.tr(&amp;#39;I have a  car&amp;#39;, &amp;#39;I have   cars&amp;#39;, &amp;#39;1&amp;#39;), &amp;#39;{ &amp;#34;num&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;brand&amp;#34;: &amp;#34;Mercedes&amp;#34; }&amp;#39;));
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Grid Layout&lt;/h2&gt;
@@ -478,17 +478,17 @@ i18n.strargs(i18n.tr(&amp;#39;I have a  car&amp;#39;, &amp;#39;I have   cars&amp
 &lt;/ul&gt;
 &lt;h2&gt;Capture image&lt;/h2&gt;
 &lt;p&gt;To capture an image you need to set the &lt;code&gt;accept=&amp;quot;image/*&amp;quot;&lt;/code&gt; and the &lt;code&gt;capture&lt;/code&gt; attributes, on the implementation on Chrome for Android is quite differente from to Firefox and Opera, Chrome opens the camera directly while the others opens a menu to select from diffrentes sources.&lt;/p&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;input type=&amp;#34;file&amp;#34; accept=&amp;#34;image/*&amp;#34; capture&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;input type=&amp;#34;file&amp;#34; accept=&amp;#34;image/*&amp;#34; capture&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/media-capture/image-firefox.png&#34; alt=&#34;&#34;&gt; &lt;img src=&#34;http://daker.me/assets/posts/media-capture/image-chrome1.png&#34; alt=&#34;&#34;&gt; &lt;img src=&#34;http://daker.me/assets/posts/media-capture/image-chrome2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Capture video&lt;/h2&gt;
 &lt;p&gt;To capture a video, &lt;code&gt;accept=&amp;quot;video/*&amp;quot;&lt;/code&gt; should be also set, same behaviour will happen for Chrome and Firefox.&lt;/p&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;input type=&amp;#34;file&amp;#34; accept=&amp;#34;video/*&amp;#34; capture&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;input type=&amp;#34;file&amp;#34; accept=&amp;#34;video/*&amp;#34; capture&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/media-capture/video-firefox.png&#34; alt=&#34;&#34;&gt; &lt;img src=&#34;http://daker.me/assets/posts/media-capture/video-chrome1.png&#34; alt=&#34;&#34;&gt; &lt;img src=&#34;http://daker.me/assets/posts/media-capture/video-chrome2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Capture audio&lt;/h2&gt;
 &lt;p&gt;To capture an audio sequence, you need to set &lt;code&gt;audio/*&lt;/code&gt; as a value for the &lt;code&gt;accept&lt;/code&gt; attribute, which will open the audio recorder application.&lt;/p&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;input type=&amp;#34;file&amp;#34; accept=&amp;#34;audio/*&amp;#34; capture&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;input type=&amp;#34;file&amp;#34; accept=&amp;#34;audio/*&amp;#34; capture&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/media-capture/audio-firefox.png&#34; alt=&#34;&#34;&gt; &lt;img src=&#34;http://daker.me/assets/posts/media-capture/audio-chrome1.png&#34; alt=&#34;&#34;&gt; &lt;img src=&#34;http://daker.me/assets/posts/media-capture/audio-chrome2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 
@@ -510,7 +510,7 @@ i18n.strargs(i18n.tr(&amp;#39;I have a  car&amp;#39;, &amp;#39;I have   cars&amp
 &lt;/video&gt;&lt;/p&gt;
 
 &lt;p&gt;To start using it you need to install ADB, you can use the phablet-team PPA if you are using Ubuntu which has the tools and dependencies for 12.04, 12.10, 13.04 and 13.10 to get everything setup, if not you can download the Android SDK from the &lt;a href=&#34;https://developer.android.com/sdk/index.html&#34;&gt;Android developer site&lt;/a&gt;&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo add-apt-repository ppa:phablet-team/tools
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo add-apt-repository ppa:phablet-team/tools
 $ sudo apt-get update
 $ sudo apt-get install android-tools-adb
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Enable Developer Mode&lt;/h2&gt;
@@ -527,12 +527,12 @@ $ sudo apt-get install android-tools-adb
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/android4.4/usb-debugging2.png&#34; alt=&#34;Security Question&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Using the Screen Recording&lt;/h2&gt;
 &lt;p&gt;Once done, you need to make sure that your device is listed &amp;amp; connected using :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ adb devices
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ adb devices
 List of devices attached
 xxxxxxxxxxxxxxxx  device
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then all you have to do is :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ adb shell screenrecord /sdcard/recording.mp4 &amp;amp;&amp;amp; adb pull /sdcard/recording.mp4
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ adb shell screenrecord /sdcard/recording.mp4 &amp;amp;&amp;amp; adb pull /sdcard/recording.mp4
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The default and maximum duration of a screenrecord is 3 minutes, you can use the &lt;code&gt;--time-limit&lt;/code&gt; argument to set the limit you want, here all arguements you can set :&lt;/p&gt;
 
@@ -566,7 +566,7 @@ screenrecord --bit-rate 6000000 /sdcard/demo.mp4&lt;/li&gt;
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/requestAutocomplete/1.png&#34; alt=&#34;requestAutocomplete&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;Calling the &lt;code&gt;requestAutocomplete()&lt;/code&gt; on a form element will auto-populate the data, the browser will use the form to detect which input types to populate, which means that the form doesn’t really need to be shown to the user.&lt;/p&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;button id=&amp;#34;checkout&amp;#34;&amp;gt;Checkout&amp;lt;/button&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;button id=&amp;#34;checkout&amp;#34;&amp;gt;Checkout&amp;lt;/button&amp;gt;
 
 &amp;lt;form id=&amp;#34;checkout-form&amp;#34; hidden&amp;gt;
   &amp;lt;input autocomplete=&amp;#34;cc-name&amp;#34; name=&amp;#34;myname&amp;#34;&amp;gt;
@@ -584,7 +584,7 @@ screenrecord --bit-rate 6000000 /sdcard/demo.mp4&lt;/li&gt;
   &amp;lt;input autocomplete=&amp;#34;shipping region&amp;#34; name=&amp;#34;billstate&amp;#34;&amp;gt;
   &amp;lt;input autocomplete=&amp;#34;shipping postal-code&amp;#34; name=&amp;#34;billzip&amp;#34;&amp;gt;
 &amp;lt;/form&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;&amp;lt;script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;&amp;lt;script&amp;gt;
   (function(){
     var form = document.getElementById(&amp;#39;checkout-form&amp;#39;);
     var button = document.getElementById(&amp;#39;checkout&amp;#39;);
@@ -643,7 +643,7 @@ screenrecord --bit-rate 6000000 /sdcard/demo.mp4&lt;/li&gt;
 &lt;li&gt;disabled – The browser supports requestAutocomplete, but it’s disabled in browser preferences.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;form.addEventListener(&amp;#39;autocomplete&amp;#39;, function() {
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;form.addEventListener(&amp;#39;autocomplete&amp;#39;, function() {
     form.submit();
 });
 
@@ -702,11 +702,11 @@ form.addEventListener(&amp;#39;autocompleteerror&amp;#39;, function(event) {
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/dir.png&#34; alt=&#34;JavaScript Console&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Assertions&lt;/h2&gt;
 &lt;p&gt;Tests that an expression is true using &lt;code&gt;console.assert&lt;/code&gt;. If not, it will write a message to the console and throw an exception.&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;var x=0;
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;var x=0;
 console.assert((x == 1), &amp;#34;assert message: x != 1&amp;#34;);
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Grouping output&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;console.group&lt;/code&gt; allows you to group the message or log in Console tab. If you have some many logs in your code, you can probably divide your log into small group or subgroup&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var user = &amp;#34;jsmith&amp;#34;, authenticated = false;
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;var user = &amp;#34;jsmith&amp;#34;, authenticated = false;
 console.group(&amp;#34;Authentication phase&amp;#34;);
 console.log(&amp;#34;Authenticating user &amp;#39;%s&amp;#39;&amp;#34;, user);
 // authentication code here...
@@ -716,7 +716,7 @@ if (!authenticated) {
 console.groupEnd();
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You can also do nested grouping :&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var user = &amp;#34;jsmith&amp;#34;, authenticated = true, authorized = true;
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;var user = &amp;#34;jsmith&amp;#34;, authenticated = true, authorized = true;
 // Top-level group
 console.group(&amp;#34;Authenticating user &amp;#39;%s&amp;#39;&amp;#34;, user);
 if (authenticated) {
@@ -736,7 +736,7 @@ console.log(&amp;#34;A group-less log trace.&amp;#34;);
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/nested.png&#34; alt=&#34;Nested Grouping&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Logging Array Data&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;console.table()&lt;/code&gt; is a very handy fonction to display Array object&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var langs = [
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;var langs = [
     { name: &amp;#34;JavaScript&amp;#34;, extension: &amp;#34;.js&amp;#34; },
     { name: &amp;#34;HTML&amp;#34;, extension: &amp;#34;.html&amp;#34; },
     { name: &amp;#34;CoffeeScript&amp;#34;, extension: &amp;#34;.coffee&amp;#34; },
@@ -748,7 +748,7 @@ console.table(langs);
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/jsconsole/table.png&#34; alt=&#34;JavaScript Console&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Measuring Execution time&lt;/h2&gt;
 &lt;p&gt;To mesure how long something it takes to execute a set of instructions :&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var i, t = &amp;#34;&amp;#34;;
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;var i, t = &amp;#34;&amp;#34;;
 
 // Start
 console.time(&amp;#34;OPNAME&amp;#34;);
@@ -760,7 +760,7 @@ for (i = 1; i &amp;lt;= 100; i++)
 console.timeEnd(&amp;#34;OPNAME&amp;#34;);
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Tracing&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;console.trace()&lt;/code&gt; prints the stacktrace of JavaScript execution at the point where it was called.&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;function F(v) {
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;function F(v) {
     return K(v + 1);
 }
 
@@ -800,10 +800,10 @@ F(5);
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/utouch/5.png&#34; alt=&#34;Welcome Screen&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;To use the &lt;code&gt;UserMetrics&lt;/code&gt; QML module you need to install &lt;code&gt;qtdeclarative5-usermetrics0.1&lt;/code&gt; package on the desktop :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install qtdeclarative5-usermetrics0.1
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo apt-get install qtdeclarative5-usermetrics0.1
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Apparmor Policy groups&lt;/h2&gt;
 &lt;p&gt;Add the &lt;code&gt;usermetrics&lt;/code&gt; to your apparmor file :&lt;/p&gt;
-&lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
+&lt;pre&gt;&lt;code data-language=&#34;json&#34;&gt;{
     &amp;#34;policy_groups&amp;#34;: [
         ...
         &amp;#34;usermetrics&amp;#34;
@@ -812,10 +812,10 @@ F(5);
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;QML&lt;/h2&gt;
 &lt;p&gt;First you need to import the &lt;code&gt;UserMetrics&lt;/code&gt; module :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;import UserMetrics 0.1
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;import UserMetrics 0.1
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then create the metric(s) :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Metric {
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;Metric {
     /* Set a unique ID for each metric object you use so you can access it in your QML code. */
     id: gameMetric
 
@@ -853,21 +853,21 @@ F(5);
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/utouch/3.png&#34; alt=&#34;Ubuntu Browser&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;The phablet-team PPA has the tools and dependencies for 12.04, 12.10, 13.04 and 13.10 to get everything setup:&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo add-apt-repository ppa:phablet-team/tools
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo add-apt-repository ppa:phablet-team/tools
 $ sudo apt-get update
 $ sudo apt-get install phablet-tools android-tools-adb android-tools-fastboot
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Plug the device via the USB cable, then run the following commands to connect to it through ADB&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ adb shell
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ adb shell
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Switch to the phablet user :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo -u phablet -i
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo -u phablet -i
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Take a note of your phone IP adresse :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ ifconfig wlan0 | grep &amp;#39;inet addr&amp;#39; | cut -d: -f2 | awk &amp;#39;{print $1}&amp;#39;
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ ifconfig wlan0 | grep &amp;#39;inet addr&amp;#39; | cut -d: -f2 | awk &amp;#39;{print $1}&amp;#39;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Once done launch the webbrowser app using :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ upstart-app-launch webbrowser-app --inspector
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ upstart-app-launch webbrowser-app --inspector
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;A browser instance will launch on the phone, point to URL of your webapp then access the Devtools with your Chrome/ium browser by opening &lt;code&gt;http://$YOUR-PHONE-IP:9221&lt;/code&gt;&lt;/p&gt;
 
@@ -889,9 +889,9 @@ $ sudo apt-get install phablet-tools android-tools-adb android-tools-fastboot
 &lt;p&gt;Adding an Android or iPhone token will lead to unwanted behaviours, like showing ads for the Android app or even trying to open the Google Play app or the Youtube app. The browser now reports it in the following formats, depending on whether the device is a phone or a tablet, with the addition of an &lt;a href=&#34;https://bazaar.launchpad.net/%7Ephablet-team/webbrowser-app/trunk/view/head:/src/Ubuntu/Components/Extras/Browser/ua-overrides.js&#34;&gt;override mechanism&lt;/a&gt; that will override the UA on the fly and the site will serve us a proper mobile content.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/utouch/1.png&#34; alt=&#34;Facebook Android Ads&#34;&gt;&lt;/p&gt;
-&lt;h2&gt;Phone&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; Mobile) WebKit/537.21
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Tablet&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; Tablet) WebKit/537.21
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Pattern&lt;/h2&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;Mozilla/5.0 (Ubuntu; $FormFactor) WebKit/$WebKitRev
+&lt;h2&gt;Phone&lt;/h2&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;Mozilla/5.0 (Ubuntu; Mobile) WebKit/537.21
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Tablet&lt;/h2&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;Mozilla/5.0 (Ubuntu; Tablet) WebKit/537.21
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Pattern&lt;/h2&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;Mozilla/5.0 (Ubuntu; $FormFactor) WebKit/$WebKitRev
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You can also get it through JavaScript using the &lt;code&gt;navigator.userAgent&lt;/code&gt;&lt;/p&gt;
 
@@ -913,7 +913,7 @@ $ sudo apt-get install phablet-tools android-tools-adb android-tools-fastboot
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/xtype/xtype.png&#34; alt=&#34;X-Type running on Ubuntu Touch&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;First using the Qt Creator you have to create a &amp;quot;HTML5 Touch UI&amp;quot; project which will produce the following QML code :&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import QtQuick 2.0
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;import QtQuick 2.0
 import Ubuntu.Components 0.1
 import QtWebKit 3.0
 
@@ -944,8 +944,8 @@ MainView {
 &lt;p&gt;Also with the &lt;code&gt;UbuntuWebView&lt;/code&gt; the &lt;code&gt;DPR&lt;/code&gt; weren&amp;#39;t set automatically(&lt;a href=&#34;https://bugs.launchpad.net/webbrowser-app/+bug/1237348&#34;&gt;bug #1237348&lt;/a&gt;), it was also fixed and all those fixes has been shipped with image #96.&lt;/p&gt;
 
 &lt;p&gt;Here is the QML code i used to embed the &amp;quot;X-Type&amp;quot; game(Fullscreen) but first you need to install the browser plugin :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install qtdeclarative5-ubuntu-ui-extras-browser-plugin
-&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;import QtQuick 2.0
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo apt-get install qtdeclarative5-ubuntu-ui-extras-browser-plugin
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;import QtQuick 2.0
 import Ubuntu.Components 0.1
 import Ubuntu.Components.Extras.Browser 0.1
 
@@ -969,7 +969,7 @@ MainView {
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;you need to create a &lt;code&gt;manifest.json&lt;/code&gt; file :&lt;/p&gt;
-&lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
+&lt;pre&gt;&lt;code data-language=&#34;json&#34;&gt;{
     &amp;#34;description&amp;#34;: &amp;#34;A Free HTML5 Dual Stick Shooter&amp;#34;,
     &amp;#34;framework&amp;#34;: &amp;#34;ubuntu-sdk-13.10&amp;#34;,
     &amp;#34;architecture&amp;#34;: &amp;#34;all&amp;#34;,
@@ -986,7 +986,7 @@ MainView {
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;the security policy groups &lt;code&gt;x-type.json&lt;/code&gt; :&lt;/p&gt;
-&lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
+&lt;pre&gt;&lt;code data-language=&#34;json&#34;&gt;{
     &amp;#34;policy_groups&amp;#34;: [
         &amp;#34;networking&amp;#34;
     ],
@@ -994,7 +994,7 @@ MainView {
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;and a .desktop file :&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;[Desktop Entry]
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;[Desktop Entry]
 Name=x-type
 Comment=A Free HTML5 Dual Stick Shooter
 Exec=qmlscene $@ x-type.qml
@@ -1021,29 +1021,29 @@ X-Ubuntu-Touch=true
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/vagrant/vagrant.jpg&#34; alt=&#34;Vagrant&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Installing Vagrant&lt;/h2&gt;
 &lt;p&gt;Vagrant works with VirtualBox, and support &lt;a href=&#34;http://www.vagrantup.com/vmware&#34;&gt;Vmware Fusion&lt;/a&gt; and AWS via plugins&lt;/p&gt;
-&lt;h3&gt;Install Virtualbox&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install virtualbox
-&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Install Vagrant&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo apt-get install vagrant
+&lt;h3&gt;Install Virtualbox&lt;/h3&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo apt-get install virtualbox
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Install Vagrant&lt;/h3&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo apt-get install vagrant
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Make sure Vagrant is installed correctly&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ vagrant --version
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ vagrant --version
 Vagrant version 1.2.0
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Get your first VM up and running&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;start a vagrant config file in an empty project folder. this will create &lt;code&gt;Vagrantfile&lt;/code&gt;&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ mkdir project
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ mkdir project
 $ cd project
 $ vagrant init
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;edit &lt;code&gt;Vagrantfile&lt;/code&gt; to add the boxname&lt;/p&gt;
-&lt;pre lang=&#34;ruby&#34;&gt;&lt;code&gt;Vagrant::Config.run do |config|
+&lt;pre&gt;&lt;code data-language=&#34;ruby&#34;&gt;Vagrant::Config.run do |config|
     config.vm.box = &amp;#34;devserver&amp;#34;
 end
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;add a base image or box to quickly clone a virtual machine. this will create a folder .vagrant with an ubuntu box&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ vagrant box add devserver http://files.vagrantup.com/precise32.box
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ vagrant box add devserver http://files.vagrantup.com/precise32.box
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;then you are ready to go&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ vagrant up
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ vagrant up
 [default] Importing base box &amp;#39;precise32&amp;#39;...
 [default] Matching MAC address for NAT networking...
 [default] Clearing any previously set forwarded ports...
@@ -1061,7 +1061,7 @@ end
 &lt;/ol&gt;
 
 &lt;p&gt;Wait for the command to finish, then you will have a VM ready for you to connect. the VM can be accessed via SSH:&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ vagrant ssh
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ vagrant ssh
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Provisioning&lt;/h2&gt;
 &lt;p&gt;Vagrant allow you to use different Provisioners to easily setup your VM with everything it needs to run your project :&lt;/p&gt;
 
@@ -1076,7 +1076,7 @@ end
 &lt;p&gt;I do prefer Puppet for provisioning, because it&amp;#39;s easy and it allow you to easily create a manifest to control the package, file or service with a few lines of code.&lt;/p&gt;
 
 &lt;p&gt;Here is the &lt;code&gt;Vagrantfile&lt;/code&gt; i use, i needed to forward the port 8000 because i want to access the webapp using my browser, i also increased the memory of the VM to 1GB, and made the project folder accessible to the VM :&lt;/p&gt;
-&lt;pre lang=&#34;ruby&#34;&gt;&lt;code&gt;# -*- mode: ruby -*-
+&lt;pre&gt;&lt;code data-language=&#34;ruby&#34;&gt;# -*- mode: ruby -*-
 # vi: set ft=ruby :
 
 Vagrant::Config.run do |ltp|
@@ -1099,7 +1099,7 @@ Vagrant::Config.run do |ltp|
 end
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;here one of the classes i use on my dev environement :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;class init {
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;class init {
 
     group { &amp;#34;puppet&amp;#34;:
         ensure =&amp;gt; &amp;#34;present&amp;#34;,
@@ -1129,7 +1129,7 @@ end
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You need to specify one manifest file in your Vagranfile, if you need to split it, you can use something like this :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ tree
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ tree
 .
 └── manifests
     ├── classes
@@ -1138,7 +1138,7 @@ end
     └── vagrant.pp
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I use &lt;code&gt;vagrant.pp&lt;/code&gt; to define my project variables, and to make sure all the classes are executed in the order i want :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;import &amp;#34;classes/*.pp&amp;#34;
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;import &amp;#34;classes/*.pp&amp;#34;
 
 $PROJ_DIR = &amp;#34;/home/vagrant/ltp&amp;#34;
 
@@ -1157,7 +1157,7 @@ class dev {
 include dev
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The &lt;code&gt;ltp&lt;/code&gt; class is only used to run some &lt;code&gt;django&lt;/code&gt; commands :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;class ltp {
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;class ltp {
 
     file { &amp;#34;$PROJ_DIR/loco_directory/local_settings.py&amp;#34;:
         ensure =&amp;gt; file,
@@ -1186,7 +1186,7 @@ include dev
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Now all i have to do is &lt;code&gt;vagrant up&lt;/code&gt; and let Vagrant do all his magic tricks :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ vagrant up
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ vagrant up
 [default] Importing base box &amp;#39;ltp-devserver&amp;#39;...
 [default] Matching MAC address for NAT networking...
 [default] Clearing any previously set forwarded ports...
@@ -1251,7 +1251,7 @@ notice: Finished catalog run in 811.47 seconds
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/webcomponents.png&#34; alt=&#34;Web Components&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;HTML Templates&lt;/h2&gt;
 &lt;p&gt;A template provides a method for declaring document fragments in HTML, it contains a chunks of markup that can be used later. The &lt;code&gt;template&lt;/code&gt; element is not rendered but parsed, which means that scripts aren&amp;#39;t processed, css and images aren&amp;#39;t downloaded, it&amp;#39;s completly hidden from the document object, so for ex you can&amp;#39;t access the &lt;code&gt;.comment-text&lt;/code&gt; element using &lt;code&gt;document.querySelector&lt;/code&gt;.&lt;/p&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;template id=&amp;#34;commentTemplate&amp;#34;&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;template id=&amp;#34;commentTemplate&amp;#34;&amp;gt;
     &amp;lt;img src=&amp;#34;&amp;#34;&amp;gt; &amp;lt;!-- dynamically populate at runtime --&amp;gt;
     &amp;lt;div class=&amp;#34;comment-text&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;!-- dynamically populate at runtime --&amp;gt;
 &amp;lt;/template&amp;gt;
@@ -1265,7 +1265,7 @@ notice: Finished catalog run in 811.47 seconds
 &lt;/blockquote&gt;
 
 &lt;p&gt;This means you will be able to create new HTML elements and extend the existing DOM objects with new ones. The name of any custom element must contain a dash (-) :&lt;/p&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;element name=&amp;#34;x-foo-bar&amp;#34; constructor=&amp;#34;XFooBar&amp;#34;&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;element name=&amp;#34;x-foo-bar&amp;#34; constructor=&amp;#34;XFooBar&amp;#34;&amp;gt;
 ...
 &amp;lt;/element&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -1280,10 +1280,10 @@ notice: Finished catalog run in 811.47 seconds
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/input-date-time.png&#34; alt=&#34;Date &amp;amp; time input&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;HTML Imports&lt;/h2&gt;
 &lt;p&gt;HTML Imports is similar way to how we load CSS stylesheets, it&amp;#39;s a new type of link tag which allow developers to import and use HTML code from a url, after importing the page you need to use some Javascript code to manipulate it and inject your code :&lt;/p&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;link rel=&amp;#34;import&amp;#34; href=&amp;#34;/import/page-to-import.html&amp;#34;&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;link rel=&amp;#34;import&amp;#34; href=&amp;#34;/import/page-to-import.html&amp;#34;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Here is an example :&lt;/p&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;
 &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt;
     &amp;lt;head&amp;gt;
         &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt;
@@ -1299,7 +1299,7 @@ notice: Finished catalog run in 811.47 seconds
         &amp;lt;/script&amp;gt;
     &amp;lt;/body&amp;gt;
 &amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;!-- import.html --&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;!-- import.html --&amp;gt;
 &amp;lt;div id=&amp;#34;page-content&amp;#34;&amp;gt;
     &amp;lt;p&amp;gt;This is the content of the imported page.&amp;lt;/p&amp;gt;
 &amp;lt;/div&amp;gt;
@@ -1359,12 +1359,12 @@ notice: Finished catalog run in 811.47 seconds
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/persona-mozilla.jpg&#34; alt=&#34;Persona&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;
 &lt;p&gt;Mozilla provides a library called &lt;code&gt;django-browserid&lt;/code&gt; that integrates Persona authentication into Django, so you can simply added to to your &lt;code&gt;requirements.txt&lt;/code&gt; or just install via pip :&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo pip install django-browserid
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo pip install django-browserid
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Configuration&lt;/h2&gt;
 &lt;p&gt;Once done you need to follow the following steps :&lt;/p&gt;
 
 &lt;p&gt;Add &lt;code&gt;django-browserid&lt;/code&gt; to your &lt;code&gt;INSTALLED_APPS&lt;/code&gt;,&lt;/p&gt;
-&lt;pre lang=&#34;python&#34;&gt;&lt;code&gt;INSTALLED_APPS = (
+&lt;pre&gt;&lt;code data-language=&#34;python&#34;&gt;INSTALLED_APPS = (
     # ...
     &amp;#39;django.contrib.auth&amp;#39;,
     &amp;#39;django.contrib.contenttypes&amp;#39;,
@@ -1377,7 +1377,7 @@ notice: Finished catalog run in 811.47 seconds
 )
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Add the &lt;code&gt;django_browserid&lt;/code&gt; authentication backend :&lt;/p&gt;
-&lt;pre lang=&#34;python&#34;&gt;&lt;code&gt;AUTHENTICATION_BACKENDS = (
+&lt;pre&gt;&lt;code data-language=&#34;python&#34;&gt;AUTHENTICATION_BACKENDS = (
    # ...
    &amp;#39;django.contrib.auth.backends.ModelBackend&amp;#39;, # required for admin
    &amp;#39;django_browserid.auth.BrowserIDBackend&amp;#39;,
@@ -1385,14 +1385,14 @@ notice: Finished catalog run in 811.47 seconds
 )
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Add the &lt;code&gt;django_browserid&lt;/code&gt; context processor :&lt;/p&gt;
-&lt;pre lang=&#34;python&#34;&gt;&lt;code&gt;TEMPLATE_CONTEXT_PROCESSORS = (
+&lt;pre&gt;&lt;code data-language=&#34;python&#34;&gt;TEMPLATE_CONTEXT_PROCESSORS = (
    # ...
    &amp;#39;django_browserid.context_processors.browserid&amp;#39;,
    # ...
 )
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;and finally you need to set your site url :&lt;/p&gt;
-&lt;pre lang=&#34;python&#34;&gt;&lt;code&gt;SITE_URL = &amp;#39;https://example.com&amp;#39;
+&lt;pre&gt;&lt;code data-language=&#34;python&#34;&gt;SITE_URL = &amp;#39;https://example.com&amp;#39;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I have created a working demo project on &lt;a href=&#34;https://github.com/daker/django-persona-demo&#34;&gt;github&lt;/a&gt; to play with, you can still check the &lt;a href=&#34;http://django-browserid.readthedocs.org/en/v0.9/details/troubleshooting.html&#34;&gt;docs&lt;/a&gt; or comment here if it doesn&amp;#39;t work for you.&lt;/p&gt;
 </content>
@@ -1437,23 +1437,23 @@ notice: Finished catalog run in 811.47 seconds
                 <content type="html">&lt;p&gt;Stylus is an expressive, dynamic, robust CSS pre-processor built on top of Node.js. LESS and Sass are both great, they try to stay as close as the original CSS syntax as possible to minimize the impact of having to learn a new language, but for me someone who cares about simplicity and readability, the syntax becomes an important part of the language or the framework.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/stylus.png&#34; alt=&#34;Stylus&#34;&gt;&lt;/p&gt;
-&lt;h2&gt;Installation&lt;/h2&gt;&lt;h3&gt;Ubuntu&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo add-apt-repository ppa:chris-lea/node.js
+&lt;h2&gt;Installation&lt;/h2&gt;&lt;h3&gt;Ubuntu&lt;/h3&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo add-apt-repository ppa:chris-lea/node.js
 $ sudo apt-get update
 $ sudo apt-get install nodejs
 $ sudo npm install -g stylus
-&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Mac OSX&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ brew install node
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Mac OSX&lt;/h3&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ brew install node
 $ curl https://npmjs.org/install.sh | sh
 $ npm install -g stylus
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;For me as someone who comes from a Python world, Stylus syntax strips away all the colons, semicolons, brackets and most parentheses from regular CSS script, which become like a python syntax, easy and dead simple.&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;#container
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;#container
     width 980px
     margin 0 auto
     background #ccc
     font 12px Helvetica, Arial, sans-serif
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;which produce the following CSS code&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;#container {
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;#container {
     width: 980px;
     margin: 0 auto;
     background: #ccc;
@@ -1461,7 +1461,7 @@ $ npm install -g stylus
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Variables&lt;/h2&gt;
 &lt;p&gt;Defining variables is simple, you don&amp;#39;t need to use $ or @ like in Sass or LESS, the good part is that Stylus also support the $ so if you are coming from Sass your variables will remain functionnal.&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;font-size = 14px
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;font-size = 14px
 color = #ff0000
 
 body
@@ -1470,7 +1470,7 @@ body
     color color
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Once compiled, you&amp;#39;ll get the following CSS code&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;body {
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;body {
     font-family: Arial, sans-serif;
     font-size: 14px;
     color: #f00;
@@ -1479,7 +1479,7 @@ body
 &lt;p&gt;Did you noticed something ? the color has been compressed automatically.&lt;/p&gt;
 &lt;h2&gt;Mixins&lt;/h2&gt;
 &lt;p&gt;Mixins are similar to functions, but used in a different way, a good example of a mixin is the border-radius property&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;border-radius(n)
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;border-radius(n)
     -webkit-border-radius n
     -moz-border-radius n
     -ms-border-radius n
@@ -1491,7 +1491,7 @@ body
     background #e9573f
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The compiled version will be&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;#btn {
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;#btn {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
@@ -1503,13 +1503,13 @@ body
 &lt;p&gt;Handy for vendor-prefixed properties.&lt;/p&gt;
 &lt;h2&gt;Iteration&lt;/h2&gt;
 &lt;p&gt;Stylus gives you the ablity to iterate expressions via for/in&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;ul
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;ul
     for row in 1 2 3 4 5
         li:nth-child({row})
             height: 10px * row
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The CSS code will be&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;ul li:nth-child(1) {
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;ul li:nth-child(1) {
     height: 10px;
 }
 
@@ -1530,14 +1530,14 @@ ul li:nth-child(5) {
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Inheritance&lt;/h2&gt;
 &lt;p&gt;Stylus provides a good inheritance mecanism&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;.notice
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;.notice
     padding 10px
     border 1px solid #eee
 
 .warning
     @extend .notice
     color #e2e21e
-&lt;/code&gt;&lt;/pre&gt;&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;.notice,
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;.notice,
 .warning {
     padding: 10px;
     border: 1px solid #eee;
@@ -1548,12 +1548,12 @@ ul li:nth-child(5) {
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Error Reporting&lt;/h2&gt;
 &lt;p&gt;Stylus has fantastic error reporting built-in for syntax, parse, and evaluation errors—complete with stack traces, line numbers, and filenames.&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;.message
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;.message
     padding 10px
     border 1px solid [#ccc]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The output will look something like this&lt;/p&gt;
-&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ stylus buggy-demo.styl
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ stylus buggy-demo.styl
 
 /usr/lib/node_modules/stylus/bin/stylus:530
               throw err;
@@ -1570,7 +1570,7 @@ cannot perform solid[(#ccc)]
 &lt;p&gt;Stylus provides a detailed stack trace much like you would find in any decent language.&lt;/p&gt;
 &lt;h2&gt;Literal CSS&lt;/h2&gt;
 &lt;p&gt;This the best part of Stylus, you can still use your CSS code using &lt;code&gt;@css&lt;/code&gt; and it will work, how that will help you in your workflow? you&amp;#39;ll be able to integrate Stylus progressivly in your project&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;@css {
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;@css {
     body {
         font-family: Arial, sans-serif;
         font-size: 14px;
@@ -1585,7 +1585,7 @@ cannot perform solid[(#ccc)]
     font 12px Helvetica, Arial, sans-serif
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;the output will be&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;body {
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;body {
     font-family: Arial, sans-serif;
     font-size: 14px;
     color: #f00;
@@ -1612,11 +1612,11 @@ cannot perform solid[(#ccc)]
                 <content type="html">&lt;p&gt;User testing is an important aspect of the development process of any web project, that&amp;#39;s why headless browsers can be great for automating and testing web pages programmatically, PhantomJS is one of many headless browsers basicaly a WebKit browser with JavaScript API, which means that the rendered web pages are never actually displayed, just because it is a browser but without a GUI.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/phantomjs.png&#34; alt=&#34;PhantomJS&#34;&gt;&lt;/p&gt;
-&lt;h2&gt;Installation&lt;/h2&gt;&lt;h3&gt;Ubuntu&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo add-apt-repository ppa:chris-lea/node.js
+&lt;h2&gt;Installation&lt;/h2&gt;&lt;h3&gt;Ubuntu&lt;/h3&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo add-apt-repository ppa:chris-lea/node.js
 $ sudo apt-get update
 $ sudo apt-get install nodejs
 $ sudo npm install -g phantomjs
-&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Mac OSX&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ brew install node
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Mac OSX&lt;/h3&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ brew install node
 $ curl https://npmjs.org/install.sh | sh
 $ npm install -g phantomjs
 &lt;/code&gt;&lt;/pre&gt;
@@ -1625,7 +1625,7 @@ $ npm install -g phantomjs
 &lt;p&gt;PhantomJS is very powerfull tool, it lets you manipulate pages, access page settings(prevent loading images, prevent running Javascript), accessing the filesystem, running Javascript and you can capture webpage, it can be coupled with other testing frameworks(like QUnitJS)&lt;/p&gt;
 &lt;h2&gt;Testing your responsive design&lt;/h2&gt;
 &lt;p&gt;PhantomJS can capture the content of any webpage in PNG, JPEG, GIF or PDF file, it let&amp;#39;s you set the viewport size, the zoom factor, the user-agent and more usefull stuff.&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;/*
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;/*
     requires: phantomjs, async
     usage: phantomjs capture.js
 */
@@ -1692,7 +1692,7 @@ async.eachSeries(sizes, capture, function (e) {
 &lt;code&gt;Height = height + padding-top + padding-bottom + border-top + border-bottom&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;so if we take this as an example :&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;.box {
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;.box {
     width: 300px;
     padding: 10px;
     border: 5px solid #e9573f;
@@ -1716,7 +1716,7 @@ async.eachSeries(sizes, capture, function (e) {
 &lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsfiddle.net/ZtLL8/1/embedded/result,css,html&#34; allowfullscreen=&#34;allowfullscreen&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;To save you time, you can apply it using the universal selector&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;* {
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;* {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -1748,7 +1748,7 @@ async.eachSeries(sizes, capture, function (e) {
 &lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;http://jsbin.com/omanut/2&#34; allowfullscreen=&#34;allowfullscreen&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;and this is the CSS way:&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;.sticky {
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;.sticky {
     position: -webkit-sticky;
     position: -moz-sticky;
     position: -ms-sticky;
@@ -1787,12 +1787,12 @@ async.eachSeries(sizes, capture, function (e) {
                 <content type="html">&lt;p&gt;&lt;a href=&#34;http://gruntjs.com&#34;&gt;Grunt.js&lt;/a&gt; is a powerful task-based command line tool written in JavaScript on top of Node.js, and there are a number of grunt plugins that make it easy to set up common tasks, most common ones are concatenating files, linting, testing and minification.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/grunt-logo.png&#34; alt=&#34;Grunt logo&#34;&gt;&lt;/p&gt;
-&lt;h2&gt;Installation&lt;/h2&gt;&lt;h3&gt;Ubuntu&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ sudo add-apt-repository ppa:chris-lea/node.js
+&lt;h2&gt;Installation&lt;/h2&gt;&lt;h3&gt;Ubuntu&lt;/h3&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo add-apt-repository ppa:chris-lea/node.js
 $ sudo apt-get update
 $ sudo apt-get install nodejs
 $ sudo npm install -g grunt-cli
 $ sudo npm install grunt --save-dev
-&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Mac OSX&lt;/h3&gt;&lt;pre lang=&#34;sh&#34;&gt;&lt;code&gt;$ brew install node
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Mac OSX&lt;/h3&gt;&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ brew install node
 $ curl https://npmjs.org/install.sh | sh
 $ npm install -g grunt-cli
 $ npm install grunt --save-dev
@@ -1800,7 +1800,7 @@ $ npm install grunt --save-dev
 &lt;p&gt;To integrate &lt;a href=&#34;http://gruntjs.com&#34;&gt;Grunt.js&lt;/a&gt; in your project, you just need to add two files, package.json and Gruntfile.js, to the root of your project.&lt;/p&gt;
 &lt;h3&gt;package.json&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;http://nodejs.org&#34;&gt;package.json&lt;/a&gt; file should contain project configurations (project name, version, license, author, etc...), it is always located in project root :&lt;/p&gt;
-&lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
+&lt;pre&gt;&lt;code data-language=&#34;json&#34;&gt;{
   &amp;#34;name&amp;#34; : &amp;#34;example&amp;#34;,
   &amp;#34;version&amp;#34; : &amp;#34;0.0.1&amp;#34;,
   &amp;#34;author&amp;#34;: &amp;#34;Adnane Belmadiaf&amp;#34;,
@@ -1818,7 +1818,7 @@ $ npm install grunt --save-dev
 &lt;p&gt;This will install Grunt and the plugins you will be using in your project, now all you need to do is running &lt;code&gt;npm install&lt;/code&gt; command in the root folder of the project.&lt;/p&gt;
 &lt;h3&gt;Gruntfile.js&lt;/h3&gt;
 &lt;p&gt;Gruntfile.js is used to define and configure tasks, and load &lt;a href=&#34;http://gruntjs.com&#34;&gt;Grunt.js&lt;/a&gt; &lt;a href=&#34;http://gruntjs.com/plugins&#34;&gt;plugins&lt;/a&gt;.&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;/*global module:false*/
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;/*global module:false*/
 module.exports = function(grunt){
     grunt.registerTask(&amp;#39;hello&amp;#39;, function(){
         console.log(&amp;#34;Hello from the Gruntfile!&amp;#34;);
@@ -1826,7 +1826,7 @@ module.exports = function(grunt){
 };
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This is the Gruntfile.js i use to jshint/concat/cssmin and uglify all my CSS and JS files in one .min.(js|css) file. Sure you can go deeper, you can compile your Less or Sass files, watch files and run tasks whenever they changed and more.&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;/*global module:false*/
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;/*global module:false*/
 
 module.exports = function(grunt) {
 
@@ -2043,7 +2043,7 @@ How many time you wanted to vertically center a div ? how many time you wanted t
 &lt;/div&gt;
 &lt;h2&gt;CSS3 Media Queries&lt;/h2&gt;
 &lt;p&gt;CSS3 Media queries allow you to target CSS rules based on screen size, device-orientation or display-density, you can add expressions to media type to check for certain conditions, this is the technique used for the so called &amp;quot;Responsive design&amp;quot;.&lt;/p&gt;
-&lt;pre lang=&#34;css&#34;&gt;&lt;code&gt;/* The following CSS will apply if the viewing area is smaller than 600px. */
+&lt;pre&gt;&lt;code data-language=&#34;css&#34;&gt;/* The following CSS will apply if the viewing area is smaller than 600px. */
 @media screen and (max-width: 600px) {
     .class {
         background: #ccc;
@@ -2081,14 +2081,14 @@ How many time you wanted to vertically center a div ? how many time you wanted t
                 <content type="html">&lt;p&gt;In my &lt;a href=&#34;http://daker.me/2013/05/5-html5-features-you-need-to-know.html&#34;&gt;last post&lt;/a&gt;, i have talked about HTML5 APIs, so thought it will also interesting to write about some new &lt;strike&gt;old&lt;/strike&gt; JavaScript APIs. Since CSS has been improving over the time and today you can achieve what was only done with Javascript with CSS only, on the other side Javascript have to improve and follow the evolution, so today Javascript can do a lot of things, like accessing hardware(camera, microphone, gamepad, GPU), accessing the filesystem and websocket.&lt;/p&gt;
 &lt;h2&gt;Battery Status API&lt;/h2&gt;
 &lt;p&gt;The &lt;a href=&#34;http://www.w3.org/TR/battery-status/&#34;&gt;Battery Status API&lt;/a&gt; allows any webpage to inspect the state of the device&amp;#39;s (Laptop, phone or tablet) battery through javascript :&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;var battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;var battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery
 
 console.log(&amp;#34;Battery charging: &amp;#34;, battery.charging); // true
 console.log(&amp;#34;Battery level: &amp;#34;, battery.level); // 0.58
 console.log(&amp;#34;Battery discharging time: &amp;#34;, battery.dischargingTime);
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;As you can see you need to do more checks to make your code cross-browser compatible, i have done some researches and i have found &lt;a href=&#34;https://github.com/pstadler/battery.js/&#34;&gt;battery.js&lt;/a&gt; a tiny wrapper for the Battery Status API :&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;if(Battery.isSupported()) {
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;if(Battery.isSupported()) {
     // Get the battery status
     var status = Battery.getStatus();
     console.log(&amp;#39;Level: &amp;#39; + Math.floor(status.level * 100) + &amp;#39;%&amp;#39;); // 30%
@@ -2111,7 +2111,7 @@ console.log(&amp;#34;Battery discharging time: &amp;#34;, battery.dischargingTim
 &lt;/div&gt;
 &lt;h2&gt;Gamepad API&lt;/h2&gt;
 &lt;p&gt;Gamepad API allows you to connect your console gamepad into your computer and use it for browser based games. With the increase in popularity of HTML5 games this API will have a prominent future.&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;navigator.gamepads = navigator.webkitGamepads || navigator.MozGamepads;
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;navigator.gamepads = navigator.webkitGamepads || navigator.MozGamepads;
 
 var requestAnimationFrame = window.webkitRequestAnimationFrame ||
                             window.mozRequestAnimationFrame;
@@ -2152,7 +2152,7 @@ window.addEventListener(&amp;#39;MozGamepadConnected&amp;#39;, onConnected, fals
 &lt;p&gt;Using device orientation, you can determine the orientation of the device as well as gather information about its movement (alpha, beta and gamma).&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/deviceorientation.png&#34; alt=&#34;Source html5rocks.com&#34;&gt;&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;if (window.DeviceOrientationEvent) {
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;if (window.DeviceOrientationEvent) {
     window.addEventListener(&amp;#39;deviceorientation&amp;#39;, function(event) {
         var a = event.alpha,
             b = event.beta,
@@ -2174,7 +2174,7 @@ window.addEventListener(&amp;#39;MozGamepadConnected&amp;#39;, onConnected, fals
 &lt;p&gt;To use this feature your device must have gyroscope capabilities, more about browser support can be found on &lt;a href=&#34;http://caniuse.com/deviceorientation&#34;&gt;caniuse.com&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Geolocation API&lt;/h2&gt;
 &lt;p&gt;The &lt;a href=&#34;http://dev.w3.org/geo/api/&#34;&gt;Geolocation API&lt;/a&gt; lets you share your location with trusted web sites. The latitude and longitude are available to JavaScript on the page, which in turn can send it back to the remote web server and do fancy location-aware things like finding local businesses or showing your location on a map, it can be also used for &amp;quot;geo-tagging&amp;quot; user&amp;#39;s content like photos.&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;if (navigator.geolocation) {
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
         var lat = position.coords.latitude,
             lon = position.coords.longitude;
@@ -2196,7 +2196,7 @@ else {
 &lt;p&gt;More about browser support can be found on &lt;a href=&#34;http://caniuse.com/geolocation&#34;&gt;caniuse.com&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Page Visibility API&lt;/h2&gt;
 &lt;p&gt;The &lt;a href=&#34;http://www.w3.org/TR/page-visibility/&#34;&gt;Page Visibility API&lt;/a&gt; let&amp;#39;s you determine if your page is visible or not, when you minimise the page or move to another tab, a visibilitychange event is triggered, this can be very useful if you are a game developer this will allow you to pause the game when the user change the page.&lt;/p&gt;
-&lt;pre lang=&#34;js&#34;&gt;&lt;code&gt;document.addEventListener(&amp;#39;visibilitychange&amp;#39;, function(e) {
+&lt;pre&gt;&lt;code data-language=&#34;js&#34;&gt;document.addEventListener(&amp;#39;visibilitychange&amp;#39;, function(e) {
     console.log(&amp;#39;hidden:&amp;#39; + document.hidden,
               &amp;#39;state:&amp;#39; + document.visibilityState)
 }, false);
@@ -2229,7 +2229,7 @@ else {
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/sublime.png&#34; alt=&#34;Sublime Text 2&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;For my frontend development workflow i use some plugins with a specific user settings and sure the wonderfull &lt;a href=&#34;https://github.com/buymeasoda/soda-theme&#34;&gt;Soda theme&lt;/a&gt; by &lt;a href=&#34;https://github.com/buymeasoda&#34;&gt;Ian Hill&lt;/a&gt;, so here’s &lt;a href=&#34;https://gist.github.com/daker/5665850&#34;&gt;my settings file&lt;/a&gt;:&lt;/p&gt;
-&lt;pre lang=&#34;json&#34;&gt;&lt;code&gt;{
+&lt;pre&gt;&lt;code data-language=&#34;json&#34;&gt;{
     &amp;#34;auto_complete&amp;#34;: false,
     &amp;#34;caret_style&amp;#34;: &amp;#34;phase&amp;#34;,
     &amp;#34;close_windows_when_empty&amp;#34;: false,
@@ -2271,7 +2271,7 @@ else {
 
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Package Control&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;http://wbond.net/sublime_packages/package_control/&#34;&gt;Package Control&lt;/a&gt; is one of my favorite plugins, it allows users to manage packages very easily, with one shortcut you have access to a long list of plugins available to install and update is automaticly handled. To install it open the console View-&amp;gt;Show Console, then paste the following code :&lt;/p&gt;
-&lt;pre lang=&#34;python&#34;&gt;&lt;code&gt;import urllib2,os; pf=&amp;#39;Package Control.sublime-package&amp;#39;; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),&amp;#39;wb&amp;#39;).write(urllib2.urlopen(&amp;#39;http://sublime.wbond.net/&amp;#39;+pf.replace(&amp;#39; &amp;#39;,&amp;#39;%20&amp;#39;)).read()); print(&amp;#39;Please restart Sublime Text to finish installation&amp;#39;)
+&lt;pre&gt;&lt;code data-language=&#34;python&#34;&gt;import urllib2,os; pf=&amp;#39;Package Control.sublime-package&amp;#39;; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),&amp;#39;wb&amp;#39;).write(urllib2.urlopen(&amp;#39;http://sublime.wbond.net/&amp;#39;+pf.replace(&amp;#39; &amp;#39;,&amp;#39;%20&amp;#39;)).read()); print(&amp;#39;Please restart Sublime Text to finish installation&amp;#39;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;To use it simply invoke the command palette using ctrl+shift+p or ⌘+shift+p then type &amp;quot;install&amp;quot; :&lt;/p&gt;
 
@@ -2330,28 +2330,28 @@ else {
 &lt;p&gt;DNS hostname resolution is one of the issues that can make any website slow. Modern browsers start to be very smart when it comes to DNS resolution, they try to resolve domain names then cache them before the user tries to follow any link on the webpage.&lt;/p&gt;
 
 &lt;p&gt;With the dns-prefetch feature you are allowed to manually control this operation by telling the browser which domain names to resolve :&lt;/p&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;link rel=&amp;#34;dns-prefetch&amp;#34; href=&amp;#34;//fonts.googleapis.com&amp;#34;&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;link rel=&amp;#34;dns-prefetch&amp;#34; href=&amp;#34;//fonts.googleapis.com&amp;#34;&amp;gt;
 &amp;lt;link rel=&amp;#34;dns-prefetch&amp;#34; href=&amp;#34;//google-analytics.com&amp;#34;&amp;gt;
 &amp;lt;link rel=&amp;#34;dns-prefetch&amp;#34; href=&amp;#34;//www.google-analytics.com&amp;#34;&amp;gt;
 &amp;lt;link rel=&amp;#34;dns-prefetch&amp;#34; href=&amp;#34;//platform.twitter.com&amp;#34;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Link Prefetching&lt;/h2&gt;
 &lt;p&gt;Link prefetching allows developers to specify pages or assets they want to silently preload once the page load, like loading the first search results :&lt;/p&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;link rel=&amp;#34;prefetch&amp;#34; href=&amp;#34;http://daker.me/2013/05/hello-world.html&amp;#34; /&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;link rel=&amp;#34;prefetch&amp;#34; href=&amp;#34;http://daker.me/2013/05/hello-world.html&amp;#34; /&amp;gt;
 &amp;lt;link rel=&amp;#34;prefetch&amp;#34; href=&amp;#34;http://daker.me/assets/images/avatar.png&amp;#34; /&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Also you can use the &lt;a href=&#34;https://developers.google.com/chrome/whitepapers/prerender&#34;&gt;prerendering&lt;/a&gt; feature which will make your website even faster, the browser will fetch and render the entire next page on the background and show it only when the user click on the link :&lt;/p&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;link rel=&amp;#34;prerender&amp;#34; href=&amp;#34;http://daker.me/2013/05/hello-world.html&amp;#34; /&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;link rel=&amp;#34;prerender&amp;#34; href=&amp;#34;http://daker.me/2013/05/hello-world.html&amp;#34; /&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;iframe width=&#34;780&#34; height=&#34;439&#34; src=&#34;http://www.youtube.com/embed/_Jn93FDx9oI&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;h2&gt;Download Attribute&lt;/h2&gt;
 &lt;p&gt;The HTML5 download attribute allows developers to force a file to download rather than go to that specific page, you no longer need to rely on server side code to do that :&lt;/p&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;a href=&amp;#34;download_pdf.php?id=15&amp;#34; download=&amp;#34;myfile.pdf&amp;#34;&amp;gt;Download PDF&amp;lt;/a&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;a href=&amp;#34;download_pdf.php?id=15&amp;#34; download=&amp;#34;myfile.pdf&amp;#34;&amp;gt;Download PDF&amp;lt;/a&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Regular Expressions&lt;/h2&gt;
 &lt;p&gt;I know you&amp;#39;ll fall in love with this feature, no more js &lt;strike&gt;or a server side&lt;/strike&gt; code to check if the user&amp;#39;s input is a valid email or url adress, with the pattern attribute you can use regular expressions directly :&lt;/p&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;input type=&amp;#34;email&amp;#34; pattern=&amp;#34;[^ @]*@[^ @]*&amp;#34; value=&amp;#34;&amp;#34;&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;input type=&amp;#34;email&amp;#34; pattern=&amp;#34;[^ @]*@[^ @]*&amp;#34; value=&amp;#34;&amp;#34;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Datalist Element&lt;/h2&gt;
 &lt;p&gt;Datalist element is a litle big addition, no more use of jQuery plugins for autocomplete inputs combined with a server side code that hit the database on each user keystroke :&lt;/p&gt;
-&lt;pre lang=&#34;html&#34;&gt;&lt;code&gt;&amp;lt;form action=&amp;#34;form.php&amp;#34; method=&amp;#34;post&amp;#34;&amp;gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;form action=&amp;#34;form.php&amp;#34; method=&amp;#34;post&amp;#34;&amp;gt;
     &amp;lt;input list=&amp;#34;cars&amp;#34; name=&amp;#34;cars&amp;#34; &amp;gt;
     &amp;lt;datalist id=&amp;#34;cars&amp;#34;&amp;gt;
         &amp;lt;option value=&amp;#34;Volvo&amp;#34;&amp;gt;

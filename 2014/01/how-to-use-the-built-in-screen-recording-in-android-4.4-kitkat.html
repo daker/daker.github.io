@@ -133,13 +133,10 @@
 </video></p>
 
 <p>To start using it you need to install ADB, you can use the phablet-team PPA if you are using Ubuntu which has the tools and dependencies for 12.04, 12.10, 13.04 and 13.10 to get everything setup, if not you can download the Android SDK from the <a href="https://developer.android.com/sdk/index.html">Android developer site</a></p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>sudo add-apt-repository ppa:phablet-team/tools
-<span class="nv">$ </span>sudo apt-get update
-<span class="nv">$ </span>sudo apt-get install android-tools-adb
-</pre></div>
-</td></tr></table></div></div><h2>Enable Developer Mode</h2>
+<pre><code data-language="sh">$ sudo add-apt-repository ppa:phablet-team/tools
+$ sudo apt-get update
+$ sudo apt-get install android-tools-adb
+</code></pre><h2>Enable Developer Mode</h2>
 <ul>
 <li>Go to the settings menu, and scroll down to &quot;About phone.&quot; Tap on it.</li>
 <li>Scroll down to the bottom, where you see &quot;Build number.&quot;</li>
@@ -153,17 +150,13 @@
 <p><img src="/assets/posts/android4.4/usb-debugging2.png" alt="Security Question"></p>
 <h2>Using the Screen Recording</h2>
 <p>Once done, you need to make sure that your device is listed &amp; connected using :</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>adb devices
+<pre><code data-language="sh">$ adb devices
 List of devices attached
 xxxxxxxxxxxxxxxx  device
-</pre></div>
-</td></tr></table></div></div>
+</code></pre>
 <p>Then all you have to do is :</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>adb shell screenrecord /sdcard/recording.mp4 <span class="o">&amp;&amp;</span> adb pull /sdcard/recording.mp4
-</pre></div>
-</td></tr></table></div></div>
+<pre><code data-language="sh">$ adb shell screenrecord /sdcard/recording.mp4 &amp;&amp; adb pull /sdcard/recording.mp4
+</code></pre>
 <p>The default and maximum duration of a screenrecord is 3 minutes, you can use the <code>--time-limit</code> argument to set the limit you want, here all arguements you can set :</p>
 
 <ul>
@@ -236,6 +229,10 @@ screenrecord --bit-rate 6000000 /sdcard/demo.mp4</li>
     <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/jquery.ba-hashchange.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/main.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/rainbow.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/css.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/html.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/javascript.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

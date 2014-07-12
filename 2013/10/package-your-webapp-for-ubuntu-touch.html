@@ -131,53 +131,30 @@
 <p><img src="/assets/posts/xtype/xtype.png" alt="X-Type running on Ubuntu Touch"></p>
 
 <p>First using the Qt Creator you have to create a &quot;HTML5 Touch UI&quot; project which will produce the following QML code :</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23</pre></div></td><td class="code"><div class="highlight"><pre><span class="kr">import</span> <span class="nx">QtQuick</span> <span class="mf">2.0</span>
-<span class="kr">import</span> <span class="nx">Ubuntu</span><span class="p">.</span><span class="nx">Components</span> <span class="mf">0.1</span>
-<span class="kr">import</span> <span class="nx">QtWebKit</span> <span class="mf">3.0</span>
+<pre><code data-language="js">import QtQuick 2.0
+import Ubuntu.Components 0.1
+import QtWebKit 3.0
 
-<span class="nx">MainView</span> <span class="p">{</span>
-    <span class="nx">objectName</span><span class="o">:</span> <span class="s2">&quot;mainView&quot;</span>
-    <span class="nx">applicationName</span><span class="o">:</span> <span class="s2">&quot;com.ubuntu.developer.daker.x-type&quot;</span>
-    <span class="nx">automaticOrientation</span><span class="o">:</span> <span class="kc">true</span>
+MainView {
+    objectName: &#34;mainView&#34;
+    applicationName: &#34;com.ubuntu.developer.daker.x-type&#34;
+    automaticOrientation: true
 
-    <span class="nx">width</span><span class="o">:</span> <span class="nx">units</span><span class="p">.</span><span class="nx">gu</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-    <span class="nx">height</span><span class="o">:</span> <span class="nx">units</span><span class="p">.</span><span class="nx">gu</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+    width: units.gu(100)
+    height: units.gu(75)
 
-    <span class="nx">Flickable</span> <span class="p">{</span>
-        <span class="nx">id</span><span class="o">:</span> <span class="nx">webViewFlickable</span>
-        <span class="nx">anchors</span><span class="p">.</span><span class="nx">fill</span><span class="o">:</span> <span class="nx">parent</span>
+    Flickable {
+        id: webViewFlickable
+        anchors.fill: parent
 
-        <span class="nx">WebView</span> <span class="p">{</span>
-            <span class="nx">id</span><span class="o">:</span> <span class="nx">webView</span>
-            <span class="nx">anchors</span><span class="p">.</span><span class="nx">fill</span><span class="o">:</span> <span class="nx">parent</span>
-            <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://phoboslab.org/xtype/&quot;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div></div>
+        WebView {
+            id: webView
+            anchors.fill: parent
+            url: &#34;http://phoboslab.org/xtype/&#34;
+        }
+    }
+}
+</code></pre>
 <p>The problem with using the QtWebKit Webview is that the device-pixel-ratio (DPR) is not set automatically causing the content of the Webview to not scale correctly, so you&#39;ll need to get the corresponding value for your device from the <code>QTWEBKIT_DPR</code> environment variable, there is actually no way to read those variables using QML so you&#39;ll need to use some C++ code to read the <code>QTWEBKIT_DPR</code> and passe it to QML so the content of the WebView will scale accordingly.</p>
 
 <p>The Ubuntu Touch Browser Plugin provides a component called <code>UbuntuWebView</code>, it uses some kind of UA overrides to bypass the UA sniffing used to serve the mobile version of webapp(Gmail, G+, Facebook, Twitter, etc...) and changes the UA on the fly, unfortunately there was no way to set your own UA using the <code>UbuntuWebView</code> but now you can since this <a href="https://bugs.launchpad.net/webbrowser-app/+bug/1237365">bug #1237365</a> has been fixed.</p>
@@ -185,117 +162,65 @@
 <p>Also with the <code>UbuntuWebView</code> the <code>DPR</code> weren&#39;t set automatically(<a href="https://bugs.launchpad.net/webbrowser-app/+bug/1237348">bug #1237348</a>), it was also fixed and all those fixes has been shipped with image #96.</p>
 
 <p>Here is the QML code i used to embed the &quot;X-Type&quot; game(Fullscreen) but first you need to install the browser plugin :</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install qtdeclarative5-ubuntu-ui-extras-browser-plugin
-</pre></div>
-</td></tr></table></div></div><div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22</pre></div></td><td class="code"><div class="highlight"><pre><span class="kr">import</span> <span class="nx">QtQuick</span> <span class="mf">2.0</span>
-<span class="kr">import</span> <span class="nx">Ubuntu</span><span class="p">.</span><span class="nx">Components</span> <span class="mf">0.1</span>
-<span class="kr">import</span> <span class="nx">Ubuntu</span><span class="p">.</span><span class="nx">Components</span><span class="p">.</span><span class="nx">Extras</span><span class="p">.</span><span class="nx">Browser</span> <span class="mf">0.1</span>
+<pre><code data-language="sh">$ sudo apt-get install qtdeclarative5-ubuntu-ui-extras-browser-plugin
+</code></pre><pre><code data-language="js">import QtQuick 2.0
+import Ubuntu.Components 0.1
+import Ubuntu.Components.Extras.Browser 0.1
 
 
-<span class="nx">MainView</span> <span class="p">{</span>
-    <span class="nx">objectName</span><span class="o">:</span> <span class="s2">&quot;mainView&quot;</span>
-    <span class="nx">applicationName</span><span class="o">:</span> <span class="s2">&quot;com.ubuntu.developer.daker.x-type&quot;</span>
-    <span class="c1">//automaticOrientation: true</span>
+MainView {
+    objectName: &#34;mainView&#34;
+    applicationName: &#34;com.ubuntu.developer.daker.x-type&#34;
+    //automaticOrientation: true
 
-    <span class="nx">width</span><span class="o">:</span> <span class="nx">units</span><span class="p">.</span><span class="nx">gu</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-    <span class="nx">height</span><span class="o">:</span> <span class="nx">units</span><span class="p">.</span><span class="nx">gu</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+    width: units.gu(50)
+    height: units.gu(75)
 
-    <span class="nx">UbuntuWebView</span> <span class="p">{</span>
-        <span class="nx">anchors</span><span class="p">.</span><span class="nx">fill</span><span class="o">:</span> <span class="nx">parent</span>
-        <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://phoboslab.org/xtype/&quot;</span>
-        <span class="cm">/* This function is used to override the UA */</span>
-        <span class="kd">function</span> <span class="nx">getUAString</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="s2">&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3&quot;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div></div>
+    UbuntuWebView {
+        anchors.fill: parent
+        url: &#34;http://phoboslab.org/xtype/&#34;
+        /* This function is used to override the UA */
+        function getUAString(url) {
+            return &#34;Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3&#34;
+        }
+    }
+}
+</code></pre>
 <p>you need to create a <code>manifest.json</code> file :</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td><td class="code"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A Free HTML5 Dual Stick Shooter&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;framework&quot;</span><span class="p">:</span> <span class="s2">&quot;ubuntu-sdk-13.10&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;architecture&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;hooks&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;x-type&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;apparmor&quot;</span><span class="p">:</span> <span class="s2">&quot;x-type.json&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;desktop&quot;</span><span class="p">:</span> <span class="s2">&quot;x-type.desktop&quot;</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;maintainer&quot;</span><span class="p">:</span> <span class="s2">&quot;Adnane Belmadiaf &lt;daker@ubuntu.com&gt;&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;com.ubuntu.developer.daker.x-type&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;X-Type&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.4&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div></div>
+<pre><code data-language="json">{
+    &#34;description&#34;: &#34;A Free HTML5 Dual Stick Shooter&#34;,
+    &#34;framework&#34;: &#34;ubuntu-sdk-13.10&#34;,
+    &#34;architecture&#34;: &#34;all&#34;,
+    &#34;hooks&#34;: {
+        &#34;x-type&#34;: {
+            &#34;apparmor&#34;: &#34;x-type.json&#34;,
+            &#34;desktop&#34;: &#34;x-type.desktop&#34;
+        }
+    },
+    &#34;maintainer&#34;: &#34;Adnane Belmadiaf &lt;daker@ubuntu.com&gt;&#34;,
+    &#34;name&#34;: &#34;com.ubuntu.developer.daker.x-type&#34;,
+    &#34;title&#34;: &#34;X-Type&#34;,
+    &#34;version&#34;: &#34;0.4&#34;
+}
+</code></pre>
 <p>the security policy groups <code>x-type.json</code> :</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;policy_groups&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;networking&quot;</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;policy_version&quot;</span><span class="p">:</span> <span class="mi">1</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div></div>
+<pre><code data-language="json">{
+    &#34;policy_groups&#34;: [
+        &#34;networking&#34;
+    ],
+    &#34;policy_version&#34;: 1
+}
+</code></pre>
 <p>and a .desktop file :</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span class="p">[</span><span class="nx">Desktop</span> <span class="nx">Entry</span><span class="p">]</span>
-<span class="nx">Name</span><span class="o">=</span><span class="nx">x</span><span class="o">-</span><span class="nx">type</span>
-<span class="nx">Comment</span><span class="o">=</span><span class="nx">A</span> <span class="nx">Free</span> <span class="nx">HTML5</span> <span class="nx">Dual</span> <span class="nx">Stick</span> <span class="nx">Shooter</span>
-<span class="nx">Exec</span><span class="o">=</span><span class="nx">qmlscene</span> <span class="nx">$</span><span class="err">@</span> <span class="nx">x</span><span class="o">-</span><span class="nx">type</span><span class="p">.</span><span class="nx">qml</span>
-<span class="nx">Icon</span><span class="o">=</span><span class="p">.</span><span class="o">/</span><span class="nx">x</span><span class="o">-</span><span class="nx">type</span><span class="p">.</span><span class="nx">png</span>
-<span class="nx">Terminal</span><span class="o">=</span><span class="kc">false</span>
-<span class="nx">Type</span><span class="o">=</span><span class="nx">Application</span>
-<span class="nx">X</span><span class="o">-</span><span class="nx">Ubuntu</span><span class="o">-</span><span class="nx">Touch</span><span class="o">=</span><span class="kc">true</span>
-</pre></div>
-</td></tr></table></div></div>
+<pre><code data-language="js">[Desktop Entry]
+Name=x-type
+Comment=A Free HTML5 Dual Stick Shooter
+Exec=qmlscene $@ x-type.qml
+Icon=./x-type.png
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true
+</code></pre>
 <p>you need to add the icon and now all you have to do is to build the click package using <code>click build .</code>and <a href="https://myapps.developer.ubuntu.com/dev/click-apps/new/">upload</a> it to the store. I have also packaged another HTML5 game called <a href="http://heliom.github.io/bytesjack/">BytesJack</a> using the same method, the source code of both games can be found <a href="https://bazaar.launchpad.net/%7Edaker/+junk/x-type/files">here</a> and <a href="https://bazaar.launchpad.net/%7Edaker/+junk/bytesjack/files">here</a>.</p>
 
 <p>Happy hacking!</p>
@@ -360,6 +285,10 @@
     <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/jquery.ba-hashchange.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/main.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/rainbow.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/css.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/html.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/javascript.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

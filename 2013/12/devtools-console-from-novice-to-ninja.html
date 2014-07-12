@@ -158,135 +158,78 @@
 <p><img src="/assets/posts/jsconsole/dir.png" alt="JavaScript Console"></p>
 <h2>Assertions</h2>
 <p>Tests that an expression is true using <code>console.assert</code>. If not, it will write a message to the console and throw an exception.</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre>var <span class="nv">x</span><span class="o">=</span>0;
-console.assert<span class="o">((</span><span class="nv">x</span> <span class="o">==</span> 1<span class="o">)</span>, <span class="s2">&quot;assert message: x != 1&quot;</span><span class="o">)</span>;
-</pre></div>
-</td></tr></table></div></div><h2>Grouping output</h2>
+<pre><code data-language="sh">var x=0;
+console.assert((x == 1), &#34;assert message: x != 1&#34;);
+</code></pre><h2>Grouping output</h2>
 <p><code>console.group</code> allows you to group the message or log in Console tab. If you have some many logs in your code, you can probably divide your log into small group or subgroup</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="s2">&quot;jsmith&quot;</span><span class="p">,</span> <span class="nx">authenticated</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">group</span><span class="p">(</span><span class="s2">&quot;Authentication phase&quot;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Authenticating user &#39;%s&#39;&quot;</span><span class="p">,</span> <span class="nx">user</span><span class="p">);</span>
-<span class="c1">// authentication code here...</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">authenticated</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;User &#39;%s&#39; not authenticated.&quot;</span><span class="p">,</span> <span class="nx">user</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span>
-</pre></div>
-</td></tr></table></div></div>
+<pre><code data-language="js">var user = &#34;jsmith&#34;, authenticated = false;
+console.group(&#34;Authentication phase&#34;);
+console.log(&#34;Authenticating user &#39;%s&#39;&#34;, user);
+// authentication code here...
+if (!authenticated) {
+    console.log(&#34;User &#39;%s&#39; not authenticated.&#34;, user)
+}
+console.groupEnd();
+</code></pre>
 <p>You can also do nested grouping :</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16</pre></div></td><td class="code"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="s2">&quot;jsmith&quot;</span><span class="p">,</span> <span class="nx">authenticated</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">authorized</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="c1">// Top-level group</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">group</span><span class="p">(</span><span class="s2">&quot;Authenticating user &#39;%s&#39;&quot;</span><span class="p">,</span> <span class="nx">user</span><span class="p">);</span>
-<span class="k">if</span> <span class="p">(</span><span class="nx">authenticated</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;User &#39;%s&#39; was authenticated&quot;</span><span class="p">,</span> <span class="nx">user</span><span class="p">);</span>
-    <span class="c1">// Start nested group</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">group</span><span class="p">(</span><span class="s2">&quot;Authorizing user &#39;%s&#39;&quot;</span><span class="p">,</span> <span class="nx">user</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">authorized</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;User &#39;%s&#39; was authorized.&quot;</span><span class="p">,</span> <span class="nx">user</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="c1">// End nested group</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span>
-<span class="p">}</span>
-<span class="c1">// End top-level group</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;A group-less log trace.&quot;</span><span class="p">);</span>
-</pre></div>
-</td></tr></table></div></div>
+<pre><code data-language="js">var user = &#34;jsmith&#34;, authenticated = true, authorized = true;
+// Top-level group
+console.group(&#34;Authenticating user &#39;%s&#39;&#34;, user);
+if (authenticated) {
+    console.log(&#34;User &#39;%s&#39; was authenticated&#34;, user);
+    // Start nested group
+    console.group(&#34;Authorizing user &#39;%s&#39;&#34;, user);
+    if (authorized) {
+        console.log(&#34;User &#39;%s&#39; was authorized.&#34;, user);
+    }
+    // End nested group
+    console.groupEnd();
+}
+// End top-level group
+console.groupEnd();
+console.log(&#34;A group-less log trace.&#34;);
+</code></pre>
 <p><img src="/assets/posts/jsconsole/nested.png" alt="Nested Grouping"></p>
 <h2>Logging Array Data</h2>
 <p><code>console.table()</code> is a very handy fonction to display Array object</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">langs</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span> <span class="nx">extension</span><span class="o">:</span> <span class="s2">&quot;.js&quot;</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;HTML&quot;</span><span class="p">,</span> <span class="nx">extension</span><span class="o">:</span> <span class="s2">&quot;.html&quot;</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;CoffeeScript&quot;</span><span class="p">,</span> <span class="nx">extension</span><span class="o">:</span> <span class="s2">&quot;.coffee&quot;</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;SASS&quot;</span><span class="p">,</span> <span class="nx">extension</span><span class="o">:</span> <span class="s2">&quot;.sass&quot;</span> <span class="p">}</span>
-<span class="p">];</span>
+<pre><code data-language="js">var langs = [
+    { name: &#34;JavaScript&#34;, extension: &#34;.js&#34; },
+    { name: &#34;HTML&#34;, extension: &#34;.html&#34; },
+    { name: &#34;CoffeeScript&#34;, extension: &#34;.coffee&#34; },
+    { name: &#34;SASS&#34;, extension: &#34;.sass&#34; }
+];
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">table</span><span class="p">(</span><span class="nx">langs</span><span class="p">);</span>
-</pre></div>
-</td></tr></table></div></div>
+console.table(langs);
+</code></pre>
 <p><img src="/assets/posts/jsconsole/table.png" alt="JavaScript Console"></p>
 <h2>Measuring Execution time</h2>
 <p>To mesure how long something it takes to execute a set of instructions :</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">t</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<pre><code data-language="js">var i, t = &#34;&#34;;
 
-<span class="c1">// Start</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">time</span><span class="p">(</span><span class="s2">&quot;OPNAME&quot;</span><span class="p">);</span>
+// Start
+console.time(&#34;OPNAME&#34;);
 
-<span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="nx">t</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
+for (i = 1; i &lt;= 100; i++)
+    t += i;
 
-<span class="c1">// Stop</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">timeEnd</span><span class="p">(</span><span class="s2">&quot;OPNAME&quot;</span><span class="p">);</span>
-</pre></div>
-</td></tr></table></div></div><h2>Tracing</h2>
+// Stop
+console.timeEnd(&#34;OPNAME&#34;);
+</code></pre><h2>Tracing</h2>
 <p><code>console.trace()</code> prints the stacktrace of JavaScript execution at the point where it was called.</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">F</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">K</span><span class="p">(</span><span class="nx">v</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-<span class="p">}</span>
+<pre><code data-language="js">function F(v) {
+    return K(v + 1);
+}
 
-<span class="kd">function</span> <span class="nx">K</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">Y</span><span class="p">(</span><span class="nx">v</span> <span class="o">+</span> <span class="mi">2</span><span class="p">);</span>
-<span class="p">}</span>
+function K(v) {
+    return Y(v + 2);
+}
 
-<span class="kd">function</span> <span class="nx">Y</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">();</span>
-<span class="p">};</span>
+function Y(v) {
+    console.trace();
+};
 
-<span class="nx">F</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-</pre></div>
-</td></tr></table></div></div>
+F(5);
+</code></pre>
 <p><img src="/assets/posts/jsconsole/trace.png" alt="Console Trace"></p>
 <h2>Shortcuts</h2>
 <ul>
@@ -359,6 +302,10 @@ console.assert<span class="o">((</span><span class="nv">x</span> <span class="o"
     <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/jquery.ba-hashchange.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/main.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/rainbow.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/css.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/html.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/javascript.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

@@ -134,19 +134,13 @@
 <code>Height = height + padding-top + padding-bottom + border-top + border-bottom</code></p>
 
 <p>so if we take this as an example :</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span class="nc">.box</span> <span class="p">{</span>
-    <span class="k">width</span><span class="o">:</span> <span class="m">300px</span><span class="p">;</span>
-    <span class="k">padding</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
-    <span class="k">border</span><span class="o">:</span> <span class="m">5px</span> <span class="k">solid</span> <span class="m">#e9573f</span><span class="p">;</span>
-    <span class="k">margin</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div></div>
+<pre><code data-language="css">.box {
+    width: 300px;
+    padding: 10px;
+    border: 5px solid #e9573f;
+    margin: 10px;
+}
+</code></pre>
 <p>the width of the rendred box will be calculated like this :</p>
 
 <p><code>300px (width) + 20px (left + right padding) + 10px (left + right border) + 20px (left + right margin) = 350px</code></p>
@@ -164,17 +158,12 @@
 <iframe width="100%" height="300" src="http://jsfiddle.net/ZtLL8/1/embedded/result,css,html" allowfullscreen="allowfullscreen"></iframe>
 
 <p>To save you time, you can apply it using the universal selector</p>
-<div class="code"><div><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span class="o">*</span> <span class="p">{</span>
-    <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
-    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
-    <span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div></div>
+<pre><code data-language="css">* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+</code></pre>
 <p><code>box-sizing</code> is pretty well supported but partially and i mean that only Firefox support the three models, the others browsers only support content-box and border-box since the padding-box value has been added to the spec very recently.</p>
 
 <div class="browser-support">
@@ -245,6 +234,10 @@
     <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/jquery.ba-hashchange.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/assets/js/main.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/rainbow.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/css.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/html.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/languages/javascript.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
