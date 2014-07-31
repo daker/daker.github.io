@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-07-31T22:14:30Z</updated>
+        <updated>2014-07-31T22:34:07Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -30,6 +30,7 @@
 
 &lt;ul&gt;
 &lt;li&gt;System architecture&lt;/li&gt;
+&lt;li&gt;Security model&lt;/li&gt;
 &lt;li&gt;QML/HTML5 SDK&lt;/li&gt;
 &lt;li&gt;Platform APIs(udm, push notifications, webview, etc...)&lt;/li&gt;
 &lt;li&gt;Writing &amp;amp; testing apps on the device &amp;amp; the emulator&lt;/li&gt;
