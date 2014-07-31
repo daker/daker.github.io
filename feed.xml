@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-07-29T14:02:49Z</updated>
+        <updated>2014-07-31T22:12:14Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,30 @@
             <uri>http://daker.me/</uri>
         </author>
         
+        
+            <entry>
+                <title>Ubuntu Touch session in Morocco</title>
+                <link rel="alternate" href="http://daker.me/2014/07/ubuntu-touch-session-in-morocco.html" type="text/html" />
+                <id>http://daker.me/2014/07/ubuntu-touch-session-in-morocco.html</id>
+                <updated>2014-07-31T22:05:00Z</updated>
+                
+                <summary type="html">Next November I&amp;#39;ll be speaking at &lt;a href=&#34;http://www.jmaghreb.io/en/speakers-2014.php&#34;&gt;JMaghreb&lt;/a&gt; conference, i&amp;#39;ll be giving a talk about the Ubuntu Touch platform and the Ubuntu development story, together with a live coding session and a Q&amp;amp;A round at the end.</summary>
+                <content type="html">&lt;p&gt;Next November I&amp;#39;ll be speaking at &lt;a href=&#34;http://www.jmaghreb.io/en/speakers-2014.php&#34;&gt;JMaghreb&lt;/a&gt; conference, i&amp;#39;ll be giving a talk about the Ubuntu Touch platform and the Ubuntu development story, together with a live coding session and a Q&amp;amp;A round at the end.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/ubuntu/ubuntu.png&#34; alt=&#34;Ubuntu logo&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;In this session i&amp;#39;ll be covering :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;System architecture&lt;/li&gt;
+&lt;li&gt;QML/HTML5 SDK&lt;/li&gt;
+&lt;li&gt;Plateform APIs(udm, push notifications, webview, etc...)&lt;/li&gt;
+&lt;li&gt;Writing &amp;amp; testing apps on the device &amp;amp; the emulator&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The exact time &amp;amp; date of the session will be announced soon, so if you&amp;#39;re going to be in or near Morocco this November, make sure to attend!&lt;/p&gt;
+</content>
+            </entry>
         
             <entry>
                 <title>How I Did Make The Ubuntu HTML5 Range Slider</title>
