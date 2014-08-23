@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-django.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-08-23T15:18:43Z</updated>
+        <updated>2014-08-23T18:49:20Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -62,7 +62,7 @@
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/persona-mozilla.jpg&#34; alt=&#34;Persona&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;
 &lt;p&gt;Mozilla provides a library called &lt;code&gt;django-browserid&lt;/code&gt; that integrates Persona authentication into Django, so you can simply added to to your &lt;code&gt;requirements.txt&lt;/code&gt; or just install via pip :&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ sudo pip install django-browserid
+&lt;pre&gt;&lt;code data-language=&#34;shell&#34;&gt;$ sudo pip install django-browserid
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Configuration&lt;/h2&gt;
 &lt;p&gt;Once done you need to follow the following steps :&lt;/p&gt;
 
@@ -98,6 +98,10 @@
 &lt;pre&gt;&lt;code data-language=&#34;python&#34;&gt;SITE_URL = &amp;#39;https://example.com&amp;#39;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I have created a working demo project on &lt;a href=&#34;https://github.com/daker/django-persona-demo&#34;&gt;github&lt;/a&gt; to play with, you can still check the &lt;a href=&#34;http://django-browserid.readthedocs.org/en/v0.9/details/troubleshooting.html&#34;&gt;docs&lt;/a&gt; or comment here if it doesn&amp;#39;t work for you.&lt;/p&gt;
+&lt;h2&gt;Mentioned on&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://lincolnloop.github.io/round-up/#round-up-10&#34;&gt;Django Round-Up Podcast&lt;/a&gt; - Django Round-Up #10&lt;/li&gt;
+&lt;/ul&gt;
 </content>
             </entry>
             

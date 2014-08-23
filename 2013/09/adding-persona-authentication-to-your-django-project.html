@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="/assets/css/app.min.css" type="text/css">
     <title>Adding Persona authentication to your django project — Adnane Belmadiaf's Blog - Front-end Developer</title>
     <meta name="description" content="Persona is a decentralized login system made by Mozilla that aims to eliminate site-specific passwords so you can log in with your existing email accounts without having to type in a password.">
-    <meta name="keywords" content="django, persona, ubuntuplanet">
+    <meta name="keywords" content="django, mozilla, persona, python, ubuntuplanet">
     <meta property="og:image" content="http://daker.me/assets/images/pp_sketch.jpg">
     <meta property="og:title" content="Adding Persona authentication to your django project — Adnane Belmadiaf's Blog - Front-end Developer">
     <meta property="og:site_name" content="Adnane Belmadiaf's Blog - Front-end Developer">
@@ -93,7 +93,11 @@
         
         <a href="/tags/django/" itemprop="keywords">#django</a>, 
         
+        <a href="/tags/mozilla/" itemprop="keywords">#mozilla</a>, 
+        
         <a href="/tags/persona/" itemprop="keywords">#persona</a>, 
+        
+        <a href="/tags/python/" itemprop="keywords">#python</a>, 
         
         <a href="/tags/ubuntuplanet/" itemprop="keywords">#ubuntuplanet</a>
         
@@ -118,7 +122,7 @@
             <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://daker.me/2013/09/adding-persona-authentication-to-your-django-project.html" data-count="horizontal" data-text="Adding Persona authentication to your django project" data-via="AdnaneBelmadiaf" data-related="AdnaneBelmadiaf"></a>
         </div>
         <div class="post-social-button">
-        <a class="FlattrButton" style="display:none;" href="http://daker.me/2013/09/adding-persona-authentication-to-your-django-project.html" title="Adding Persona authentication to your django project" data-flattr-uid="daker" data-flattr-button="compact" data-flattr-tags="django, persona, ubuntuplanet" data-flattr-category="text" data-flattr-lang="en_US">Persona is a decentralized login system made by Mozilla that aims to eliminate site-specific passwords so you can log in with your existing email accounts without having to type in a password.</a>
+        <a class="FlattrButton" style="display:none;" href="http://daker.me/2013/09/adding-persona-authentication-to-your-django-project.html" title="Adding Persona authentication to your django project" data-flattr-uid="daker" data-flattr-button="compact" data-flattr-tags="django, mozilla, persona, python, ubuntuplanet" data-flattr-category="text" data-flattr-lang="en_US">Persona is a decentralized login system made by Mozilla that aims to eliminate site-specific passwords so you can log in with your existing email accounts without having to type in a password.</a>
         </div>
         <div class="post-social-button">
             <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="horizontal" data-url="http://daker.me/2013/09/adding-persona-authentication-to-your-django-project.html" data-via="AdnaneBelmadiaf" data-picture="http://daker.me/assets/images/pp_sketch.jpg"></a>
@@ -134,7 +138,7 @@
 <p><img src="/assets/posts/persona-mozilla.jpg" alt="Persona"></p>
 <h2>Installation</h2>
 <p>Mozilla provides a library called <code>django-browserid</code> that integrates Persona authentication into Django, so you can simply added to to your <code>requirements.txt</code> or just install via pip :</p>
-<pre><code data-language="sh">$ sudo pip install django-browserid
+<pre><code data-language="shell">$ sudo pip install django-browserid
 </code></pre><h2>Configuration</h2>
 <p>Once done you need to follow the following steps :</p>
 
@@ -170,6 +174,10 @@
 <pre><code data-language="python">SITE_URL = &#39;https://example.com&#39;
 </code></pre>
 <p>I have created a working demo project on <a href="https://github.com/daker/django-persona-demo">github</a> to play with, you can still check the <a href="http://django-browserid.readthedocs.org/en/v0.9/details/troubleshooting.html">docs</a> or comment here if it doesn&#39;t work for you.</p>
+<h2>Mentioned on</h2>
+<ul>
+<li><a href="https://lincolnloop.github.io/round-up/#round-up-10">Django Round-Up Podcast</a> - Django Round-Up #10</li>
+</ul>
 </div>
     </div>
 
