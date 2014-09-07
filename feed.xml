@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-08-31T00:12:14Z</updated>
+        <updated>2014-09-07T19:24:38Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,95 @@
             <uri>http://daker.me/</uri>
         </author>
         
+        
+            <entry>
+                <title>Everything you need to know about HTML5 Video</title>
+                <link rel="alternate" href="http://daker.me/2014/08/everything-you-need-to-know-about-html5-video.html" type="text/html" />
+                <id>http://daker.me/2014/08/everything-you-need-to-know-about-html5-video.html</id>
+                <updated>2014-08-31T22:05:00Z</updated>
+                
+                <summary type="html">The HTML5 built-in video support has come to a state where it starts to be adopted by the big players on a large scale(Youtube, Netflix). In this article i&amp;#39;ll provide some details of HTML5 video element so you can start using it.</summary>
+                <content type="html">&lt;p&gt;The HTML5 built-in video support has come to a state where it starts to be adopted by the big players on a large scale(Youtube, Netflix). In this article i&amp;#39;ll provide some details of HTML5 video element so you can start using it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/html5-video/cover.jpg&#34; alt=&#34;Chromium HTML5 Video player&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;here is a basic declaration of HTML5 video player :&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;video src=&amp;#34;videofile.ogg&amp;#34;&amp;gt;
+  Sorry, your browser doesn&amp;#39;t support embedded videos,
+  but don&amp;#39;t worry, you can &amp;lt;a href=&amp;#34;videofile.ogg&amp;#34;&amp;gt;download it&amp;lt;/a&amp;gt;
+  and watch it with your favorite video player!
+&amp;lt;/video&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Controls&lt;/h2&gt;
+&lt;p&gt;The video element provides a boolean attribute &lt;code&gt;control&lt;/code&gt; that makes the controls visible or not to the user.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;video src=&amp;#34;videofile.ogg&amp;#34; controls&amp;gt;
+&amp;lt;/video&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/html5-video/controls-chrome.png&#34; alt=&#34;Chrome&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/html5-video/controls-ff.png&#34; alt=&#34;Firefox&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/html5-video/controls-safari.png&#34; alt=&#34;Safari&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Poster&lt;/h2&gt;
+&lt;p&gt;When you want to watch a video on the Web, normally a single frame of the video will display in order to provide a preview of its content. The &lt;code&gt;poster&lt;/code&gt; attribute makes it easy to specify an image file.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;video src=&amp;#34;videofile.ogg&amp;#34; poster=&amp;#34;poster.jpg&amp;#34; controls&amp;gt;
+&amp;lt;/video&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Preload&lt;/h2&gt;
+&lt;p&gt;The browser needs allowed to download a small chunk of the media to get the duration &amp;amp; the first frame, the &lt;code&gt;preload&lt;/code&gt; attribute has the tree states to tell the browser what to do :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;quot;none&amp;quot; does not buffer the file&lt;/li&gt;
+&lt;li&gt;&amp;quot;auto&amp;quot; buffers the media file&lt;/li&gt;
+&lt;li&gt;&amp;quot;metadata&amp;quot; loads enough to determine duration &amp;amp; the first fame&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Loop&lt;/h2&gt;
+&lt;p&gt;When present, this attribute will tell the browser to seek back to the start of the media resource once the end is reached.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;video src=&amp;#34;videofile.ogg&amp;#34; poster=&amp;#34;poster.jpg&amp;#34; controls loop&amp;gt;
+&amp;lt;/video&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Sources&lt;/h2&gt;
+&lt;p&gt;Multiple source files can be specified using the &lt;code&gt;&amp;lt;source&amp;gt;&lt;/code&gt; element in order to provide video in different formats for different browsers. If you&amp;#39;re providing source elements, there’s no need to specify a &lt;code&gt;src&lt;/code&gt; for your video.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;video controls&amp;gt;
+    &amp;lt;source src=&amp;#34;video.mp4&amp;#34; type=&amp;#34;video/mp4&amp;#34;&amp;gt;
+    &amp;lt;source src=&amp;#34;video.webm&amp;#34; type=&amp;#34;video/webm&amp;#34;&amp;gt;
+    &amp;lt;source src=&amp;#34;video.ogv&amp;#34; type=&amp;#34;video/ogg&amp;#34;&amp;gt;
+&amp;lt;/video&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;More details about codecs &amp;amp; video type for each browser can be found &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Subtitles&lt;/h2&gt;
+&lt;p&gt;The video element allows you set subtitles in different languages using the &lt;code&gt;track&lt;/code&gt; element.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;video controls&amp;gt;
+    &amp;lt;source src=&amp;#34;video.mp4&amp;#34; type=&amp;#34;video/mp4&amp;#34;&amp;gt;
+    &amp;lt;source src=&amp;#34;video.webm&amp;#34; type=&amp;#34;video/webm&amp;#34;&amp;gt;
+    &amp;lt;source src=&amp;#34;video.ogv&amp;#34; type=&amp;#34;video/ogg&amp;#34;&amp;gt;
+    &amp;lt;track label=&amp;#34;English&amp;#34; src=&amp;#34;captions-en.vtt&amp;#34; kind=&amp;#34;subtitles&amp;#34; srclang=&amp;#34;en&amp;#34;&amp;gt;&amp;lt;/track&amp;gt;
+    &amp;lt;track label=&amp;#34;Deutsch&amp;#34; src=&amp;#34;captions-de.vtt&amp;#34; kind=&amp;#34;subtitles&amp;#34; srclang=&amp;#34;de&amp;#34;&amp;gt;&amp;lt;/track&amp;gt;
+    &amp;lt;track label=&amp;#34;한국어 (Korean)&amp;#34; src=&amp;#34;captions-ko.vtt&amp;#34; kind=&amp;#34;subtitles&amp;#34; srclang=&amp;#34;ko&amp;#34;&amp;gt;&amp;lt;/track&amp;gt;
+    &amp;lt;track label=&amp;#34;Português&amp;#34; src=&amp;#34;captions-pt.vtt&amp;#34; kind=&amp;#34;subtitles&amp;#34; srclang=&amp;#34;pt&amp;#34;&amp;gt;&amp;lt;/track&amp;gt;
+    &amp;lt;track label=&amp;#34;Türkçe (Turkish)&amp;#34; src=&amp;#34;captions-tr.vtt&amp;#34; kind=&amp;#34;subtitles&amp;#34; srclang=&amp;#34;tr&amp;#34;&amp;gt;&amp;lt;/track&amp;gt;
+&amp;lt;/video&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A detailed docs on the &lt;code&gt;track&lt;/code&gt; element can be found on &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track&#34;&gt;MDN&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;oncanplay&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;oncanplay&lt;/code&gt; attribute is very useful, it can be used to serve a fallback if the browser doesn&amp;#39;t have capability to play HTML5 video&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;html&#34;&gt;&amp;lt;video controls oncanplay=&amp;#34;handler()&amp;#34;&amp;gt;
+    &amp;lt;source src=&amp;#34;video.mp4&amp;#34; type=&amp;#34;video/mp4&amp;#34;&amp;gt;
+    &amp;lt;source src=&amp;#34;video.webm&amp;#34; type=&amp;#34;video/webm&amp;#34;&amp;gt;
+    &amp;lt;source src=&amp;#34;video.ogv&amp;#34; type=&amp;#34;video/ogg&amp;#34;&amp;gt;
+&amp;lt;/video&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;JavaScript API&lt;/h2&gt;
+&lt;p&gt;The video element can be controlled via a JavaScript API to do all kind of stuf that can be done via the GUI, here are some examples :&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;javascript&#34;&gt;var video = document.getElementsByTagName(&amp;#34;video&amp;#34;)[0];
+/* Play the video */
+video.play();
+/* Set the volume to 50% */
+video.volume = 0.5;
+/* Pause the video */
+video.pause();
+/* Restart the video */
+video.currentTime = 0;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Sure the list of APIs is long that can help you build your HTML5 video player, finally i hope that this small introduction will be helpfull for you.&lt;/p&gt;
+</content>
+            </entry>
         
             <entry>
                 <title>Ubuntu Touch session in Morocco</title>

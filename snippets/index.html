@@ -86,6 +86,34 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
             <header class="post-header">
                 <h2 itemprop="name headline" class="post-title">
+                    <a itemprop="url" href="/snippets/truncate-multiline-text-with-ellipsis-in-css.html">Truncate multiline text with ellipsis in CSS</a>
+                </h2>
+            </header>
+            <div class="post-content">
+                <div class="post-content-inner">
+                    <div class="post-field">
+                        <p>Ellipsis multiline text using <code>text-overflow</code> and <code>-webkit-line-clamp</code> :</p>
+<pre><code>.multiline-ellipsis {
+    display: block;
+    display: -webkit-box;
+    max-width: 400px;
+    height: 109.2px;
+    margin: 0 auto;
+    font-size: 26px;
+    line-height: 1.4;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+            <header class="post-header">
+                <h2 itemprop="name headline" class="post-title">
                     <a itemprop="url" href="/snippets/truncate-text-with-ellipsis-in-css.html">Truncate text with ellipsis in CSS</a>
                 </h2>
             </header>
@@ -107,26 +135,18 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
             <header class="post-header">
                 <h2 itemprop="name headline" class="post-title">
-                    <a itemprop="url" href="/snippets/truncate-multiline-text-with-ellipsis-in-css.html">Truncate multiline text with ellipsis in CSS</a>
+                    <a itemprop="url" href="/snippets/detecting-chrome-ua-on-ios.html">Detecting Chrome UA on iOS</a>
                 </h2>
             </header>
             <div class="post-content">
                 <div class="post-content-inner">
                     <div class="post-field">
-                        <p>Ellipsis multiline text using <code>text-overflow</code> and <code>-webkit-line-clamp</code> :</p>
-<pre><code>.multiline-ellipsis {
-    display: block;
-    display: -webkit-box;
-    max-width: 400px;
-    height: 109.2px;
-    margin: 0 auto;
-    font-size: 26px;
-    line-height: 1.4;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+                        <p>The UA in Chrome for iOS uses <code>CriOS/$Rev</code>, it's not recommended to use UA sniffing to detect mobile devices</p>
+<pre><code>&lt;script type='text/javascript'&gt;
+    if(userAgent.indexOf("crios") != -1) {
+        [...]
+    }
+&lt;/script&gt;
 </code></pre>
                     </div>
                 </div>

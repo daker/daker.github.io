@@ -23,19 +23,20 @@
     <meta name="author" content="Adnane Belmadiaf">
     <link rel="author" href="https://plus.google.com/101694416703170881163" />
     <link rel="stylesheet" href="/assets/css/app.min.css" type="text/css">
-    <link rel="stylesheet" href="/assets/css/mobile.min.css" type="text/css">
-    <link rel="stylesheet" href="/assets/css/print.min.css" type="text/css" media="print" />
-    <title>html5 — Adnane Belmadiaf's Blog - Front-end Developer</title>
-    <meta property="og:image" content="http://daker.me/assets/images/avatar.png">
-    <meta property="og:title" content="html5 — Adnane Belmadiaf's Blog - Front-end Developer">
-    <meta property="og:site_name" content="Adnane Belmadiaf's Blog - Front-end Developer">
+    <title>Detecting Chrome UA on iOS — Adnane Belmadiaf's Blog - Front-end Developer</title>
+    <meta name="description" content="Detecting Chrome UA on iOS — Blog of Adnane Belmadiaf Front-end Developer based in Morocco.">
+    <meta property="og:image" content="http://daker.me/assets/images/pp_sketch.jpg">
+    <meta property="og:title" content="Detecting Chrome UA on iOS — Adnane Belmadiaf's Blog - Front-end Developer">
     <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Adnane Belmadiaf">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@AdnaneBelmadiaf">
-    <meta property="twitter:image" content="http://daker.me/assets/images/avatar.png">
-    <meta property="twitter:title" content="html5 — Adnane Belmadiaf's Blog - Front-end Developer">
-    <meta property="twitter:url" content="http://daker.me/tags/html5/">
+    <meta property="twitter:image" content="http://daker.me/assets/images/pp_sketch.jpg">
+    <meta property="twitter:title" content="Detecting Chrome UA on iOS — Adnane Belmadiaf's Blog - Front-end Developer">
+    <meta property="twitter:url" content="http://daker.me">
     <meta name="twitter:creator" content="@AdnaneBelmadiaf">
+    <meta property="og:description" content="Detecting Chrome UA on iOS — Blog of Adnane Belmadiaf Front-end Developer based in Morocco.">
+    <meta name="twitter:description" content="Detecting Chrome UA on iOS — Blog of Adnane Belmadiaf Front-end Developer based in Morocco.">
     <meta property="article:author" content="https://www.facebook.com/AdnaneBelmadiaf" />
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-precomposed-144.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-precomposed-114.png">
@@ -77,67 +78,36 @@
                     <a style="margin-right: 0;" href="/feed.xml" class="icon-feed" title="RSS feed" target="_blank"></a>
                 </div>
             </div>
-            
-            <script type="text/javascript" src="//cdn.adpacks.com/adpacks.js?legacyid=1290676&amp;zoneid=1386&amp;key=af6bf8f7d59e09aa41173c9e7d776de9&amp;serve=C6SI42Y&amp;placement=dakerme&amp;circle=dev" async id="_adpacks_js"></script>
+            <script type="text/javascript" src="http://cdn.adpacks.com/adpacks.js?legacyid=1290676&amp;zoneid=1386&amp;key=af6bf8f7d59e09aa41173c9e7d776de9&amp;serve=C6SI42Y&amp;placement=dakerme&amp;circle=dev" id="_adpacks_js"></script>
         </aside>
 
         <section class="posts">
-            
-    <h1>Topic: html5</h1>
-    <section id="archive">
-        
-        <section class="timeline-wrapper" id="year2014">
-            <h2>2014</h2>
-            <ul class="timeline">
-                
-                <li>
-                    <h3>August</h3>
-                    
-                    <span>
-                        <a href="/2014/08/everything-you-need-to-know-about-html5-video.html" title="">Everything you need to know about HTML5 Video</a>
-                    </span>
-                     
-                </li>
-                
-                <li>
-                    <h3>February</h3>
-                    
-                    <span>
-                        <a href="/2014/02/on-using-the-html-media-capture-in-mobile-browsers.html" title="">On Using The HTML Media Capture in Mobile Browsers</a>
-                    </span>
-                     
-                </li>
-                 
-            </ul>
-        </section>
-        
-        <section class="timeline-wrapper" id="year2013">
-            <h2>2013</h2>
-            <ul class="timeline">
-                
-                <li>
-                    <h3>June</h3>
-                    
-                    <span>
-                        <a href="/2013/06/5-html5-javascript-apis-to-keep-an-eye-on.html" title="">5 HTML5 Javascript APIs to keep an eye on</a>
-                    </span>
-                     
-                </li>
-                
-                <li>
-                    <h3>May</h3>
-                    
-                    <span>
-                        <a href="/2013/05/5-html5-features-you-need-to-know.html" title="">5 HTML5 Features you need to know</a>
-                    </span>
-                     
-                </li>
-                 
-            </ul>
-        </section>
-         
-    </section>
+            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                <header class="post-header">
+                    <h2 itemprop="name headline" class="post-title">Detecting Chrome UA on iOS</h2>
+                </header>
+                <div class="post-content">
+                    <div class="post-field body" itemprop="articleBody">
+                        <p>The UA in Chrome for iOS uses <code>CriOS/$Rev</code>, it's not recommended to use UA sniffing to detect mobile devices</p>
+<pre><code>&lt;script type='text/javascript'&gt;
+    if(userAgent.indexOf("crios") != -1) {
+        [...]
+    }
+&lt;/script&gt;
+</code></pre>
+                    </div>
+                </div>
 
+                <form action="http://daker.us7.list-manage.com/subscribe/post?u=ebd280d4e0da7cce97bd7a8ad&amp;id=327b2cec50" method="post" id="signup" name="signup-form">
+                    <div class="row">
+                        <input type="email" name="EMAIL" id="email" required="required" placeholder="Your E-mail address will be safe.">
+                        <a href="/feed.xml" class="icon-feed " title="Subscribe to the RSS feed" target="_blank"></a>
+                        <input type="submit" value="Subscribe" name="subscribe" id="subscribe-btn">
+                    </div>
+                </form>
+                <div id="response" style="display:none"></div>
+                <div class="notice">By joining you'll receive a weekly e-mail with latest blog posts each Wednesday. Easy unsubscribe. No spam — your e-mail address will be safe.</div>
+            </article>
         </section>
     </main>
 
@@ -147,9 +117,6 @@
             This work is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>
         </p>
     </footer>
-    <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="/assets/js/jquery.ba-hashchange.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="/assets/js/main.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -158,6 +125,5 @@
       ga('create', 'UA-41135963-1', 'daker.me');
       ga('send', 'pageview');
     </script>
-    
 </body>
 </html>
