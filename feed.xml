@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-10-26T16:12:36Z</updated>
+        <updated>2014-10-26T16:14:01Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -21,8 +21,8 @@
                 <id>http://daker.me/2014/10/how-to-fix-perl-warning-setting-locale-failed-in-raspbian.html</id>
                 <updated>2014-10-26T16:00:00Z</updated>
                 
-                <summary type="html">Last week i was trying to make my Raspberry Pi work again, and while reinstalling and upgrading Raspbian OS packages i run into an issue where a perl waring is displayed.</summary>
-                <content type="html">&lt;p&gt;Last week i was trying to make my Raspberry Pi work again, and while reinstalling and upgrading Raspbian OS packages i run into an issue where a perl waring is displayed.&lt;/p&gt;
+                <summary type="html">Last week i was trying to make my Raspberry Pi work again, and while reinstalling and upgrading Raspbian OS packages i run into an issue where a perl warning is displayed.</summary>
+                <content type="html">&lt;p&gt;Last week i was trying to make my Raspberry Pi work again, and while reinstalling and upgrading Raspbian OS packages i run into an issue where a perl warning is displayed.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/rpi-logo.png&#34; alt=&#34;Raspberry Pi Logo&#34;&gt;&lt;/p&gt;
 
