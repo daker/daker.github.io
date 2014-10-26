@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-10-26T16:05:35Z</updated>
+        <updated>2014-10-26T16:12:36Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -46,7 +46,7 @@ perl: warning: Please check that your locale settings:
 perl: warning: Falling back to the standard locale (&amp;#34;C&amp;#34;).
 locale: Cannot set LC_ALL to default locale: No such file or directory
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Solution&lt;/h2&gt;
-&lt;p&gt;You can fix the issue by setting the locale can be set en_US.UTF-8 for example:&lt;/p&gt;
+&lt;p&gt;You can fix the issue by setting the locale to en_US.UTF-8 for example:&lt;/p&gt;
 &lt;pre&gt;&lt;code data-language=&#34;shell&#34;&gt;$ export LANGUAGE=en_US.UTF-8
 $ export LANG=en_US.UTF-8
 $ export LC_ALL=en_US.UTF-8
