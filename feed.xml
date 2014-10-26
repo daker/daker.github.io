@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-09-07T19:24:38Z</updated>
+        <updated>2014-10-26T16:05:35Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,48 @@
             <uri>http://daker.me/</uri>
         </author>
         
+        
+            <entry>
+                <title>How to fix Perl warning setting locale failed on Raspbian</title>
+                <link rel="alternate" href="http://daker.me/2014/10/how-to-fix-perl-warning-setting-locale-failed-in-raspbian.html" type="text/html" />
+                <id>http://daker.me/2014/10/how-to-fix-perl-warning-setting-locale-failed-in-raspbian.html</id>
+                <updated>2014-10-26T16:00:00Z</updated>
+                
+                <summary type="html">Last week i was trying to make my Raspberry Pi work again, and while reinstalling and upgrading Raspbian OS packages i run into an issue where a perl waring is displayed.</summary>
+                <content type="html">&lt;p&gt;Last week i was trying to make my Raspberry Pi work again, and while reinstalling and upgrading Raspbian OS packages i run into an issue where a perl waring is displayed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/rpi-logo.png&#34; alt=&#34;Raspberry Pi Logo&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;The warning message apprears during the installation packages(invoking Perl) and it&amp;#39;s due to missing locales being set not :&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;shell&#34;&gt;[...]
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+        LANGUAGE = (unset),
+        LC_ALL = (unset),
+        LC_TIME = &amp;#34;fr_FR.UTF-8&amp;#34;,
+        LC_MONETARY = &amp;#34;fr_FR.UTF-8&amp;#34;,
+        LC_ADDRESS = &amp;#34;fr_FR.UTF-8&amp;#34;,
+        LC_TELEPHONE = &amp;#34;fr_FR.UTF-8&amp;#34;,
+        LC_NAME = &amp;#34;fr_FR.UTF-8&amp;#34;,
+        LC_MEASUREMENT = &amp;#34;fr_FR.UTF-8&amp;#34;,
+        LC_IDENTIFICATION = &amp;#34;fr_FR.UTF-8&amp;#34;,
+        LC_NUMERIC = &amp;#34;fr_FR.UTF-8&amp;#34;,
+        LC_PAPER = &amp;#34;fr_FR.UTF-8&amp;#34;,
+        LANG = &amp;#34;en_GB.UTF-8&amp;#34;
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale (&amp;#34;C&amp;#34;).
+locale: Cannot set LC_ALL to default locale: No such file or directory
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Solution&lt;/h2&gt;
+&lt;p&gt;You can fix the issue by setting the locale can be set en_US.UTF-8 for example:&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;shell&#34;&gt;$ export LANGUAGE=en_US.UTF-8
+$ export LANG=en_US.UTF-8
+$ export LC_ALL=en_US.UTF-8
+$ locale-gen en_US.UTF-8
+$ dpkg-reconfigure locales
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once you run the last command a dialog will appear to let you choose the desired locale.&lt;/p&gt;
+</content>
+            </entry>
         
             <entry>
                 <title>Everything you need to know about HTML5 Video</title>
