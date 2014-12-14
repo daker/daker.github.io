@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-django.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2014-10-26T16:14:01Z</updated>
+        <updated>2014-12-14T21:35:43Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,8 @@
             <uri>http://daker.me/</uri>
         </author>
 
+        
+            
         
             
         
