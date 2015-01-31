@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2015-01-31T23:15:22Z</updated>
+        <updated>2015-01-31T23:17:50Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -21,8 +21,8 @@
                 <id>http://daker.me/2015/01/fix-morocco-borders-on-google-maps.html</id>
                 <updated>2015-01-31T22:30:00Z</updated>
                 
-                <summary type="html">Everyone needs to pay attention when using Morocco Map, specially if it doesn&amp;#39;t include the Sahara, so here i&amp;#39;ll explain how to fix the borders in Google Map.</summary>
-                <content type="html">&lt;p&gt;Everyone needs to pay attention when using Morocco Map, specially if it doesn&amp;#39;t include the Sahara, so here i&amp;#39;ll explain how to fix the borders in Google Map.&lt;/p&gt;
+                <summary type="html">Everyone needs to pay attention when using Morocco Map, specially if it doesn&amp;#39;t include the Sahara, so here i&amp;#39;ll explain how to fix the borders in Google Maps.</summary>
+                <content type="html">&lt;p&gt;Everyone needs to pay attention when using Morocco Map, specially if it doesn&amp;#39;t include the Sahara, so here i&amp;#39;ll explain how to fix the borders in Google Maps.&lt;/p&gt;
 
 &lt;p&gt;The first thing you need to do is to create a simple map :&lt;/p&gt;
 &lt;pre&gt;&lt;code data-language=&#34;javascript&#34;&gt;&amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;http://maps.google.com/maps/api/js?sensor=false&amp;#34;&amp;gt; &amp;lt;/script&amp;gt;
