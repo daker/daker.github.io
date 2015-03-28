@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed-ubuntuplanet.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2015-01-31T23:17:50Z</updated>
+        <updated>2015-03-28T16:36:27Z</updated>
 
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,54 @@
             <uri>http://daker.me/</uri>
         </author>
 
+        
+            
+            <entry>
+                <title>Running Dekko in LXC</title>
+                <link rel="alternate" href="http://daker.me/2015/03/running-dekko-in-lxc.html" type="text/html" />
+                <id>http://daker.me/2015/03/running-dekko-in-lxc.html</id>
+                <updated>2015-03-28T16:35:00Z</updated>
+
+                <summary type="html">I was approached by &lt;a href=&#34;https://plus.google.com/114760723716576457396/about&#34;&gt;Daniel Chapman&lt;/a&gt; to help with the new message view in Dekko(Ubuntu Touch email client) which uses Oxide Webview to render the message details. Dekko is using the new Ubuntu SDK 1.1 which is not present in the LTS version 14.04, we have tried to make it run but it was impossible.</summary>
+                <content type="html">&lt;p&gt;I was approached by &lt;a href=&#34;https://plus.google.com/114760723716576457396/about&#34;&gt;Daniel Chapman&lt;/a&gt; to help with the new message view in Dekko(Ubuntu Touch email client) which uses Oxide Webview to render the message details. Dekko is using the new Ubuntu SDK 1.1 which is not present in the LTS version 14.04, we have tried to make it run but it was impossible.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/dekko/lxc-logo.png&#34; alt=&#34;LXC logo&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Setup LXC&lt;/h2&gt;
+&lt;p&gt;To have a clear idea on how LXC works and how to setup your environment make sure you check &lt;a href=&#34;http://nik90.com/fiddling-around-with-lxc-containers/&#34;&gt;Nekhelesh&amp;#39;s post&lt;/a&gt;,&lt;/p&gt;
+&lt;h2&gt;Unpriviledged container&lt;/h2&gt;
+&lt;p&gt;To run Dekko we need to create an unpriviledged container using Utopic 14.10, and let&amp;#39;s name it &lt;code&gt;utopicdev&lt;/code&gt; :&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;shell&#34;&gt;$ lxc-create --template download --name utopicdev -- --dist ubuntu --release utopic --arch i386
+$ sudo chown -R 1000:1000 ~/.local/share/lxc/utopicdev/rootfs/home/ubuntu
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Running the container&lt;/h2&gt;
+&lt;p&gt;So at this point i had some issues with cgmanager :&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;shell&#34;&gt;$ lxc-start -n utopicdev
+lxc_container: cgmanager.c: lxc_cgmanager_create: 299 call to cgmanager_create_sync failed: invalid request
+lxc_container: cgmanager.c: lxc_cgmanager_create: 301 Failed to create hugetlb:utopicdev
+lxc_container: cgmanager.c: cgm_create: 646 Error creating cgroup hugetlb:utopicdev
+lxc_container: start.c: lxc_spawn: 861 failed creating cgroups
+lxc_container: start.c: __lxc_start: 1080 failed to spawn &amp;#39;utopicdev&amp;#39;
+lxc_container: lxc_start.c: main: 342 The container failed to start.
+lxc_container: lxc_start.c: main: 346 Additional information can be obtained by setting the --logfile and --logpriority options.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I fixed it by restarting my machine only, now let&amp;#39;s run it in daemon mode :&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;shell&#34;&gt;$ lxc-start -n utopicdev -d
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;Using the container&lt;/h2&gt;&lt;pre&gt;&lt;code data-language=&#34;shell&#34;&gt;$ lxc-attach --clear-env -n utopicdev -- sudo -u ubuntu -i env DISPLAY=$DISPLAY /home/ubuntu/dekko/__build/dekko
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When trying to run it you get the following error :&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;shell&#34;&gt;$ lxc-attach --clear-env -n utopicdev -- sudo -u ubuntu -i env DISPLAY=$DISPLAY /home/ubuntu/dekko/__build/dekko
+Cannot chdir into /proc/ directory: Permission denied
+[0325/151501:ERROR:setuid_sandbox_client.cc(195)] Failed to read from chroot pipe: Not a directory
+[0325/151501:FATAL:zygote_main_linux.cc(549)] Check failed: EnterSuidSandbox(setuid_sandbox, post_fork_parent_callback). Failed to enter setuid sandbox
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You get this error is because dekko is using Oxide to render message view which uses setuid sandbox, using &lt;code&gt;OXIDE_DISABLE_SETUID_SANDBOX=1&lt;/code&gt; we can disable it since the LXC container already provides the isolation.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;shell&#34;&gt;$ lxc-attach --clear-env -n utopicdev -- sudo -u ubuntu -i env DISPLAY=$DISPLAY OXIDE_DISABLE_SETUID_SANDBOX=1 /home/ubuntu/dekko/__build/dekko
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/dekko/dekko.jpg&#34; alt=&#34;Dekko running in Ubuntu 14.04&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;Note that i am running the compiled version, so you need to install the SDK and compile dekko first.&lt;/p&gt;
+</content>
+            </entry>
+            
         
             
         
