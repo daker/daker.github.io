@@ -25,23 +25,23 @@
     <link rel="stylesheet" href="/assets/css/app.min.css" type="text/css">
     <link rel="stylesheet" href="/assets/css/mobile.min.css" type="text/css">
     <link rel="stylesheet" href="/assets/css/print.min.css" type="text/css" media="print" />
-    <title>Package your Webapp for Ubuntu Touch — Adnane Belmadiaf's Blog - Front-end Developer</title>
-    <meta name="description" content="Last week i discovered a HTML5 game called 'X-Type', which is basically a free dual stick shooter with endless boss battles. Unfortunately this game does only work on iOS and Android and it does use the UA sniffing mechanism to serve both desktop and mobile versions, and using the Ubuntu Touch user-agent it will only serve the desktop version which will not work on the phone.">
-    <meta name="keywords" content="ubuntuplanet, utouchdev">
+    <title>Migrating emails between IMAP servers with Imapsync — Adnane Belmadiaf's Blog - Front-end Developer</title>
+    <meta name="description" content="Migrating accounts can be a hard task if you are hosting your mails in a shared hosting. Imapsync is a one way synchronisation tool which can migrate mails from one account in a server to another account in another server with a simple command.">
+    <meta name="keywords" content="imapsync">
     <meta property="og:image" content="http://daker.me/assets/images/pp_sketch.jpg">
-    <meta property="og:title" content="Package your Webapp for Ubuntu Touch — Adnane Belmadiaf's Blog - Front-end Developer">
+    <meta property="og:title" content="Migrating emails between IMAP servers with Imapsync — Adnane Belmadiaf's Blog - Front-end Developer">
     <meta property="og:site_name" content="Adnane Belmadiaf's Blog - Front-end Developer">
     <meta property="og:type" content="article">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@AdnaneBelmadiaf">
     <meta property="twitter:image" content="http://daker.me/assets/images/pp_sketch.jpg">
-    <meta property="twitter:title" content="Package your Webapp for Ubuntu Touch — Adnane Belmadiaf's Blog - Front-end Developer">
-    <meta property="twitter:url" content="http://daker.me/2013/10/package-your-webapp-for-ubuntu-touch.html">
+    <meta property="twitter:title" content="Migrating emails between IMAP servers with Imapsync — Adnane Belmadiaf's Blog - Front-end Developer">
+    <meta property="twitter:url" content="http://daker.me/2015/09/migrating-emails-between-imap-servers-with-imapsync.html">
     <meta name="twitter:creator" content="@AdnaneBelmadiaf">
-    <meta property="og:description" content="Last week i discovered a HTML5 game called 'X-Type', which is basically a free dual stick shooter with endless boss battles. Unfortunately this game does only work on iOS and Android and it does use the UA sniffing mechanism to serve both desktop and mobile versions, and using the Ubuntu Touch user-agent it will only serve the desktop version which will not work on the phone.">
-    <meta name="twitter:description" content="Last week i discovered a HTML5 game called 'X-Type', which is basically a free dual stick shooter with endless boss battles. Unfortunately this game does only work on iOS and Android and it does use the UA sniffing mechanism to serve both desktop and mobile versions, and using the Ubuntu Touch user-agent it will only serve the desktop version which will not work on the phone.">
-    <link rel="prev" title="Automate Your Dev Environment With Vagrant" href="http://daker.me/2013/09/automate-your-dev-environment-with-vagrant.html" />
-    <link rel="next" title="Ubuntu Touch User-Agent" href="http://daker.me/2013/11/ubuntu-touch-user-agent.html" />
+    <meta property="og:description" content="Migrating accounts can be a hard task if you are hosting your mails in a shared hosting. Imapsync is a one way synchronisation tool which can migrate mails from one account in a server to another account in another server with a simple command.">
+    <meta name="twitter:description" content="Migrating accounts can be a hard task if you are hosting your mails in a shared hosting. Imapsync is a one way synchronisation tool which can migrate mails from one account in a server to another account in another server with a simple command.">
+    <link rel="prev" title="Running Dekko in LXC" href="http://daker.me/2015/03/running-dekko-in-lxc.html" />
+    
     <meta property="article:author" content="https://www.facebook.com/AdnaneBelmadiaf" />
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-precomposed-144.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-precomposed-114.png">
@@ -86,7 +86,7 @@
             
 <div class="post-published-date"> <strong>Published</strong>
     <p>
-        <time datetime="2013-10-15 23:50:00+01:00" class="post-date">Oct 15, 2013 at 23:50</time>
+        <time datetime="2015-09-09 22:30:00+01:00" class="post-date">Sep 09, 2015 at 22:30</time>
     </p>
 </div>
 
@@ -94,9 +94,7 @@
     <strong>Tags</strong>
     <p>
         
-        <a href="/tags/ubuntuplanet/" itemprop="keywords">#ubuntuplanet</a>, 
-        
-        <a href="/tags/utouchdev/" itemprop="keywords">#utouchdev</a>
+        <a href="/tags/imapsync/" itemprop="keywords">#imapsync</a>
         
     </p>
 </div>
@@ -108,125 +106,46 @@
             
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header">
-        <h2 itemprop="name headline" class="post-title">Package your Webapp for Ubuntu Touch</h2>
+        <h2 itemprop="name headline" class="post-title">Migrating emails between IMAP servers with Imapsync</h2>
     </header>
     <div class="post-social">
         <div class="post-social-button">
-            <fb:like href="http://daker.me/2013/10/package-your-webapp-for-ubuntu-touch.html" send="false" show_faces="false"  layout="button_count" width="92" ></fb:like>
+            <fb:like href="http://daker.me/2015/09/migrating-emails-between-imap-servers-with-imapsync.html" send="false" show_faces="false"  layout="button_count" width="92" ></fb:like>
         </div>
         <div class="post-social-button">
-            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://daker.me/2013/10/package-your-webapp-for-ubuntu-touch.html" data-count="horizontal" data-text="Package your Webapp for Ubuntu Touch" data-via="AdnaneBelmadiaf" data-related="AdnaneBelmadiaf"></a>
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://daker.me/2015/09/migrating-emails-between-imap-servers-with-imapsync.html" data-count="horizontal" data-text="Migrating emails between IMAP servers with Imapsync" data-via="AdnaneBelmadiaf" data-related="AdnaneBelmadiaf"></a>
         </div>
         <div class="post-social-button">
-        <a class="FlattrButton" style="display:none;" href="http://daker.me/2013/10/package-your-webapp-for-ubuntu-touch.html" title="Package your Webapp for Ubuntu Touch" data-flattr-uid="daker" data-flattr-button="compact" data-flattr-tags="ubuntuplanet, utouchdev" data-flattr-category="text" data-flattr-lang="en_US">Last week i discovered a HTML5 game called 'X-Type', which is basically a free dual stick shooter with endless boss battles. Unfortunately this game does only work on iOS and Android and it does use the UA sniffing mechanism to serve both desktop and mobile versions, and using the Ubuntu Touch user-agent it will only serve the desktop version which will not work on the phone.</a>
+        <a class="FlattrButton" style="display:none;" href="http://daker.me/2015/09/migrating-emails-between-imap-servers-with-imapsync.html" title="Migrating emails between IMAP servers with Imapsync" data-flattr-uid="daker" data-flattr-button="compact" data-flattr-tags="imapsync" data-flattr-category="text" data-flattr-lang="en_US">Migrating accounts can be a hard task if you are hosting your mails in a shared hosting. Imapsync is a one way synchronisation tool which can migrate mails from one account in a server to another account in another server with a simple command.</a>
         </div>
         <div class="post-social-button">
-            <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="horizontal" data-url="http://daker.me/2013/10/package-your-webapp-for-ubuntu-touch.html" data-via="AdnaneBelmadiaf" data-picture="http://daker.me/assets/images/pp_sketch.jpg"></a>
+            <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="horizontal" data-url="http://daker.me/2015/09/migrating-emails-between-imap-servers-with-imapsync.html" data-via="AdnaneBelmadiaf" data-picture="http://daker.me/assets/images/pp_sketch.jpg"></a>
         </div>
 
         <div class="post-social-button">
-            <div class="g-plusone" data-size="medium" data-href="http://daker.me/2013/10/package-your-webapp-for-ubuntu-touch.html"></div>
+            <div class="g-plusone" data-size="medium" data-href="http://daker.me/2015/09/migrating-emails-between-imap-servers-with-imapsync.html"></div>
         </div>
     </div>
     <div class="post-content">
-        <div class="post-field body" itemprop="articleBody"><p>Last week i discovered a HTML5 game called &#39;<a href="http://phoboslab.org/xtype/">X-Type</a>&#39;, which is basically a free dual stick shooter with endless boss battles. Unfortunately this game does only work on iOS and Android and it does use the UA sniffing mechanism to serve both desktop and mobile versions, and using the Ubuntu Touch user-agent it will only serve the desktop version which will not work on the phone.</p>
+        <div class="post-field body" itemprop="articleBody"><p>Migrating accounts can be a hard task if you are hosting your mails in a shared hosting. Imapsync is a one way synchronisation tool which can migrate mails from one account in a server to another account in another server with a simple command.</p>
 
-<p><img src="/assets/posts/xtype/xtype.png" alt="X-Type running on Ubuntu Touch"></p>
-
-<p>First using the Qt Creator you have to create a &quot;HTML5 Touch UI&quot; project which will produce the following QML code :</p>
-<pre><code data-language="js">import QtQuick 2.0
-import Ubuntu.Components 0.1
-import QtWebKit 3.0
-
-MainView {
-    objectName: &#34;mainView&#34;
-    applicationName: &#34;com.ubuntu.developer.daker.x-type&#34;
-    automaticOrientation: true
-
-    width: units.gu(100)
-    height: units.gu(75)
-
-    Flickable {
-        id: webViewFlickable
-        anchors.fill: parent
-
-        WebView {
-            id: webView
-            anchors.fill: parent
-            url: &#34;http://phoboslab.org/xtype/&#34;
-        }
-    }
-}
+<p><img src="/assets/posts/imapsync.png" alt="Imapsync logo"></p>
+<h2>Instaling Imapsync</h2>
+<p>You need to manually install <code>imapsync</code> by grabbing the code from the github repo</p>
+<pre><code data-language="shell">$ git clone https://github.com/imapsync/imapsync.git
 </code></pre>
-<p>The problem with using the QtWebKit Webview is that the device-pixel-ratio (DPR) is not set automatically causing the content of the Webview to not scale correctly, so you&#39;ll need to get the corresponding value for your device from the <code>QTWEBKIT_DPR</code> environment variable, there is actually no way to read those variables using QML so you&#39;ll need to use some C++ code to read the <code>QTWEBKIT_DPR</code> and passe it to QML so the content of the WebView will scale accordingly.</p>
-
-<p>The Ubuntu Touch Browser Plugin provides a component called <code>UbuntuWebView</code>, it uses some kind of UA overrides to bypass the UA sniffing used to serve the mobile version of webapp(Gmail, G+, Facebook, Twitter, etc...) and changes the UA on the fly, unfortunately there was no way to set your own UA using the <code>UbuntuWebView</code> but now you can since this <a href="https://bugs.launchpad.net/webbrowser-app/+bug/1237365">bug #1237365</a> has been fixed.</p>
-
-<p>Also with the <code>UbuntuWebView</code> the <code>DPR</code> weren&#39;t set automatically(<a href="https://bugs.launchpad.net/webbrowser-app/+bug/1237348">bug #1237348</a>), it was also fixed and all those fixes has been shipped with image #96.</p>
-
-<p>Here is the QML code i used to embed the &quot;X-Type&quot; game(Fullscreen) but first you need to install the browser plugin :</p>
-<pre><code data-language="sh">$ sudo apt-get install qtdeclarative5-ubuntu-ui-extras-browser-plugin
-</code></pre><pre><code data-language="js">import QtQuick 2.0
-import Ubuntu.Components 0.1
-import Ubuntu.Components.Extras.Browser 0.1
-
-
-MainView {
-    objectName: &#34;mainView&#34;
-    applicationName: &#34;com.ubuntu.developer.daker.x-type&#34;
-    //automaticOrientation: true
-
-    width: units.gu(50)
-    height: units.gu(75)
-
-    UbuntuWebView {
-        anchors.fill: parent
-        url: &#34;http://phoboslab.org/xtype/&#34;
-        /* This function is used to override the UA */
-        function getUAString(url) {
-            return &#34;Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3&#34;
-        }
-    }
-}
+<p>Before you start compiling, you need to make sure all the dependencies are installed</p>
+<pre><code data-language="shell">$ sudo apt-get install libauthen-ntlm-perl libcrypt-ssleay-perl libdigest-hmac-perl libfile-copy-recursive-perl libio-compress-perl libio-socket-inet6-perl libio-socket-ssl-perl libio-tee-perl libmail-imapclient-perl libmodule-scandeps-perl libnet-ssleay-perl libpar-packer-perl libterm-readkey-perl libtest-pod-perl libtest-simple-perl libunicode-string-perl liburi-perl
+$ sudo cpan Data::Uniqid
 </code></pre>
-<p>you need to create a <code>manifest.json</code> file :</p>
-<pre><code data-language="json">{
-    &#34;description&#34;: &#34;A Free HTML5 Dual Stick Shooter&#34;,
-    &#34;framework&#34;: &#34;ubuntu-sdk-13.10&#34;,
-    &#34;architecture&#34;: &#34;all&#34;,
-    &#34;hooks&#34;: {
-        &#34;x-type&#34;: {
-            &#34;apparmor&#34;: &#34;x-type.json&#34;,
-            &#34;desktop&#34;: &#34;x-type.desktop&#34;
-        }
-    },
-    &#34;maintainer&#34;: &#34;Adnane Belmadiaf &lt;daker@ubuntu.com&gt;&#34;,
-    &#34;name&#34;: &#34;com.ubuntu.developer.daker.x-type&#34;,
-    &#34;title&#34;: &#34;X-Type&#34;,
-    &#34;version&#34;: &#34;0.4&#34;
-}
+<p>Now let&#39;s compile &amp; install</p>
+<pre><code data-language="shell">$ cd imapsync
+$ sudo make install
 </code></pre>
-<p>the security policy groups <code>x-type.json</code> :</p>
-<pre><code data-language="json">{
-    &#34;policy_groups&#34;: [
-        &#34;networking&#34;
-    ],
-    &#34;policy_version&#34;: 1
-}
+<p>and now let&#39;s start the migration</p>
+<pre><code data-language="shell">$ imapsync --host1 $HOST1 --user1 $EMAIL --password1 &#39;&#39; --tls1 -port1 $PORT1 -authmech1 PLAIN --host2 $HOST2 --user2 $EMAIL --password2 &#39;&#39; --tls2 -port2 $PORT2 --reconnectretry1 1 --reconnectretry2 1 --useheader &#39;Message-Id&#39; --skipsize
 </code></pre>
-<p>and a .desktop file :</p>
-<pre><code data-language="js">[Desktop Entry]
-Name=x-type
-Comment=A Free HTML5 Dual Stick Shooter
-Exec=qmlscene $@ x-type.qml
-Icon=./x-type.png
-Terminal=false
-Type=Application
-X-Ubuntu-Touch=true
-</code></pre>
-<p>you need to add the icon and now all you have to do is to build the click package using <code>click build .</code>and <a href="https://myapps.developer.ubuntu.com/dev/click-apps/new/">upload</a> it to the store. I have also packaged another HTML5 game called <a href="http://heliom.github.io/bytesjack/">BytesJack</a> using the same method, the source code of both games can be found <a href="https://bazaar.launchpad.net/%7Edaker/+junk/x-type/files">here</a> and <a href="https://bazaar.launchpad.net/%7Edaker/+junk/bytesjack/files">here</a>.</p>
-
-<p>Happy hacking!</p>
+<p>Migrating accounts can take longer depending on thir size.</p>
 </div>
     </div>
 
@@ -244,17 +163,11 @@ X-Ubuntu-Touch=true
     <div class="prev-next">
         
         <div class="prev-post">
-            <a href="/2013/09/automate-your-dev-environment-with-vagrant.html" title="Automate Your Dev Environment With Vagrant" class="title">
-                <span>Automate Your Dev Environment With Vagrant</span>
+            <a href="/2015/03/running-dekko-in-lxc.html" title="Running Dekko in LXC" class="title">
+                <span>Running Dekko in LXC</span>
             </a>
         </div>
         
-        
-        <div class="next-post">
-            <a href="/2013/11/ubuntu-touch-user-agent.html" title="Ubuntu Touch User-Agent" class="title">
-                <span>Ubuntu Touch User-Agent</span>
-            </a>
-        </div>
         
     </div>
     
@@ -263,7 +176,7 @@ X-Ubuntu-Touch=true
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname = 'daker-blog';
-        var disqus_title = 'Package your Webapp for Ubuntu Touch';
+        var disqus_title = 'Migrating emails between IMAP servers with Imapsync';
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

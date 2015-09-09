@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2015-03-28T16:36:27Z</updated>
+        <updated>2015-09-09T21:37:05Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,35 @@
             <uri>http://daker.me/</uri>
         </author>
         
+        
+            <entry>
+                <title>Migrating emails between IMAP servers with Imapsync</title>
+                <link rel="alternate" href="http://daker.me/2015/09/migrating-emails-between-imap-servers-with-imapsync.html" type="text/html" />
+                <id>http://daker.me/2015/09/migrating-emails-between-imap-servers-with-imapsync.html</id>
+                <updated>2015-09-09T22:30:00Z</updated>
+                
+                <summary type="html">Migrating accounts can be a hard task if you are hosting your mails in a shared hosting. Imapsync is a one way synchronisation tool which can migrate mails from one account in a server to another account in another server with a simple command.</summary>
+                <content type="html">&lt;p&gt;Migrating accounts can be a hard task if you are hosting your mails in a shared hosting. Imapsync is a one way synchronisation tool which can migrate mails from one account in a server to another account in another server with a simple command.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/imapsync.png&#34; alt=&#34;Imapsync logo&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Instaling Imapsync&lt;/h2&gt;
+&lt;p&gt;You need to manually install &lt;code&gt;imapsync&lt;/code&gt; by grabbing the code from the github repo&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;shell&#34;&gt;$ git clone https://github.com/imapsync/imapsync.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Before you start compiling, you need to make sure all the dependencies are installed&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;shell&#34;&gt;$ sudo apt-get install libauthen-ntlm-perl libcrypt-ssleay-perl libdigest-hmac-perl libfile-copy-recursive-perl libio-compress-perl libio-socket-inet6-perl libio-socket-ssl-perl libio-tee-perl libmail-imapclient-perl libmodule-scandeps-perl libnet-ssleay-perl libpar-packer-perl libterm-readkey-perl libtest-pod-perl libtest-simple-perl libunicode-string-perl liburi-perl
+$ sudo cpan Data::Uniqid
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now let&amp;#39;s compile &amp;amp; install&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;shell&#34;&gt;$ cd imapsync
+$ sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and now let&amp;#39;s start the migration&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;shell&#34;&gt;$ imapsync --host1 $HOST1 --user1 $EMAIL --password1 &amp;#39;&amp;#39; --tls1 -port1 $PORT1 -authmech1 PLAIN --host2 $HOST2 --user2 $EMAIL --password2 &amp;#39;&amp;#39; --tls2 -port2 $PORT2 --reconnectretry1 1 --reconnectretry2 1 --useheader &amp;#39;Message-Id&amp;#39; --skipsize
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Migrating accounts can take longer depending on thir size.&lt;/p&gt;
+</content>
+            </entry>
         
             <entry>
                 <title>Running Dekko in LXC</title>
