@@ -41,7 +41,7 @@
     <meta property="og:description" content="Migrating accounts can be a hard task if you are hosting your mails in a shared hosting. Imapsync is a one way synchronisation tool which can migrate mails from one account in a server to another account in another server with a simple command.">
     <meta name="twitter:description" content="Migrating accounts can be a hard task if you are hosting your mails in a shared hosting. Imapsync is a one way synchronisation tool which can migrate mails from one account in a server to another account in another server with a simple command.">
     <link rel="prev" title="Running Dekko in LXC" href="http://daker.me/2015/03/running-dekko-in-lxc.html" />
-    
+    <link rel="next" title="How to Integrate Slack with Launchpad" href="http://daker.me/2016/01/how-to-integrate-slack-with-launchpad.html" />
     <meta property="article:author" content="https://www.facebook.com/AdnaneBelmadiaf" />
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-precomposed-144.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-precomposed-114.png">
@@ -145,7 +145,7 @@ $ sudo make install
 <p>and now let&#39;s start the migration</p>
 <pre><code data-language="shell">$ imapsync --host1 $HOST1 --user1 $EMAIL --password1 &#39;&#39; --tls1 -port1 $PORT1 -authmech1 PLAIN --host2 $HOST2 --user2 $EMAIL --password2 &#39;&#39; --tls2 -port2 $PORT2 --reconnectretry1 1 --reconnectretry2 1 --useheader &#39;Message-Id&#39; --skipsize
 </code></pre>
-<p>Migrating accounts can take longer depending on thir size.</p>
+<p>Migrating accounts can take longer depending on their size.</p>
 </div>
     </div>
 
@@ -168,6 +168,12 @@ $ sudo make install
             </a>
         </div>
         
+        
+        <div class="next-post">
+            <a href="/2016/01/how-to-integrate-slack-with-launchpad.html" title="How to Integrate Slack with Launchpad" class="title">
+                <span>How to Integrate Slack with Launchpad</span>
+            </a>
+        </div>
         
     </div>
     
@@ -194,7 +200,7 @@ $ sudo make install
 
     <footer class="site-footer">
         <p class="copyright">
-            Copyright &copy; 2015 Adnane Belmadiaf<br />
+            Copyright &copy; 2016 Adnane Belmadiaf<br />
             This work is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>
         </p>
     </footer>

@@ -25,23 +25,23 @@
     <link rel="stylesheet" href="/assets/css/app.min.css" type="text/css">
     <link rel="stylesheet" href="/assets/css/mobile.min.css" type="text/css">
     <link rel="stylesheet" href="/assets/css/print.min.css" type="text/css" media="print" />
-    <title>Devtools Console, from Novice to Ninja — Adnane Belmadiaf's Blog - Front-end Developer</title>
-    <meta name="description" content="The JavaScript console is a powerful tool that allows developers debug their code using functions provided by the Console API and a shell prompt where they can enter commands and interact with the document object.">
-    <meta name="keywords" content="console, javascript, ubuntuplanet">
+    <title>How to Integrate Slack with Launchpad — Adnane Belmadiaf's Blog - Front-end Developer</title>
+    <meta name="description" content="Slack is a great platform for team communication, it is a collection of chat rooms, both public and private. It helps confine all your team communications to one place. Slack also provides an API to let you interacte with it, so i have to decided to write a simple app using Flask to integrate Slack with Launchpad using its new webhooks feature.">
+    <meta name="keywords" content="launchpad, ubuntuplanet">
     <meta property="og:image" content="http://daker.me/assets/images/pp_sketch.jpg">
-    <meta property="og:title" content="Devtools Console, from Novice to Ninja — Adnane Belmadiaf's Blog - Front-end Developer">
+    <meta property="og:title" content="How to Integrate Slack with Launchpad — Adnane Belmadiaf's Blog - Front-end Developer">
     <meta property="og:site_name" content="Adnane Belmadiaf's Blog - Front-end Developer">
     <meta property="og:type" content="article">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@AdnaneBelmadiaf">
     <meta property="twitter:image" content="http://daker.me/assets/images/pp_sketch.jpg">
-    <meta property="twitter:title" content="Devtools Console, from Novice to Ninja — Adnane Belmadiaf's Blog - Front-end Developer">
-    <meta property="twitter:url" content="http://daker.me/2013/12/devtools-console-from-novice-to-ninja.html">
+    <meta property="twitter:title" content="How to Integrate Slack with Launchpad — Adnane Belmadiaf's Blog - Front-end Developer">
+    <meta property="twitter:url" content="http://daker.me/2016/01/how-to-integrate-slack-with-launchpad.html">
     <meta name="twitter:creator" content="@AdnaneBelmadiaf">
-    <meta property="og:description" content="The JavaScript console is a powerful tool that allows developers debug their code using functions provided by the Console API and a shell prompt where they can enter commands and interact with the document object.">
-    <meta name="twitter:description" content="The JavaScript console is a powerful tool that allows developers debug their code using functions provided by the Console API and a shell prompt where they can enter commands and interact with the document object.">
-    <link rel="prev" title="Adding UserMetrics to your app on Ubuntu Touch" href="http://daker.me/2013/11/adding-usermetrics-to-your-app-on-ubuntu-touch.html" />
-    <link rel="next" title="Chrome’s requestAutocomplete(), for a Better Payment on the Web & Mobile" href="http://daker.me/2014/01/chrome-requestautocomplete-better-payment-web-mobile.html" />
+    <meta property="og:description" content="Slack is a great platform for team communication, it is a collection of chat rooms, both public and private. It helps confine all your team communications to one place. Slack also provides an API to let you interacte with it, so i have to decided to write a simple app using Flask to integrate Slack with Launchpad using its new webhooks feature.">
+    <meta name="twitter:description" content="Slack is a great platform for team communication, it is a collection of chat rooms, both public and private. It helps confine all your team communications to one place. Slack also provides an API to let you interacte with it, so i have to decided to write a simple app using Flask to integrate Slack with Launchpad using its new webhooks feature.">
+    <link rel="prev" title="Migrating emails between IMAP servers with Imapsync" href="http://daker.me/2015/09/migrating-emails-between-imap-servers-with-imapsync.html" />
+    
     <meta property="article:author" content="https://www.facebook.com/AdnaneBelmadiaf" />
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-precomposed-144.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-precomposed-114.png">
@@ -86,7 +86,7 @@
             
 <div class="post-published-date"> <strong>Published</strong>
     <p>
-        <time datetime="2013-12-21 23:45:00+01:00" class="post-date">Dec 21, 2013 at 23:45</time>
+        <time datetime="2016-01-26 22:45:00+01:00" class="post-date">Jan 26, 2016 at 22:45</time>
     </p>
 </div>
 
@@ -94,9 +94,7 @@
     <strong>Tags</strong>
     <p>
         
-        <a href="/tags/console/" itemprop="keywords">#console</a>, 
-        
-        <a href="/tags/javascript/" itemprop="keywords">#javascript</a>, 
+        <a href="/tags/launchpad/" itemprop="keywords">#launchpad</a>, 
         
         <a href="/tags/ubuntuplanet/" itemprop="keywords">#ubuntuplanet</a>
         
@@ -110,139 +108,51 @@
             
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header">
-        <h2 itemprop="name headline" class="post-title">Devtools Console, from Novice to Ninja</h2>
+        <h2 itemprop="name headline" class="post-title">How to Integrate Slack with Launchpad</h2>
     </header>
     <div class="post-social">
         <div class="post-social-button">
-            <fb:like href="http://daker.me/2013/12/devtools-console-from-novice-to-ninja.html" send="false" show_faces="false"  layout="button_count" width="92" ></fb:like>
+            <fb:like href="http://daker.me/2016/01/how-to-integrate-slack-with-launchpad.html" send="false" show_faces="false"  layout="button_count" width="92" ></fb:like>
         </div>
         <div class="post-social-button">
-            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://daker.me/2013/12/devtools-console-from-novice-to-ninja.html" data-count="horizontal" data-text="Devtools Console, from Novice to Ninja" data-via="AdnaneBelmadiaf" data-related="AdnaneBelmadiaf"></a>
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://daker.me/2016/01/how-to-integrate-slack-with-launchpad.html" data-count="horizontal" data-text="How to Integrate Slack with Launchpad" data-via="AdnaneBelmadiaf" data-related="AdnaneBelmadiaf"></a>
         </div>
         <div class="post-social-button">
-        <a class="FlattrButton" style="display:none;" href="http://daker.me/2013/12/devtools-console-from-novice-to-ninja.html" title="Devtools Console, from Novice to Ninja" data-flattr-uid="daker" data-flattr-button="compact" data-flattr-tags="console, javascript, ubuntuplanet" data-flattr-category="text" data-flattr-lang="en_US">The JavaScript console is a powerful tool that allows developers debug their code using functions provided by the Console API and a shell prompt where they can enter commands and interact with the document object.</a>
+        <a class="FlattrButton" style="display:none;" href="http://daker.me/2016/01/how-to-integrate-slack-with-launchpad.html" title="How to Integrate Slack with Launchpad" data-flattr-uid="daker" data-flattr-button="compact" data-flattr-tags="launchpad, ubuntuplanet" data-flattr-category="text" data-flattr-lang="en_US">Slack is a great platform for team communication, it is a collection of chat rooms, both public and private. It helps confine all your team communications to one place. Slack also provides an API to let you interacte with it, so i have to decided to write a simple app using Flask to integrate Slack with Launchpad using its new webhooks feature.</a>
         </div>
         <div class="post-social-button">
-            <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="horizontal" data-url="http://daker.me/2013/12/devtools-console-from-novice-to-ninja.html" data-via="AdnaneBelmadiaf" data-picture="http://daker.me/assets/images/pp_sketch.jpg"></a>
+            <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="horizontal" data-url="http://daker.me/2016/01/how-to-integrate-slack-with-launchpad.html" data-via="AdnaneBelmadiaf" data-picture="http://daker.me/assets/images/pp_sketch.jpg"></a>
         </div>
 
         <div class="post-social-button">
-            <div class="g-plusone" data-size="medium" data-href="http://daker.me/2013/12/devtools-console-from-novice-to-ninja.html"></div>
+            <div class="g-plusone" data-size="medium" data-href="http://daker.me/2016/01/how-to-integrate-slack-with-launchpad.html"></div>
         </div>
     </div>
     <div class="post-content">
-        <div class="post-field body" itemprop="articleBody"><p>The <a href="http://daker.me/2013/06/5-html5-javascript-apis-to-keep-an-eye-on.html">JavaScript</a> console is a powerful tool that allows developers debug their code using functions provided by the Console API and a shell prompt where they can enter commands and interact with the document object.</p>
+        <div class="post-field body" itemprop="articleBody"><p>Slack is a great platform for team communication, it is a collection of chat rooms, both public and private. It helps confine all your team communications to one place. Slack also provides an API to let you interacte with it, so i have to decided to write a simple app using Flask to integrate Slack with Launchpad using its new webhooks feature.</p>
 
-<p><img src="/assets/posts/jsconsole/console.png" alt="JavaScript Console"></p>
-<h2>Filters</h2>
-<p>There are different buttons allowing you to filter the display of messages logged to the console:</p>
+<p><img src="/assets/posts/slack/lp_slack.png" alt="Launchpad &amp; Slack logos"></p>
+<h2>Deploying to Heroku</h2>
+<p>You can check the full steps in the <a href="https://github.com/daker/launchpad-slack/blob/master/README.md">README</a> file</p>
+<pre><code data-language="sh">$ git clone git@github.com:daker/launchpad-slack.git
+$ cd launchpad-slack
+$ heroku create
+$ git push heroku master
+$ heroku open
+</code></pre>
+<p>Once installed and everything is configured, things will start working like a charm :</p>
+
+<p><img src="/assets/posts/slack/mr.png" alt="Slack chat"><br>
+<img src="/assets/posts/slack/bug.png" alt="Slack Slash command"></p>
+<h2>Contributing</h2>
+<p>Of course of you can contribute fixes and improvements, how to do it ? easy :</p>
 
 <ul>
-<li>All — Shows all console output.</li>
-<li>Errors — Only show output from console.error()</li>
-<li>Warnings — Only show output from console.warn()</li>
-<li>Logs — Only show output from console.log(), console.info() and console.debug().</li>
-<li>Debug — Only show output from console.timeEnd() and other console output.</li>
-</ul>
-
-<p><img src="/assets/posts/jsconsole/filters.png" alt="Filters"></p>
-<h2>Errors and warnings</h2>
-<ul>
-<li>console.info : Writes a message to the console with the visual &quot;info&quot; icon and color coding and a hyperlink to the line where it was called.</li>
-<li>console.warn : Writes a message to the console with the visual &quot;warning&quot; icon and color coding and a hyperlink to the line where it was called.</li>
-<li>console.debug : Writes a message to the console, including a hyperlink to the line where it was called.</li>
-<li>console.error : Writes a message to the console with the visual &quot;error&quot; icon and color coding and a hyperlink to the line where it was called.</li>
-</ul>
-
-<p><img src="/assets/posts/jsconsole/logging.png" alt="Logging"></p>
-<h2>console.dir[xml]</h2>
-<p><code>console.dir(object)</code> prints an interactive listing of all properties of the object, while <code>console.dirxml(node)</code> prints the XML source tree of an element.</p>
-
-<p><img src="/assets/posts/jsconsole/dir.png" alt="JavaScript Console"></p>
-<h2>Assertions</h2>
-<p>Tests that an expression is true using <code>console.assert</code>. If not, it will write a message to the console and throw an exception.</p>
-<pre><code data-language="sh">var x=0;
-console.assert((x == 1), &#34;assert message: x != 1&#34;);
-</code></pre><h2>Grouping output</h2>
-<p><code>console.group</code> allows you to group the message or log in Console tab. If you have some many logs in your code, you can probably divide your log into small group or subgroup</p>
-<pre><code data-language="js">var user = &#34;jsmith&#34;, authenticated = false;
-console.group(&#34;Authentication phase&#34;);
-console.log(&#34;Authenticating user &#39;%s&#39;&#34;, user);
-// authentication code here...
-if (!authenticated) {
-    console.log(&#34;User &#39;%s&#39; not authenticated.&#34;, user)
-}
-console.groupEnd();
-</code></pre>
-<p>You can also do nested grouping :</p>
-<pre><code data-language="js">var user = &#34;jsmith&#34;, authenticated = true, authorized = true;
-// Top-level group
-console.group(&#34;Authenticating user &#39;%s&#39;&#34;, user);
-if (authenticated) {
-    console.log(&#34;User &#39;%s&#39; was authenticated&#34;, user);
-    // Start nested group
-    console.group(&#34;Authorizing user &#39;%s&#39;&#34;, user);
-    if (authorized) {
-        console.log(&#34;User &#39;%s&#39; was authorized.&#34;, user);
-    }
-    // End nested group
-    console.groupEnd();
-}
-// End top-level group
-console.groupEnd();
-console.log(&#34;A group-less log trace.&#34;);
-</code></pre>
-<p><img src="/assets/posts/jsconsole/nested.png" alt="Nested Grouping"></p>
-<h2>Logging Array Data</h2>
-<p><code>console.table()</code> is a very handy fonction to display Array object</p>
-<pre><code data-language="js">var langs = [
-    { name: &#34;JavaScript&#34;, extension: &#34;.js&#34; },
-    { name: &#34;HTML&#34;, extension: &#34;.html&#34; },
-    { name: &#34;CoffeeScript&#34;, extension: &#34;.coffee&#34; },
-    { name: &#34;SASS&#34;, extension: &#34;.sass&#34; }
-];
-
-console.table(langs);
-</code></pre>
-<p><img src="/assets/posts/jsconsole/table.png" alt="JavaScript Console"></p>
-<h2>Measuring Execution time</h2>
-<p>To mesure how long something it takes to execute a set of instructions :</p>
-<pre><code data-language="js">var i, t = &#34;&#34;;
-
-// Start
-console.time(&#34;OPNAME&#34;);
-
-for (i = 1; i &lt;= 100; i++)
-    t += i;
-
-// Stop
-console.timeEnd(&#34;OPNAME&#34;);
-</code></pre><h2>Tracing</h2>
-<p><code>console.trace()</code> prints the stacktrace of JavaScript execution at the point where it was called.</p>
-<pre><code data-language="js">function F(v) {
-    return K(v + 1);
-}
-
-function K(v) {
-    return Y(v + 2);
-}
-
-function Y(v) {
-    console.trace();
-};
-
-F(5);
-</code></pre>
-<p><img src="/assets/posts/jsconsole/trace.png" alt="Console Trace"></p>
-<h2>Shortcuts</h2>
-<ul>
-<li><code>Ctrl + Shift + J</code> : Open the Chrome/ium Console</li>
-<li><code>Ctrl+l</code> : Clear the console</li>
-</ul>
-<h2>References</h2>
-<ul>
-<li><a href="http://getfirebug.com/wiki/index.php/Console_Panel">Firebug Wiki</a></li>
-<li><a href="https://developers.google.com/chrome-developer-tools/docs/javascript-debugging#console-assert">Chrome DevTools documentation</a></li>
+<li>  Fork it</li>
+<li>  Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>  Commit your changes (<code>git commit -am &#39;Add some feature&#39;</code>)</li>
+<li>  Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>  Create new Pull Request</li>
 </ul>
 </div>
     </div>
@@ -261,17 +171,11 @@ F(5);
     <div class="prev-next">
         
         <div class="prev-post">
-            <a href="/2013/11/adding-usermetrics-to-your-app-on-ubuntu-touch.html" title="Adding UserMetrics to your app on Ubuntu Touch" class="title">
-                <span>Adding UserMetrics to your app on Ubuntu Touch</span>
+            <a href="/2015/09/migrating-emails-between-imap-servers-with-imapsync.html" title="Migrating emails between IMAP servers with Imapsync" class="title">
+                <span>Migrating emails between IMAP servers with Imapsync</span>
             </a>
         </div>
         
-        
-        <div class="next-post">
-            <a href="/2014/01/chrome-requestautocomplete-better-payment-web-mobile.html" title="Chrome’s requestAutocomplete(), for a Better Payment on the Web & Mobile" class="title">
-                <span>Chrome’s requestAutocomplete(), for a Better Payment on the Web & Mobile</span>
-            </a>
-        </div>
         
     </div>
     
@@ -280,7 +184,7 @@ F(5);
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname = 'daker-blog';
-        var disqus_title = 'Devtools Console, from Novice to Ninja';
+        var disqus_title = 'How to Integrate Slack with Launchpad';
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

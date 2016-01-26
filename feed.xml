@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://daker.me/" />
         <link rel="self" href="http://daker.me/feed.xml" type="application/atom+xml" />
         <id>http://daker.me/</id>
-        <updated>2015-09-09T21:37:05Z</updated>
+        <updated>2016-01-26T23:34:30Z</updated>
         
         <author>
             <name>Adnane Belmadiaf</name>
@@ -14,6 +14,41 @@
             <uri>http://daker.me/</uri>
         </author>
         
+        
+            <entry>
+                <title>How to Integrate Slack with Launchpad</title>
+                <link rel="alternate" href="http://daker.me/2016/01/how-to-integrate-slack-with-launchpad.html" type="text/html" />
+                <id>http://daker.me/2016/01/how-to-integrate-slack-with-launchpad.html</id>
+                <updated>2016-01-26T22:45:00Z</updated>
+                
+                <summary type="html">Slack is a great platform for team communication, it is a collection of chat rooms, both public and private. It helps confine all your team communications to one place. Slack also provides an API to let you interacte with it, so i have to decided to write a simple app using Flask to integrate Slack with Launchpad using its new webhooks feature.</summary>
+                <content type="html">&lt;p&gt;Slack is a great platform for team communication, it is a collection of chat rooms, both public and private. It helps confine all your team communications to one place. Slack also provides an API to let you interacte with it, so i have to decided to write a simple app using Flask to integrate Slack with Launchpad using its new webhooks feature.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/slack/lp_slack.png&#34; alt=&#34;Launchpad &amp;amp; Slack logos&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Deploying to Heroku&lt;/h2&gt;
+&lt;p&gt;You can check the full steps in the &lt;a href=&#34;https://github.com/daker/launchpad-slack/blob/master/README.md&#34;&gt;README&lt;/a&gt; file&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language=&#34;sh&#34;&gt;$ git clone git@github.com:daker/launchpad-slack.git
+$ cd launchpad-slack
+$ heroku create
+$ git push heroku master
+$ heroku open
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once installed and everything is configured, things will start working like a charm :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://daker.me/assets/posts/slack/mr.png&#34; alt=&#34;Slack chat&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;http://daker.me/assets/posts/slack/bug.png&#34; alt=&#34;Slack Slash command&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Contributing&lt;/h2&gt;
+&lt;p&gt;Of course of you can contribute fixes and improvements, how to do it ? easy :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  Fork it&lt;/li&gt;
+&lt;li&gt;  Create your feature branch (&lt;code&gt;git checkout -b my-new-feature&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;  Commit your changes (&lt;code&gt;git commit -am &amp;#39;Add some feature&amp;#39;&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;  Push to the branch (&lt;code&gt;git push origin my-new-feature&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;  Create new Pull Request&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+            </entry>
         
             <entry>
                 <title>Migrating emails between IMAP servers with Imapsync</title>
@@ -40,7 +75,7 @@ $ sudo make install
 &lt;p&gt;and now let&amp;#39;s start the migration&lt;/p&gt;
 &lt;pre&gt;&lt;code data-language=&#34;shell&#34;&gt;$ imapsync --host1 $HOST1 --user1 $EMAIL --password1 &amp;#39;&amp;#39; --tls1 -port1 $PORT1 -authmech1 PLAIN --host2 $HOST2 --user2 $EMAIL --password2 &amp;#39;&amp;#39; --tls2 -port2 $PORT2 --reconnectretry1 1 --reconnectretry2 1 --useheader &amp;#39;Message-Id&amp;#39; --skipsize
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Migrating accounts can take longer depending on thir size.&lt;/p&gt;
+&lt;p&gt;Migrating accounts can take longer depending on their size.&lt;/p&gt;
 </content>
             </entry>
         
