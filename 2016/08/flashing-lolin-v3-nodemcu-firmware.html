@@ -25,23 +25,23 @@
     <link rel="stylesheet" href="/assets/css/app.min.css" type="text/css">
     <link rel="stylesheet" href="/assets/css/mobile.min.css" type="text/css">
     <link rel="stylesheet" href="/assets/css/print.min.css" type="text/css" media="print" />
-    <title>How to Integrate Slack with Launchpad — Adnane Belmadiaf's Blog - Front-end Developer</title>
-    <meta name="description" content="Slack is a great platform for team communication, it is a collection of chat rooms, both public and private. It helps confine all your team communications to one place. Slack also provides an API to let you interacte with it, so i have to decided to write a simple app using Flask to integrate Slack with Launchpad using its new webhooks feature.">
-    <meta name="keywords" content="launchpad, ubuntuplanet">
+    <title>Flashing LOLin V3 NodeMCU firmware — Adnane Belmadiaf's Blog - Front-end Developer</title>
+    <meta name="description" content="A few months ago, i did bought a chinese version of NodeMCU named LOLin V3, it's not version of 3 of NodeMCU, it's using CH340G chip which is the TTL to USB converter made by a chinese manufacture instead of the FTDI. After using for few times, it's stopped working.">
+    <meta name="keywords" content="iot">
     <meta property="og:image" content="http://daker.me/assets/images/pp_sketch.jpg">
-    <meta property="og:title" content="How to Integrate Slack with Launchpad — Adnane Belmadiaf's Blog - Front-end Developer">
+    <meta property="og:title" content="Flashing LOLin V3 NodeMCU firmware — Adnane Belmadiaf's Blog - Front-end Developer">
     <meta property="og:site_name" content="Adnane Belmadiaf's Blog - Front-end Developer">
     <meta property="og:type" content="article">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@AdnaneBelmadiaf">
     <meta property="twitter:image" content="http://daker.me/assets/images/pp_sketch.jpg">
-    <meta property="twitter:title" content="How to Integrate Slack with Launchpad — Adnane Belmadiaf's Blog - Front-end Developer">
-    <meta property="twitter:url" content="http://daker.me/2016/01/how-to-integrate-slack-with-launchpad.html">
+    <meta property="twitter:title" content="Flashing LOLin V3 NodeMCU firmware — Adnane Belmadiaf's Blog - Front-end Developer">
+    <meta property="twitter:url" content="http://daker.me/2016/08/flashing-lolin-v3-nodemcu-firmware.html">
     <meta name="twitter:creator" content="@AdnaneBelmadiaf">
-    <meta property="og:description" content="Slack is a great platform for team communication, it is a collection of chat rooms, both public and private. It helps confine all your team communications to one place. Slack also provides an API to let you interacte with it, so i have to decided to write a simple app using Flask to integrate Slack with Launchpad using its new webhooks feature.">
-    <meta name="twitter:description" content="Slack is a great platform for team communication, it is a collection of chat rooms, both public and private. It helps confine all your team communications to one place. Slack also provides an API to let you interacte with it, so i have to decided to write a simple app using Flask to integrate Slack with Launchpad using its new webhooks feature.">
-    <link rel="prev" title="Migrating emails between IMAP servers with Imapsync" href="http://daker.me/2015/09/migrating-emails-between-imap-servers-with-imapsync.html" />
-    <link rel="next" title="Flashing LOLin V3 NodeMCU firmware" href="http://daker.me/2016/08/flashing-lolin-v3-nodemcu-firmware.html" />
+    <meta property="og:description" content="A few months ago, i did bought a chinese version of NodeMCU named LOLin V3, it's not version of 3 of NodeMCU, it's using CH340G chip which is the TTL to USB converter made by a chinese manufacture instead of the FTDI. After using for few times, it's stopped working.">
+    <meta name="twitter:description" content="A few months ago, i did bought a chinese version of NodeMCU named LOLin V3, it's not version of 3 of NodeMCU, it's using CH340G chip which is the TTL to USB converter made by a chinese manufacture instead of the FTDI. After using for few times, it's stopped working.">
+    <link rel="prev" title="How to Integrate Slack with Launchpad" href="http://daker.me/2016/01/how-to-integrate-slack-with-launchpad.html" />
+    
     <meta property="article:author" content="https://www.facebook.com/AdnaneBelmadiaf" />
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-precomposed-144.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-precomposed-114.png">
@@ -86,7 +86,7 @@
             
 <div class="post-published-date"> <strong>Published</strong>
     <p>
-        <time datetime="2016-01-26 22:45:00+01:00" class="post-date">Jan 26, 2016 at 22:45</time>
+        <time datetime="2016-08-23 22:45:00+01:00" class="post-date">Aug 23, 2016 at 22:45</time>
     </p>
 </div>
 
@@ -94,9 +94,7 @@
     <strong>Tags</strong>
     <p>
         
-        <a href="/tags/launchpad/" itemprop="keywords">#launchpad</a>, 
-        
-        <a href="/tags/ubuntuplanet/" itemprop="keywords">#ubuntuplanet</a>
+        <a href="/tags/iot/" itemprop="keywords">#iot</a>
         
     </p>
 </div>
@@ -108,52 +106,51 @@
             
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header">
-        <h2 itemprop="name headline" class="post-title">How to Integrate Slack with Launchpad</h2>
+        <h2 itemprop="name headline" class="post-title">Flashing LOLin V3 NodeMCU firmware</h2>
     </header>
     <div class="post-social">
         <div class="post-social-button">
-            <fb:like href="http://daker.me/2016/01/how-to-integrate-slack-with-launchpad.html" send="false" show_faces="false"  layout="button_count" width="92" ></fb:like>
+            <fb:like href="http://daker.me/2016/08/flashing-lolin-v3-nodemcu-firmware.html" send="false" show_faces="false"  layout="button_count" width="92" ></fb:like>
         </div>
         <div class="post-social-button">
-            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://daker.me/2016/01/how-to-integrate-slack-with-launchpad.html" data-count="horizontal" data-text="How to Integrate Slack with Launchpad" data-via="AdnaneBelmadiaf" data-related="AdnaneBelmadiaf"></a>
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://daker.me/2016/08/flashing-lolin-v3-nodemcu-firmware.html" data-count="horizontal" data-text="Flashing LOLin V3 NodeMCU firmware" data-via="AdnaneBelmadiaf" data-related="AdnaneBelmadiaf"></a>
         </div>
         <div class="post-social-button">
-        <a class="FlattrButton" style="display:none;" href="http://daker.me/2016/01/how-to-integrate-slack-with-launchpad.html" title="How to Integrate Slack with Launchpad" data-flattr-uid="daker" data-flattr-button="compact" data-flattr-tags="launchpad, ubuntuplanet" data-flattr-category="text" data-flattr-lang="en_US">Slack is a great platform for team communication, it is a collection of chat rooms, both public and private. It helps confine all your team communications to one place. Slack also provides an API to let you interacte with it, so i have to decided to write a simple app using Flask to integrate Slack with Launchpad using its new webhooks feature.</a>
+        <a class="FlattrButton" style="display:none;" href="http://daker.me/2016/08/flashing-lolin-v3-nodemcu-firmware.html" title="Flashing LOLin V3 NodeMCU firmware" data-flattr-uid="daker" data-flattr-button="compact" data-flattr-tags="iot" data-flattr-category="text" data-flattr-lang="en_US">A few months ago, i did bought a chinese version of NodeMCU named LOLin V3, it's not version of 3 of NodeMCU, it's using CH340G chip which is the TTL to USB converter made by a chinese manufacture instead of the FTDI. After using for few times, it's stopped working.</a>
         </div>
         <div class="post-social-button">
-            <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="horizontal" data-url="http://daker.me/2016/01/how-to-integrate-slack-with-launchpad.html" data-via="AdnaneBelmadiaf" data-picture="http://daker.me/assets/images/pp_sketch.jpg"></a>
+            <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="horizontal" data-url="http://daker.me/2016/08/flashing-lolin-v3-nodemcu-firmware.html" data-via="AdnaneBelmadiaf" data-picture="http://daker.me/assets/images/pp_sketch.jpg"></a>
         </div>
 
         <div class="post-social-button">
-            <div class="g-plusone" data-size="medium" data-href="http://daker.me/2016/01/how-to-integrate-slack-with-launchpad.html"></div>
+            <div class="g-plusone" data-size="medium" data-href="http://daker.me/2016/08/flashing-lolin-v3-nodemcu-firmware.html"></div>
         </div>
     </div>
     <div class="post-content">
-        <div class="post-field body" itemprop="articleBody"><p>Slack is a great platform for team communication, it is a collection of chat rooms, both public and private. It helps confine all your team communications to one place. Slack also provides an API to let you interacte with it, so i have to decided to write a simple app using Flask to integrate Slack with Launchpad using its new webhooks feature.</p>
+        <div class="post-field body" itemprop="articleBody"><p>A few months ago, i did bought a chinese version of NodeMCU named LOLin V3, it&#39;s not version of 3 of NodeMCU, it&#39;s using CH340G chip which is the TTL to USB converter made by a chinese manufacture instead of the FTDI. After using for few times, it&#39;s stopped working.</p>
 
-<p><img src="/assets/posts/slack/lp_slack.png" alt="Launchpad &amp; Slack logos"></p>
-<h2>Deploying to Heroku</h2>
-<p>You can check the full steps in the <a href="https://github.com/daker/launchpad-slack/blob/master/README.md">README</a> file</p>
-<pre><code data-language="sh">$ git clone git@github.com:daker/launchpad-slack.git
-$ cd launchpad-slack
-$ heroku create
-$ git push heroku master
-$ heroku open
+<p><img src="/assets/posts/lolin/board.jpg" alt="LOLin V3"></p>
+<h2>Install the esptool</h2>
+<p>We need to download and install the <code>esptool</code> that will help us the new flash the new firmware</p>
+<pre><code data-language="sh">$ git clone https://github.com/themadinventor/esptool.git
+$ cd esptool
+$ python setup.py install
+</code></pre><h2>Downloading the firmware</h2>
+<p>You can grab the latest .bin version of the firmware from the <a href="https://github.com/nodemcu/nodemcu-firmware/releases">github</a> repo, or use <a href="https://nodemcu-build.com">nodemcu-build</a> to build a custom firmware.</p>
+<h2>Flashing the firmware</h2>
+<p>First, you need to know is the USB port where the board is plugged, open the commandline, then use the esptool to flash the new firmware :</p>
+<pre><code data-language="sh">$ python esptool.py --port /dev/ttyUSB0 --baud 9600 write_flash --flash_mode qio --flash_size 32m --flash_freq 40m 0x00000 nodemcu_float_0.9.6-dev_20150704.bin
+esptool.py v1.0.2-dev
+Connecting...
+Running Cesanta flasher stub...
+Flash params set to 0x0040
+Writing 450560 @ 0x0... 450560 (100 %)
+Wrote 450560 bytes at 0x0 in 19.5 seconds (184.5 kbit/s)...
+Leaving...
 </code></pre>
-<p>Once installed and everything is configured, things will start working like a charm :</p>
+<p>Once the flashing is done, just open <code>ESPlorer</code>, set the USB port and the baud speed then hit <code>Open</code> :</p>
 
-<p><img src="/assets/posts/slack/mr.png" alt="Slack chat"><br>
-<img src="/assets/posts/slack/bug.png" alt="Slack Slash command"></p>
-<h2>Contributing</h2>
-<p>Of course of you can contribute fixes and improvements, how to do it ? easy :</p>
-
-<ul>
-<li>  Fork it</li>
-<li>  Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
-<li>  Commit your changes (<code>git commit -am &#39;Add some feature&#39;</code>)</li>
-<li>  Push to the branch (<code>git push origin my-new-feature</code>)</li>
-<li>  Create new Pull Request</li>
-</ul>
+<p><img src="/assets/posts/lolin/esplorer.jpg" alt="ESPlorer"></p>
 </div>
     </div>
 
@@ -171,17 +168,11 @@ $ heroku open
     <div class="prev-next">
         
         <div class="prev-post">
-            <a href="/2015/09/migrating-emails-between-imap-servers-with-imapsync.html" title="Migrating emails between IMAP servers with Imapsync" class="title">
-                <span>Migrating emails between IMAP servers with Imapsync</span>
+            <a href="/2016/01/how-to-integrate-slack-with-launchpad.html" title="How to Integrate Slack with Launchpad" class="title">
+                <span>How to Integrate Slack with Launchpad</span>
             </a>
         </div>
         
-        
-        <div class="next-post">
-            <a href="/2016/08/flashing-lolin-v3-nodemcu-firmware.html" title="Flashing LOLin V3 NodeMCU firmware" class="title">
-                <span>Flashing LOLin V3 NodeMCU firmware</span>
-            </a>
-        </div>
         
     </div>
     
@@ -190,7 +181,7 @@ $ heroku open
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname = 'daker-blog';
-        var disqus_title = 'How to Integrate Slack with Launchpad';
+        var disqus_title = 'Flashing LOLin V3 NodeMCU firmware';
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
