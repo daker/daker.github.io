@@ -25,23 +25,23 @@
     <link rel="stylesheet" href="/assets/css/app.min.css" type="text/css">
     <link rel="stylesheet" href="/assets/css/mobile.min.css" type="text/css">
     <link rel="stylesheet" href="/assets/css/print.min.css" type="text/css" media="print" />
-    <title>Ubuntu Touch User-Agent — Adnane Belmadiaf's Blog - Front-end Developer</title>
-    <meta name="description" content="With the launch of Ubuntu Touch v1.0, the OS now ships its own QtWebKit based browser which will be replaced by Oxide a Chromium-powered webview by 14.04. There has been a lot of discussions arround the user-agent because many large sites(Facebook, Google, Twitter, Yahoo etc..) are sniffing the UA(for iPhone or Android tokens) to serve the mobile version of the site.">
-    <meta name="keywords" content="ubuntuplanet, utouchdev">
+    <title>Fix Morocco borders on Google Maps (2017 version) — Adnane Belmadiaf's Blog - Front-end Developer</title>
+    <meta name="description" content="Since the first solution helped many moroccan developers, i am going to update it to use some new ES6 features like Async and Arrows.">
+    <meta name="keywords" content="gmap">
     <meta property="og:image" content="http://daker.me/assets/images/pp_sketch.jpg">
-    <meta property="og:title" content="Ubuntu Touch User-Agent — Adnane Belmadiaf's Blog - Front-end Developer">
+    <meta property="og:title" content="Fix Morocco borders on Google Maps (2017 version) — Adnane Belmadiaf's Blog - Front-end Developer">
     <meta property="og:site_name" content="Adnane Belmadiaf's Blog - Front-end Developer">
     <meta property="og:type" content="article">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@AdnaneBelmadiaf">
     <meta property="twitter:image" content="http://daker.me/assets/images/pp_sketch.jpg">
-    <meta property="twitter:title" content="Ubuntu Touch User-Agent — Adnane Belmadiaf's Blog - Front-end Developer">
-    <meta property="twitter:url" content="http://daker.me/2013/11/ubuntu-touch-user-agent.html">
+    <meta property="twitter:title" content="Fix Morocco borders on Google Maps (2017 version) — Adnane Belmadiaf's Blog - Front-end Developer">
+    <meta property="twitter:url" content="http://daker.me/2017/08/fix-morocco-borders-on-google-maps-2017-version.html">
     <meta name="twitter:creator" content="@AdnaneBelmadiaf">
-    <meta property="og:description" content="With the launch of Ubuntu Touch v1.0, the OS now ships its own QtWebKit based browser which will be replaced by Oxide a Chromium-powered webview by 14.04. There has been a lot of discussions arround the user-agent because many large sites(Facebook, Google, Twitter, Yahoo etc..) are sniffing the UA(for iPhone or Android tokens) to serve the mobile version of the site.">
-    <meta name="twitter:description" content="With the launch of Ubuntu Touch v1.0, the OS now ships its own QtWebKit based browser which will be replaced by Oxide a Chromium-powered webview by 14.04. There has been a lot of discussions arround the user-agent because many large sites(Facebook, Google, Twitter, Yahoo etc..) are sniffing the UA(for iPhone or Android tokens) to serve the mobile version of the site.">
-    <link rel="prev" title="Package your Webapp for Ubuntu Touch" href="http://daker.me/2013/10/package-your-webapp-for-ubuntu-touch.html" />
-    <link rel="next" title="Web Apps Remote Debugging on Ubuntu Touch" href="http://daker.me/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html" />
+    <meta property="og:description" content="Since the first solution helped many moroccan developers, i am going to update it to use some new ES6 features like Async and Arrows.">
+    <meta name="twitter:description" content="Since the first solution helped many moroccan developers, i am going to update it to use some new ES6 features like Async and Arrows.">
+    <link rel="prev" title="Flashing LOLin V3 NodeMCU firmware" href="http://daker.me/2016/08/flashing-lolin-v3-nodemcu-firmware.html" />
+    
     <meta property="article:author" content="https://www.facebook.com/AdnaneBelmadiaf" />
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-precomposed-144.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-precomposed-114.png">
@@ -86,7 +86,7 @@
             
 <div class="post-published-date"> <strong>Published</strong>
     <p>
-        <time datetime="2013-11-06 19:00:00+01:00" class="post-date">Nov 06, 2013 at 19:00</time>
+        <time datetime="2017-08-10 22:30:00+01:00" class="post-date">Aug 10, 2017 at 22:30</time>
     </p>
 </div>
 
@@ -94,9 +94,7 @@
     <strong>Tags</strong>
     <p>
         
-        <a href="/tags/ubuntuplanet/" itemprop="keywords">#ubuntuplanet</a>, 
-        
-        <a href="/tags/utouchdev/" itemprop="keywords">#utouchdev</a>
+        <a href="/tags/gmap/" itemprop="keywords">#gmap</a>
         
     </p>
 </div>
@@ -108,38 +106,82 @@
             
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header">
-        <h2 itemprop="name headline" class="post-title">Ubuntu Touch User-Agent</h2>
+        <h2 itemprop="name headline" class="post-title">Fix Morocco borders on Google Maps (2017 version)</h2>
     </header>
     <div class="post-social">
         <div class="post-social-button">
-            <fb:like href="http://daker.me/2013/11/ubuntu-touch-user-agent.html" send="false" show_faces="false"  layout="button_count" width="92" ></fb:like>
+            <fb:like href="http://daker.me/2017/08/fix-morocco-borders-on-google-maps-2017-version.html" send="false" show_faces="false"  layout="button_count" width="92" ></fb:like>
         </div>
         <div class="post-social-button">
-            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://daker.me/2013/11/ubuntu-touch-user-agent.html" data-count="horizontal" data-text="Ubuntu Touch User-Agent" data-via="AdnaneBelmadiaf" data-related="AdnaneBelmadiaf"></a>
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://daker.me/2017/08/fix-morocco-borders-on-google-maps-2017-version.html" data-count="horizontal" data-text="Fix Morocco borders on Google Maps (2017 version)" data-via="AdnaneBelmadiaf" data-related="AdnaneBelmadiaf"></a>
         </div>
         <div class="post-social-button">
-            <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="horizontal" data-url="http://daker.me/2013/11/ubuntu-touch-user-agent.html" data-via="AdnaneBelmadiaf" data-picture="http://daker.me/assets/images/pp_sketch.jpg"></a>
+            <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="horizontal" data-url="http://daker.me/2017/08/fix-morocco-borders-on-google-maps-2017-version.html" data-via="AdnaneBelmadiaf" data-picture="http://daker.me/assets/images/pp_sketch.jpg"></a>
         </div>
 
         <div class="post-social-button">
-            <div class="g-plusone" data-size="medium" data-href="http://daker.me/2013/11/ubuntu-touch-user-agent.html"></div>
+            <div class="g-plusone" data-size="medium" data-href="http://daker.me/2017/08/fix-morocco-borders-on-google-maps-2017-version.html"></div>
         </div>
     </div>
     <div class="post-content">
-        <div class="post-field body" itemprop="articleBody"><p>With the launch of <a href="http://www.ubuntu.com/phone/install">Ubuntu Touch</a> v1.0, the OS now ships its own QtWebKit based browser which will be replaced by <a href="https://launchpad.net/oxide">Oxide</a> a Chromium-powered webview by 14.04. There has been a lot of <a href="https://bugs.launchpad.net/webbrowser-app/+bug/1179596">discussions</a> arround the user-agent because many large sites(Facebook, Google, Twitter, Yahoo etc..) are sniffing the UA(for iPhone or Android tokens) to serve the mobile version of the site.</p>
+        <div class="post-field body" itemprop="articleBody"><p>Since the <a href="http://daker.me/2015/01/fix-morocco-borders-on-google-maps.html">first solution</a> helped many moroccan developers, i am going to update it to use some new ES6 features like <code>Async</code> and <code>Arrows</code>.</p>
 
-<p>Adding an Android or iPhone token will lead to unwanted behaviours, like showing ads for the Android app or even trying to open the Google Play app or the Youtube app. The browser now reports it in the following formats, depending on whether the device is a phone or a tablet, with the addition of an <a href="https://bazaar.launchpad.net/%7Ephablet-team/webbrowser-app/trunk/view/head:/src/Ubuntu/Components/Extras/Browser/ua-overrides.js">override mechanism</a> that will override the UA on the fly and the site will serve us a proper mobile content.</p>
-
-<p><img src="/assets/posts/utouch/1.png" alt="Facebook Android Ads"></p>
-<h2>Phone</h2><pre><code data-language="sh">Mozilla/5.0 (Ubuntu; Mobile) WebKit/537.21
-</code></pre><h2>Tablet</h2><pre><code data-language="sh">Mozilla/5.0 (Ubuntu; Tablet) WebKit/537.21
-</code></pre><h2>Pattern</h2><pre><code data-language="sh">Mozilla/5.0 (Ubuntu; $FormFactor) WebKit/$WebKitRev
+<p>The first thing you need to do is create a simple map Google Maps JavaScript API :</p>
+<pre><code data-language="javascript">&lt;script type=&#34;text/javascript&#34;&gt;
+    init = () =&gt; {
+        const mapOptions = {
+            zoom: 5,
+            center: new google.maps.LatLng(29.54619, -7.36133),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        const map = new google.maps.Map(document.getElementById(&#34;map&#34;), mapOptions);
+    };
+&lt;/script&gt;
+&lt;script async defer
+    src=&#34;https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&amp;callback=init&#34;&gt;
+&lt;/script&gt;
+</code></pre><pre><code data-language="html">&lt;div id=&#34;map&#34; style=&#34;width:650px; height:500px;&#34;&gt;&lt;/div&gt;
 </code></pre>
-<p>You can also get it through JavaScript using the <code>navigator.userAgent</code></p>
+<p>As you can see the map is splitted in two. To fix it we need to set <code>administrative.country</code> feature visibility to off, which will remove the borders and the countries, then you need to load custom Geodata from a <code>FusionTablesLayer</code> source and draw the borders again :</p>
+<pre><code data-language="javascript">&lt;script type=&#34;text/javascript&#34;&gt;
+    init = () =&gt; {
+        const mapOptions = {
+            zoom: 5,
+            center: new google.maps.LatLng(29.54619, -7.36133),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        const map = new google.maps.Map(document.getElementById(&#34;map&#34;), mapOptions),
+        mapStyles = [{featureType: &#34;administrative.country&#34;, stylers: [{ visibility: &#34;off&#34; }]}],
+        mapType = new google.maps.StyledMapType(mapStyles , {name: &#34;Maroc&#34;});
+        map.mapTypes.set(&#39;maroc&#39;, mapType );
+        map.setMapTypeId(&#39;maroc&#39;);
+        layer = new google.maps.FusionTablesLayer({
+                query: {
+                    select: &#39;geometry&#39;,
+                    from: &#39;1S4aLkBE5u_WS0WMVSchhBgMLdAARuPEjyW4rs20&#39;,
+                    where: &#34;col1 contains &#39;MAR&#39;&#34;
+                },
+                styles: [{
+                    polylineOptions: {
+                        strokeColor: &#34;#333333&#34;,
+                        strokeWeight: 2
+                    },
+                }],
+                suppressInfoWindows: true,
+        });
+        layer.setMap(map);
+    };
+&lt;/script&gt;
+&lt;script async defer
+    src=&#34;https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&amp;callback=init&#34;&gt;
+&lt;/script&gt;
+</code></pre>
+<p>Note that you will need an <a href="https://developers.google.com/maps/documentation/javascript/get-api-key">API key</a> to use the Google Maps JavaScript API, and finally the div that will hold the map :</p>
+<pre><code data-language="html">&lt;div id=&#34;map&#34; style=&#34;width:650px; height:500px;&#34;&gt;&lt;/div&gt;
+</code></pre>
+<p>And the finale result will look like this</p>
 
-<p><img src="/assets/posts/utouch/2.png" alt="Using the console"></p>
-
-<p>So if you are doing UA sniffing it&#39;s really better to look for &quot;Mobile&quot; rather than looking the OS identifier.</p>
+<p><img src="/assets/posts/morocco.png" alt="Morocco Map"></p>
 </div>
     </div>
 
@@ -157,17 +199,11 @@
     <div class="prev-next">
         
         <div class="prev-post">
-            <a href="/2013/10/package-your-webapp-for-ubuntu-touch.html" title="Package your Webapp for Ubuntu Touch" class="title">
-                <span>Package your Webapp for Ubuntu Touch</span>
+            <a href="/2016/08/flashing-lolin-v3-nodemcu-firmware.html" title="Flashing LOLin V3 NodeMCU firmware" class="title">
+                <span>Flashing LOLin V3 NodeMCU firmware</span>
             </a>
         </div>
         
-        
-        <div class="next-post">
-            <a href="/2013/11/web-apps-remote-debugging-on-ubuntu-touch.html" title="Web Apps Remote Debugging on Ubuntu Touch" class="title">
-                <span>Web Apps Remote Debugging on Ubuntu Touch</span>
-            </a>
-        </div>
         
     </div>
     
@@ -176,7 +212,7 @@
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname = 'daker-blog';
-        var disqus_title = 'Ubuntu Touch User-Agent';
+        var disqus_title = 'Fix Morocco borders on Google Maps (2017 version)';
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
