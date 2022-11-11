@@ -1,0 +1,7 @@
+{
+  "tags": [
+    "posts"
+  ],
+  "permalink": "{{ page|urlize }}",
+  "layout": "layouts/post.njk"
+}

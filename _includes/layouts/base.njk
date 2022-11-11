@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="{{ site.language }}">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#dda448">
+    <title>{{ title or site.title }}</title>
+    <meta name="description" content="{{ description or site.description }}">
+    <style>
+      @font-face {
+        font-family: Lora;
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: local("Lora Bold"),local("Lora-Bold"),url(/assets/css/fonts/lora-v13-latin-700.woff2) format("woff")
+      }
+      @font-face {
+        font-family: Lora;
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: local("Lora"),local("Lora"),url(/assets/css/fonts/lora-v13-latin-regular.woff2) format("woff");
+      }
+    </style>
+    {% if site.environment == 'production' %}
+      {% set css %}
+          {% include "assets/css/styles.css" %}
+          {% include "assets/css/prism-base16-monokai.dark.css" %}
+      {% endset %}
+      <style>
+        {{ css | purifyCss | safe }}
+      </style>
+    {% else %}
+      <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
+      <link rel="stylesheet" href="{{ '/assets/css/prism-base16-monokai.dark.css' | url }}">
+    {% endif %}
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ site.title }}">
+    <link rel="shortcut icon" href="/assets/img/favicon.jpg">
+    
+    <link rel="apple-touch-icon" href="/assets/img/favicon.jpg">
+
+    <link rel="manifest" href="/manifest.json">
+
+    <meta property="og:title" content="{{ title or site.author }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ page_url }}" />
+    <meta property="og:description" content="{{ page_description }}" />
+    <meta property="og:site_name" content="daker.me" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@AdnaneBelmadiaf">
+    <meta name="twitter:description" content="{{ page_description }}">
+    <meta name="twitter:domain" content="daker.me">
+    <meta name="twitter:image" content="https://daker.me/assets/images/favicon-192.jpg">
+    <meta name="twitter:site" content="@AdnaneBelmadiaf">
+    <meta name="twitter:title" content="{{ title or site.author }}">
+  </head>
+  <body itemscope itemtype="http://schema.org/CreativeWork">
+    <header>
+      <div class="container">
+        <a href="{{ '/' | url }}" class="avatar">
+          <img src="/assets/img/avatar.webp" alt="{{ site.title }}" width="145" height="145" />
+        </a>
+
+        <span class="me">{{ site.author }}</span>
+
+        <div class="links">
+          <a href="https://github.com/daker" class="link" title="Github" target="_blank">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+          <a href="https://twitter.com/AdnaneBelmadiaf" class="link" title="Twitter" target="_blank">
+            <svg class="icon" role="img" viewBox="0 0 24 24" height="32" width="32" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg>
+          </a>
+          <a href="/feed.xml" class="link" title="RSS feed" target="_blank">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 26" height="32" width="32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"></path></svg>          </a>
+        </div>
+      </div>
+    </header>
+
+    <main {% if templateClass %}class="{{ templateClass }}"{% endif %} role="main" id="main">
+      <div class="container">
+        {{ content | safe }}
+      </div>
+    </main>
+
+    <footer>
+      <p class="footer__copyright">&copy; {% copyright %} Adnane Belmadiaf.</p>
+      <p class="footer__colophon">This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" title="CC BY 4.0">Creative Commons Attribution 4.0 International</a></p>
+      <p class="footer__colophon">Please ensure any redistribution adheres to the <a href="https://wiki.creativecommons.org/wiki/Best_practices_for_attribution" target="_blank" title="Creative Commons Best Practices for Attribution">Creative Commons Best Practices for Attribution</a>.</p>
+    </footer>
+  </body>
+</html>
