@@ -188,6 +188,8 @@ function purifyCss(content) {
     'prev',
     'next',
     'tag',
+    'light',
+    'dark',
   ]
   svgs.map((svg) => (
     content = content.replace(

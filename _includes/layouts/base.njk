@@ -36,7 +36,7 @@
     {% endif %}
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ site.title }}">
     <link rel="shortcut icon" href="/assets/img/favicon.jpg">
-    
+
     <link rel="apple-touch-icon" href="/assets/img/favicon.jpg">
 
     <link rel="manifest" href="/manifest.json">
@@ -58,6 +58,9 @@
   <body itemscope itemtype="http://schema.org/CreativeWork">
     <header>
       <div class="container">
+        <div class="theme-switcher">
+          <button id="dark-mode-toggle" title="Switch mode"></button>
+        </div>
         <a href="{{ '/' | url }}" class="avatar">
           <img src="/assets/img/avatar.webp" alt="{{ site.title }}" width="145" height="145" />
         </a>
@@ -88,5 +91,32 @@
       <p class="footer__colophon">This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" title="CC BY 4.0">Creative Commons Attribution 4.0 International</a></p>
       <p class="footer__colophon">Please ensure any redistribution adheres to the <a href="https://wiki.creativecommons.org/wiki/Best_practices_for_attribution" target="_blank" title="Creative Commons Best Practices for Attribution">Creative Commons Best Practices for Attribution</a>.</p>
     </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const getPreferredColorScheme = () => {
+          const darkQuery = "(prefers-color-scheme: dark)";
+          const darkMQL = window.matchMedia ? window.matchMedia(darkQuery) : {};
+          if (darkMQL.media === darkQuery && darkMQL.matches) {
+            return "dark";
+          }
+
+          return "default";
+        };
+
+        const colorScheme = localStorage.getItem("color-scheme") || getPreferredColorScheme();
+        document.documentElement.setAttribute("data-color-scheme", colorScheme);
+
+        document.getElementById("dark-mode-toggle").onclick = () => {
+          const colorScheme = document.documentElement.getAttribute(
+            "data-color-scheme"
+          );
+          const newColorScheme = colorScheme === "default" ? "dark" : "default";
+          document.documentElement.setAttribute("data-color-scheme", newColorScheme);
+
+          localStorage.setItem("color-scheme", newColorScheme);
+        };
+      })
+    </script>
   </body>
 </html>

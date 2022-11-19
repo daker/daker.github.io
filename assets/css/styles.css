@@ -8,7 +8,10 @@
   --vb: 1.5em;
   --font-family-text: "Lora", Arial, Tahoma, sans-serif;
   --font-family-headline: "Lora", Arial, Tahoma, sans-serif;
-  --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+  --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+    Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+    Courier, monospace;
 }
 
 /* Theme colors */
@@ -24,20 +27,48 @@
   --text-color-footer: var(--color-onyx);
 }
 
+:root[data-color-scheme="dark"] {
+  --background-color: var(--color-eerieblack);
+  --text-color: #fff;
+  --text-color-link: var(--color-sunray);
+  --text-color-link-hover: var(--color-jonquil);
+  --background-color-footer: #1f1f1f;
+  --border-color-avatar: var(--color-sunray);
+  --text-color-code: #fff;
+  --border-color-footer: #333;
+  --text-color-footer: var(--text-color);
+}
+
+.theme-switcher {
+  color: var(--text-color);
+  float: right;
+}
+
+:root[data-color-scheme="dark"] #dark-mode-toggle {
+  background: transparent url("../img/dark.svg") no-repeat center center;
+}
+
+#dark-mode-toggle {
+  background: transparent url("../img/light.svg") no-repeat center center;
+  border: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: var(--color-eerieblack);
     --text-color: #fff;
     --text-color-link: var(--color-sunray);
     --text-color-link-hover: var(--color-jonquil);
-    --background-color-footer: #1F1F1F;
+    --background-color-footer: #1f1f1f;
     --border-color-avatar: var(--color-sunray);
     --text-color-code: #fff;
     --border-color-footer: #333;
     --text-color-footer: var(--text-color);
   }
 }
-
 
 /* Global stylesheet */
 * {
@@ -63,7 +94,11 @@ body {
 }
 body::before,
 hr {
-  background-image: linear-gradient(to right, var(--color-jonquil), var(--color-fireopal));
+  background-image: linear-gradient(
+    to right,
+    var(--color-jonquil),
+    var(--color-fireopal)
+  );
 }
 hr {
   height: 4px;
@@ -73,7 +108,7 @@ hr {
 }
 @media (min-width: 768px) {
   body {
-      font-size: 120%;
+    font-size: 120%;
   }
 }
 p,
@@ -134,6 +169,7 @@ header .me {
   display: block;
   text-align: center;
   margin-top: 1em;
+  font-size: 1.5em;
   font-weight: 700;
 }
 header .links {
@@ -189,7 +225,7 @@ table th {
   display: block;
 }
 .post-list__link {
-  font-size: 1.5em; 
+  font-size: 1.5em;
 }
 .post-list__item-active .post-list__link {
   font-weight: bold;
@@ -226,7 +262,7 @@ a[href].post-tag:focus {
 
 /* Post */
 .post {
- margin-top: 1em;
+  margin-top: 1em;
 }
 .post .post-title {
   text-align: center;
@@ -236,16 +272,20 @@ a[href].post-tag:focus {
   text-align: center;
 }
 .post-title {
-  background-image: linear-gradient(to right, var(--color-fireopal), var(--color-jonquil));
+  background-image: linear-gradient(
+    to right,
+    var(--color-fireopal),
+    var(--color-jonquil)
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .post img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 /* CollectionNav */
 .collection-nav {
@@ -256,14 +296,18 @@ a[href].post-tag:focus {
   position: relative;
 }
 .collection-nav::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 100%;
   left: 0;
   right: 0;
   height: 4px;
   border-radius: 4px;
-  background-image: linear-gradient(to right, var(--color-fireopal), var(--color-jonquil));
+  background-image: linear-gradient(
+    to right,
+    var(--color-fireopal),
+    var(--color-jonquil)
+  );
 }
 .collection-nav__item {
   max-width: 50%;
