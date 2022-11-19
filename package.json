@@ -6,7 +6,7 @@
     "build": "NODE_ENV=production npx @11ty/eleventy",
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "watch": "npx @11ty/eleventy --watch",
-    "serve": "NODE_ENV=development npx @11ty/eleventy --serve",
+    "dev": "NODE_ENV=development npx @11ty/eleventy --serve",
     "start": "NODE_ENV=development npx @11ty/eleventy --serve",
     "debug": "DEBUG=* npx @11ty/eleventy"
   },
