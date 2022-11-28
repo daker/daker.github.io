@@ -1,4 +1,4 @@
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   code[class*="language-"],
   pre[class*="language-"] {
     font-size: 14px;
@@ -16,7 +16,7 @@
     -ms-hyphens: none;
     hyphens: none;
     background: var(--background-color-footer);
-    color: #f8f8f2;
+    color: var(--text-color);
   }
 
   pre[class*="language-"]::-moz-selection,

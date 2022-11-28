@@ -212,6 +212,11 @@
   </url>
   
   <url>
+    <loc>https://daker.me/tags/html5/</loc>
+    <lastmod>2022-11-28</lastmod>
+  </url>
+  
+  <url>
     <loc>https://daker.me/tags/css3/</loc>
     <lastmod>2022-11-28</lastmod>
   </url>
@@ -227,7 +232,7 @@
   </url>
   
   <url>
-    <loc>https://daker.me/tags/html5/</loc>
+    <loc>https://daker.me/tags/sublimetext/</loc>
     <lastmod>2022-11-28</lastmod>
   </url>
   
@@ -237,7 +242,7 @@
   </url>
   
   <url>
-    <loc>https://daker.me/tags/sublimetext/</loc>
+    <loc>https://daker.me/tags/utouchdev/</loc>
     <lastmod>2022-11-28</lastmod>
   </url>
   
@@ -262,11 +267,6 @@
   </url>
   
   <url>
-    <loc>https://daker.me/tags/utouchdev/</loc>
-    <lastmod>2022-11-28</lastmod>
-  </url>
-  
-  <url>
     <loc>https://daker.me/tags/vagrant/</loc>
     <lastmod>2022-11-28</lastmod>
   </url>
@@ -277,7 +277,7 @@
   </url>
   
   <url>
-    <loc>https://daker.me/tags/console/</loc>
+    <loc>https://daker.me/tags/gmaps/</loc>
     <lastmod>2022-11-28</lastmod>
   </url>
   
@@ -287,12 +287,17 @@
   </url>
   
   <url>
-    <loc>https://daker.me/tags/gmaps/</loc>
+    <loc>https://daker.me/tags/console/</loc>
     <lastmod>2022-11-28</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/iot/</loc>
+    <lastmod>2022-11-28</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daker.me/tags/raspberrypi/</loc>
     <lastmod>2022-11-28</lastmod>
   </url>
   
@@ -307,22 +312,17 @@
   </url>
   
   <url>
-    <loc>https://daker.me/tags/raspberrypi/</loc>
-    <lastmod>2022-11-28</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://daker.me/tags/launchpad/</loc>
-    <lastmod>2022-11-28</lastmod>
-  </url>
-  
-  <url>
     <loc>https://daker.me/tags/css/</loc>
     <lastmod>2022-11-28</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/webkit/</loc>
+    <lastmod>2022-11-28</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daker.me/tags/launchpad/</loc>
     <lastmod>2022-11-28</lastmod>
   </url>
   
@@ -342,12 +342,12 @@
   </url>
   
   <url>
-    <loc>https://daker.me/tags/webcomponents/</loc>
+    <loc>https://daker.me/tags/imapsync/</loc>
     <lastmod>2022-11-28</lastmod>
   </url>
   
   <url>
-    <loc>https://daker.me/tags/imapsync/</loc>
+    <loc>https://daker.me/tags/webcomponents/</loc>
     <lastmod>2022-11-28</lastmod>
   </url>
   
@@ -357,12 +357,12 @@
   </url>
   
   <url>
-    <loc>https://daker.me/tags/lxc/</loc>
+    <loc>https://daker.me/tags/phantomjs/</loc>
     <lastmod>2022-11-28</lastmod>
   </url>
   
   <url>
-    <loc>https://daker.me/tags/phantomjs/</loc>
+    <loc>https://daker.me/tags/lxc/</loc>
     <lastmod>2022-11-28</lastmod>
   </url>
   
