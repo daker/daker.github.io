@@ -4,24 +4,11 @@
 	<subtitle>Adnane Belmadiaf&#39;s blog.</subtitle>
 	<link href="https://daker.me/feed.xml" rel="self"/>
 	<link href="https://daker.me"/>
-	<updated>2024-03-13T12:38:18Z</updated>
+	<updated>2024-03-13T00:00:00Z</updated>
 	<id>https://daker.me/</id>
 	<author>
 		<name>Adnane Belmadiaf</name>
 	</author>
-	
-	<entry>
-		<title>Clearing out the cobwebs</title>
-		<link href="https://daker.me/2024/03/clearing-out-the-cobwebs.html"/>
-		<updated>2024-03-13T12:38:18Z</updated>
-		<id>https://daker.me/2024/03/clearing-out-the-cobwebs.html</id>
-		<content type="html">&lt;p&gt;Wow, it’s been awhile.&lt;/p&gt;
-&lt;p&gt;I didn’t really intend to stop posting for five years now, but that’s always how it goes. Between day-to-day concerns and work, we sometimes get lost.&lt;/p&gt;
-&lt;p&gt;So, I’m getting this post out of the way and can return to posting again. I have made a lot of changes to this blog, the main change is the switch of the SSG engine to &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;11ty&lt;/a&gt; combined with Github pages and Github actions.&lt;/p&gt;
-&lt;p&gt;I added the light and dark mode and removed all the social media crap and analytics.&lt;/p&gt;
-&lt;p&gt;You can find the code on &lt;a href=&quot;https://github.com/daker/daker.github.io&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;
-</content>
-	</entry>
 	
 	<entry>
 		<title>How to Fix Static Files Being Served with the Wrong text/plain Mimetype</title>
@@ -40,6 +27,19 @@
 &lt;p&gt;Let&#39;s check now.&lt;/p&gt;
 &lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;C:&lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;python&lt;br /&gt;Python &lt;span class=&quot;token number&quot;&gt;3.12&lt;/span&gt;.2 &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;tags/v3.12.2:6abddd9, Feb  &lt;span class=&quot;token number&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2024&lt;/span&gt;, &lt;span class=&quot;token number&quot;&gt;21&lt;/span&gt;:26:36&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;MSC v.1937 &lt;span class=&quot;token number&quot;&gt;64&lt;/span&gt; bit &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;AMD64&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; on win32&lt;br /&gt;Type &lt;span class=&quot;token string&quot;&gt;&quot;help&quot;&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;copyright&quot;&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;credits&quot;&lt;/span&gt; or &lt;span class=&quot;token string&quot;&gt;&quot;license&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;more&lt;/span&gt; information.&lt;br /&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;import&lt;/span&gt; mimetypes&lt;br /&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; content_type, encoding &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; mimetypes.guess_type&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;C:\script.js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; print&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;content_type&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br /&gt;application/javascript&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I hope this helps if you encounter this issue :)&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Clearing out the cobwebs</title>
+		<link href="https://daker.me/2022/11/clearing-out-the-cobwebs.html"/>
+		<updated>2022-11-12T00:00:00Z</updated>
+		<id>https://daker.me/2022/11/clearing-out-the-cobwebs.html</id>
+		<content type="html">&lt;p&gt;Wow, it’s been awhile.&lt;/p&gt;
+&lt;p&gt;I didn’t really intend to stop posting for five years now, but that’s always how it goes. Between day-to-day concerns and work, we sometimes get lost.&lt;/p&gt;
+&lt;p&gt;So, I’m getting this post out of the way and can return to posting again. I have made a lot of changes to this blog, the main change is the switch of the SSG engine to &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;11ty&lt;/a&gt; combined with Github pages and Github actions.&lt;/p&gt;
+&lt;p&gt;I added the light and dark mode and removed all the social media crap and analytics.&lt;/p&gt;
+&lt;p&gt;You can find the code on &lt;a href=&quot;https://github.com/daker/daker.github.io&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;
 </content>
 	</entry>
 	
