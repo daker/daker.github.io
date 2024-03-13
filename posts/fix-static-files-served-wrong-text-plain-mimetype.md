@@ -24,7 +24,6 @@ On Gnu/Linux machines, mimetypes uses a list of `mime.types` files
 ```sh
 >>> mimetypes.knownfiles
 ['/etc/mime.types', '/etc/httpd/mime.types', '/etc/httpd/conf/mime.types', '/etc/apache/mime.types', '/etc/apache2/mime.types', '/usr/local/etc/httpd/conf/mime.types', '/usr/local/lib/netscape/mime.types', '/usr/local/etc/httpd/conf/mime.types', '/usr/local/etc/mime.types']
->>> exit()
 ```
 
 However, on Windows (as of Python 3.2), it uses the Windows registry settings.
@@ -54,4 +53,4 @@ Type "help", "copyright", "credits" or "license" for more information.
 application/javascript
 ```
 
-I hope this helps if you encounter this issue :)
+All good, now the mimetype is guessed correctly. I hope this helps if you encounter this issue 😄
