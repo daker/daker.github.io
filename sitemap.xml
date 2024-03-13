@@ -198,181 +198,186 @@
   
   <url>
     <loc>https://daker.me/archive/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
-    <loc>https://daker.me/2022/11/clearing-out-the-cobwebs.html</loc>
-    <lastmod>2022-11-28</lastmod>
+    <loc>https://daker.me/2024/03/clearing-out-the-cobwebs.html</loc>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
-    <loc>https://daker.me/tags/html5/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <loc>https://daker.me/2024/03/fix-static-files-served-wrong-text-plain-mimetype.html</loc>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/css3/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/ubuntuplanet/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/devtools/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daker.me/tags/html5/</loc>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/sublimetext/</loc>
-    <lastmod>2022-11-28</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://daker.me/tags/javascript/</loc>
-    <lastmod>2022-11-28</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://daker.me/tags/utouchdev/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/django/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/persona/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/mozilla/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/python/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
-    <loc>https://daker.me/tags/vagrant/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <loc>https://daker.me/tags/utouchdev/</loc>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/ubuntutouch/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
-    <loc>https://daker.me/tags/gmaps/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <loc>https://daker.me/tags/vagrant/</loc>
+    <lastmod>2024-03-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daker.me/tags/javascript/</loc>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/fishing/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/console/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daker.me/tags/gmaps/</loc>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/iot/</loc>
-    <lastmod>2022-11-28</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://daker.me/tags/raspberrypi/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/grunt/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/nodejs/</loc>
-    <lastmod>2022-11-28</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://daker.me/tags/css/</loc>
-    <lastmod>2022-11-28</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://daker.me/tags/webkit/</loc>
-    <lastmod>2022-11-28</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://daker.me/tags/launchpad/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/ubuntu/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/oxide/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
-    <loc>https://daker.me/tags/android/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <loc>https://daker.me/tags/raspberrypi/</loc>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
-    <loc>https://daker.me/tags/imapsync/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <loc>https://daker.me/tags/css/</loc>
+    <lastmod>2024-03-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daker.me/tags/webkit/</loc>
+    <lastmod>2024-03-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daker.me/tags/launchpad/</loc>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/webcomponents/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
-    <loc>https://daker.me/tags/pockettv/</loc>
-    <lastmod>2022-11-28</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://daker.me/tags/phantomjs/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <loc>https://daker.me/tags/android/</loc>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/lxc/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daker.me/tags/imapsync/</loc>
+    <lastmod>2024-03-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daker.me/tags/pockettv/</loc>
+    <lastmod>2024-03-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daker.me/tags/phantomjs/</loc>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/stylus/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
   
   <url>
     <loc>https://daker.me/tags/11ty/</loc>
-    <lastmod>2022-11-28</lastmod>
+    <lastmod>2024-03-13</lastmod>
   </url>
 </urlset>
