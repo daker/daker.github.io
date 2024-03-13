@@ -1,5 +1,10 @@
-How to Fix Static Files Being Served with the Wrong text/plain Mimetype
-
+---
+title: How to Fix Static Files Being Served with the Wrong text/plain Mimetype
+date: 2024-03-13
+tags:
+  - python
+  - django
+---
 I was performing some Python migrations of a Django web app that used to work, and since I switched to Windows 11 on my work machine, the static files were not being served with the correct mimetype `application/javascript` but rather `text/plain`.
 
 After some digging into the web app code, I found that the assets were being served using the `serve` function from `django.views.static`. Upon checking the Django code, it turns out it does use the `mimetypes` module to guess the mimetype of the file.
