@@ -1,5 +1,6 @@
 ---
 title: Clearing out the cobwebs
+date: 2022-11-12
 tags:
   - 11ty
 ---
